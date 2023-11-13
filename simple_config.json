@@ -1,0 +1,136 @@
+{
+    "controllers": {
+        "upper_body_controller": {
+            "sync_read": true,
+            "attached_motors": [
+              "arms",
+              "head"
+            ],
+            "port": "auto"
+          }
+    },
+    "motorgroups": {
+        "l_arm": [
+            "l_shoulder_x",
+            "l_shoulder_y",
+            "l_arm_z",
+            "l_elbow_y"
+        ],
+        "r_arm": [
+            "r_shoulder_x",
+            "r_shoulder_y",
+            "r_arm_z",
+            "r_elbow_y"
+        ], 
+        "arms": [
+            "l_arm",
+            "r_arm"
+        ],
+        "head": [
+            "head_z",
+            "head_y"
+        ]
+    },
+    "motors": {
+        "l_shoulder_x": {
+            "offset": 90.0,
+            "type": "MG996R",
+            "pin": "P0",
+            "angle_limit": [
+                -105,
+                110
+            ],
+            "orientation": "indirect"
+        },
+        "l_shoulder_y": {
+            "offset": 90.0,
+            "type": "MG996R",
+            "pin": "P1",
+            "angle_limit": [
+                -120,
+                155
+            ],
+            "orientation": "indirect"
+        },
+        "l_arm_z": {
+            "offset": 0.0,
+            "type": "MG996R",
+            "pin": "P2",
+            "angle_limit": [
+                -105,
+                105
+            ],
+            "orientation": "indirect"
+        },
+        "l_elbow_y": {
+            "offset": 0.0,
+            "type": "MG996R",
+            "pin": "P3",
+            "angle_limit": [
+                -148,
+                1
+            ],
+            "orientation": "direct"
+        },
+        "r_shoulder_x": {
+            "offset": 90.0,
+            "type": "MG996R",
+            "pin": "P4",
+            "angle_limit": [
+                -110,
+                105
+            ],
+            "orientation": "indirect"
+        },
+        "r_shoulder_y": {
+            "offset": 90,
+            "type": "MG996R",
+            "pin": "P5",
+            "angle_limit": [
+                -155,
+                120
+            ],
+            "orientation": "indirect"
+        },
+        "r_arm_z": {
+            "offset": 0.0,
+            "type": "MG996R",
+            "pin": "P6",
+            "angle_limit": [
+                -105,
+                105
+            ],
+            "orientation": "indirect"
+        },
+        "r_elbow_y": {
+            "offset": 0.0,
+            "type": "MG996R",
+            "pin": "P7",
+            "angle_limit": [
+                -1,
+                148
+            ],
+            "orientation": "indirect"
+        },
+        "head_z": {
+            "offset": 0.0,
+            "type": "MG996R",
+            "pin": "P8",
+            "angle_limit": [
+                -90,
+                90
+            ],
+            "orientation": "direct"
+        },
+        "head_y": {
+            "offset": 20.0,
+            "type": "MG996R",
+            "pin": "P9",
+            "angle_limit": [
+                -45,
+                6
+            ],
+            "orientation": "indirect"
+        }
+    }
+}
