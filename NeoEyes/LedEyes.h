@@ -14,13 +14,19 @@ class LedEyes
 {
   public:
     LedEyes(int ledPin, ESPIChipsets chipSet, EOrder rgbOrder);
+    LedEyes(int leftPin, int rightPin, ESPIChipsets chipSet, EOrder rgbOrder);
     void begin();
+    void setPinPositions(bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false);
     void setExpression(emote expression);
     void setExpression(CRGB::HTMLColorCode expression[][]);
   private:
-    int _pin;
+    int _lPin;
+    int _rPin;
+    bool _isSeparate = false;
     // 8x16, or 8x8 connected data out to data in of second 8x8
-    int _nLeds = 128;
+    const int _nLeds = 128;
+    const int _kMatrixHeight = 8;
+    const int _kMatrixWidth = 16;
     CRGB _leds[_nLeds];
     ESPIChipsets _chipSet;
     EOrder _rgbOrder;
