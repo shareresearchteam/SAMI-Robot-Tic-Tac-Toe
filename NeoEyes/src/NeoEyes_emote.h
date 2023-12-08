@@ -1,5 +1,5 @@
-#ifndef LedEyes_emote_h
-#define LedEyes_emote_h
+#ifndef NeoEyes_emote_h
+#define NeoEyes_emote_h
 
 #include "FastLED.h"
 

@@ -1,35 +1,35 @@
 
 #include "Arduino.h"
 #include "FastLED.h"
-#include "LedEyes.h"
+#include "NeoEyes.h"
 
-LedEyes::LedEyes(int ledPin, ESPIChipsets chipSet, EOrder rgbOrder) {
+NeoEyes::NeoEyes(int ledPin, ESPIChipsets chipSet, EOrder rgbOrder, bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false) {
     _lPin = ledPin;
     _chipSet = chipSet;
     _rgbOrder = rgbOrder;
     _isSeparate = false;
-    setPinPositions();
+    setPinPositions(kMatrixSerpentineLayout, kMatrixVertical);
 }
 
-LedEyes::LedEyes(int leftPin, int rightPin, ESPIChipsets chipSet, EOrder rgbOrder) {
+NeoEyes::NeoEyes(int leftPin, int rightPin, ESPIChipsets chipSet, EOrder rgbOrder, bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false) {
     _lPin = leftPin;
     _rPin = rightPin;
     _chipSet = chipSet;
     _rgbOrder = rgbOrder;
     _isSeparate = true;
-    setPinPositions();
+    setPinPositions(kMatrixSerpentineLayout, kMatrixVertical);
 }
 
-void LedEyes::setPinPositions(bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false) {
+void NeoEyes::setPinPositions(bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false) {
     for( uint8_t x = 0; x < _kMatrixWidth; x++) {
         for( uint8_t y = 0; y < _kMatrixHeight; y++) {
             // I have my rows set before my columns, so, y'know, height then width, w/e
-            pinPositions[y][x] = XY(x,y);
+            pinPositions[y][x] = XY(x,y,kMatrixSerpentineLayout,kMatrixVertical);
         }
     }
 }
 
-void LedEyes::begin() {
+void NeoEyes::begin() {
     if (_isSeparate){
         // This will maybe work for chained matrices?
         FastLED.addLeds<_chipSet, _lPin, _rgbOrder>(_leds,0, _nLeds/2);
@@ -41,7 +41,7 @@ void LedEyes::begin() {
     //pinMode(_pin, OUTPUT);
 }
 
-void LedEyes::setExpression(emote expression) {
+void NeoEyes::setExpression(emote expression) {
     // set the matrix based on the chosen existing expression... or a custom matrix
     for (int i = 0; i < _kMatrixHeight; i ++) {
         for (int j = 0; j < _kMatrixWidth; j++) {
@@ -52,12 +52,21 @@ void LedEyes::setExpression(emote expression) {
     FastLED.show();
 }
 
-void LedEyed::setExpression(CRGB::HTMLColorCode expression[][]) {
-
+void NeoEyes::setExpression(CRGB::HTMLColorCode expression[][]) {
+    // set the matrix based on the chosen existing expression... or a custom matrix
+    for (int i = 0; i < _kMatrixHeight; i ++) {
+        for (int j = 0; j < _kMatrixWidth; j++) {
+            // so, this is for a static index...
+            _leds[pinPositions[i][j]] = expression[i][j];
+        }
+    }
+    FastLED.show();
 }
 
+
+
 // Convert the x,y position to led index flexibly
-uint16_t XY( uint8_t x, uint8_t y)
+uint16_t NeoEyes::XY( uint8_t x, uint8_t y, bool _kMatrixSerpentineLayout = true, bool _kMatrixVertical = false)
 {
   uint16_t i;
   
