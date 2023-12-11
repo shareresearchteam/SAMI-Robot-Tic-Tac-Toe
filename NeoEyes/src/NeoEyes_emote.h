@@ -24,7 +24,7 @@ enum emote {
 
 // Which pallete index to use for each matrix position
 // alternatively just use the CRGB enum set instead lol
-CRGB::HTMLColorCode Neutral[8][16] = {
+CRGB Neutral[8][16] = {
   { // Row 1
     CRGB::, CRGB::, CRGB::, CRGB::, CRGB::, CRGB::, CRGB::, CRGB::, CRGB::, CRGB::, CRGB::, CRGB::, CRGB::, CRGB::, CRGB::, CRGB::
   },

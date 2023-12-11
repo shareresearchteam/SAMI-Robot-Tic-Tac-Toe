@@ -8,7 +8,18 @@
 
 #include "Arduino.h"
 #include "FastLED.h"
-#include "NeoEyes_emote.h"
+
+enum emote {
+  neutral,
+  right,
+  left,
+  up,
+  down,
+  happy,
+  sad,
+  angry,
+  confused
+};
 
 class NeoEyes
 {
@@ -17,7 +28,7 @@ class NeoEyes
     NeoEyes(int leftPin, int rightPin, ESPIChipsets chipSet, EOrder rgbOrder, bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false);
     void begin();
     void setExpression(emote expression);
-    void setExpression(CRGB::HTMLColorCode expression[][]);
+    void setExpression(CRGB expression[][]);
   private:
     void setPinPositions(bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false);
     uint16_t XY( uint8_t x, uint8_t y, bool _kMatrixSerpentineLayout = true, bool _kMatrixVertical = false);
@@ -32,6 +43,27 @@ class NeoEyes
     CRGB _leds[_nLeds];
     ESPIChipsets _chipSet;
     EOrder _rgbOrder;
+
+    // This matrix has the pin position associated with each visual
+    // array location point
+    int pinPositions[8][16] = {
+      // Row 1
+      { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
+      // Row 2
+      { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
+      // Row 3
+      { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
+      // Row 4
+      { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
+      // Row 5
+      { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
+      // Row 6
+      { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
+      // Row 7
+      { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
+      // Row 8
+      { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }
+    };
 };
 
 
