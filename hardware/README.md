@@ -3,19 +3,10 @@ PTC Fuses for each motor: RKEF075-2
 Relays for each motor group: PR9-5V-200-1A
 
 
+
+
 Relay setup breakdowns! My notes based on looking for relays to handle each section. Checking again I think we're doing 6 relays, but check the datasheet for yourself.
 
-If by side of body:
-chest shoulder
-shoulder shoulder
-twist shoulder
-elbow
-single tendon gripper
-hip
-knee
-ankle
-(20A all stall current)
-(120W @ 6VDC)
 
 If by side and arm/leg:
 chest shoulder
@@ -25,6 +16,7 @@ elbow
 single tendon gripper
 (12.5A all stall current)
 (75W @ 6VDC)
+
 hip
 knee
 ankle
