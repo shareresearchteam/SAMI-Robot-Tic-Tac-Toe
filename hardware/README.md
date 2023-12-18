@@ -1,3 +1,19 @@
+
+
+## Mechanical Bill of Materials
+The mechanical BoM includes all of the 3D printed parts, and associated screw pieces:
+
+| Part | Quantity | Additional Notes | Right Eye |
+| :------ | :----------: | --------: | --------: |
+| M3x     |   GND        | GND       | GND       |
+| 5V      |   5V         | ------    | ------    |
+| A4      |   SDA        | ------    | ------    |
+| A5      |   SCL        | ------    | ------    |
+| Pin 6   | ------       | Din       | ------    |
+| Pin 7   | ------       | ------    | Din       |
+
+
+## Electrical Bill of Materials
 Power Supply: 24V, many Amp, buck converter down to 6V (Need to check current still)
 PTC Fuses for each motor: RKEF075-2
 Relays for each motor group: PR9-5V-200-1A
