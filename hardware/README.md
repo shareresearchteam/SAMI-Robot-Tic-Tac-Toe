@@ -39,7 +39,11 @@ The mechanical BoM includes all of the 3D printed parts, and associated screw pi
 
 ## Electrical Information
 
-
+TODO:
+ - Flyback diodes for the relays (we've added one stand-in diode with zener in the fritzing, but we need to also pick a part and at it to the others, useful example circuit [here](https://blog.mbedded.ninja/electronics/components/relays/))
+ - Big capacitors on power supply output (2x system voltage, like 1000uF each)
+ - Fix the diodes between the relay and the servos to have the correct average forward current rating (already added to digikey partlist (15A))
+ - Double check if we actually want a slightly heftier PTC fuse
 
 
 ### Safety Circuitry
@@ -60,6 +64,7 @@ We have PTC fuses to protect the servos from melting themselves, and 15A relays 
 
 ##### Relay Circuits
 There are 6 relay groups, broken down for each arm, and leg, as well as the neck and torso. Each relay needs 40mA control current, which becomes 240mA current from the Arduino 5V line. To turn the control circuit on and off, each relay has an individual NPN transistor. These transistors are controlled by a common Arduino pin.
+
  - Arm Motors: Max Rating: 12.5A, 75W @ 6VDC
     - Chest Shoulder
     - Shoulder
