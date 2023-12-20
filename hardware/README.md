@@ -1,64 +1,80 @@
+# Aaron Robot Hardware
+All of the hardware information for the Aaron robot.
 
+## Bill of Materials
 
-## Mechanical Bill of Materials
+### Mechanical Bill of Materials
 The mechanical BoM includes all of the 3D printed parts, and associated screw pieces:
 
-| Part | Quantity | Additional Notes | Right Eye |
-| :------ | :----------: | --------: | --------: |
-| M3x     |   GND        | GND       | GND       |
-| 5V      |   5V         | ------    | ------    |
-| A4      |   SDA        | ------    | ------    |
-| A5      |   SCL        | ------    | ------    |
-| Pin 6   | ------       | Din       | ------    |
-| Pin 7   | ------       | ------    | Din       |
+|Part                      |Quantity|Notes                                                                  |Head Twist|Head Nod|Head Tilt|Torso Tilt|Torso Bow|Chest Shoulder|Shoulder|Arm Twist|Elbow|Gripper|Hip|Knee|Ankle|
+|--------------------------|--------|-----------------------------------------------------------------------|----------|--------|---------|----------|---------|--------------|--------|---------|-----|-------|---|----|-----|
+|M3x14                     |20      |                                                                       |4         |        |         |4         |4        |4             |        |         |     |       |   |    |     |
+|M3x16 countersunk         |12      |                                                                       |          |        |         |          |         |              |        |         |2    |       |   |2   |2    |
+|M3x16                     |4       |                                                                       |          |        |         |          |         |              |        |         |     |       |2  |    |     |
+|M3x30                     |4       |                                                                       |          |        |         |          |         |              |        |2        |     |       |   |    |     |
+|M3x35                     |4       |                                                                       |          |        |         |          |         |              |2       |         |     |       |   |    |     |
+|M3x40                     |4       |                                                                       |          |        |         |          |         |              |        |2        |     |       |   |    |     |
+|M3 hex nut                |32      |                                                                       |          |        |         |          |         |4             |2       |2        |2    |       |2  |2   |2    |
+|M3 square nut             |16      |Fits the 2.6mm x 5.5mm x 5.5mm square nuts                             |4         |        |         |4         |4        |              |        |2        |     |       |   |    |     |
+|M2x8 self-tapping pan head|8       |could probably use them for all of the motor horns if you really wanted|          |4       |         |          |         |              |        |
+|M1.6x8                    |60      |motor horn                                                             |4         |        |         |4         |4        |4             |4       |         |4    |       |4  |4   |4    |
+|M1.6 hex nut              |60      |motor horn                                                             |4         |        |         |4         |4        |4             |4       |         |4    |       |4  |4   |4    |
+|M1.6 flat washer          |60      |motor horn                                                             |4         |        |         |4         |4        |4             |4       |         |4    |       |4  |4   |4    |
+|MG-996R                   |17      |main servo motor, using the towerpro dimensions                        |1         |1       |1        |          |         |1             |1       |1        |1    |       |1  |1   |1    |
+|LD-27MG                   |2       |Hiwonder servo motor dimensions                                        |1         |1       |         |          |         |              |        |         |     |       |
 
 
-## Electrical Bill of Materials
-Power Supply: 24V, many Amp, buck converter down to 6V (Need to check current still)
-PTC Fuses for each motor: RKEF075-2
-Relays for each motor group: PR9-5V-200-1A
+
+
+
+### Electrical Bill of Materials
+
+ - Power Supply: 24V, many Amp, buck converter down to 6V (Need to check current still)
+ - PTC Fuses for each motor: RKEF075-2
+ - Relays for each motor group: PR9-5V-200-1A
+ - NPN Transistors for each motor group relay controller: BC547CBU-ND
+
+
+## Mechanical Information
+
+## Electrical Information
 
 
 
 
-Relay setup breakdowns! My notes based on looking for relays to handle each section. Checking again I think we're doing 6 relays, but check the datasheet for yourself.
+### Safety Circuitry
 
 
-If by side and arm/leg:
-chest shoulder
-shoulder shoulder
-twist shoulder
-elbow
-single tendon gripper
-(12.5A all stall current)
-(75W @ 6VDC)
+#### Motor Current Characteristics
 
-hip
-knee
-ankle
-(7.5A all stall current)
-(45W @ 6VDC)
+See the motor current characteristics for the arms (without gripper) and legs
 
-If Body motion weaker motors:
-chest tilt
-hip forward
-neck turn
-neck nod
-neck tilt
-(12.5A all stall current)
-(75W @ 6VDC)
+![Downward, upward, idle, and when blocked max current ratings for each of the arm motors](res/ArmCurrentRatings.png?raw=true "Arm Current Ratings")
+
+![Downward, upward, idle, and when blocked max current ratings for each of the leg motors](res/LegCurrentRatings.png?raw=true "Leg Current Ratings")
 
 
-If we're doing big boy motors, I have those split out too.
-BIG BOY MODE (3+ A stall current)(7.4 VDC)
-chest tilt 
-hip forward
-(~7A all stall current)
-(~52W @ 7.4VDC)
+#### Safety Circuit Current Breakdown
+We have PTC fuses to protect the servos from melting themselves, and 15A relays so we can cut power to the servos if operation is not currently necessary.
 
-With normal neck motors?
-neck turn
-neck nod
-neck tilt
-(7.5A all stall current)
-(45W @ 6VDC)
+
+##### Relay Circuits
+There are 6 relay groups, broken down for each arm, and leg, as well as the neck and torso. Each relay needs 40mA control current, which becomes 240mA current from the Arduino 5V line. To turn the control circuit on and off, each relay has an individual NPN transistor. These transistors are controlled by a common Arduino pin.
+ - Arm Motors: Max Rating: 12.5A, 75W @ 6VDC
+    - Chest Shoulder
+    - Shoulder
+    - Arm Twist
+    - Elbow
+    - Single Tendon Gripper
+ - Leg Motors: Max Rating: 7.5A, 45W @ 6VDC
+    - Hip
+    - Knee
+    - Ankle
+ - Head Motors: Max Rating: 7.5A, 45W @ 6VDC
+    - Head Twist
+    - Head Nod
+    - Head Tilt
+ - Torso Motors: Max Rating: ~7.5A, 52W @ 7.4VDC
+    - Torso Tilt
+    - Torso Bow
+
