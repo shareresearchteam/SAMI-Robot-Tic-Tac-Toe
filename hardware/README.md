@@ -33,6 +33,8 @@ The mechanical BoM includes all of the 3D printed parts, and associated screw pi
  - PTC Fuses for each motor: RKEF075-2
  - Relays for each motor group: PR9-5V-200-1A
  - NPN Transistors for each motor group relay controller: BC547CBU-ND
+ - Diode between motors and servo: 15SQ100
+
 
 
 ## Mechanical Information
@@ -42,7 +44,6 @@ The mechanical BoM includes all of the 3D printed parts, and associated screw pi
 TODO:
  - Flyback diodes for the relays (we've added one stand-in diode with zener in the fritzing, but we need to also pick a part and at it to the others, useful example circuit [here](https://blog.mbedded.ninja/electronics/components/relays/))
  - Big capacitors on power supply output (2x system voltage, like 1000uF each)
- - Fix the diodes between the relay and the servos to have the correct average forward current rating (already added to digikey partlist (15A))
  - Double check if we actually want a slightly heftier PTC fuse
 
 
