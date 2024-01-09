@@ -39,6 +39,13 @@ The mechanical BoM includes all of the 3D printed parts, and associated screw pi
 
 ## Mechanical Information
 
+### Joint Rotations & Home
+Head nod: facing forward -> 20 degrees
+Head tilt: straight up -> 90 degrees
+Head turn: straight forward -> 90 degrees
+Left (stage left) shoulder pitch -> 
+
+
 ## Electrical Information
 
 TODO:
