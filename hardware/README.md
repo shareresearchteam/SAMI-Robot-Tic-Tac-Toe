@@ -1,35 +1,24 @@
 # Aaron Robot Hardware
 All of the hardware information for the Aaron robot.
 
+## Future Improvements
+More involved improvements for future development, in no particular order
+ - Add hip roll/out at side flexor motors
+ - Add a torso twist motor
+ - 
+
+
 ## Bill of Materials
 
 ### Mechanical Bill of Materials
-The mechanical BoM includes all of the 3D printed parts, and associated screw pieces:
-
-|Part                      |Quantity|Notes                                                                  |Head Twist|Head Nod|Head Tilt|Torso Tilt|Torso Bow|Chest Shoulder|Shoulder|Arm Twist|Elbow|Gripper|Hip|Knee|Ankle|
-|--------------------------|--------|-----------------------------------------------------------------------|----------|--------|---------|----------|---------|--------------|--------|---------|-----|-------|---|----|-----|
-|M3x14                     |20      |                                                                       |4         |        |         |4         |4        |4             |        |         |     |       |   |    |     |
-|M3x16 countersunk         |12      |                                                                       |          |        |         |          |         |              |        |         |2    |       |   |2   |2    |
-|M3x16                     |4       |                                                                       |          |        |         |          |         |              |        |         |     |       |2  |    |     |
-|M3x30                     |4       |                                                                       |          |        |         |          |         |              |        |2        |     |       |   |    |     |
-|M3x35                     |4       |                                                                       |          |        |         |          |         |              |2       |         |     |       |   |    |     |
-|M3x40                     |4       |                                                                       |          |        |         |          |         |              |        |2        |     |       |   |    |     |
-|M3 hex nut                |32      |                                                                       |          |        |         |          |         |4             |2       |2        |2    |       |2  |2   |2    |
-|M3 square nut             |16      |Fits the 2.6mm x 5.5mm x 5.5mm square nuts                             |4         |        |         |4         |4        |              |        |2        |     |       |   |    |     |
-|M2x8 self-tapping pan head|8       |could probably use them for all of the motor horns if you really wanted|          |4       |         |          |         |              |        |
-|M1.6x8                    |60      |motor horn                                                             |4         |        |         |4         |4        |4             |4       |         |4    |       |4  |4   |4    |
-|M1.6 hex nut              |60      |motor horn                                                             |4         |        |         |4         |4        |4             |4       |         |4    |       |4  |4   |4    |
-|M1.6 flat washer          |60      |motor horn                                                             |4         |        |         |4         |4        |4             |4       |         |4    |       |4  |4   |4    |
-|MG-996R                   |17      |main servo motor, using the towerpro dimensions                        |1         |1       |1        |          |         |1             |1       |1        |1    |       |1  |1   |1    |
-|LD-27MG                   |2       |Hiwonder servo motor dimensions                                        |1         |1       |         |          |         |              |        |         |     |       |
-
-
+The mechanical BoM includes all of the 3D printed parts, and associated screw pieces (currently in an excel doc for my sanity)
 
 
 
 ### Electrical Bill of Materials
+Also in the same excel doc for the moment
 
- - Power Supply: 24V, many Amp, buck converter down to 6V (Need to check current still)
+ - Power Supply: 12V, 30A, buck converter down to 6V (Need to check current still)
  - PTC Fuses for each motor: RKEF075-2
  - Relays for each motor group: PR9-5V-200-1A
  - NPN Transistors for each motor group relay controller: BC547CBU-ND
@@ -39,19 +28,49 @@ The mechanical BoM includes all of the 3D printed parts, and associated screw pi
 
 ## Mechanical Information
 
-### Joint Rotations & Home
-Head nod: facing forward -> 20 degrees
-Head tilt: straight up -> 90 degrees
-Head turn: straight forward -> 90 degrees
-Left (stage left) shoulder pitch -> 
+### Joint Rotation Range & Centering
+These are hardware joint angles for assembly, ***not for operation***. The arduino code takes in values so the operator does not have to remember how the joints are reversed.
+
+|                      | Min | Max | Home |   |
+|----------------------|-----|-----|------|---|
+| Head Nod             | 0   |     | 20   |   |
+| Head Turn            | 0   | 180 | 90   |   |
+| Head Tilt            | 0   | 180 | 90   |   |
+| Torso Bow            | 40  | 140 | 90   |   |
+| Torso Tilt           | 40  | 140 | 90   |   |
+| Right Shoulder Pitch | 0   | 180 | 0    |   |
+| Right Shoulder Roll  | 0   | 180 | 25   |   |
+| Right Arm Twist      | 0   | 180 | 90   |   |
+| Right Elbow          |     |     |      |   |
+| Right Gripper        |     |     |      |   |
+| Left Shoulder Pitch  | 0   | 180 | 180  |   |
+| Left Shoulder Roll   | 0   | 180 | 155  |   |
+| Left Arm Twist       | 0   | 180 | 90   |   |
+| Left Elbow           |     |     |      |   |
+| Left Gripper         |     |     |      |   |
+| Right Hip            |     |     | 90   |   |
+| Right Knee           |     | 180 | 175  |   |
+| Right Ankle          |     |     | 90   |   |
+| Left Hip             |     |     | 90   |   |
+| Left Knee            | 0   |     | 5    |   |
+| Left Ankle           |     |     | 90   |   |
+
+### 3D Model QoL Adjustments
+To do when time permits, in no particular order
+ - Slightly extend the round nubs that we use to stabilize motor rotation (the round nubs opposite a motor shaft) for the chest and neck connectors
+ - Check if the head tilt motor support nub is actually inline with the motor shaft
+ - Decrease motor horn screw holes sizing on spine/hip connection point for better attachment stability
+ - Improve the arm twist motor attachment to be easier and more consistent/stable
+ - Make elbow motor mounting more stable
+ - Make knee motor mounting more stable
+ - Make ankle motor easier to install
+ - Make the shoulders on the chest piece less... whatever they are (less pointy on ends of shoulder tops, maybe use square nuts and hide the motors from the front, etc)
+
 
 
 ## Electrical Information
-
 TODO:
- - Flyback diodes for the relays (we've added one stand-in diode with zener in the fritzing, but we need to also pick a part and at it to the others, useful example circuit [here](https://blog.mbedded.ninja/electronics/components/relays/))
- - Big capacitors on power supply output (2x system voltage, like 1000uF each)
- - Double check if we actually want a slightly heftier PTC fuse
+ - So much assembly
 
 
 ### Safety Circuitry
@@ -59,11 +78,13 @@ TODO:
 
 #### Motor Current Characteristics
 
-See the motor current characteristics for the arms (without gripper) and legs
+See the motor current characteristics for the arms (without gripper) and legs below. The measured torso nod motor current during operation was seen as a maximum of 0.6A, and the stall current was measured at 1.12A. The measured torso tilt current during operation similarly hit a maximum of 0.6A, but the stall current when held still was 1.99A.
 
 ![Downward, upward, idle, and when blocked max current ratings for each of the arm motors](res/ArmCurrentRatings.png?raw=true "Arm Current Ratings")
 
 ![Downward, upward, idle, and when blocked max current ratings for each of the leg motors](res/LegCurrentRatings.png?raw=true "Leg Current Ratings")
+
+
 
 
 #### Safety Circuit Current Breakdown
@@ -87,7 +108,12 @@ There are 6 relay groups, broken down for each arm, and leg, as well as the neck
     - Head Twist
     - Head Nod
     - Head Tilt
+    - Camera pan motor? (add another 2.5A)
  - Torso Motors: Max Rating: ~7.5A, 52W @ 7.4VDC
     - Torso Tilt
     - Torso Bow
 
+
+
+## References
+ - [Flyback diode example circuit](https://blog.mbedded.ninja/electronics/components/relays/)
