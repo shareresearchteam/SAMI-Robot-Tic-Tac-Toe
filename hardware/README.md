@@ -65,6 +65,7 @@ To do when time permits, in no particular order
  - Make knee motor mounting more stable
  - Make ankle motor easier to install
  - Make the shoulders on the chest piece less... whatever they are (less pointy on ends of shoulder tops, maybe use square nuts and hide the motors from the front, etc)
+ - **Separate the servo joint sections from the rest of the body links, so we can make different shape designs for the limbs/torso without needing to re-zero or re-assemble the motors**
 
 
 
