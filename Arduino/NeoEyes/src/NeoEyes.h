@@ -114,7 +114,7 @@ class cNeoEyes
 template<uint8_t DataPin>
 class NeoEyes : public cNeoEyes {
 public:
-	NeoEyes() : cNeoEyes(ledData, 128, true, false) 
+	NeoEyes() : cNeoEyes(ledData, 128, true, true) 
 	{
 		memset(ledData, 0, sizeof(ledData));  // set all LEDs to black
 	}
