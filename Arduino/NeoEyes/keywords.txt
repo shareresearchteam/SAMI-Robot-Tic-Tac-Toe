@@ -1,3 +1,4 @@
 NeoEyes KEYWORD1
 begin KEYWORD2
+setEmote KEYWORD2
 setExpression KEYWORD2

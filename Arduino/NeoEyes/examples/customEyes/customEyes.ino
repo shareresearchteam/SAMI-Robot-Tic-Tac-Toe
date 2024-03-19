@@ -1,6 +1,8 @@
 #include <NeoEyes.h>
 
-NeoEyes eyesss(12, NeoPixel,  GRB);
+#define DATA_PIN 12
+
+NeoEyes<DATA_PIN> eyesss;
 
 CRGB customExpression[8][16] = {
   // Row 1

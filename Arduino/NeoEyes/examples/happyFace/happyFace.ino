@@ -1,14 +1,16 @@
 #include <NeoEyes.h>
 
-NeoEyes eyesss(12, NeoPixel,  GRB);
+#define DATA_PIN 12
+
+NeoEyes<DATA_PIN> eyesss;
 
 void setup() {
     eyesss.begin();
 }
 
 void loop() {
-    eyesss.setExpression(neutral);
+    eyesss.setEmote(neutral);
     delay(500);
-    eyesss.setExpression(happy);
+    eyesss.setEmote(happy);
     delay(500);
 }
