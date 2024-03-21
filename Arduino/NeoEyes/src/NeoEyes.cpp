@@ -1,128 +1,30 @@
 
-// suppress FastLED pragma version message
-// #define FASTLED_INTERNAL
-
-// #include "Arduino.h"
-// #include "FastLED.h"
 #include "NeoEyes.h"
 
-//NeoEyes::NeoEyes(int ledPin, ESPIChipsets chipSet, EOrder rgbOrder, int rightPin = -1, bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false);
-//NeoEyes::NeoEyes(int ledPin, int rightPin = -1, bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false);
-//void NeoEyes::setPinPositions(bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false);
-//uint16_t NeoEyes::XY( uint8_t x, uint8_t y, bool _kMatrixSerpentineLayout = true, bool _kMatrixVertical = false);
 
-//NeoEyes::NeoEyes(int ledPin, int rightPin = -1, ESPIChipsets chipSet, EOrder rgbOrder, bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false) {
-//NeoEyes::NeoEyes(int ledPin, ESPIChipsets chipSet, EOrder rgbOrder, int rightPin, bool kMatrixSerpentineLayout, bool kMatrixVertical) {
-//NeoEyes::NeoEyes(uint8_t  ledPin, uint8_t  rightPin = -1, bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false) {
-cNeoEyes::cNeoEyes(CRGB* ledPtr, uint16_t nLeds, bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false) 
+
+cNeoEyes::cNeoEyes(CRGB* ledPtr, uint16_t nLeds, bool kMatrixSerpentineLayout = true, bool kMatrixVertical = true) 
   :
-	_leds(ledPtr),
-	maxLEDs(nLeds),
-	numLEDs(nLeds)
+	_leds(ledPtr)
 {
-
-    // _lPin = ledPin;
-    // _isSeparate = false;
-    // if (rightPin != -1)
-    // {
-    //   _rPin = rightPin;
-    //   _isSeparate = true;
-    // }
-    //_chipSet = chipSet;
-    //_rgbOrder = rgbOrder;
-    setPinPositions(kMatrixSerpentineLayout, kMatrixVertical);
+    //setPinPositions(kMatrixSerpentineLayout, kMatrixVertical);
+    _kMatrixSerpentineLayout = kMatrixSerpentineLayout;
+    _kMatrixVertical = kMatrixVertical;
 }
 
-// NeoEyes::NeoEyes(int leftPin, int rightPin, ESPIChipsets chipSet, EOrder rgbOrder, bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false) {
-//     _lPin = leftPin;
-//     _rPin = rightPin;
-//     _chipSet = chipSet;
-//     _rgbOrder = rgbOrder;
-//     _isSeparate = true;
-//     setPinPositions(kMatrixSerpentineLayout, kMatrixVertical);
-// }
-
-//void NeoEyes::setPinPositions(bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false) {
-void cNeoEyes::setPinPositions(bool kMatrixSerpentineLayout = true, bool kMatrixVertical = false) {
-    for( uint8_t x = 0; x < _kMatrixWidth; x++) {
-        for( uint8_t y = 0; y < _kMatrixHeight; y++) {
-            // I have my rows set before my columns, so, y'know, height then width, w/e
-            pinPositions[y][x] = XY(x,y,kMatrixSerpentineLayout,kMatrixVertical);
-        }
-    }
-}
-
-// void NeoEyes::begin(uint8_t  ledPin) {
-//         //FastLED.addLeds<_chipSet, _lPin, _rgbOrder>(_leds,_nLeds);
-//         FastLED.addLeds<NEOPIXEL, ledPin>(_leds,_NLEDS);
-// }
-
-// void NeoEyes::begin(uint8_t  leftPin, uint8_t  rightPin) {
-
-//         // This will maybe work for chained matrices?
-//         // FastLED.addLeds<_chipSet, _lPin, _rgbOrder>(_leds,0, _nLeds/2);
-//         // FastLED.addLeds<_chipSet, _rPin, _rgbOrder>(_leds,_nLeds/2, _nLeds/2);
-//         FastLED.addLeds<NEOPIXEL, leftPin>(_leds,0, _NLEDS/2);
-//         FastLED.addLeds<NEOPIXEL, rightPin>(_leds,_NLEDS/2, _NLEDS/2);
-
-//     //pinMode(_pin, OUTPUT);
-// }
 void cNeoEyes::begin(CLEDController& ctrl) {
   controller = &ctrl;
 }
 
-void cNeoEyes::setEmote(emote expression) {
-    // set the matrix based on the chosen existing expression... or a custom matrix
-    CRGB deadFace[8][16] = {{ CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Red },
-  // Row 2
-  { CRGB::Black, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Black },
-  // Row 3
-  { CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Black, CRGB::Black },
-  // Row 4
-  { CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Black },
-  // Row 5
-  { CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Black },
-  // Row 6
-  { CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Black, CRGB::Black },
-  // Row 7
-  { CRGB::Black, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Black },
-  // Row 8
-  { CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Red, CRGB::Red, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Black, CRGB::Red }
-    };
-    switch (expression) {
-      case neutral:
-      setExpression(deadFace);
-      break;
-      case right:
-      setExpression(deadFace);
-      break;
-      case left:
-      setExpression(deadFace);
-      break;
-      case up:
-      setExpression(deadFace);
-      break;
-      case down:
-      setExpression(deadFace);
-      break;
-      case happy:
-      setExpression(deadFace);
-      break;
-      case sad:
-      setExpression(deadFace);
-      break;
-      case angry:
-      setExpression(deadFace);
-      break;
-      case confused:
-      setExpression(deadFace);
-      break;
-      case dead:
-      setExpression(deadFace);
-      break;
-      default:
-        break;
+void cNeoEyes::setExpression(Emote expression) {
+  currentEmote = expression;
+  for (int i = 0; i < _kMatrixHeight; i ++) {
+    for (int j = 0; j < _kMatrixWidth; j++) {
+      // so, this is for a static index...
+      _leds[XY(j,i)] = expression.colorList[expression.pattern[i][j]];
     }
+  }
+  FastLED.show();
 }
 
 void cNeoEyes::setExpression(CRGB expression[8][16]) {
@@ -130,15 +32,326 @@ void cNeoEyes::setExpression(CRGB expression[8][16]) {
     for (int i = 0; i < _kMatrixHeight; i ++) {
         for (int j = 0; j < _kMatrixWidth; j++) {
             // so, this is for a static index...
-            _leds[pinPositions[i][j]] = expression[i][j];
+            _leds[XY(j,i)] = expression[i][j];
         }
     }
     FastLED.show();
 }
 
+void cNeoEyes::setNeutral() {
+  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  currentEmote = { defaultColors,
+    {     // Right Eye                   Left Eye
+      { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 1
+      { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 2
+      { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 3
+      { 1, 0, 0, 2, 2, 0, 0, 1,   1, 0, 0, 2, 2, 0, 0, 1 }, // Row 4
+      { 1, 0, 0, 2, 2, 0, 0, 1,   1, 0, 0, 2, 2, 0, 0, 1 }, // Row 5
+      { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 6
+      { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
+      { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
+    } };
+  setExpression(currentEmote);
+}
+
+void cNeoEyes::setRight(bool isSlight = true) {
+  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  if(isSlight) {
+    currentEmote = { defaultColors,
+      {     // Right Eye                   Left Eye
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 1
+        { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 2
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 3
+        { 1, 0, 2, 2, 0, 0, 0, 1,   1, 0, 2, 2, 0, 0, 0, 1 }, // Row 4
+        { 1, 0, 2, 2, 0, 0, 0, 1,   1, 0, 2, 2, 0, 0, 0, 1 }, // Row 5
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 6
+        { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
+      } };
+    setExpression(currentEmote);
+  }
+  else {
+    currentEmote = { defaultColors,
+      {     // Right Eye                   Left Eye
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 1
+        { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 2
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 3
+        { 1, 2, 2, 0, 0, 0, 0, 1,   1, 2, 2, 0, 0, 0, 0, 1 }, // Row 4
+        { 1, 2, 2, 0, 0, 0, 0, 1,   1, 2, 2, 0, 0, 0, 0, 1 }, // Row 5
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 6
+        { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
+      } };
+    setExpression(currentEmote);
+  }
+}
+
+void cNeoEyes::setLeft(bool isSlight = true) {
+  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  if(isSlight) {
+    currentEmote = { defaultColors,
+      {     // Right Eye                   Left Eye
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 1
+        { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 2
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 3
+        { 1, 0, 0, 0, 2, 2, 0, 1,   1, 0, 0, 0, 2, 2, 0, 1 }, // Row 4
+        { 1, 0, 0, 0, 2, 2, 0, 1,   1, 0, 0, 0, 2, 2, 0, 1 }, // Row 5
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 6
+        { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
+      } };
+    setExpression(currentEmote);
+  }
+  else {
+    currentEmote = { defaultColors,
+      {     // Right Eye                   Left Eye
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 1
+        { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 2
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 3
+        { 1, 0, 0, 0, 0, 2, 2, 1,   1, 0, 0, 0, 0, 2, 0, 1 }, // Row 4
+        { 1, 0, 0, 0, 0, 2, 2, 1,   1, 0, 0, 0, 0, 2, 0, 1 }, // Row 5
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 6
+        { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
+      } };
+    setExpression(currentEmote);
+  }
+}
+
+void cNeoEyes::setUp(bool isSlight = true) {
+  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  if(isSlight) {
+    currentEmote = { defaultColors,
+      {     // Right Eye                   Left Eye
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 1
+        { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 2
+        { 1, 0, 0, 2, 2, 0, 0, 1,   1, 0, 0, 2, 2, 0, 0, 1 }, // Row 3
+        { 1, 0, 0, 2, 2, 0, 0, 1,   1, 0, 0, 2, 2, 0, 0, 1 }, // Row 4
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 5
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 6
+        { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
+      } };
+    setExpression(currentEmote);
+  }
+  else {
+    currentEmote = { defaultColors,
+      {     // Right Eye                   Left Eye
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 1
+        { 0, 1, 0, 2, 2, 0, 1, 0,   0, 1, 0, 2, 2, 0, 1, 0 }, // Row 2
+        { 1, 0, 0, 2, 2, 0, 0, 1,   1, 0, 0, 2, 2, 0, 0, 1 }, // Row 3
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 4
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 5
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 6
+        { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
+      } };
+    setExpression(currentEmote);
+  }
+}
+
+void cNeoEyes::setDown(bool isSlight = true) {
+  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  if(isSlight) {
+    currentEmote = { defaultColors,
+      {     // Right Eye                   Left Eye
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 1
+        { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 2
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 3
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 4
+        { 1, 0, 0, 2, 2, 0, 0, 1,   1, 0, 0, 2, 2, 0, 0, 1 }, // Row 5
+        { 1, 0, 0, 2, 2, 0, 0, 1,   1, 0, 0, 2, 2, 0, 0, 1 }, // Row 6
+        { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
+      } };
+    setExpression(currentEmote);
+  }
+  else {
+    currentEmote = { defaultColors,
+      {     // Right Eye                   Left Eye
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 1
+        { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 2
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 3
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 4
+        { 1, 0, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 0, 1 }, // Row 5
+        { 1, 0, 0, 2, 2, 0, 0, 1,   1, 0, 0, 2, 2, 0, 0, 1 }, // Row 6
+        { 0, 1, 0, 2, 2, 0, 1, 0,   0, 1, 0, 2, 2, 0, 1, 0 }, // Row 7
+        { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
+      } };
+    setExpression(currentEmote);
+  }
+}
+
+void cNeoEyes::setHappy() {
+  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  currentEmote = { defaultColors,
+    {     // Right Eye                   Left Eye
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 1
+      { 0, 0, 0, 1, 1, 0, 0, 0,   0, 0, 0, 1, 1, 0, 0, 0 }, // Row 2
+      { 0, 0, 1, 0, 0, 1, 0, 0,   0, 0, 1, 0, 0, 1, 0, 0 }, // Row 3
+      { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 4
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 5
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 6
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 7
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 8
+    } };
+  setExpression(currentEmote);
+}
+
+void cNeoEyes::setSad() {
+  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  currentEmote = { defaultColors,
+    {     // Right Eye                   Left Eye
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 1
+      { 0, 0, 0, 0, 1, 1, 1, 0,   0, 1, 1, 1, 0, 0, 0, 0 }, // Row 2
+      { 0, 0, 0, 1, 0, 0, 0, 1,   1, 0, 0, 0, 1, 0, 0, 0 }, // Row 3
+      { 0, 0, 1, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 1, 0, 0 }, // Row 4
+      { 0, 1, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 1, 0 }, // Row 5
+      { 1, 0, 0, 0, 2, 2, 0, 1,   1, 0, 2, 2, 0, 0, 0, 1 }, // Row 6
+      { 1, 0, 0, 0, 2, 2, 0, 1,   1, 0, 2, 2, 0, 0, 0, 1 }, // Row 7
+      { 0, 1, 1, 1, 1, 1, 1, 0,   0, 1, 1, 1, 1, 1, 1, 0 }, // Row 8
+    } };
+  setExpression(currentEmote);
+}
+
+void cNeoEyes::setAngry() {
+  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  currentEmote = { defaultColors,
+    {     // Right Eye                   Left Eye
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 1
+      { 0, 1, 1, 1, 0, 0, 0, 0,   0, 0, 0, 0, 1, 1, 1, 0 }, // Row 2
+      { 1, 0, 0, 0, 1, 0, 0, 0,   0, 0, 0, 1, 0, 0, 0, 1 }, // Row 3
+      { 1, 0, 0, 0, 0, 1, 0, 0,   0, 0, 1, 0, 0, 0, 0, 1 }, // Row 4
+      { 1, 0, 0, 2, 2, 0, 1, 0,   0, 1, 0, 2, 2, 0, 0, 1 }, // Row 5
+      { 1, 0, 0, 2, 2, 0, 0, 1,   1, 0, 0, 2, 2, 0, 0, 1 }, // Row 6
+      { 0, 1, 0, 0, 0, 0, 0, 1,   1, 0, 0, 0, 0, 0, 1, 0 }, // Row 7
+      { 0, 0, 1, 1, 1, 1, 1, 1,   1, 1, 1, 1, 1, 1, 0, 0 }, // Row 8
+    } };
+  setExpression(currentEmote);
+}
+
+void cNeoEyes::setConfused(bool isSplit = true) {
+  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  if(isSplit) {
+    currentEmote = { defaultColors,
+    {     // Right Eye                   Left Eye
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 1, 0, 0, 0 }, // Row 1
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 1, 0, 1, 0, 0 }, // Row 2
+      { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 0, 0, 0, 1, 0 }, // Row 3
+      { 0, 1, 0, 0, 0, 0, 1, 0,   0, 0, 1, 0, 2, 0, 1, 0 }, // Row 4
+      { 1, 0, 0, 2, 2, 0, 0, 1,   0, 0, 1, 0, 2, 0, 1, 0 }, // Row 5
+      { 0, 1, 0, 0, 0, 0, 1, 0,   0, 0, 1, 0, 0, 0, 1, 0 }, // Row 6
+      { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 0, 1, 0, 1, 0, 0 }, // Row 7
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 1, 0, 0, 0 }, // Row 8
+    } };
+    setExpression(currentEmote);
+  }
+  else {
+    Emote currentEmote = { defaultColors,
+    {     // Right Eye                   Left Eye
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 1, 0, 0 }, // Row 1
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 1, 0, 1, 0 }, // Row 2
+      { 0, 0, 1, 1, 1, 1, 1, 1,   0, 0, 0, 1, 0, 0, 0, 1 }, // Row 3
+      { 0, 1, 0, 0, 0, 0, 0, 0,   1, 0, 0, 1, 0, 2, 0, 1 }, // Row 4
+      { 1, 0, 0, 0, 2, 2, 0, 0,   0, 1, 0, 1, 0, 2, 0, 1 }, // Row 5
+      { 0, 1, 0, 0, 0, 0, 0, 0,   1, 0, 0, 1, 0, 0, 0, 1 }, // Row 6
+      { 0, 0, 1, 1, 1, 1, 1, 1,   0, 0, 0, 0, 1, 0, 1, 0 }, // Row 7
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 1, 0, 0 }, // Row 8
+    } };
+    setExpression(currentEmote);
+  }
+}
+
+void cNeoEyes::setClosed() {
+  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  currentEmote = { defaultColors,
+    {     // Right Eye                   Left Eye
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 1
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 2
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 3
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 4
+      { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 5
+      { 0, 0, 1, 0, 0, 1, 0, 0,   0, 0, 1, 0, 0, 1, 0, 0 }, // Row 6
+      { 0, 0, 0, 1, 1, 0, 0, 0,   0, 0, 0, 1, 1, 0, 0, 0 }, // Row 7
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 8
+    } };
+  setExpression(currentEmote);
+}
+
+void cNeoEyes::setSleepy() {
+  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  currentEmote = { defaultColors,
+    {     // Right Eye                   Left Eye
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 1
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 2
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 3
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 4
+      { 0, 1, 1, 1, 1, 1, 1, 0,   0, 1, 1, 1, 1, 1, 1, 0 }, // Row 5
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 6
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 7
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 8
+    } };
+  setExpression(currentEmote);
+}
+
+void cNeoEyes::setDead() {
+  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  currentEmote = { defaultColors,
+    {     // Right Eye                   Left Eye
+      { 3, 0, 0, 0, 0, 0, 0, 3,   3, 0, 0, 0, 0, 0, 0, 3 }, // Row 1
+      { 0, 3, 0, 0, 0, 0, 3, 0,   0, 3, 0, 0, 0, 0, 3, 0 }, // Row 2
+      { 0, 0, 3, 0, 0, 3, 0, 0,   0, 0, 3, 0, 0, 3, 0, 0 }, // Row 3
+      { 0, 0, 0, 3, 3, 0, 0, 0,   0, 0, 0, 3, 3, 0, 0, 0 }, // Row 4
+      { 0, 0, 0, 3, 3, 0, 0, 0,   0, 0, 0, 3, 3, 0, 0, 0 }, // Row 5
+      { 0, 0, 3, 0, 0, 3, 0, 0,   0, 0, 3, 0, 0, 3, 0, 0 }, // Row 6
+      { 0, 3, 0, 0, 0, 0, 3, 0,   0, 3, 0, 0, 0, 0, 3, 0 }, // Row 7
+      { 3, 0, 0, 0, 0, 0, 0, 3,   3, 0, 0, 0, 0, 0, 0, 3 }, // Row 8
+    } };
+  setExpression(currentEmote);
+}
+
+void cNeoEyes::setOff() {
+  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  currentEmote = { defaultColors,
+    {     // Right Eye                   Left Eye
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 1
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 2
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 3
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 4
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 5
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 6
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 7
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 8
+    } };
+  setExpression(currentEmote);
+}
+
+void cNeoEyes::blink(int closeTime = 50) {
+  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  Emote closedEmote = { defaultColors,
+    {     // Right Eye                   Left Eye
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 1
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 2
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 3
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 4
+      { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 5
+      { 0, 0, 1, 0, 0, 1, 0, 0,   0, 0, 1, 0, 0, 1, 0, 0 }, // Row 6
+      { 0, 0, 0, 1, 1, 0, 0, 0,   0, 0, 0, 1, 1, 0, 0, 0 }, // Row 7
+      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 8
+    } };
+  setExpression(closedEmote);
+  FastLED.show();
+  delay(closeTime);
+  setExpression(currentEmote);
+  FastLED.show();
+}
+
+void cNeoEyes::setBrightness(uint8_t scale) {
+  FastLED.show(scale);
+}
+
 // Convert the x,y position to led index flexibly
-//uint16_t NeoEyes::XY( uint8_t x, uint8_t y, bool _kMatrixSerpentineLayout = true, bool _kMatrixVertical = false)
-uint16_t cNeoEyes::XY( uint8_t x, uint8_t y, bool _kMatrixSerpentineLayout = true, bool _kMatrixVertical = false)
+uint16_t cNeoEyes::XY( uint8_t x, uint8_t y)
 {
   uint16_t i;
   

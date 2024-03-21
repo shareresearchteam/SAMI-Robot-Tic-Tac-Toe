@@ -6,11 +6,10 @@ NeoEyes<DATA_PIN> eyesss;
 
 void setup() {
     eyesss.begin();
+    eyesss.setNeutral();
 }
 
 void loop() {
-    eyesss.setNeutral();
-    delay(500);
-    eyesss.setHappy();
+    eyesss.blink(50);
     delay(500);
 }
