@@ -23,17 +23,24 @@
 
 #include <Wire.h>
 #include <Adafruit_PWMServoDriver.h>
+#include <NeoEyes.h>
 #include "constants.h"
 #include "servoControl.h"
 #include "Global_Variables.h"
 String readString;
+
+NeoEyes<EYES_PIN> roboEyes;
 
 void setup() {
   pinMode(SERVO_RELAY, OUTPUT); //pin 4 is the on and off for the servo relay power
   pinMode(PING_PIN, OUTPUT); //enable pingPing as an OUTPUT
   pinMode(ECHO_PIN, INPUT); //enable echoPin as an INPUT
   pinMode(PIR_PIN, INPUT); //decalre sensor as input
-  
+
+  // Eyes Setup!
+  roboEyes.begin();
+
+  // Servo bits
   digitalWrite(SERVO_RELAY, HIGH);
   int initial[]={170,155,90,90,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21}; //initial servo values
   Serial.begin(115200);
@@ -75,8 +82,17 @@ void loop() {
 //Serial.print("in, ");
 //pir(PIR_PIN);
 
+// Turn on servo motor power?
 digitalWrite(SERVO_RELAY, HIGH);
-servoCom();
+
+// Check for any serial communications
+checkForCom();
+// If we got a new emote instruction, then set the eyes
+if(newEmote) {
+  roboEyes.setStandardEmote(currentEmote);
+  newEmote = false;
+}
+//servoCom();
 setAllJoints1();
 setAllJoints2();
 //setJointAngle(LeftChest, 0);

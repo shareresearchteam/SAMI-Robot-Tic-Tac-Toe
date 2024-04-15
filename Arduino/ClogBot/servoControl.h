@@ -118,9 +118,9 @@ void setAllJointsInitial(int jointAnglesInitial[]){
 void setAllJoints1() {
   for (int joint = LeftChest; joint < RightAnkle+1; joint++) {
     setJointAngle1(static_cast<joints>(joint), jointAngles[joint]);
-    Serial.print("Angles sent to servos: ");
-    Serial.print(jointAngles[joint]);
-    Serial.print(" ");
+    //Serial.print("Angles sent to servos: ");
+    //Serial.print(jointAngles[joint]);
+    //Serial.print(" ");
   }
 }
 

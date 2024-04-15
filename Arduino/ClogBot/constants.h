@@ -37,6 +37,7 @@ This contains all our constant definitions, including:
  Using the enum here, the left and right side enum positions can align directly with the pin
  wiring on the driver board, meaning we can use them for calling each motor directly
 */
+const int NumJoints = 21;
 enum joints {
 // Left side //
   LeftChest,
@@ -70,11 +71,18 @@ extern int jointAngles[TorsoTilt+1]; // Assuming TorsoTilt is the last item in t
 
 //extern int jointAnglesInitial = [170,155,90,0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]; // Assuming TorsoTilt is the last item in the enum
 
+/********** Eye Control Variables **********/
+// Emote variables to share for the Eyes data
+extern bool newEmote = false;
+extern int currentEmote = 0;
+
+
 /********** Pin Definitions **********/
 // Eyes //
 // We use non-PWM pins here
 #define LEFT_EYE_PIN 2
 #define RIGHT_EYE_PIN 4
+
 
 // Head & Torso //
 // Must be PWM pins
