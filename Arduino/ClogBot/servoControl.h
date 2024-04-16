@@ -100,12 +100,12 @@ void setServoPulse(uint8_t n, double pulse) {
   
   pulselength = 1000000;   // 1,000,000 us per second
   pulselength /= SERVO_FREQ;   // Analog servos run at ~60 Hz updates
-  Serial.print(pulselength); Serial.println(" us per period"); 
+  //Serial.print(pulselength); Serial.println(" us per period"); 
   pulselength /= 4096;  // 12 bits of resolution
-  Serial.print(pulselength); Serial.println(" us per bit"); 
+  //Serial.print(pulselength); Serial.println(" us per bit"); 
   pulse *= 1000000;  // convert input seconds to us
   pulse /= pulselength;
-  Serial.println(pulse);
+  //Serial.println(pulse);
   pwm1.setPWM(n, 0, pulse);
 }
 

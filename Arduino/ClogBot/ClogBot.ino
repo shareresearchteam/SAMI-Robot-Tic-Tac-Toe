@@ -27,6 +27,7 @@
 #include "constants.h"
 #include "servoControl.h"
 #include "Global_Variables.h"
+#include "newCommunication.h"
 String readString;
 
 NeoEyes<EYES_PIN> roboEyes;
@@ -44,7 +45,7 @@ void setup() {
   digitalWrite(SERVO_RELAY, HIGH);
   int initial[]={170,155,90,90,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21}; //initial servo values
   Serial.begin(115200);
-  Serial.println("21 channel Servo test!");
+  //Serial.println("21 channel Servo test!");
 
   // Handles our initialization of the 16 channel servo driver board & remaining servos
   initServos();
@@ -86,18 +87,31 @@ void loop() {
 digitalWrite(SERVO_RELAY, HIGH);
 
 // Check for any serial communications
-checkForCom();
-// If we got a new emote instruction, then set the eyes
-if(newEmote) {
-  roboEyes.setStandardEmote(currentEmote);
-  newEmote = false;
+//checkForCom();
+recvWithStartEndMarkers();
+if(newData) {
+  Serial.println("Got new data!");
+  Serial.print("Message type: ");
+        Serial.println(msgType);
+  // If we got a new emote instruction, then set the eyes
+  if(newEmote) {
+    Serial.print("Emote Recieved: ");
+          Serial.println(currentEmote);
+    roboEyes.setStandardEmote(currentEmote);
+    newEmote = false;
+    
+  }
+  else if(newJoints) {
+    //servoCom();
+    setAllJoints1();
+    setAllJoints2();
+    //setJointAngle(LeftChest, 0);
+    newJoints = false;
+  }
+  newData = false;
 }
-//servoCom();
-setAllJoints1();
-setAllJoints2();
-//setJointAngle(LeftChest, 0);
 
-delay(500);
+delay(100);
 
 //  while (Serial.available()) {
 //    char c = Serial.read();  //gets one byte from serial buffer

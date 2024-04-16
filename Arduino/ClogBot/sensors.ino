@@ -35,19 +35,19 @@ float ultrasonic_cm(const int x, const int y){//ultrasonic funtion in returns ce
 void pir(int x){
 
   val = digitalRead(x); //read input value
-  Serial.print("PIR Sensor Value: ");
-  Serial.print(val); //print value of the DI
+  //Serial.print("PIR Sensor Value: ");
+  //Serial.print(val); //print value of the DI
   if (val == HIGH){ //check if the input is HIGH
     if (pirState == LOW){
       //we have just turned on
-      Serial.println("Motion Detected!");
+      //Serial.println("Motion Detected!");
       //Only printing on the output change, not the state
       pirState = HIGH;
   }
   } else{
     if (pirState == HIGH){
       //we have just turned off
-      Serial.println("Motion Ended!");
+      //Serial.println("Motion Ended!");
       //Only printing on the output chage not the state
       pirState = LOW;
     }
