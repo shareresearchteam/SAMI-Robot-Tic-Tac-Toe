@@ -38,6 +38,65 @@ void cNeoEyes::setExpression(CRGB expression[8][16]) {
     FastLED.show();
 }
 
+void cNeoEyes::setStandardEmote(StandardEmote emote) {
+  switch(emote) {
+    case Off:
+      setOff();
+      break;
+    case Neutral:
+      setNeutral();
+      break;
+    case Happy:
+      setHappy();
+      break;
+    case Sad:
+      setSad();
+      break;
+    case Angry:
+      setAngry();
+      break;
+    case Confused:
+      setConfused();
+      break;
+    case Closed:
+      setClosed();
+      break;
+    case Sleepy:
+      setSleepy();
+      break;
+    case Dead:
+      setDead();
+      break;
+    case SlightRight:
+      setRight(true);
+      break;
+    case Right:
+      setRight(false);
+      break;
+    case SlightLeft:
+      setLeft(true);
+      break;
+    case Left:
+      setLeft(false);
+      break;
+    case SlightUp:
+      setUp(true);
+      break;
+    case Up:
+      setUp(false);
+      break;
+    case SlightDown:
+      setDown(true);
+      break;
+    case Down:
+      setDown(false);
+      break;
+    default:
+      setOff();
+      break;
+  }
+}
+
 void cNeoEyes::setNeutral() {
   CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
   currentEmote = { defaultColors,

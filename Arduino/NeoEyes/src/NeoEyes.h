@@ -16,6 +16,26 @@ struct Emote {
     int pattern[8][16];
 };
 
+enum StandardEmote {
+  Off,
+  Neutral,
+  Happy,
+  Sad,
+  Angry,
+  Confused,
+  Closed,
+  Sleepy,
+  Dead,
+  SlightRight,
+  Right,
+  SlightLeft,
+  Left,
+  SlightUp,
+  Up,
+  SlightDown,
+  Down
+};
+
 class cNeoEyes
 {
   public:
@@ -23,6 +43,7 @@ class cNeoEyes
     void begin(CLEDController& ctrl);
     void setExpression(Emote expression);
     void setExpression(CRGB expression[8][16]);
+    void setStandardEmote(StandardEmote emote);
     void setNeutral();
     void setRight(bool isSlight = true);
     void setLeft(bool isSlight = true);
