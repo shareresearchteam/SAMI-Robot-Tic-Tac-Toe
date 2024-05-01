@@ -4,6 +4,8 @@ const char endMarker = '>';
 
 char ultraMsg = 'U';
 char pirMsg = 'P';
+char pbMsg1 = 'Y';//YES push button
+char pbMsg2 ='N';//NO push button
 
 void sendUltrasonicData(float distance) {
   Serial.print(startMarker);
@@ -20,3 +22,18 @@ void sendPirData(int motionStatus) {
     Serial.println(endMarker);
   }
 }
+
+void sendPushButtonData1(int buttonState1) {
+    Serial.print(startMarker);
+    Serial.print(pbMsg1); // Message type for push button 1
+    Serial.print(buttonState1);
+    Serial.println(endMarker);
+  }
+
+void sendPushButtonData2(int buttonState2) {
+    Serial.print(startMarker);
+    Serial.print(pbMsg2); // Message type for push button 2
+    Serial.print(buttonState2);
+    Serial.println(endMarker);
+  }
+  
