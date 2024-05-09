@@ -3,13 +3,14 @@
 
 
 
-cNeoEyes::cNeoEyes(CRGB* ledPtr, uint16_t nLeds, bool kMatrixSerpentineLayout = true, bool kMatrixVertical = true) 
+cNeoEyes::cNeoEyes(CRGB* ledPtr, uint16_t nLeds, bool kMatrixSerpentineLayout = true, bool kMatrixVertical = true, bool isSeparate = true) 
   :
 	_leds(ledPtr)
 {
     //setPinPositions(kMatrixSerpentineLayout, kMatrixVertical);
     _kMatrixSerpentineLayout = kMatrixSerpentineLayout;
     _kMatrixVertical = kMatrixVertical;
+    _isSeparate = isSeparate;
 }
 
 void cNeoEyes::begin(CLEDController& ctrl) {
@@ -24,7 +25,7 @@ void cNeoEyes::setExpression(Emote expression) {
       _leds[XY(j,i)] = expression.colorList[expression.pattern[i][j]];
     }
   }
-  FastLED.show();
+  FastLED.show(_brightness);
 }
 
 void cNeoEyes::setExpression(CRGB expression[8][16]) {
@@ -35,7 +36,7 @@ void cNeoEyes::setExpression(CRGB expression[8][16]) {
             _leds[XY(j,i)] = expression[i][j];
         }
     }
-    FastLED.show();
+    FastLED.show(_brightness);
 }
 
 void cNeoEyes::setStandardEmote(StandardEmote emote) {
@@ -98,7 +99,7 @@ void cNeoEyes::setStandardEmote(StandardEmote emote) {
 }
 
 void cNeoEyes::setNeutral() {
-  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  //CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
   currentEmote = { defaultColors,
     {     // Right Eye                   Left Eye
       { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 1
@@ -110,11 +111,12 @@ void cNeoEyes::setNeutral() {
       { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
       { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
     } };
+  //currentEmote = neutralEmote;
   setExpression(currentEmote);
 }
 
 void cNeoEyes::setRight(bool isSlight = true) {
-  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  //CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
   if(isSlight) {
     currentEmote = { defaultColors,
       {     // Right Eye                   Left Eye
@@ -127,7 +129,8 @@ void cNeoEyes::setRight(bool isSlight = true) {
         { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
         { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
       } };
-    setExpression(currentEmote);
+    //currentEmote = slightRightEmote;
+    //setExpression(currentEmote);
   }
   else {
     currentEmote = { defaultColors,
@@ -141,12 +144,14 @@ void cNeoEyes::setRight(bool isSlight = true) {
         { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
         { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
       } };
-    setExpression(currentEmote);
+    //currentEmote = rightEmote;
+    //setExpression(currentEmote);
   }
+  setExpression(currentEmote);
 }
 
 void cNeoEyes::setLeft(bool isSlight = true) {
-  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  //CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
   if(isSlight) {
     currentEmote = { defaultColors,
       {     // Right Eye                   Left Eye
@@ -159,7 +164,8 @@ void cNeoEyes::setLeft(bool isSlight = true) {
         { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
         { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
       } };
-    setExpression(currentEmote);
+    // setExpression(currentEmote);
+    //currentEmote = slightLeftEmote;
   }
   else {
     currentEmote = { defaultColors,
@@ -173,13 +179,16 @@ void cNeoEyes::setLeft(bool isSlight = true) {
         { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
         { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
       } };
-    setExpression(currentEmote);
+    // setExpression(currentEmote);
+    //currentEmote = leftEmote;
   }
+  setExpression(currentEmote);
 }
 
 void cNeoEyes::setUp(bool isSlight = true) {
-  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  //CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
   if(isSlight) {
+    //currentEmote = slightUpEmote;
     currentEmote = { defaultColors,
       {     // Right Eye                   Left Eye
         { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 1
@@ -191,7 +200,7 @@ void cNeoEyes::setUp(bool isSlight = true) {
         { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
         { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
       } };
-    setExpression(currentEmote);
+    // setExpression(currentEmote);
   }
   else {
     currentEmote = { defaultColors,
@@ -205,12 +214,12 @@ void cNeoEyes::setUp(bool isSlight = true) {
         { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
         { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
       } };
-    setExpression(currentEmote);
+    // setExpression(currentEmote);
   }
+  setExpression(currentEmote);
 }
 
 void cNeoEyes::setDown(bool isSlight = true) {
-  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
   if(isSlight) {
     currentEmote = { defaultColors,
       {     // Right Eye                   Left Eye
@@ -223,7 +232,6 @@ void cNeoEyes::setDown(bool isSlight = true) {
         { 0, 1, 0, 0, 0, 0, 1, 0,   0, 1, 0, 0, 0, 0, 1, 0 }, // Row 7
         { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
       } };
-    setExpression(currentEmote);
   }
   else {
     currentEmote = { defaultColors,
@@ -237,12 +245,11 @@ void cNeoEyes::setDown(bool isSlight = true) {
         { 0, 1, 0, 2, 2, 0, 1, 0,   0, 1, 0, 2, 2, 0, 1, 0 }, // Row 7
         { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 1, 1, 1, 1, 0, 0 }, // Row 8
       } };
-    setExpression(currentEmote);
   }
+  setExpression(currentEmote);
 }
 
 void cNeoEyes::setHappy() {
-  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
   currentEmote = { defaultColors,
     {     // Right Eye                   Left Eye
       { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 1
@@ -258,7 +265,6 @@ void cNeoEyes::setHappy() {
 }
 
 void cNeoEyes::setSad() {
-  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
   currentEmote = { defaultColors,
     {     // Right Eye                   Left Eye
       { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 1
@@ -274,7 +280,6 @@ void cNeoEyes::setSad() {
 }
 
 void cNeoEyes::setAngry() {
-  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
   currentEmote = { defaultColors,
     {     // Right Eye                   Left Eye
       { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 1
@@ -290,7 +295,6 @@ void cNeoEyes::setAngry() {
 }
 
 void cNeoEyes::setConfused(bool isSplit = true) {
-  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
   if(isSplit) {
     currentEmote = { defaultColors,
     {     // Right Eye                   Left Eye
@@ -303,7 +307,6 @@ void cNeoEyes::setConfused(bool isSplit = true) {
       { 0, 0, 1, 1, 1, 1, 0, 0,   0, 0, 0, 1, 0, 1, 0, 0 }, // Row 7
       { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 1, 0, 0, 0 }, // Row 8
     } };
-    setExpression(currentEmote);
   }
   else {
     Emote currentEmote = { defaultColors,
@@ -317,12 +320,11 @@ void cNeoEyes::setConfused(bool isSplit = true) {
       { 0, 0, 1, 1, 1, 1, 1, 1,   0, 0, 0, 0, 1, 0, 1, 0 }, // Row 7
       { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 1, 0, 0 }, // Row 8
     } };
-    setExpression(currentEmote);
   }
+  setExpression(currentEmote);
 }
 
 void cNeoEyes::setClosed() {
-  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
   currentEmote = { defaultColors,
     {     // Right Eye                   Left Eye
       { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 1
@@ -338,7 +340,6 @@ void cNeoEyes::setClosed() {
 }
 
 void cNeoEyes::setSleepy() {
-  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
   currentEmote = { defaultColors,
     {     // Right Eye                   Left Eye
       { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 1
@@ -354,7 +355,6 @@ void cNeoEyes::setSleepy() {
 }
 
 void cNeoEyes::setDead() {
-  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
   currentEmote = { defaultColors,
     {     // Right Eye                   Left Eye
       { 3, 0, 0, 0, 0, 0, 0, 3,   3, 0, 0, 0, 0, 0, 0, 3 }, // Row 1
@@ -370,23 +370,12 @@ void cNeoEyes::setDead() {
 }
 
 void cNeoEyes::setOff() {
-  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
-  currentEmote = { defaultColors,
-    {     // Right Eye                   Left Eye
-      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 1
-      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 2
-      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 3
-      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 4
-      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 5
-      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 6
-      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 7
-      { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 8
-    } };
+  currentEmote = { defaultColors, {}};
   setExpression(currentEmote);
 }
 
 void cNeoEyes::blink(int closeTime = 50) {
-  CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
+  //CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
   Emote closedEmote = { defaultColors,
     {     // Right Eye                   Left Eye
       { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 1
@@ -399,26 +388,37 @@ void cNeoEyes::blink(int closeTime = 50) {
       { 0, 0, 0, 0, 0, 0, 0, 0,   0, 0, 0, 0, 0, 0, 0, 0 }, // Row 8
     } };
   setExpression(closedEmote);
-  FastLED.show();
+  FastLED.show(_brightness);
   delay(closeTime);
   setExpression(currentEmote);
-  FastLED.show();
+  FastLED.show(_brightness);
 }
 
 void cNeoEyes::setBrightness(uint8_t scale) {
-  FastLED.show(scale);
+  _brightness = scale;
+  FastLED.show(_brightness);
 }
 
 // Convert the x,y position to led index flexibly
 uint16_t cNeoEyes::XY( uint8_t x, uint8_t y)
 {
   uint16_t i;
+  int _matrixWidth = _kMatrixWidth;
+  int _matrixHeight = _kMatrixHeight;
+  if (_isSeparate == true) {
+    _matrixWidth = _kMatrixWidth/2;
+    _matrixHeight = _kMatrixHeight*2;
+    if (x >= _matrixWidth) {
+      x = x - _matrixWidth;
+      y = y + _kMatrixHeight;
+    }
+  }
   
   if( _kMatrixSerpentineLayout == false) {
     if (_kMatrixVertical == false) {
-      i = (y * _kMatrixWidth) + x;
+      i = (y * _matrixWidth) + x;
     } else {
-      i = _kMatrixHeight * (_kMatrixWidth - (x+1))+y;
+      i = _matrixHeight * (_matrixWidth - (x+1))+y;
     }
   }
 
@@ -426,17 +426,17 @@ uint16_t cNeoEyes::XY( uint8_t x, uint8_t y)
     if (_kMatrixVertical == false) {
       if( y & 0x01) {
         // Odd rows run backwards
-        uint8_t reverseX = (_kMatrixWidth - 1) - x;
-        i = (y * _kMatrixWidth) + reverseX;
+        uint8_t reverseX = (_matrixWidth - 1) - x;
+        i = (y * _matrixWidth) + reverseX;
       } else {
         // Even rows run forwards
-        i = (y * _kMatrixWidth) + x;
+        i = (y * _matrixWidth) + x;
       }
     } else { // vertical positioning
       if ( x & 0x01) {
-        i = _kMatrixHeight * (_kMatrixWidth - (x+1))+y;
+        i = _matrixHeight * (_matrixWidth - (x+1))+y;
       } else {
-        i = _kMatrixHeight * (_kMatrixWidth - x) - (y+1);
+        i = _matrixHeight * (_matrixWidth - x) - (y+1);
       }
     }
   }

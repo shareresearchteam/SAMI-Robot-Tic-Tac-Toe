@@ -5,9 +5,10 @@ import time
 arduino = serial.Serial(port='COM6', baudrate=115200, timeout=.1)
 
 def send_servo_angles(angles):
-    packet = [0xFF]  # Start byte
+    packet = [0x3C]  # Start byte
+    packet.append(0x4A)
     packet.extend(min(180, max(0, angle)) for angle in angles)  # Servo angles
-    packet.append(0xFE)  # End byte
+    packet.append(0x3E)  # End byte
     arduino.write(bytearray(packet))
     print (bytearray(packet))
     time.sleep(1)  # Short delay for transmission

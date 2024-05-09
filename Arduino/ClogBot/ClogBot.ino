@@ -30,7 +30,7 @@
 #include "newCommunication.h"
 String readString;
 
-NeoEyes<EYES_PIN> roboEyes;
+NeoEyes<EYES_PIN> roboEyes  = NeoEyes<DATA_PIN>(isSerpentine,followColumnFirst,isTwoPanels);
 
 void setup() {
   pinMode(SERVO_RELAY, OUTPUT); //pin 4 is the on and off for the servo relay power
@@ -40,6 +40,7 @@ void setup() {
 
   // Eyes Setup!
   roboEyes.begin();
+  roboEyes.setBrightness(50); // Set the brightness to something less than max (255) to avoid blinding yourself
 
   // Servo bits
   digitalWrite(SERVO_RELAY, HIGH);

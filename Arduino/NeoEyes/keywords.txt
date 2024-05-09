@@ -8,6 +8,7 @@
 cNeoEyes	KEYWORD1
 NeoEyes 	KEYWORD1
 Emote       KEYWORD1
+StandardEmote KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)

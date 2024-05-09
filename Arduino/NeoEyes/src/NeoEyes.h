@@ -36,10 +36,12 @@ enum StandardEmote {
   Down
 };
 
+
+
 class cNeoEyes
 {
   public:
-    cNeoEyes(CRGB* ledPtr, uint16_t nLeds, bool kMatrixSerpentineLayout = true, bool kMatrixVertical = true);
+    cNeoEyes(CRGB* ledPtr, uint16_t nLeds, bool kMatrixSerpentineLayout = true, bool kMatrixVertical = true, bool isSeparate = true);
     void begin(CLEDController& ctrl);
     void setExpression(Emote expression);
     void setExpression(CRGB expression[8][16]);
@@ -60,6 +62,7 @@ class cNeoEyes
     void blink(int closeTime = 50);
     void setBrightness(uint8_t scale);
     uint16_t XY( uint8_t x, uint8_t y);
+    CRGB defaultColors[4] = {CRGB::Black, CRGB::Blue, CRGB::MediumSpringGreen, CRGB::Red};
     
 
   private:
@@ -71,6 +74,7 @@ class cNeoEyes
     bool _kMatrixSerpentineLayout = true;
     bool _kMatrixVertical = true;
     Emote currentEmote;
+    uint8_t _brightness = 255;
 
     CRGB* const _leds;          ///< Pointer to LED data, in CRGB array
     CLEDController* controller = nullptr;  ///< Pointer to controller object for latching LED data
@@ -110,10 +114,14 @@ class cNeoEyes
 * @see NewFuncs
 * @see Unimplemented
 */
+// kMatrixSerpentineLayout: Do we go along one row/column, then at the end go back the other away along the next row/column
+// kMatrixVertical: Do we go down columnwise first?
+// isSeparate: Is this actually two panels that are wired up in series?
+// All of them assume it's NeoPixels
 template<uint8_t DataPin>
 class NeoEyes : public cNeoEyes {
 public:
-	NeoEyes() : cNeoEyes(ledData, 128, true, true) 
+	NeoEyes(bool kMatrixSerpentineLayout, bool kMatrixVertical, bool isSeparate) : cNeoEyes(ledData, 128, kMatrixSerpentineLayout, kMatrixVertical, isSeparate) 
 	{
 		memset(ledData, 0, sizeof(ledData));  // set all LEDs to black
 	}
