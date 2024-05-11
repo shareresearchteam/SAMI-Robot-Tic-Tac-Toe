@@ -37,37 +37,50 @@ This contains all our constant definitions, including:
  Using the enum here, the left and right side enum positions can align directly with the pin
  wiring on the driver board, meaning we can use them for calling each motor directly
 */
-const int NumJoints = 21;
+const int NumJoints = 31;
 enum joints {
-// Left side //
-  LeftChest,
-  LeftShoulder,
-  LeftBicep,
-  LeftElbow,
-  LeftGripper,
-  LeftHip,
-  LeftKnee,
-  LeftAnkle,
-// Right side //
-  RightChest,
-  RightShoulder,
-  RightBicep,
-  RightElbow,
-  RightGripper,
-  RightHip,
-  RightKnee,
-  RightAnkle,
 // Head control //
   HeadNod,
   HeadTurn,
   HeadTilt,
 // Torso control //
-  TorsoBow,
-  TorsoTilt
+  TorsoBow, 
+  TorsoTilt,
+//Dummy
+  Dummy5,
+  Dummy6,
+  Dummy7,
+  Dummy8,
+  Dummy9,
+  Dummy10,
+  Dummy11,
+  Dummy12,
+  Dummy13,
+  Dummy14,
+  Dummy15,
+// Right side //
+  RightGripper,
+  RightElbow,
+  RightBicep,
+  RightChest,
+  RightShoulder,
+  RightHip,
+  RightKnee,
+  RightAnkle,
+// Left side //
+  LeftHip, 
+  LeftKnee, 
+  LeftAnkle,
+  LeftGripper,
+  LeftShoulder,
+  LeftChest,
+  LeftBicep,
+  LeftElbow,
+
 };
 
 // Define a global array for joint angles
-extern int jointAngles[NumJoints+1]; // Assuming TorsoTilt is the last item in the enum
+extern int jointAngles[NumJoints+1]; // Assuming LeftElbow is the last item in the enum
 
 //extern int jointAnglesInitial = [170,155,90,0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]; // Assuming TorsoTilt is the last item in the enum
 
@@ -80,17 +93,17 @@ extern int jointAngles[NumJoints+1]; // Assuming TorsoTilt is the last item in t
 /********** Pin Definitions **********/
 // Eyes //
 // We use non-PWM pins here
-#define LEFT_EYE_PIN 2
-#define RIGHT_EYE_PIN 4
+#define LEFT_EYE_PIN 7
+//#define RIGHT_EYE_PIN 4
 
 
 // Head & Torso //
 // Must be PWM pins
-#define HEAD_NOD_PIN 3
-#define HEAD_TURN_PIN 5
-#define HEAD_TILT_PIN 6
-#define TORSO_BOW_PIN 9
-#define TORSO_TILT_PIN 10
+//#define HEAD_NOD_PIN 3
+//#define HEAD_TURN_PIN 5
+//#define HEAD_TILT_PIN 6
+//#define TORSO_BOW_PIN 9
+//#define TORSO_TILT_PIN 10
 
 
 #endif
