@@ -4,14 +4,11 @@
 
 //Pin Declarations
 // The data pin for our LED Eyes
-#define EYES_PIN 2
+#define EYES_PIN 7
 // The pin that controls the relay providing power to the servos
-#define SERVO_RELAY 4
-
-// Trigger Pin of Ultrasonic Sensor
-#define PING_PIN 13
-// Echo Pin of Ultrasonic Sensor
-#define ECHO_PIN 12
-
-//PIR sensor input pin
-#define PIR_PIN  10
+#define SERVO_RELAY1 1 // LEFT ARM
+#define SERVO_RELAY2 2 //TORSO CONTROL
+#define SERVO_RELAY3 3 //LEFT LEGS
+#define SERVO_RELAY4 4 //RIGHT LEG
+#define SERVO_RELAY5 5 //RIGHT ARM
+#define SERVO_RELAY6 6 //HEAD
