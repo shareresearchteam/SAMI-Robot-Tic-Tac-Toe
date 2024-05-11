@@ -110,13 +110,13 @@ void setServoPulse(uint8_t n, double pulse) {
 }
 
 void setAllJointsInitial(int jointAnglesInitial[]){
-  for (int joint = LeftChest; joint < RightAnkle+1; joint++) {
+  for (int joint = RightGripper; joint < LeftElbow+1; joint++) {
     setJointAngle1(static_cast<joints>(joint), jointAnglesInitial[joint]);
   }
 }
 // Function to set all joints from 1-16 servos to their corresponding angles
 void setAllJoints1() {
-  for (int joint = LeftChest; joint < RightAnkle+1; joint++) {
+  for (int joint = HeadNod; joint < TorsoTilt+1; joint++) {
     setJointAngle1(static_cast<joints>(joint), jointAngles[joint]);
     //Serial.print("Angles sent to servos: ");
     //Serial.print(jointAngles[joint]);
@@ -126,7 +126,7 @@ void setAllJoints1() {
 
 // Function to set all joints from 17-32 servos to their corresponding angles
 void setAllJoints2() {
-  for (int joint = HeadNod; joint < TorsoTilt+1; joint++) {
+  for (int joint = RightGripper; joint < LeftElbow+1; joint++) {
     setJointAngle1(static_cast<joints>(joint), jointAngles[joint]);
   }
 }
