@@ -33,7 +33,12 @@ String readString;
 NeoEyes<EYES_PIN> roboEyes  = NeoEyes<DATA_PIN>(isSerpentine,followColumnFirst,isTwoPanels);
 
 void setup() {
-  pinMode(SERVO_RELAY, OUTPUT); //pin 4 is the on and off for the servo relay power
+  pinMode(SERVO_RELAY1, OUTPUT); //pin 1 is the on and off for the servo relay power
+  pinMode(SERVO_RELAY2, OUTPUT); //pin 2 is the on and off for the servo relay power
+  pinMode(SERVO_RELAY3, OUTPUT); //pin 3 is the on and off for the servo relay power
+  pinMode(SERVO_RELAY4, OUTPUT); //pin 4 is the on and off for the servo relay power
+  pinMode(SERVO_RELAY5, OUTPUT); //pin 5 is the on and off for the servo relay power
+  pinMode(SERVO_RELAY6, OUTPUT); //pin 6 is the on and off for the servo relay power
   pinMode(PING_PIN, OUTPUT); //enable pingPing as an OUTPUT
   pinMode(ECHO_PIN, INPUT); //enable echoPin as an INPUT
   pinMode(PIR_PIN, INPUT); //decalre sensor as input
@@ -43,7 +48,12 @@ void setup() {
   roboEyes.setBrightness(50); // Set the brightness to something less than max (255) to avoid blinding yourself
 
   // Servo bits
-  digitalWrite(SERVO_RELAY, HIGH);
+  digitalWrite(SERVO_RELAY1, HIGH);
+  digitalWrite(SERVO_RELAY2, HIGH);
+  digitalWrite(SERVO_RELAY3, HIGH);
+  digitalWrite(SERVO_RELAY4, HIGH);
+  digitalWrite(SERVO_RELAY5, HIGH);
+  digitalWrite(SERVO_RELAY6, HIGH);
   int initial[]={170,155,90,90,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21}; //initial servo values
   Serial.begin(115200);
   //Serial.println("21 channel Servo test!");
@@ -85,7 +95,12 @@ void loop() {
 //pir(PIR_PIN);
 
 // Turn on servo motor power?
-digitalWrite(SERVO_RELAY, HIGH);
+digitalWrite(SERVO_RELAY1, HIGH);
+digitalWrite(SERVO_RELAY2, HIGH);
+digitalWrite(SERVO_RELAY3, HIGH);
+digitalWrite(SERVO_RELAY4, HIGH);
+digitalWrite(SERVO_RELAY5, HIGH);
+digitalWrite(SERVO_RELAY6, HIGH);
 
 // Check for any serial communications
 //checkForCom();
