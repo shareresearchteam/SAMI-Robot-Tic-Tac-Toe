@@ -9,6 +9,22 @@ This contains all our constant definitions, including:
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
+//Pin Declarations
+// The data pin for our LED Eyes
+#define EYES_PIN 7
+// The pin that controls the relay providing power to the servos
+#define SERVO_RELAY1 1 // LEFT ARM
+#define SERVO_RELAY2 2 //TORSO CONTROL
+#define SERVO_RELAY3 3 //LEFT LEGS
+#define SERVO_RELAY4 4 //RIGHT LEG
+#define SERVO_RELAY5 5 //RIGHT ARM
+#define SERVO_RELAY6 6 //HEAD
+
+
+/********** Eye Details *********/
+bool isSerpentine = true;
+bool followColumnFirst = false;
+bool isTwoPanels = true;
 
 /********** Motor Tuning Constants **********/
 /*
@@ -37,52 +53,12 @@ This contains all our constant definitions, including:
  Using the enum here, the left and right side enum positions can align directly with the pin
  wiring on the driver board, meaning we can use them for calling each motor directly
 */
-const int NumJoints = 31;
-enum joints {
-// Head control //
-  HeadNod,
-  HeadTurn,
-  HeadTilt,
-// Torso control //
-  TorsoBow, 
-  TorsoTilt,
-//Dummy
-  Dummy5,
-  Dummy6,
-  Dummy7,
-  Dummy8,
-  Dummy9,
-  Dummy10,
-  Dummy11,
-  Dummy12,
-  Dummy13,
-  Dummy14,
-  Dummy15,
-// Right side //
-  RightGripper,
-  RightElbow,
-  RightBicep,
-  RightChest,
-  RightShoulder,
-  RightHip,
-  RightKnee,
-  RightAnkle,
-// Left side //
-  LeftHip, 
-  LeftKnee, 
-  LeftAnkle,
-  LeftGripper,
-  LeftShoulder,
-  LeftChest,
-  LeftBicep,
-  LeftElbow,
-
-};
+const int NumPins = 32;
 
 // Define a global array for joint angles
-extern int jointAngles[NumJoints+1]; // Assuming LeftElbow is the last item in the enum
-
-//extern int jointAnglesInitial = [170,155,90,0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]; // Assuming TorsoTilt is the last item in the enum
+extern int jointIDs[NumPins];
+extern int jointAngles[NumPins];
+extern int numJointsRecv;
 
 /********** Eye Control Variables **********/
 // Emote variables to share for the Eyes data
@@ -93,7 +69,7 @@ extern int jointAngles[NumJoints+1]; // Assuming LeftElbow is the last item in t
 /********** Pin Definitions **********/
 // Eyes //
 // We use non-PWM pins here
-#define LEFT_EYE_PIN 7
+//#define LEFT_EYE_PIN 7
 //#define RIGHT_EYE_PIN 4
 
 
