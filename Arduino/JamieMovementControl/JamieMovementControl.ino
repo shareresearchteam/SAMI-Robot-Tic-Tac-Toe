@@ -27,11 +27,15 @@
 #include "constants.h"
 #include "servoControl.h"
 #include "serialComms.h"
-String readString;
 
-NeoEyes<EYES_PIN> roboEyes  = NeoEyes<EYES_PIN>(isSerpentine,followColumnFirst,isTwoPanels);
+// LED Panel definition: NeyoEyes<Panel data pin>(isSerpentine, followColumnFirst, isTwoPanels)
+// In our case the eyes follows a row-first serpentine pattern (isSerpentine = true, followColumnFirst = false)
+// and the eyes are two 8x8 panels connected in series (isTwoPanels = true)
+// 
+NeoEyes<EYES_PIN> roboEyes  = NeoEyes<EYES_PIN>(true, false, true);
 
 void setup() {
+  // Set up our servo relay pins
   pinMode(SERVO_RELAY1, OUTPUT); //pin 1 is the on and off for the servo relay power
   pinMode(SERVO_RELAY2, OUTPUT); //pin 2 is the on and off for the servo relay power
   pinMode(SERVO_RELAY3, OUTPUT); //pin 3 is the on and off for the servo relay power
@@ -39,48 +43,42 @@ void setup() {
   pinMode(SERVO_RELAY5, OUTPUT); //pin 5 is the on and off for the servo relay power
   pinMode(SERVO_RELAY6, OUTPUT); //pin 6 is the on and off for the servo relay power
 
+  // Turn off power to all the servos to start
+  setServoRelays(false);
+  
   // Eyes Setup!
   roboEyes.begin();
   roboEyes.setBrightness(50); // Set the brightness to something less than max (255) to avoid blinding yourself
 
-  // Servo bits
-  // Turn off power to all the servos to start
-  setServoRelays(false);
-  
-  //int initial[]={170,155,90,90,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21}; //initial servo values
   Serial.begin(115200);
-  //Serial.println("21 channel Servo test!");
-
   // Handles our initialization of the 16 channel servo driver board & remaining servos
   initServos();
-  //setAllJointsInitial(initial);
 
   delay(10);
 }
 
-
 void loop() {
-// Check for any serial communications
-recvWithStartEndMarkers();
-if(newData) {
-  Serial.println("Got new data!");
-  Serial.print("Message type: ");
-        Serial.println(msgType);
-  // If we got a new emote instruction, then set the eyes
-  if(newEmote) {
-    Serial.print("Emote Recieved: ");
-          Serial.println(currentEmote);
-    roboEyes.setStandardEmote(currentEmote);
-    newEmote = false;
+  // Check for any serial communications
+  recvWithStartEndMarkers();
+  if(newData) {
+    //Serial.print("Message type: ");
+    //Serial.println(msgType);
+    // If we got a new emote instruction, then set the eyes
+    if(newEmote) {
+      //Serial.print("Emote Recieved: ");
+      //Serial.println(currentEmote);
+      roboEyes.setStandardEmote(currentEmote);
+      newEmote = false;
+    }
+    // If we got new joint data
+    else if(newJoints) {
+      // Turn the servo relays on, just in case they currently are not
+      setServoRelays(true);
+      // Set the new joint values for the specific joint pins we recieved
+      setFromJointMsg();
+      newJoints = false;
+    }
+    newData = false;
   }
-  else if(newJoints) {
-    setServoRelays(true);
-    setFromJointMsg();
-    newJoints = false;
-  }
-  newData = false;
-}
-
-delay(10);
-  
+  delay(10);
 }

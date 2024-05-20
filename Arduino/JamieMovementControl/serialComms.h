@@ -77,7 +77,6 @@ void recvWithStartEndMarkers() {
         // Or if our msg is a joint msg, and we aren't out of joint pins, then set new joint ids and angles
         else if(msgType == jointMsg && ndx <= 31){
           getNewJointData(rc);
-          //jointAngles[ndx-1] = rc; // convert char to int
           ndx++;
         }
         // Otherwise it's just kinda w/e
