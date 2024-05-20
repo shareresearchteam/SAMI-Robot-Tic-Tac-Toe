@@ -20,6 +20,7 @@ bool newJoints = false;
 
 boolean newData = false;
 
+// Helper function just to separate out the joint pin/angle read logic
 void getNewJointData(char newByte) {
   // If we're looking for a new joint ID, and we still have more joint pins available...
   if (getJointID && numJointsRecv < 31) {
@@ -113,26 +114,3 @@ void recvWithStartEndMarkers() {
     }
   }
 }
-
-//void recvWithEndMarker() {
-//  static byte ndx = 0;
-//  char endMarker = '\n';
-//  char rc;
-//
-//  while (Serial.available() > 0 && newData == false) {
-//    rc = Serial.read();
-//
-//    if (rc != endMarker) {
-//      receivedChars[ndx] = rc;
-//      ndx++;
-//      if (ndx >= numChars) {
-//        ndx = numChars - 1;
-//      }
-//    }
-//    else {
-//      receivedChars[ndx] = '\0'; // terminate the string
-//      ndx = 0;
-//      newData = true;
-//    }
-//  }
-//}

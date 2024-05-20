@@ -26,7 +26,7 @@
 #include <NeoEyes.h>
 #include "constants.h"
 #include "servoControl.h"
-#include "newCommunication.h"
+#include "serialComms.h"
 String readString;
 
 NeoEyes<EYES_PIN> roboEyes  = NeoEyes<EYES_PIN>(isSerpentine,followColumnFirst,isTwoPanels);

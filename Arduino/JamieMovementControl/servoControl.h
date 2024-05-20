@@ -95,39 +95,4 @@ void setFromJointMsg() {
   }
 }
 
-int pulseWidth(int angle)
-{
-  int pulse_wide, analog_value;
-  pulse_wide   = map(angle, 0, 180, SERVOMIN, SERVOMAX);
-  //analog_value = int(float(pulse_wide) / 1000000  SERVO_FREQ  4096);
-  analog_value = static_cast<int>(static_cast<float>(pulse_wide) / 1000000 * SERVO_FREQ * 4096);
-  return analog_value;
-}
-
-void setServoAngle(uint8_t n, int angle) {
-  int pulse;
-  pulse = map(angle, 0, 180, SERVOMIN, SERVOMAX);
-  pwm1.setPWM(n, 0, pulse);
-}
-
-// You can use this function if you'd like to set the pulse length in seconds
-// e.g. setServoPulse(0, 0.001) is a ~1 millisecond pulse width. It's not precise!
-void setServoPulse(uint8_t n, double pulse) {
-  double pulselength;
-  
-  pulselength = 1000000;   // 1,000,000 us per second
-  pulselength /= SERVO_FREQ;   // Analog servos run at ~60 Hz updates
-  //Serial.print(pulselength); Serial.println(" us per period"); 
-  pulselength /= 4096;  // 12 bits of resolution
-  //Serial.print(pulselength); Serial.println(" us per bit"); 
-  pulse *= 1000000;  // convert input seconds to us
-  pulse /= pulselength;
-  //Serial.println(pulse);
-  pwm1.setPWM(n, 0, pulse);
-}
-
-
-
-
-
 #endif
