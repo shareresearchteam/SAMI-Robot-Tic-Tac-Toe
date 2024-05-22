@@ -32,7 +32,7 @@
 // In our case the eyes follows a row-first serpentine pattern (isSerpentine = true, followColumnFirst = false)
 // and the eyes are two 8x8 panels connected in series (isTwoPanels = true)
 // 
-NeoEyes<EYES_PIN> roboEyes  = NeoEyes<EYES_PIN>(true, false, true);
+NeoEyes<EYES_PIN> roboEyes  = NeoEyes<EYES_PIN>(false, false, true);
 
 void setup() {
   // Set up our servo relay pins
@@ -72,6 +72,8 @@ void loop() {
     }
     // If we got new joint data
     else if(newJoints) {
+      //Serial.print("Number Joints Recieved: ");
+      //Serial.println(numJointsRecv);
       // Turn the servo relays on, just in case they currently are not
       setServoRelays(true);
       // Set the new joint values for the specific joint pins we recieved
