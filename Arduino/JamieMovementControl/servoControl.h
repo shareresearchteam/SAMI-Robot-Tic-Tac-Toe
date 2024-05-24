@@ -36,6 +36,17 @@ Adafruit_PWMServoDriver pwm2 = Adafruit_PWMServoDriver(0x41);
 // you can also call it with a different address and I2C interface
 //Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver(0x40, Wire);
 
+
+// Turn on/off power to all the servos at once
+void setServoRelays(bool isOn) {
+  digitalWrite(SERVO_RELAY1, isOn);
+  digitalWrite(SERVO_RELAY2, isOn);
+  digitalWrite(SERVO_RELAY3, isOn);
+  digitalWrite(SERVO_RELAY4, isOn);
+  digitalWrite(SERVO_RELAY5, isOn);
+  digitalWrite(SERVO_RELAY6, isOn);
+}
+
 void initServos () {
   pwm1.begin();
   /*
@@ -64,72 +75,24 @@ void initServos () {
   // Setup
 }
 
-int pulseWidth(int angle)
-{
-  int pulse_wide, analog_value;
-  pulse_wide   = map(angle, 0, 180, SERVOMIN, SERVOMAX);
-  //analog_value = int(float(pulse_wide) / 1000000  SERVO_FREQ  4096);
-  analog_value = static_cast<int>(static_cast<float>(pulse_wide) / 1000000 * SERVO_FREQ * 4096);
-  return analog_value;
-}
-
-void setServoAngle(uint8_t n, int angle) {
+void setJointAngle(uint8_t jointNum, int angle) {
+  if(jointNum > NumPins) { return; } // We only have two driver boards, so we can't have more than 32 joint pins
   int pulse;
   pulse = map(angle, 0, 180, SERVOMIN, SERVOMAX);
-  pwm1.setPWM(n, 0, pulse);
+  if(jointNum > 15) {
+    pwm2.setPWM(jointNum-16, 0, pulse);
+    // then exit the function
+    return;
+  }
+  pwm1.setPWM(jointNum, 0, pulse);
 }
 
-//set joint angles for servos 1-16
-void setJointAngle1(joints joint, int angle) {
-  int pulse;
-  pulse = map(angle, 0, 180, SERVOMIN, SERVOMAX);
-  pwm1.setPWM(joint, 0, pulse);
-}
-
-//set joint angles for servos 17-32
-void setJointAngle2(joints joint, int angle) {
-  int pulse;
-  pulse = map(angle, 0, 180, SERVOMIN, SERVOMAX);
-  pwm2.setPWM(joint, 0, pulse);
-}
-
-// You can use this function if you'd like to set the pulse length in seconds
-// e.g. setServoPulse(0, 0.001) is a ~1 millisecond pulse width. It's not precise!
-void setServoPulse(uint8_t n, double pulse) {
-  double pulselength;
-  
-  pulselength = 1000000;   // 1,000,000 us per second
-  pulselength /= SERVO_FREQ;   // Analog servos run at ~60 Hz updates
-  //Serial.print(pulselength); Serial.println(" us per period"); 
-  pulselength /= 4096;  // 12 bits of resolution
-  //Serial.print(pulselength); Serial.println(" us per bit"); 
-  pulse *= 1000000;  // convert input seconds to us
-  pulse /= pulselength;
-  //Serial.println(pulse);
-  pwm1.setPWM(n, 0, pulse);
-}
-
-void setAllJointsInitial(int jointAnglesInitial[]){
-  for (int joint = RightGripper; joint < LeftElbow+1; joint++) {
-    setJointAngle1(static_cast<joints>(joint), jointAnglesInitial[joint]);
+void setFromJointMsg() {
+  if(numJointsRecv > -1 && numJointsRecv < NumPins) {
+    for (int i = 0; i <= numJointsRecv; i++) {
+      setJointAngle(jointIDs[i], jointAngles[i]);
+    }
   }
 }
-// Function to set all joints from 1-16 servos to their corresponding angles
-void setAllJoints1() {
-  for (int joint = HeadNod; joint < TorsoTilt+1; joint++) {
-    setJointAngle1(static_cast<joints>(joint), jointAngles[joint]);
-    //Serial.print("Angles sent to servos: ");
-    //Serial.print(jointAngles[joint]);
-    //Serial.print(" ");
-  }
-}
-
-// Function to set all joints from 17-32 servos to their corresponding angles
-void setAllJoints2() {
-  for (int joint = RightGripper; joint < LeftElbow+1; joint++) {
-    setJointAngle1(static_cast<joints>(joint), jointAngles[joint]);
-  }
-}
-
 
 #endif
