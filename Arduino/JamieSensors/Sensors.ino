@@ -6,11 +6,19 @@ float readings[NUM_READINGS];      // Array to store the distance readings.
 int readIndex = 0;               // Index of the current reading.
 float total = 0;                 // Running total of the readings.
 
-int pirState = LOW; //start assuming no motion
-
-int val = 0; //variable for reading the pin status
-
 double accumulator = 0.0; //variable for accumaltor of the ultrasonic
+
+//Push Button Variables
+int buttonState1;            // the current reading from the input pin
+int lastButtonState1 = LOW;  // the previous reading from the input pin
+int highButtonState1 = LOW; // Vairbale for when the button state is high
+
+int buttonState2;            // the current reading from the input pin
+int lastButtonState2 = LOW;  // the previous reading from the input pin
+int highButtonState2 = LOW; // Vairbale for when the button state is high
+
+unsigned long lastDebounceTime = 0;  // the last time the output pin was toggled
+unsigned long debounceDelay = 50;    // the debounce time; increase if the output
 
 float ultrasonic_in(const int x, const int y){//ultrasonic funtion in returns inches
     float duration;
@@ -40,27 +48,29 @@ float ultrasonic_cm(const int x, const int y){//ultrasonic funtion in returns ce
 
 int pir(int x){
 
-  val = digitalRead(x); //read input value
-  //Serial.print("PIR Sensor Value: ");
-  //Serial.print(val); //print value of the DI
-  if (val == HIGH){ //check if the input is HIGH
-    if (pirState == LOW){
-      //we have just turned on
-      //Serial.println("Motion Detected!");
-      //Only printing on the output change, not the state
+val = digitalRead(x);  // read input value
+  if (val == HIGH) {            // check if the input is HIGH
+    
+    if (pirState == LOW) {
+      // we have just turned on
+      Serial.println("Motion detected!");
+      motionStatus = 1; //motion detected
+      sendPirData(motionStatus);
+      // We only want to print on the output change, not state
       pirState = HIGH;
-      return 1; // Motion detected
-  }
-  } else{
-    if (pirState == HIGH){
-      //we have just turned off
-      //Serial.println("Motion Ended!");
-      //Only printing on the output chage not the state
-      pirState = LOW;
-      return 0; // Motion ended
     }
-    return -1; // No change in state
+  } else {
+    
+    if (pirState == HIGH){
+      // we have just turned of
+      Serial.println("Motion ended!");
+      motionStatus = 0; //motion ended
+      sendPirData(motionStatus);
+      // We only want to print on the output change, not state
+      pirState = LOW;
+    }
   }
+  return motionStatus;
 }
 
 void initializeReadings() {
@@ -90,4 +100,39 @@ void sensor_avg(float newReading){
   if (filled) {
     average = total / NUM_READINGS;
   }
+}
+
+
+int pushButton1(int x){
+  // read the state of the switch into a local variable:
+  highButtonState1 = LOW; //Reset High button state variable
+  int reading1 = digitalRead(x);
+
+    if (reading1 != buttonState1) {
+      buttonState1 = reading1;
+      if (buttonState1 == HIGH) {
+        highButtonState1 = buttonState1;
+      }
+    }
+    
+  // save the reading. Next time through the loop, it'll be the lastButtonState:
+  lastButtonState1 = reading1;
+  return highButtonState1;
+}
+
+int pushButton2(int y){
+  // read the state of the switch into a local variable:
+  highButtonState2 = LOW; //Reset High button state variable
+  int reading2 = digitalRead(y);
+
+    if (reading2 != buttonState2) {
+      buttonState2 = reading2;
+      if (buttonState2 == HIGH) {
+        highButtonState2 = buttonState2;
+      }
+    }
+    
+  // save the reading. Next time through the loop, it'll be the lastButtonState:
+  lastButtonState2 = reading2;
+  return highButtonState2;
 }
