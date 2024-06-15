@@ -32,14 +32,14 @@ void loop() {
 
 // //send the message only if the button has been pressed
  if (buttonStateY == 1){
-  sendPushButtonData1(buttonStateY);
+  sendPushButtonData(0);
  }
 //  //read the state of the pushbutton value:
   buttonStateN = pushButton2(PUSHB_2);
 
 //send the message only if the button has been pressed
   if (buttonStateN == 1){
-  sendPushButtonData2(buttonStateN);
+  sendPushButtonData(1);
  }  
   // Delay 
   //delay(200);

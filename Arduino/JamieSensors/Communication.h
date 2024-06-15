@@ -4,6 +4,7 @@ const char endMarker = '>';
 
 char ultraMsg = 'U';
 char pirMsg = 'P';
+char btnMsg = 'B';
 char pbMsg1 = 'Y';//YES push button
 char pbMsg2 ='N';//NO push button
 
@@ -23,10 +24,10 @@ void sendPirData(int motionStatus) {
   }
 }
 
-void sendPushButtonData1(int buttonState1) {
+void sendPushButtonData(int buttonNum) {
     Serial.write(startMarker);
-    Serial.write(pbMsg1); // Message type for push button 1
-    Serial.write(buttonState1);
+    Serial.write(btnMsg); // Message type for push button 1
+    Serial.write(buttonNum);
     Serial.println(endMarker);
   }
 
