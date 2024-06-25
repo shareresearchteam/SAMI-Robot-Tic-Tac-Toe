@@ -53,7 +53,7 @@ val = digitalRead(x);  // read input value
     
     if (pirState == LOW) {
       // we have just turned on
-      Serial.println("Motion detected!");
+      //Serial.println("Motion detected!");
       motionStatus = 1; //motion detected
       sendPirData(motionStatus);
       // We only want to print on the output change, not state
@@ -63,7 +63,7 @@ val = digitalRead(x);  // read input value
     
     if (pirState == HIGH){
       // we have just turned of
-      Serial.println("Motion ended!");
+      //Serial.println("Motion ended!");
       motionStatus = 0; //motion ended
       sendPirData(motionStatus);
       // We only want to print on the output change, not state
