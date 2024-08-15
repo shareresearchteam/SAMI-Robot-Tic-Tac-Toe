@@ -22,7 +22,6 @@
  ****************************************************/
 
 #include <Wire.h>
-#include <Adafruit_PWMServoDriver.h>
 #include <NeoEyes.h>
 #include "constants.h"
 #include "servoControl.h"
@@ -33,6 +32,9 @@
 // and the eyes are two 8x8 panels connected in series (isTwoPanels = true)
 // 
 NeoEyes<EYES_PIN> roboEyes  = NeoEyes<EYES_PIN>(false, false, true);
+
+// Setting up the servo bus controller communication on Serial1
+servoControl servoController(Serial1);
 
 void setup() {
   // Set up our servo relay pins
@@ -51,8 +53,8 @@ void setup() {
   roboEyes.setBrightness(50); // Set the brightness to something less than max (255) to avoid blinding yourself
 
   Serial.begin(115200);
-  // Handles our initialization of the 16 channel servo driver board & remaining servos
-  initServos();
+  // Handles our initialization of the bus servos and gives them a seperate, dedicated Serial line. In this case, Serial1
+  servoController.begin();
 
   delay(10);
 }
@@ -77,7 +79,7 @@ void loop() {
       // Turn the servo relays on, just in case they currently are not
       setServoRelays(true);
       // Set the new joint values for the specific joint pins we recieved
-      setFromJointMsg();
+      servoController.setFromJointMsg();
       newJoints = false;
     }
     newData = false;
