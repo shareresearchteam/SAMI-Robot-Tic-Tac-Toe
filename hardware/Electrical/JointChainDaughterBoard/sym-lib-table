@@ -1,4 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "Relay")(type "Legacy")(uri "C:/projects/KiCAD/Extra Parts/PR9-5V-200-1A/KiCad/PR9-5V-200-1A.lib")(options "")(descr ""))
-)
