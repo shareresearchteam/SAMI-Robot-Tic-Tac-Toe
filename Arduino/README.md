@@ -8,3 +8,9 @@ Recieves serial messages from the computer and uses them to update the eyes disp
 
 ## Jamie Sensors
 Sends serial messages to the computer on new sensor inputs from the buttons and proximity sensors.
+
+## Set Servo ID
+Helper Arduino program to set a HiWonder serial bus servo to have a particular ID. Used as part of initial assembly.
+
+## Set Servo Position
+Helper Arduino program to set a HiWonder serial bus servo to a particular angle position. Used as part of initial assemply for setting the correct home positions for the motors during joint assembly.
