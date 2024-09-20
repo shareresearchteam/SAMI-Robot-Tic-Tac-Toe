@@ -50,6 +50,7 @@ power switch
 more bits idk
 usb cable
 panel mount usb cable?
+
 ##### Optional bits to mount in the robot space:
 speakers
 microphone

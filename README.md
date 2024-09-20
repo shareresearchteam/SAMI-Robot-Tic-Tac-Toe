@@ -51,13 +51,13 @@ Each message begins with a message topic, which is a single char byte defining t
 These existing message types, corresponding message topics, and remaining content structure are each presented individually below.
 
 #### Joint Message
-
+Each joint message includes the number of joints we are sending, followed by the sets of four bytes corresponding to a single byte individual joint ID, a single byte angle position to move that joint to, and an 8-bit integer corresponding to the amount of time it should take to move the joint to the new position.
 
 #### Emote Message
 
 
 #### Button Message
-
+Button messages send a single integer value corresponding the 0, 1, or 2, which in turn are the first, second, or third button on the sensor box being pressed, beginning from the left hand side when facing towards the front of the box.
 
 #### Person Detected Message
 
