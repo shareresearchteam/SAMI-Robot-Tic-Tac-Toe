@@ -1,5 +1,5 @@
 # JAMIE Robot Hardware
-All of the hardware information for the Aaron robot.
+All of the hardware information for the robot system.
 
  1. [Bill of Materials (BoM)]()
  2. [Assembly Instructions]()
