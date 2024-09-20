@@ -4,15 +4,18 @@ const char endMarker = '>';
 
 char ultraMsg = 'U';
 char pirMsg = 'P';
+char pirMsgR = 'R';
+char pirMsgL = 'L';
+char pirMsgM = 'M';
 char btnMsg = 'B';
 char pbMsg1 = 'Y';//YES push button
 char pbMsg2 ='N';//NO push button
 
-void sendUltrasonicData(float distance) {
+void sendUltrasonicData(int distance) {
   Serial.print(startMarker);
   Serial.print(ultraMsg); // Message type for Ultrasonic
   Serial.print(distance);
-  Serial.write(endMarker);
+  Serial.println(endMarker);
 }
 
 void sendPirData(int motionStatus) {
@@ -23,6 +26,36 @@ void sendPirData(int motionStatus) {
     Serial.println(endMarker);
   }
 }
+//Right PIR
+void sendPirDataR(int motionStatus) {
+  if (motionStatus != -1) { // Only send data on state change
+    Serial.write(startMarker);
+    Serial.write(pirMsgR); // Message type for PIR
+    Serial.write(motionStatus);
+    Serial.println(endMarker);
+  }
+}
+
+//Left PIR
+void sendPirDataL(int motionStatus) {
+  if (motionStatus != -1) { // Only send data on state change
+    Serial.write(startMarker);
+    Serial.write(pirMsgL); // Message type for PIR
+    Serial.write(motionStatus);
+    Serial.println(endMarker);
+  }
+}
+
+//Middle PIR
+void sendPirDataM(int motionStatus) {
+  if (motionStatus != -1) { // Only send data on state change
+    Serial.write(startMarker);
+    Serial.write(pirMsgM); // Message type for PIR
+    Serial.write(motionStatus);
+    Serial.println(endMarker);
+  }
+}
+
 
 void sendPushButtonData(int buttonNum) {
     Serial.write(startMarker);
