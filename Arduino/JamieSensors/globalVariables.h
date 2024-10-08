@@ -17,6 +17,8 @@
 #define NUM_READINGS 15  // Number of readings to average.
 #define THRESHOLD    50   // Deviation threshold from the average (in centimeters).
 
+#define DEBUG 1 // if we want to get debug messages
+
 
 // Constants
 const unsigned int MAX_DIST = 23200;

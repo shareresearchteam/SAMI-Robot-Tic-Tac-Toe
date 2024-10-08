@@ -1,4 +1,4 @@
-#include "globalVariables.h"
+//#include "globalVariables.h"
 
 // We have some number of PIRs with states to track
 // Right PIR
@@ -13,15 +13,6 @@ int pirStateL = LOW; //start assuming no motion
 int motionStatusM = 0; // Current PIR status 1 = motion detected 0 = motion ended
 int pirStateM = LOW; //start assuming no motion
 
-// Update all PIRs
-void readAllPIRs(){
-  // Right PIR
-  pir(PIR_PINR, pirStateR, motionStatusR);
-  // Left PIR
-  pir(PIR_PINL, pirStateL, motionStatusL);
-  // Middle PIR
-  //pir(PIR_PINM, pirStateM, motionStatusM);
-}
 
 // Read our PIR sensor and update the pir state and current motion state
 int pir(int pirPin, int &pirState, int &motionStatus){
@@ -34,6 +25,9 @@ int pir(int pirPin, int &pirState, int &motionStatus){
       motionStatus = 1; //motion detected
       // We only want to print on the output change, not state
       pirState = HIGH;
+      #if defined(DEBUG) && DEBUG 
+        Serial.println("PIR state changed to HIGH");
+      #endif
     }
   } else {
     // only make updates if the value has changed, basically
@@ -42,7 +36,29 @@ int pir(int pirPin, int &pirState, int &motionStatus){
       motionStatus = 0; //motion ended
       // We only want to print on the output change, not state
       pirState = LOW;
+      #if defined(DEBUG) && DEBUG 
+        Serial.println("PIR state changed to LOW");
+      #endif
     }
   }
   return motionStatus;
+}
+
+// Update all PIRs
+void readAllPIRs(){
+  // Right PIR
+  #if defined(DEBUG) && DEBUG 
+    Serial.println("Check Right PIR");
+  #endif
+  pir(PIR_PINR, pirStateR, motionStatusR);
+  // Left PIR
+  #if defined(DEBUG) && DEBUG 
+    Serial.println("Check Left PIR");
+  #endif
+  pir(PIR_PINL, pirStateL, motionStatusL);
+  // Middle PIR
+//  #if defined(DEBUG) && DEBUG 
+//    Serial.println("Check Middle PIR");
+//  #endif
+//  pir(PIR_PINM, pirStateM, motionStatusM);
 }

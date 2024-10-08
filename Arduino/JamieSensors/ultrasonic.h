@@ -1,4 +1,4 @@
-#include "globalVariables.h"
+//#include "globalVariables.h"
 // TODO: timeout checking
 // Note: we might want some sort of filtering on this, but for now we're just checking and comparing raw values.
 // Use these to track our distance difference
@@ -18,6 +18,19 @@ volatile unsigned long pulseInTimeEnd = micros();
 volatile bool newPulseDurationAvailable = false;
 unsigned long pulseTrigTime = micros();
 unsigned long timeoutTime = 10000000; // If we don't return anything within 10 seconds of starting a trig call, we want to just try again lol
+
+
+// This just kicks off the initial trig call for the echo to catch
+void startUltrasonicPing() {
+  digitalWrite(TRIG_PIN, LOW);  
+  delayMicroseconds(2);  
+  digitalWrite(TRIG_PIN, HIGH);  
+  delayMicroseconds(10);  
+  digitalWrite(TRIG_PIN, LOW); 
+  // And then save when we last pulsed the trig for sanity
+  pulseTrigTime = micros();
+}
+
 
 // We connect this to our interrupt pin so we can track our pulse time in a non-blocking way
 void echoPinInterrupt()
@@ -44,6 +57,10 @@ void checkUltrasonic(){
     unsigned long pulseDuration = pulseInTimeEnd - pulseInTimeBegin;
     // then calculate the new distance and set it to our current distance
     currentDistance = (pulseDuration*.0343)/2; 
+    #if defined(DEBUG) && DEBUG 
+      Serial.print("New Distance: ");
+      Serial.println(currentDistance);
+    #endif
     
     // If we have a real current and a real previous distance, then let's check the difference!
     if (previousDistance != -1) {
@@ -52,11 +69,17 @@ void checkUltrasonic(){
       if( abs(distDiff) > distanceThreshold) {
         // If the distance is further away...
         if (distDiff > 0) {
-          distanceChange = -1;
+          distanceChange = 2;
+          #if defined(DEBUG) && DEBUG 
+            Serial.println("Distance is further");
+          #endif
         }
         // Otherwise if the distance is closer
         else {
           distanceChange = 1;
+          #if defined(DEBUG) && DEBUG 
+            Serial.println("Distance is closer");
+          #endif
         }
       }
       // We don't modify the distanceChange value if there is no change, because a non-zero value indicates a new value
@@ -72,15 +95,4 @@ void checkUltrasonic(){
     // Should we say we're infinitely far if that happens? idk, for the moment we wont
     startUltrasonicPing();
   }
-}
-
-// This just kicks off the initial trig call for the echo to catch
-void startUltrasonicPing() {
-  digitalWrite(trigPin, LOW);  
-  delayMicroseconds(2);  
-  digitalWrite(trigPin, HIGH);  
-  delayMicroseconds(10);  
-  digitalWrite(trigPin, LOW); 
-  // And then save when we last pulsed the trig for sanity
-  pulseTrigTime = micros();
 }

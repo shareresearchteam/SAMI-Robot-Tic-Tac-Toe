@@ -1,5 +1,5 @@
-#include "globalVariables.h"
-#include "Communication.h"
+//#include "globalVariables.h"
+//#include "Communication.h"
 
 // Button state variables
 // array index is button id num!
@@ -25,6 +25,10 @@ void checkBtns() {
       btnStates[i] = reading;
       // if the new reading is high, then the button has been pushed
       if (btnStates[i] == HIGH) {
+        #if defined(DEBUG) && DEBUG 
+          Serial.print("Button Pressed: ");
+          Serial.println(i);
+        #endif
         sendPushButtonData(i);
       }
     }

@@ -45,7 +45,7 @@ void setup() {
   
   pinMode(BUZZER_PIN, OUTPUT);
   digitalWrite(BUZZER_PIN, LOW);
-  pinMode(PIR_PIN, INPUT); // Declare sensor as input
+  //pinMode(PIR_PIN, INPUT); // Declare sensor as input
   pinMode(PIR_PINR, INPUT); // Declare sensor as input Right PIR
   pinMode(PIR_PINL, INPUT); // Declare sensor as input Left PIR
 
@@ -53,12 +53,17 @@ void setup() {
 //  pinMode(PUSHB_1, INPUT); // Initialize pushbutton 1
 //  pinMode(PUSHB_2, INPUT); // Initialize pushbutton 2
 
-  initializeReadings();
+  //initializeReadings();
   Serial.begin(115200);
    // Stabilization delay
-  Serial.println("Stabilizing sensor...");
+   #if defined(DEBUG) && DEBUG 
+      Serial.println("Stabilizing sensor...");
+    #endif
+  
   delay(30000);  // 30 seconds stabilization time
-  Serial.println("Sensor stabilized.");
+  #if defined(DEBUG) && DEBUG 
+    Serial.println("Sensor stabilized.");
+  #endif
 
   // Then start our first ultrasonic ping
   attachInterrupt(digitalPinToInterrupt(ECHO_PIN),
@@ -72,11 +77,6 @@ void loop() {
 
   // Check if we have a new reading from our ultrasonic sensor, and check if our distance has changed
   checkUltrasonic();
-
-  // If our ultrasonic distance has changed...
-  if (distanceChange != 0) {
-    
-  }
 
   // Update all our PIR sensors
   readAllPIRs();
