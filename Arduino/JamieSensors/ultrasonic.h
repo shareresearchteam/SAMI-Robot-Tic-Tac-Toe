@@ -58,8 +58,8 @@ void checkUltrasonic(){
     // then calculate the new distance and set it to our current distance
     currentDistance = (pulseDuration*.0343)/2; 
     #if defined(DEBUG) && DEBUG 
-      Serial.print("New Distance: ");
-      Serial.println(currentDistance);
+      //Serial.print("New Distance: ");
+      //Serial.println(currentDistance);
     #endif
     
     // If we have a real current and a real previous distance, then let's check the difference!
@@ -71,14 +71,16 @@ void checkUltrasonic(){
         if (distDiff > 0) {
           distanceChange = 2;
           #if defined(DEBUG) && DEBUG 
-            Serial.println("Distance is further");
+            Serial.print("Object moved away to: ");
+            Serial.println(currentDistance);
           #endif
         }
         // Otherwise if the distance is closer
         else {
           distanceChange = 1;
           #if defined(DEBUG) && DEBUG 
-            Serial.println("Distance is closer");
+            Serial.print("Object moved closer to: ");
+            Serial.println(currentDistance);
           #endif
         }
       }
@@ -93,6 +95,9 @@ void checkUltrasonic(){
     // If we've reached beyond the timeout time since we first sent a ping out or micros has rolled over and gone beyond the timeout time...
     // then the signal is lost and we should just send a new ping
     // Should we say we're infinitely far if that happens? idk, for the moment we wont
+    #if defined(DEBUG) && DEBUG 
+      Serial.println("Echo ping not recieved");
+    #endif
     startUltrasonicPing();
   }
 }
