@@ -4,7 +4,7 @@
 // Use these to track our distance difference
 float currentDistance = -1;
 float previousDistance = -1;
-float distanceThreshold = 1; // If the difference between current and previous is smaller than that, ignore it
+float distanceThreshold = 10; // If the difference between current and previous is smaller than that, ignore it
 // Tracking for if our distance has changed at all
 // 0 - no change
 // 1 - distance is closer

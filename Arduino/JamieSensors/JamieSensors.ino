@@ -55,21 +55,22 @@ void setup() {
 
   //initializeReadings();
   Serial.begin(115200);
-   // Stabilization delay
-   #if defined(DEBUG) && DEBUG 
-      Serial.println("Stabilizing sensor...");
-    #endif
-  
-  delay(30000);  // 30 seconds stabilization time
-  #if defined(DEBUG) && DEBUG 
-    Serial.println("Sensor stabilized.");
-  #endif
-
   // Then start our first ultrasonic ping
   attachInterrupt(digitalPinToInterrupt(ECHO_PIN),
                   echoPinInterrupt,
                   CHANGE);
   startUltrasonicPing();
+  
+  // Stabilization delay
+  #if defined(DEBUG) && DEBUG 
+    Serial.println("Stabilizing sensor...");
+  #endif
+  delay(3000);  // 3 seconds stabilization time
+  #if defined(DEBUG) && DEBUG 
+    Serial.println("Sensor stabilized.");
+  #endif
+
+  
 }
 
 void loop() {
@@ -172,5 +173,5 @@ void loop() {
 //  if (buttonStateN == 1){
 //  sendPushButtonData(1);
 // }  
-//delay(1000);
+delay(1000);
 }

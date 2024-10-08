@@ -26,7 +26,9 @@ int pir(int pirPin, int &pirState, int &motionStatus){
       // We only want to print on the output change, not state
       pirState = HIGH;
       #if defined(DEBUG) && DEBUG 
-        Serial.println("PIR state changed to HIGH");
+        Serial.print("PIR on pin ");
+        Serial.print(pirPin);
+        Serial.println(" changed state to HIGH");
       #endif
     }
   } else {
@@ -37,7 +39,9 @@ int pir(int pirPin, int &pirState, int &motionStatus){
       // We only want to print on the output change, not state
       pirState = LOW;
       #if defined(DEBUG) && DEBUG 
-        Serial.println("PIR state changed to LOW");
+        Serial.print("PIR on pin ");
+        Serial.print(pirPin);
+        Serial.println(" changed state to LOW");
       #endif
     }
   }
@@ -47,14 +51,8 @@ int pir(int pirPin, int &pirState, int &motionStatus){
 // Update all PIRs
 void readAllPIRs(){
   // Right PIR
-  #if defined(DEBUG) && DEBUG 
-    Serial.println("Check Right PIR");
-  #endif
   pir(PIR_PINR, pirStateR, motionStatusR);
   // Left PIR
-  #if defined(DEBUG) && DEBUG 
-    Serial.println("Check Left PIR");
-  #endif
   pir(PIR_PINL, pirStateL, motionStatusL);
   // Middle PIR
 //  #if defined(DEBUG) && DEBUG 
