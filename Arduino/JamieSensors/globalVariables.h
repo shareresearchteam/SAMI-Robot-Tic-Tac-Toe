@@ -7,12 +7,17 @@
 
 //PIR sensor input pin
 #define PIR_PINM  10
-#define PIR_PINR  11
-#define PIR_PINL  12
+#define PIR_PINR  12
+#define PIR_PINL  11
 
 //Push button input pin
 #define PUSHB_1 4
 #define PUSHB_2 5
+// Button state variables
+// array index is button id num!
+int numBtns = 2;
+int btnPins[] = {4,5};
+int btnStates[] = {LOW, LOW};
 
 #define NUM_READINGS 15  // Number of readings to average.
 #define THRESHOLD    50   // Deviation threshold from the average (in centimeters).

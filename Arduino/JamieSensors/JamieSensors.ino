@@ -4,10 +4,10 @@
 #include "pir.h"
 #include "button.h"
 
-int buttonStateY = 0; //variable for reading pushbutton
-int buttonStateN = 0; //variable for reading pushbutton
-float average = 0;               // The average of the readings.
-bool filled = false;             // Flag to check if readings array is initially filled.
+//int buttonStateY = 0; //variable for reading pushbutton
+//int buttonStateN = 0; //variable for reading pushbutton
+//float average = 0;               // The average of the readings.
+//bool filled = false;             // Flag to check if readings array is initially filled.
 
 ////middle PIR
 //int motion =0; //1 = motion detected; 0 = motion ended
@@ -61,11 +61,11 @@ void setup() {
                   CHANGE);
   startUltrasonicPing();
   
-  // Stabilization delay
+  // Stabilization delay for the PIRs, which have a bunch of ping wiggles during initial power on
   #if defined(DEBUG) && DEBUG 
     Serial.println("Stabilizing sensor...");
   #endif
-  delay(3000);  // 3 seconds stabilization time
+  delay(45000);  // 45 seconds stabilization time
   #if defined(DEBUG) && DEBUG 
     Serial.println("Sensor stabilized.");
   #endif
@@ -82,32 +82,78 @@ void loop() {
   // Update all our PIR sensors
   readAllPIRs();
 
+  // LOGIC INCOMPLETE
+  // if we haven't currently detected anything
+  if(!detected) {
+    // if someone in front/ or both sensors
+    if ((motionStatusL && motionStatusR) || objectInRange) {
+      detected = true;
+      sendPirData(1);
+      if (objectInRange) {
+        center = true;
+        #if defined(DEBUG) && DEBUG 
+          Serial.println("Someone at center");
+        #endif
+      }
+    }
+    // If someone approaches from the left
+    else if (motionStatusL) {
+      detected = true;
+      sendPirDataL(1);
+      #if defined(DEBUG) && DEBUG 
+        Serial.println("Someone from left");
+      #endif
+    }
+    // If someone approaches from the right
+    else if (motionStatusR) {
+      detected = true;
+      sendPirDataR(1);
+      #if defined(DEBUG) && DEBUG 
+          Serial.println("Someone from right");
+        #endif
+    }
+    
+  }
+
+//  if (distanceChange == 1) {
+//    // If we got closer...
+//  }
+//  else if (distanceChange == 2) {
+//    // If we got further...
+//    if (!objectInRange) {
+//      center = false;
+//      distanceChange = 0;
+//    }
+//  }
+
+  
+
   // If we detect motion from left or right, and have nothing detected in the center...
-  if ((motionStatusL || motionStatusR) && !detected && !center) {
-    // Then we have detected a person passing
-    detected = true;
-    // and we need to send a message that we detected something
-    sendPirData(1);
-  }
-  // If something has gotten closer, and we are not centered
-  else if (distanceChange == 1 && !center) {
-    // Then something has come up in the front
-    detected = true;
-    center = true;
-    sendPirData(1);
-    // reset this since we've acknowledged there was a change
-    distanceChange = 0;
-  }
-  else if ((motionStatusL || motionStatusR) && distanceChange == 2 && detected && center) {
-    // Ahhh??? Maybe a person is leaving? Still detected but leaving
-    center = false;
-    distanceChange = 0;
-  }
-  else if (!motionStatusL && !motionStatusR && distanceChange == 0 && !center && detected) {
-    // then probably they've left
-    detected = false;
-    sendPirData(0);
-  }
+//  if ((motionStatusL || motionStatusR) && !detected && !center) {
+//    // Then we have detected a person passing
+//    detected = true;
+//    // and we need to send a message that we detected something
+//    sendPirData(1);
+//  }
+//  // If something has gotten closer, and we are not centered
+//  else if (distanceChange == 1 && !center) {
+//    // Then something has come up in the front
+//    detected = true;
+//    center = true;
+//    sendPirData(1);
+//    // reset this since we've acknowledged there was a change
+//    distanceChange = 0;
+//  }
+//  else if ((motionStatusL || motionStatusR) && distanceChange == 2 && detected && center) {
+//    // Ahhh??? Maybe a person is leaving? Still detected but leaving
+//    center = false;
+//    distanceChange = 0;
+//  }
+//  else if (!motionStatusL && !motionStatusR && distanceChange == 0 && !center && detected) {
+//    // then probably they've left
+//    detected = false;
+//    sendPirData(0);
+//  }
 
 
   // Original motion detect code

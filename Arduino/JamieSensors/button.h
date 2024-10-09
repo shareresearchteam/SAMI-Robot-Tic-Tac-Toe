@@ -1,11 +1,7 @@
 //#include "globalVariables.h"
 //#include "Communication.h"
 
-// Button state variables
-// array index is button id num!
-int numBtns = 2;
-int btnPins[] = {4,5};
-int btnStates[] = {LOW, LOW};
+
 
 void initBtns() {
   // initialize each push button
