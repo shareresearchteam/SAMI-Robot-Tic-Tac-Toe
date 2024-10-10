@@ -23,7 +23,7 @@ class servoControl {
     - set with goal time in milliseconds (currently 1 second)
   */
   void setJointAngle(int jointID, int angle) {
-    LobotSerialServoMove(_serialX, jointID, map(angle,0,240,0,1000), 1000);
+    LobotSerialServoMove(_serialX, jointID, map(angle,0,240,0,1000), jointTime*1000);
   }
   
   // Get the temperature of a specified joint

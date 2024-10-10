@@ -36,7 +36,6 @@ NeoEyes<EYES_PIN> roboEyes  = NeoEyes<EYES_PIN>(false, false, true);
 // Setting up the servo bus controller communication on Serial1
 // TODO: Do something with the temperature information 
 // TODO: Figure out what we're doing for the power circuitry/relays
-// TODO: Figure out what we're doing for timing/speed information and communication
 servoControl servoController(Serial1);
 
 void setup() {
@@ -87,5 +86,7 @@ void loop() {
     }
     newData = false;
   }
+  // Every so many loops let's check the temperature of the servos, and cut power if they get ~spicy~
+  
   delay(10);
 }
