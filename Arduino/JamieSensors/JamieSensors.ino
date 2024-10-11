@@ -39,12 +39,26 @@ bool PERSON_PRESENT = false; //Global Person is Present
 
 void setup() {
   // Ultrasonic setup
-  pinMode(TRIG_PIN, OUTPUT);
-  digitalWrite(TRIG_PIN, LOW);
-  pinMode(ECHO_PIN, INPUT);
+//  // Map pins 0-6 as input, and pin 7 as output, NOT SAFE, could accidentally fuck up your rx/tx
+//  DDRD = B10000000;
+//  // Map pins 8, 9, 10, and 13 to outputs, and the rest to inputs. bits 6 & 7 map to the crystal pins and are not usable
+//  DDRB = B00100111;
+   
+  pinMode(TRIG_PINR, OUTPUT);
+  pinMode(TRIG_PINL, OUTPUT);
+  pinMode(TRIG_PINM, OUTPUT);
+  digitalWrite(TRIG_PINR, LOW);
+  digitalWrite(TRIG_PINL, LOW);
+  digitalWrite(TRIG_PINM, LOW);
+  pinMode(ECHO_PINR, INPUT);
+  pinMode(ECHO_PINL, INPUT);
+  pinMode(ECHO_PINM, INPUT);
+
+  pinMode(ECHO_INTERR1, INPUT);
+  pinMode(ECHO_INTERR2, INPUT);
   
-  pinMode(BUZZER_PIN, OUTPUT);
-  digitalWrite(BUZZER_PIN, LOW);
+  //pinMode(BUZZER_PIN, OUTPUT);
+  //digitalWrite(BUZZER_PIN, LOW);
   //pinMode(PIR_PIN, INPUT); // Declare sensor as input
   pinMode(PIR_PINR, INPUT); // Declare sensor as input Right PIR
   pinMode(PIR_PINL, INPUT); // Declare sensor as input Left PIR
@@ -56,10 +70,15 @@ void setup() {
   //initializeReadings();
   Serial.begin(115200);
   // Then start our first ultrasonic ping
-  attachInterrupt(digitalPinToInterrupt(ECHO_PIN),
+  attachInterrupt(digitalPinToInterrupt(ECHO_INTERR1),
                   echoPinInterrupt,
                   CHANGE);
-  startUltrasonicPing();
+  attachInterrupt(digitalPinToInterrupt(ECHO_INTERR2),
+                  echoPinInterrupt,
+                  CHANGE);
+  startUltrasonicPing(0);
+  startUltrasonicPing(1);
+  startUltrasonicPing(2);
   
   // Stabilization delay for the PIRs, which have a bunch of ping wiggles during initial power on
   #if defined(DEBUG) && DEBUG 
@@ -76,44 +95,55 @@ void setup() {
 void loop() {
   unsigned long current_time = millis();
 
-  // Check if we have a new reading from our ultrasonic sensor, and check if our distance has changed
-  checkUltrasonic();
-
   // Update all our PIR sensors
   readAllPIRs();
-
-  // LOGIC INCOMPLETE
-  // if we haven't currently detected anything
-  if(!detected) {
-    // if someone in front/ or both sensors
-    if ((motionStatusL && motionStatusR) || objectInRange) {
-      detected = true;
-      sendPirData(1);
-      if (objectInRange) {
-        center = true;
-        #if defined(DEBUG) && DEBUG 
-          Serial.println("Someone at center");
-        #endif
-      }
-    }
-    // If someone approaches from the left
-    else if (motionStatusL) {
-      detected = true;
-      sendPirDataL(1);
-      #if defined(DEBUG) && DEBUG 
-        Serial.println("Someone from left");
-      #endif
-    }
-    // If someone approaches from the right
-    else if (motionStatusR) {
-      detected = true;
-      sendPirDataR(1);
-      #if defined(DEBUG) && DEBUG 
-          Serial.println("Someone from right");
-        #endif
-    }
-    
+  // Update all our ultrasonic sensor calls
+  updateAllUltrasonic();
+  // if we have motion on the left, and the left ultrasonic says someone has entered it's range
+  if (motionStatusL && ultraStatus[1] == 1) {
+    // send a serial message about a new person on the left?
   }
+  // if we have motion on the right, and the right ultrasonic says someone has entered it's range
+  if (motionStatusR && ultraStatus[0] == 1) {
+    // send a serial message about a new person on the right?
+  }
+  // something with checking the center too, I guess...
+  
+
+//  
+//
+//  // LOGIC INCOMPLETE
+//  // if we haven't currently detected anything
+//  if(!detected) {
+//    // if someone in front/ or both sensors
+//    if ((motionStatusL && motionStatusR) || objectInRange) {
+//      detected = true;
+//      sendPirData(1);
+//      if (objectInRange) {
+//        center = true;
+//        #if defined(DEBUG) && DEBUG 
+//          Serial.println("Someone at center");
+//        #endif
+//      }
+//    }
+//    // If someone approaches from the left
+//    else if (motionStatusL) {
+//      detected = true;
+//      sendPirDataL(1);
+//      #if defined(DEBUG) && DEBUG 
+//        Serial.println("Someone from left");
+//      #endif
+//    }
+//    // If someone approaches from the right
+//    else if (motionStatusR) {
+//      detected = true;
+//      sendPirDataR(1);
+//      #if defined(DEBUG) && DEBUG 
+//          Serial.println("Someone from right");
+//        #endif
+//    }
+//    
+//  }
 
 //  if (distanceChange == 1) {
 //    // If we got closer...
