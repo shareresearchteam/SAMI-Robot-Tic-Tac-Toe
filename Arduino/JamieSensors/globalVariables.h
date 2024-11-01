@@ -6,6 +6,10 @@
 #define ECHO_PINR 4
 #define ECHO_PINL 5
 #define ECHO_PINM 6
+// RFID reader pins
+//#define RFID_INTER 2  // This is the same as echo interr1
+#define PN532_IRQ A4
+#define PN532_RESET A5
 
 #define ECHO_INTERR1 2
 #define ECHO_INTERR2 3

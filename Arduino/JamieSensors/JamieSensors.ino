@@ -70,9 +70,11 @@ void setup() {
   //initializeReadings();
   Serial.begin(115200);
   // Then start our first ultrasonic ping
+  // this one handles one of our echos and our rfid reader
   attachInterrupt(digitalPinToInterrupt(ECHO_INTERR1),
-                  echoPinInterrupt,
+                  echoRFIDPinInterrupt,
                   CHANGE);
+  // this one handles our other two echos
   attachInterrupt(digitalPinToInterrupt(ECHO_INTERR2),
                   echoPinInterrupt,
                   CHANGE);

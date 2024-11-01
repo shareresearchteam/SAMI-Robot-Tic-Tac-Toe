@@ -24,6 +24,7 @@ unsigned long timeoutTime = 10000; // If we don't return anything within 1ms  of
 // i = 1: Left ultrasonic
 // i = 2: Middle ultrasonic
 int trigPins[] = { TRIG_PINR, TRIG_PINL, TRIG_PINM };
+int echoPins[] = { ECHO_PINR, ECHO_PINL, ECHO_PINM };
 float currDistance[] = { -1, -1, -1 };
 float prevDistance[] = { 0, 0, 0 };
 bool objectInRange[] = { false, false, false};
@@ -75,35 +76,62 @@ void startUltrasonicPing(int ultraNum) {
 
 
 // We connect this to our interrupt pin so we can track our pulse time in a non-blocking way
-void echoPinInterrupt()
-{
-//  byte portdata = PORTD;
-//  // Shift left once to kick out pin 7
-//  portdata <<= 1;
-//  // then shift right 5 times to kick out pin 0-3
-//  portdata >>= 5;
-//  // Then mask for what's high!
-//  //byte check = bitmask & portdata;
-//  // if currentState == portdata, then then wtf triggered
-//  // 
-//  
-//  if (bitmask & PORTD)
-  
-  byte portdata = PIND >> 4;
-  for (int i = 0; i < 3; i++) {
-    if (bitRead(portdata,i) != echoHigh[i]) {
-      if (echoHigh[i]) {
-        pulseInTimeEnd[i] = micros();
-        echoHigh[i] = false;
-        newPulse[i] = true;
-      }
-      else {
-        pulseInTimeBegin[i] = micros();
-        echoHigh[i] = true;
-      }
+void echoPinInterrupt() {
+  if (digitalRead(echo_pins[1] != echoHigh[1]) {
+    // then echo pin[1] (ultrasonic L) is what triggered!
+    if (echoHigh[1]) {
+      pulseInTimeEnd[1] = micros();
+      echoHigh[1] = false;
+      newPulse[1] = true;
+    }
+    else {
+      pulseInTimeBegin[1] = micros();
+      echoHigh[1] = true;
     }
   }
-  //portdata >>= 4;
+  else {
+    // otherwise ultrasonic M is what triggered!
+    if (echoHigh[2]) {
+      pulseInTimeEnd[2] = micros();
+      echoHigh[2] = false;
+      newPulse[2] = true;
+    }
+    else {
+      pulseInTimeBegin[2] = micros();
+      echoHigh[2] = true;
+    }
+  }
+}
+// old version stuff
+//void echoPinInterrupt()
+//{
+////  byte portdata = PORTD;
+////  // Shift left once to kick out pin 7
+////  portdata <<= 1;
+////  // then shift right 5 times to kick out pin 0-3
+////  portdata >>= 5;
+////  // Then mask for what's high!
+////  //byte check = bitmask & portdata;
+////  // if currentState == portdata, then then wtf triggered
+////  // 
+////  
+////  if (bitmask & PORTD)
+//  
+//  byte portdata = PIND >> 4;
+//  for (int i = 0; i < 3; i++) {
+//    if (bitRead(portdata,i) != echoHigh[i]) {
+//      if (echoHigh[i]) {
+//        pulseInTimeEnd[i] = micros();
+//        echoHigh[i] = false;
+//        newPulse[i] = true;
+//      }
+//      else {
+//        pulseInTimeBegin[i] = micros();
+//        echoHigh[i] = true;
+//      }
+//    }
+//  }
+    //portdata >>= 4;
   // if the first bit is different than ultraR
   // bitRead(portdata,4) != ultraR
 //  if (digitalRead(ECHO_PINR) != ultraR) {
@@ -145,6 +173,27 @@ void echoPinInterrupt()
 //    ultraM = true;
 //    }
 //  }
+}
+
+ // We connect this to our interrupt pin so we can track our pulse time and trigger RFID
+void echoRFIDPinInterrupt()
+{
+  if(digitalRead(echo_pins[0]) != echoHigh[0]) {
+    // then the echo pin changed! 
+    if (echoHigh[0]) {
+        pulseInTimeEnd[0] = micros();
+        echoHigh[0] = false;
+        newPulse[0] = true;
+      }
+      else {
+        pulseInTimeBegin[0] = micros();
+        echoHigh[0] = true;
+      }
+  }
+  else {
+    // we triggered rfid! 
+    pn532Read = true;
+  }
 }
 
 
