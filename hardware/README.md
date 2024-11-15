@@ -88,6 +88,8 @@ usb power cable (probably comes with)
 ### Robot Fabrication and Assembly Instructions
 *If using Prusa i3 printers with Prusa Slicer,* all parts should be printed at 0.3mm resolution ("draft quality" on Prusa Slicer), with 15% gyroid infill, and organic supports enabled (where necessary), **except for the chest piece,** which should be printed at 0.2mm resolution, with 15% gyroid infill, and normal grid-style supports instead. Alternatively, the **finger hinges** should be printed using PETG filament with 0% gyroid infill and a brim.
 
+**The hands** used for this robot have been sized down by 42.5% with minimal changes to the bolt holes from the original prosthetic model, but the mechanism funtionality remains the same.
+
 Print orientations are shown below for each part, along with the part names that are used throughout this documentation.
 
 #### Headshell
@@ -97,7 +99,7 @@ Print orientations are shown below for each part, along with the part names that
 <img src="https://github.com/user-attachments/assets/636dd761-b5fc-43b5-8e5c-8b0e2f4229c1" width="516.75" height="379.75"/>
 
 #### Head/Neck Connectors and Spine
-<img src="https://github.com/user-attachments/assets/96bd2599-7b79-45a8-b5cd-8491bc563da0" width="516.75" height="379.75"/>
+<img src="https://github.com/user-attachments/assets/e3e65f0d-32de-43c1-860c-792ffeab9e75" width="516.75" height="379.75"/>
 
 #### Hands and Lower Arms
 <img src="https://github.com/user-attachments/assets/8007a63c-7314-44be-8fca-9a795e9bf6fc" width="516.75" height="379.75"/>
@@ -168,22 +170,22 @@ Stringing the fishing line through the hands should be the **last step** (with f
 
 <img src="https://github.com/user-attachments/assets/03f3db47-aefa-4afc-8d25-8f3e58caebf9" width="516.75" height="379.75"/>
 
-*Figure 1*: Composition and BOM of Flexy-Hand 2 (Gyrobot (2014)) **fix citation
+*Figure 1*: Composition and BOM of Flexy-Hand 2 ([Flexy-Hand 2]())
 
 
 <img src="https://github.com/user-attachments/assets/b6199e72-d340-43bb-9e2d-71c6663d8e74" width="516.75" height="379.75"/>
 
-*Figure 2*: Finger plate with labeled orientation (Gyrobot (2014)) (**fix citation)
+*Figure 2*: Finger plate with labeled orientation ([Flexy-Hand 2]())
 
 
 <img src="https://github.com/user-attachments/assets/39fc64ee-b7f5-481a-aca4-d31c52dddc7e" width="500" height="250"/>
 
-*Figure 3*: Hinge orientation for all fingers (Gyrobot (2014)) (**fix citation)
+*Figure 3*: Hinge orientation for all fingers ([Flexy-Hand 2]())
 
 
 <img src="https://github.com/user-attachments/assets/8d863733-dc20-4b80-aee7-aa96baf8d8a7" width="516.75" height="379.75"/>
 
-*Figure 4*: Tendon knot placement for all fingers (Gyrobot (2014)) (**fix citation)
+*Figure 4*: Tendon knot placement for all fingers ([Flexy-Hand 2]())
 
 
 ##### Servo JST Cables
@@ -262,4 +264,5 @@ More involved improvements for future development, in no particular order
  - Separate the servo joint sections from the rest of the body links, so we can make different shape designs for the limbs/torso without needing to re-zero or re-assemble the motors
 
 ## References
+ - [Flexy-Hand 2](https://www.thingiverse.com/thing:380665)
  - []()
