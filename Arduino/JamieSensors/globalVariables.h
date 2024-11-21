@@ -2,14 +2,19 @@
 #define TRIG_PINR 7
 #define TRIG_PINL 8
 #define TRIG_PINM 9
+
 // Echo Pin of Ultrasonic Sensor, must be on an interrupt pin!
 #define ECHO_PINR 4
 #define ECHO_PINL 5
 #define ECHO_PINM 6
+
 // RFID reader pins
 //#define RFID_INTER 2  // This is the same as echo interr1
+// the PN532 SCK, MOSI, and MISO pins need to be connected to the Arduino's
+// hardware SPI SCK, MOSI, and MISO pins.  On an Arduino Uno these are
+// SCK = 13, MOSI = 11, MISO = 12.  The SS line can be any digital IO pin.
 #define PN532_IRQ A4
-#define PN532_RESET A5
+#define PN532_SS  A5
 
 #define ECHO_INTERR1 2
 #define ECHO_INTERR2 3

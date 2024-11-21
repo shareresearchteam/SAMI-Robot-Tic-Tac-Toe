@@ -3,6 +3,7 @@
 #include "ultrasonic.h"
 #include "pir.h"
 #include "button.h"
+#include "rfid.h"
 
 //int buttonStateY = 0; //variable for reading pushbutton
 //int buttonStateN = 0; //variable for reading pushbutton
@@ -69,6 +70,8 @@ void setup() {
 
   //initializeReadings();
   Serial.begin(115200);
+
+  initializeRFIDReader();
   // Then start our first ultrasonic ping
   // this one handles one of our echos and our rfid reader
   attachInterrupt(digitalPinToInterrupt(ECHO_INTERR1),
@@ -110,7 +113,7 @@ void loop() {
     // send a serial message about a new person on the right?
   }
   // something with checking the center too, I guess...
-  
+
 
 //  
 //
@@ -237,6 +240,9 @@ void loop() {
 
   // function checks the state of all buttons and sends any button messages if a button has been pressed
   checkBtns();
+
+  // function to check and handle reading rfid card
+  readRFIDCard();
     
 //  //read the state of the pushbutton value:
 //  buttonStateY = pushButton1(PUSHB_1);

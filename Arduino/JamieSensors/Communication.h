@@ -2,6 +2,7 @@
 const char startMarker = '<';
 const char endMarker = '>';
 
+char rfidMsg = 'F';
 char ultraMsg = 'U';
 char pirMsg = 'P';
 char pirMsgR = 'R';
@@ -10,6 +11,15 @@ char pirMsgM = 'M';
 char btnMsg = 'B';
 char pbMsg1 = 'Y';//YES push button
 char pbMsg2 ='N';//NO push button
+
+// I think we're going to need to read from the computer on if we should write to the RFID card...
+
+void sendRFIDData(uint8_t data[16]) {
+  Serial.print(startMarker);
+  Serial.print(rfidMsg);
+  Serial.print(data);
+  Serial.println(endMarker);
+}
 
 void sendUltrasonicData(int distance) {
   Serial.print(startMarker);
