@@ -161,7 +161,7 @@ Additionally, when screwing to the metal servo horns, it is very easy to misalig
 ##### Servo Horn Alignment
 Once a motor has been set to the default position, you can attach the metal horn with the small indent facing towards the motor body (see below image) as a useful visual reference to assist in verifying that the servo does not get misaligned or shifted during the assembly process. Additionally, when screwing the machines
 
-**IMG GO HERE**
+<img src="https://github.com/user-attachments/assets/58a353cc-a3eb-429b-9c43-654319a532c8" width="250" height="400"/>
 
 ##### Hands Construction
 Before beginning assembly, please be sure to double check that the hinges match the size-dependent and axial orientation on the fingers, with the fingers aligned to their corresponding palm (*Figures 1-3*). It is **highly** recommended to fit the largest hinges into the palm first. While the hinges should be printed as a more "spongey" material, you may need to use a pair of pliers to manually squeeze the larger side of the hinge into its gap in the palm. You can also use a file or a craft knife to trim a little from the opening sides. After fitting the palm hinges, all fingers can be assembled separately from the hand. They should perfectly slide into the finger hinge slots (following size contraints but axial orientation shouldn't matter). 
@@ -201,6 +201,12 @@ Additionally, despite how tight the connectors are into the recepticals, be very
 
 
 #### Lower Body Assembly
+When assembling the lower body it is best to start with the feet and then work your way up to the upper legs. This ensures that you will have everything aligned and allows you to begin with the more simpler pieces first.
+
+The first and foremost step that is **highly** recommended is pre-setting all of the Lower Body motors before beginning the assembly. All HiWonder HTS-20H servos involved in this assembly would be: Right Hip, Knee, Ankle and Left Hip, Knee, Ankle. All correlated motor IDs are listed above in [Initializing Servo IDs and Positions], as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found here [Servo Horn Alignment].
+
+Next up is the feet. The feet are a fairly quick and simple set-up that will require a M3 screwdriver, 1 servo horn per foot, 8 silver M3 screws and 2 black M3 screws from the motor package. As suggested before, it is **highly** recommended that you pre-thread the 3D-printed body so that you don't accidentally re-thread the servo horn.
+
 
 
 #### Hands Assembly
