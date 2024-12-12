@@ -10,14 +10,12 @@ This contains all our constant definitions, including:
 
 /********** Pin Definitions **********/
 // The data pin for our LED Eyes
-#define EYES_PIN 7
+#define EYES_PIN 32
 // The pin that controls the relay providing power to the servos
-#define SERVO_RELAY1 1 // LEFT ARM
-#define SERVO_RELAY2 2 //TORSO CONTROL
-#define SERVO_RELAY3 3 //LEFT LEGS
-#define SERVO_RELAY4 4 //RIGHT LEG
-#define SERVO_RELAY5 5 //RIGHT ARM
-#define SERVO_RELAY6 6 //HEAD
+#define NECKTORSO_RELAY 33 // Pin for controlling power to the neck and torso motors
+#define LEGS_RELAY 26 // Pin for controlling power to the leg motors
+#define ARMS_RELAY 28 // Pin for controlling power to the arm motors
+
 
 /********** Motor Definitions **********/
 /*
@@ -31,30 +29,12 @@ This contains all our constant definitions, including:
 // With two hat boards, we have 32 available servo motor pins, 
 // so that's the maximum number of joint commands we could send in a single message
 const int NumPins = 32;
-// We also define two global arrays, one for the joint pin numbers, 
+// We also define some global arrays, one for the joint pin numbers, 
 // and a second for the corresponding joint angle
-extern int jointIDs[NumPins];
-extern int jointAngles[NumPins];
+extern uint8_t jointIDs[NumPins];
+extern uint8_t jointAngles[NumPins];
 // We also have a variable we use for tracking the number of joints we recieved in a joint message
 extern int numJointsRecv;
-
-/********** Motor Tuning Constants **********/
-/*
- Depending on your servo make, the pulse width min and max may vary, you 
- want these to be as small/large as possible without hitting the hard stop
- for max range. You'll have to tweak them as necessary to match the servos you
- have!
-*/
-#define SERVOMIN  150 // This is the 'minimum' pulse length count (out of 4096)
-#define SERVOMAX  600 // This is the 'maximum' pulse length count (out of 4096)
-#define USMIN  600 // This is the rounded 'minimum' microsecond length based on the minimum pulse of 150
-#define USMAX  2400 // This is the rounded 'maximum' microsecond length based on the maximum pulse of 600
-#define SERVO_FREQ 50 // Analog servos run at ~50 Hz updates
-
-//#define SERVOMIN  800 // This is the 'minimum' pulse length count (out of 4096)
-//#define SERVOMAX  3500 // This is the 'maximum' pulse length count (out of 4096)
-//#define USMIN  3200 // This is the rounded 'minimum' microsecond length based on the minimum pulse of 800
-//#define USMAX  14000 // This is the rounded 'maximum' microsecond length based on the maximum pulse of 3500
-//#define SERVO_FREQ 50 // Analog servos run at ~50 Hz updates
+extern uint8_t jointTime;
 
 #endif

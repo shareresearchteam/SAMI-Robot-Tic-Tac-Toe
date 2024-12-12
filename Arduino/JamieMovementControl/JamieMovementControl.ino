@@ -19,6 +19,11 @@
   - Audio files
   - 3D model part files for the mechanical assembly
   - ???????
+
+TODO:
+  - Do something with the temperature information 
+  - Figure out what we're doing with the relays (Aka, when should they be on/off)
+  - How to handle gripper commands???
  ****************************************************/
 
 #include <Wire.h>
@@ -34,21 +39,16 @@
 NeoEyes<EYES_PIN> roboEyes  = NeoEyes<EYES_PIN>(false, false, true);
 
 // Setting up the servo bus controller communication on Serial1
-// TODO: Do something with the temperature information 
-// TODO: Figure out what we're doing for the power circuitry/relays
 servoControl servoController(Serial1);
 
 void setup() {
   // Set up our servo relay pins
-  pinMode(SERVO_RELAY1, OUTPUT); //pin 1 is the on and off for the servo relay power
-  pinMode(SERVO_RELAY2, OUTPUT); //pin 2 is the on and off for the servo relay power
-  pinMode(SERVO_RELAY3, OUTPUT); //pin 3 is the on and off for the servo relay power
-  pinMode(SERVO_RELAY4, OUTPUT); //pin 4 is the on and off for the servo relay power
-  pinMode(SERVO_RELAY5, OUTPUT); //pin 5 is the on and off for the servo relay power
-  pinMode(SERVO_RELAY6, OUTPUT); //pin 6 is the on and off for the servo relay power
+  pinMode(NECKTORSO_RELAY, OUTPUT); //pin 1 is the on and off for the servo relay power
+  pinMode(LEGS_RELAY, OUTPUT); //pin 2 is the on and off for the servo relay power
+  pinMode(ARMS_RELAY, OUTPUT); //pin 3 is the on and off for the servo relay power
 
   // Turn off power to all the servos to start
-  setServoRelays(false);
+  setServoRelay(0,allRelays);
   
   // Eyes Setup!
   roboEyes.begin();
@@ -60,6 +60,7 @@ void setup() {
 
   delay(10);
 }
+
 
 void loop() {
   // Check for any serial communications
@@ -74,12 +75,14 @@ void loop() {
       roboEyes.setStandardEmote(currentEmote);
       newEmote = false;
     }
+    else if (updateRelayStates) {
+      updateServoRelays();
+      updateRelayStates = false;
+    }
     // If we got new joint data
     else if(newJoints) {
       //Serial.print("Number Joints Recieved: ");
       //Serial.println(numJointsRecv);
-      // Turn the servo relays on, just in case they currently are not
-      setServoRelays(true);
       // Set the new joint values for the specific joint pins we recieved
       servoController.setFromJointMsg();
       newJoints = false;
@@ -89,4 +92,32 @@ void loop() {
   // Every so many loops let's check the temperature of the servos, and cut power if they get ~spicy~
   
   delay(10);
+}
+
+// Turn on/off power to all the servos at once
+void setServoRelay(int isOn, char selectedRelay) {
+  switch (selectedRelay) {
+    case neckTorsoRelays:
+      digitalWrite(NECKTORSO_RELAY, isOn);
+      break;
+    case armRelays:
+      digitalWrite(ARMS_RELAY, isOn);
+      break;
+    case legRelays:
+      digitalWrite(LEGS_RELAY, isOn);
+      break;
+    case allRelays:
+      digitalWrite(NECKTORSO_RELAY, isOn);
+      digitalWrite(LEGS_RELAY, isOn);
+      digitalWrite(ARMS_RELAY, isOn);
+      break;
+    default:
+      break;
+  }
+}
+
+void updateServoRelays() {
+  for(int i = 0; i < numRelayToSet; i++) {
+    setServoRelay(newOnOffState, relaysToSet[i]);
+  }
 }
