@@ -35,10 +35,10 @@
  * 
  * TEMP Message:
  * This is more of a debugging message, but the Arduino will send a message to the PC if a motor goes over temperature.
- * It will list which motor ID is over temperature, as well as the temperature.
+ * It will list which motor ID is over temperature, as well as the temperature (in degrees C). So, if motor ID 1 is at 100C:
+ *   <T1100>
  * 
  */
-
 
 const byte numChars = 33;     // Max message length
 // Our defined messages

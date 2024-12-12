@@ -22,7 +22,6 @@
 
 TODO:
   - Do something with the temperature information 
-  - Figure out what we're doing with the relays (Aka, when should they be on/off)
   - How to handle gripper commands???
  ****************************************************/
 
@@ -94,7 +93,7 @@ void loop() {
   delay(10);
 }
 
-// Turn on/off power to all the servos at once
+// Turn on/off power to specific servos
 void setServoRelay(int isOn, char selectedRelay) {
   switch (selectedRelay) {
     case neckTorsoRelays:
@@ -116,6 +115,7 @@ void setServoRelay(int isOn, char selectedRelay) {
   }
 }
 
+// Update all our servos from a serial command
 void updateServoRelays() {
   for(int i = 0; i < numRelayToSet; i++) {
     setServoRelay(newOnOffState, relaysToSet[i]);

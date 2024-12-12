@@ -18,17 +18,8 @@ This contains all our constant definitions, including:
 
 
 /********** Motor Definitions **********/
-/*
- The left side and right side arm and leg motor chains are attached through
- the Adafruit 16 channel servo driver: https://www.adafruit.com/product/815
- The remaining head and torso control are controlled directly from the arduino (for the moment)
- Using the enum here, the left and right side enum positions can align directly with the pin
- wiring on the driver board, meaning we can use them for calling each motor directly
-*/
-
-// With two hat boards, we have 32 available servo motor pins, 
-// so that's the maximum number of joint commands we could send in a single message
-const int NumPins = 32;
+// The number of joints in the system goes here, to define the max possible number of joints in a single command
+const int NumPins = 21;
 // We also define some global arrays, one for the joint pin numbers, 
 // and a second for the corresponding joint angle
 extern uint8_t jointIDs[NumPins];
