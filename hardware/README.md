@@ -1,4 +1,4 @@
-# JAMIE Robot Hardware
+![image](https://github.com/user-attachments/assets/45520710-7f09-4389-8d31-96ac0d6e39b5)# JAMIE Robot Hardware
 All of the hardware information for the robot system.
 
  1. [Bill of Materials (BoM)]()
@@ -205,9 +205,11 @@ When assembling the lower body it is best to start with the feet and then work y
 
 The first and foremost step that is **highly** recommended is pre-setting all of the Lower Body motors before beginning the assembly. All HiWonder HTS-20H servos involved in this assembly would be: Right Hip, Knee, Ankle and Left Hip, Knee, Ankle. All correlated motor IDs are listed above in [Initializing Servo IDs and Positions], as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found here [Servo Horn Alignment].
 
-Next up is the feet. The feet are a fairly quick and simple set-up that will require a M3 screwdriver, 1 servo horn per foot, 8 silver M3 screws and 2 black M3 screws from the motor package. As suggested before, it is **highly** recommended that you pre-thread the 3D-printed body so that you don't accidentally re-thread the servo horn.
+##### Feet
+Next up is the feet. The feet are a fairly quick and simple set-up that will require a M3 screwdriver, 1 servo horn per foot, 8 silver M3 screws and 2 black M3 screws from the motor package. As suggested before, it is **highly** recommended that you pre-thread the 3D-printed body so that you don't accidentally re-thread the servo horn. After pre-threading you are ready to move onto the next step. **Do not** attach the Ankle servo horn at this time.
 
-
+##### Lower Legs
+Following the set-up of the feet are the lower legs of the robot. The lower legs will require a M3 screwdriver, 1 servo horn per leg, 8 silver M3 screws and 2 black M3 screws from the motor package, 4 M3 x 18 mm (check this), 4 rubber spacers (included in the motor package), and 4 hexagonal-shaped nuts. As done same with the feet, pre-thread all the screw holes on the lower legs before beginning assembly. Next, add the rubber spacers onto the screw notches of the motor (pictured below) as this will help stabilize our screws in the frame. After, you can begin attaching the Hiwonder servo into its correct placement on the lower end of the leg, ensuring that the servo horn can be attached to the foot later on. 
 
 #### Hands Assembly
 
