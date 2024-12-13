@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/45520710-7f09-4389-8d31-96ac0d6e39b5)# JAMIE Robot Hardware
+# JAMIE Robot Hardware
 All of the hardware information for the robot system.
 
  1. [Bill of Materials (BoM)]()
