@@ -42,9 +42,9 @@ servoControl servoController(Serial1);
 
 void setup() {
   // Set up our servo relay pins
-  pinMode(NECKTORSO_RELAY, OUTPUT); //pin 1 is the on and off for the servo relay power
-  pinMode(LEGS_RELAY, OUTPUT); //pin 2 is the on and off for the servo relay power
-  pinMode(ARMS_RELAY, OUTPUT); //pin 3 is the on and off for the servo relay power
+  pinMode(NECKTORSO_RELAY, OUTPUT); // Neck & torso relay power
+  pinMode(LEGS_RELAY, OUTPUT); // Leg relay power
+  pinMode(ARMS_RELAY, OUTPUT); // Arm relay power
 
   // Turn off power to all the servos to start
   setServoRelay(0,allRelays);
@@ -65,16 +65,20 @@ void loop() {
   // Check for any serial communications
   recvWithStartEndMarkers();
   if(newData) {
-    //Serial.print("Message type: ");
-    //Serial.println(msgType);
+//    Serial.print("Message type: ");
+//    Serial.println(currMsgType);
     // If we got a new emote instruction, then set the eyes
     if(newEmote) {
-      //Serial.print("Emote Recieved: ");
-      //Serial.println(currentEmote);
+//      Serial.print("Emote Recieved: ");
+//      Serial.println(currentEmote);
       roboEyes.setStandardEmote(currentEmote);
       newEmote = false;
     }
     else if (updateRelayStates) {
+//      Serial.print("Relay Set: ");
+//      Serial.print(relaysToSet);
+//      Serial.print(" to state: ");
+//      Serial.println(newOnOffState);
       updateServoRelays();
       updateRelayStates = false;
     }

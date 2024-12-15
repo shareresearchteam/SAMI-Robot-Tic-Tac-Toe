@@ -2,8 +2,12 @@
 Driver board for the servo bus motors. Includes connection for LED eyes, serial control for bus servo motors, and power control for bus servo motors, with mounting spot for microcontroller dev board.
 
 
-## TODO
-1. I removed the PTC fuses because they were.... not really all that great when we have a chain? The individual surges would be huge and they aren't really serving a temp protection purpose.
-2. Pick microcontroller
-3. Add microcrontroller solder in footprint with additional header connectors? idk how best to mount that for easy use/access to all the other pins
-4. The actual board layout from the schematic oops
+## Bill of Materials (BoM)
+This BoM includes all items necessary to populate this particular PCB. It does not include all items necessary for the entire robot, which can be found [here](../../BoM.md). The parts listed are standalone items you need, as well as a consolidated list of all items you can purchase as a group from [DigiKey](https://www.digikey.com/). 
+
+ - 1x [Mini Arduino ATMEGA2560](https://www.amazon.com/dp/B0D7ZT5M2R), any manufacturer who matches this footprint/pinout will work.
+ - 1x [AMASS XT60PW-M Connector](https://www.tme.com/us/en-us/details/xt60pw-m/dc-power-connectors/amass/)
+ - 1x [AMASS XT30PW-M Connector](https://www.tme.com/us/en-us/details/xt30pw-m/dc-power-connectors/amass/)
+ - 2.54mm pitch female header strips, for connecting the Arduino
+ - [DigiKey Part List](../JamieMotorControlBoardDigiKey.csv)
+

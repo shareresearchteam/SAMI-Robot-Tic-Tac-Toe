@@ -78,6 +78,9 @@ bool newJoints = false;
 
 boolean newData = false;
 
+boolean recvInProgress = false;
+byte ndx = 0;
+
 // Helper function just to separate out the joint pin/angle read logic
 void getNewJointData(char newByte) {
   // If we haven't gotten a time to drive the joints, lets get that first!
@@ -115,8 +118,8 @@ void getNewJointData(char newByte) {
 
 // When we have start and end markers!
 void recvWithStartEndMarkers() {
-  static boolean recvInProgress = false;
-  static byte ndx = 0;
+  //static 
+  //static 
   char startMarker = '<';
   char endMarker = '>';
   char rc;

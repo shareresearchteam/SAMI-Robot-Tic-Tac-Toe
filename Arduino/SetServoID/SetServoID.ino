@@ -5,8 +5,18 @@
 int newID = 3;
 
 void setup() {
+  // begin serial communication with the pc
   Serial.begin(115200);
+  // begin serial communication with the servo motors
   Serial1.begin(115200);
+  // Set up and turn on relay power
+  pinMode(33, OUTPUT); //torso neck relay
+  pinMode(26, OUTPUT); //leg relay
+  pinMode(28, OUTPUT); //arm relay
+  digitalWrite(33, true);
+  digitalWrite(26, true);
+  digitalWrite(28, true);
+  // Give it some initialization time
   delay(1000);
 }
 
@@ -15,7 +25,7 @@ void loop() {
   delay(500);
   int id = LobotSerialServoReadID(Serial1);
   Serial.println("");
-  Serial.print("new ID:");
+  Serial.print("New ID:");
   Serial.println(id);
   delay(1000);
 }
