@@ -101,6 +101,9 @@ Print orientations are shown below for each part, along with the part names that
 #### Head/Neck Connectors and Spine
 <img src="https://github.com/user-attachments/assets/e3e65f0d-32de-43c1-860c-792ffeab9e75" width="516.75" height="379.75"/>
 
+#### Shoulders and Upper Arms
+<img src="https://github.com/user-attachments/assets/e9d99492-1f24-4ecc-9b2e-84c4d04afd26" width="516.75" height="379.75"/>
+
 #### Hands and Lower Arms
 <img src="https://github.com/user-attachments/assets/8007a63c-7314-44be-8fca-9a795e9bf6fc" width="516.75" height="379.75"/>
 
@@ -198,7 +201,12 @@ Additionally, despite how tight the connectors are into the recepticals, be very
 
 
 #### Arm Assembly
+When assembling the arms for the robot, it is best to begin with the shoulder down to the elbow. This is due to the slight complexity behind the assembly of the involving the shoulders, the elbows, and the biceps. You will need to attach the motors onto these pieces before the others.
 
+The first step that is **highly** recommended is pre-setting all of the Arm motors before beginning the assembly. All HiWonder HTS-20H servos involved in this assembly would be: Right Shoulder, Right Bicep, Right Elbow, Left Shoulder, Left Bicep, Left Elbow. The forearms will require one Actuonix PQ12 Micro Linear Actuator each. All correlated motor IDs are listed above in [Initializing Servo IDs and Positions], as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found here [Servo Horn Alignment].
+
+##### Shoulders and Shoulder Connectors
+The shoulders and shoulder connectors will require a M3 screwdriver, 8 silver M3 screws and 
 
 #### Lower Body Assembly
 When assembling the lower body it is best to start with the feet and then work your way up to the upper legs. This ensures that you will have everything aligned and allows you to begin with the more simpler pieces first.
@@ -206,7 +214,7 @@ When assembling the lower body it is best to start with the feet and then work y
 The first and foremost step that is **highly** recommended is pre-setting all of the Lower Body motors before beginning the assembly. All HiWonder HTS-20H servos involved in this assembly would be: Right Hip, Knee, Ankle and Left Hip, Knee, Ankle. All correlated motor IDs are listed above in [Initializing Servo IDs and Positions], as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found here [Servo Horn Alignment].
 
 ##### Feet
-Next up is the feet. The feet are a fairly quick and simple set-up that will require a M3 screwdriver, 4 silver M3 screws and 2 black M3 screws from the motor package. As suggested before, it is **highly** recommended that you pre-thread the 3D-printed body so that you don't accidentally re-thread the servo horn. After pre-threading you are ready to move onto the next step. **Do not** attach a servo horn at this time.
+Next up is the feet. The feet are a fairly quick and simple set-up that will require a M3 screwdriver, 8 silver M3 screws and 2 black M3 screws from the motor package. As suggested before, it is **highly** recommended that you pre-thread the 3D-printed body so that you don't accidentally re-thread the servo horn. After pre-threading you are ready to move onto the next step. **Do not** attach a servo horn at this time.
 
 ##### Lower Legs
 Following the set-up of the feet are the lower legs of the robot. The lower legs will require a M3 screwdriver, 1 servo horn per leg, 8 silver M3 screws and 2 black M3 screws from the motor package, 4 M3 x 18 mm (check this), 4 rubber spacers (included in the motor package), and 4 hexagonal-shaped nuts. As done same with the feet, pre-thread all the screw holes on the lower legs before beginning assembly. Next, add the rubber spacers onto the screw notches of the motor (pictured below) as this will help stabilize our screws in the frame. It is important that you **add the spacers where you'll be screwing the motor** into the 3D printed piece. After, you can begin attaching the Hiwonder servo into its correct placement on the lower end of the legs, ensuring that the servo horn and motor can be attached to the foot later on. **At this step**, add the servo horns meant for the feet onto the motor.
@@ -241,29 +249,38 @@ PCB and electrical box wiring goes here
 ### Robot Joint Rotation & Home Position Reference
 Below is a listing of the safe operation ranges and home angle positions for each robot joint. In addition to this are images showing the robot in home position, along with the rotational position corresponding the the minimum and maximum positions for each joint, for reference when designing behaviors.
 
+Specifications on Motor Motion:
+Nod: "up-down"
+Turn: "left-right"
+Tilt: "side-side"
+Bow: "up-down"
+Pitch: "up-down"
+Roll: "side-side"
+Twist: "side-side"
+
 |     Joint Name       | Min | Max | Home |   |
 |----------------------|-----|-----|------|---|
-| Head Nod             | 0   | 240 | 120  |   |
+| Head Nod             | 0   | 240 | 125  |   |
 | Head Turn            | 0   | 240 | 120  |   |
-| Head Tilt            | 0   | 240 | 120  |   |
-| Torso Bow            | 40  | 140 | 90   |   |
-| Torso Tilt           | 40  | 140 | 90   |   |
-| Right Shoulder Pitch | 0   | 180 | 0    |   |
-| Right Shoulder Roll  | 0   | 180 | 25   |   |
-| Right Arm Twist      | 0   | 180 | 90   |   |
-| Right Elbow          |     |     |      |   |
+| Head Tilt            | 0   | 240 | 125  |   |
+| Torso Bow            | 40  | 140 | 125  |   |
+| Torso Tilt           | 40  | 140 | 115  |   |
+| Right Shoulder Pitch | 0   | 180 | 125  |   |  
+| Right Shoulder Roll  | 0   | 180 | 185  |   |
+| Right Arm Twist      | 0   | 180 | 125  |   |
+| Right Elbow          |     |     | 90   |   |
 | Right Gripper        |     |     |      |   |
-| Left Shoulder Pitch  | 0   | 180 | 180  |   |
-| Left Shoulder Roll   | 0   | 180 | 155  |   |
-| Left Arm Twist       | 0   | 180 | 90   |   |
-| Left Elbow           |     |     |      |   |
+| Left Shoulder Pitch  | 0   | 180 | 115  |   |
+| Left Shoulder Roll   | 0   | 180 | 85   |   |
+| Left Arm Twist       | 0   | 180 | 115  |   |
+| Left Elbow           |     |     | 105  |   |
 | Left Gripper         |     |     |      |   |
-| Right Hip            |     |     | 90   |   |
-| Right Knee           |     | 180 | 175  |   |
-| Right Ankle          |     |     | 90   |   |
-| Left Hip             |     |     | 90   |   |
-| Left Knee            | 0   |     | 5    |   |
-| Left Ankle           |     |     | 90   |   |
+| Right Hip            |     | 180 | 90   |   |
+| Right Knee           | 45  | 180 | 90   |   |
+| Right Ankle          | 45  | 135 | 90   |   |
+| Left Hip             | 0   | 160 | 90   |   |
+| Left Knee            | 0   | 135 | 90   |   |
+| Left Ankle           | 45  | 135 | 90   |   |
 
  
  
