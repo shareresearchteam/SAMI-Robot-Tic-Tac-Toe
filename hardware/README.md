@@ -102,10 +102,10 @@ Print orientations are shown below for each part, along with the part names that
 <img src="https://github.com/user-attachments/assets/e3e65f0d-32de-43c1-860c-792ffeab9e75" width="516.75" height="379.75"/>
 
 #### Shoulders and Upper Arms
-<img src="https://github.com/user-attachments/assets/e9d99492-1f24-4ecc-9b2e-84c4d04afd26" width="516.75" height="379.75"/>
+<img src="https://github.com/user-attachments/assets/c95572e2-95e5-4ac5-920e-1a1e7d117261" width="516.75" height="379.75"/>
 
 #### Hands and Lower Arms
-<img src="https://github.com/user-attachments/assets/8007a63c-7314-44be-8fca-9a795e9bf6fc" width="516.75" height="379.75"/>
+<img src="https://github.com/user-attachments/assets/870787bf-a6fd-4431-8c6c-8ccfde2efe2b" width="516.75" height="379.75"/>
 
 #### Finger Hinges
 <img src="https://github.com/user-attachments/assets/2c212639-9a70-4d46-acc8-a449d4b221ca" width="516.75" height="379.75"/>
@@ -214,13 +214,13 @@ When assembling the lower body it is best to start with the feet and then work y
 The first and foremost step that is **highly** recommended is pre-setting all of the Lower Body motors before beginning the assembly. All HiWonder HTS-20H servos involved in this assembly would be: Right Hip, Knee, Ankle and Left Hip, Knee, Ankle. All correlated motor IDs are listed above in [Initializing Servo IDs and Positions], as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found here [Servo Horn Alignment].
 
 ##### Feet
-Next up is the feet. The feet are a fairly quick and simple set-up that will require a M3 screwdriver, 8 silver M3 screws and 2 black M3 screws from the motor package. As suggested before, it is **highly** recommended that you pre-thread the 3D-printed body so that you don't accidentally re-thread the servo horn. After pre-threading you are ready to move onto the next step. **Do not** attach a servo horn at this time.
+Next up is the feet. The feet are a fairly quick and simple set-up that will require a M3 screwdriver, 8 silver M3 screws, 2 servo horns, and 2 black M3 screws from the motor package. As suggested before, it is **highly** recommended that you pre-thread the 3D-printed body so that you don't accidentally re-thread the servo horn later on. After pre-threading you are ready to move onto the next step. **Do not** attach a servo horn at this time.
 
 ##### Lower Legs
-Following the set-up of the feet are the lower legs of the robot. The lower legs will require a M3 screwdriver, 1 servo horn per leg, 8 silver M3 screws and 2 black M3 screws from the motor package, 4 M3 x 18 mm (check this), 4 rubber spacers (included in the motor package), and 4 hexagonal-shaped nuts. As done same with the feet, pre-thread all the screw holes on the lower legs before beginning assembly. Next, add the rubber spacers onto the screw notches of the motor (pictured below) as this will help stabilize our screws in the frame. It is important that you **add the spacers where you'll be screwing the motor** into the 3D printed piece. After, you can begin attaching the Hiwonder servo into its correct placement on the lower end of the legs, ensuring that the servo horn and motor can be attached to the foot later on. **At this step**, add the servo horns meant for the feet onto the motor.
+Following the set-up of the feet are the lower legs of the robot. The lower legs will require a M3 screwdriver, 2 servo horns, 8 silver M3 screws and 2 black M3 screws from the motor package, 4 tapered M3 x 18 mm (check this), 4 rubber spacers (included in the motor package), and 4 hexagonal-shaped nuts. As done same with the feet, pre-thread all the screw holes on the lower legs before beginning assembly. Next, add the rubber spacers onto the screw notches of the motor (pictured below) as this will help stabilize our screws in the frame. It is important that you **add the spacers where you'll be screwing the motor** into the 3D printed piece. After, you can begin attaching the Hiwonder servo into its correct placement on the lower end of the legs, ensuring that the servo horn and motor can be attached to the foot later on. **At this step**, add the servo horns meant for the feet onto the motor.
 
 ##### Upper Legs
-Continuing now to the upper legs. The upper legs will require a M3 screwdriver, 1 servo horn per leg, 16 silver M3 screws and 4 black M3 screws from the motor package, 4 M3 x 18 mm (check this), 4 rubber spaces (included in the motor package), and 4 hexagonal-shaped nuts. Following the similar process from the other limbs, pre-thread all the screw holes before beginning assembly. Next, add the rubber spacers onto the screw notches of the motor (pictured below). Afterwards, you can attach the Hiwonder servos (using correct placement) onto the lower ends of the upper legs. Keep in mind that this servo will need to connect to the lower legs. **At this step**, add the servo horns meant for the lower legs onto the motor.
+Continuing now to the upper legs. The upper legs will require a M3 screwdriver, 1 servo horn per leg, 16 silver M3 screws and 4 black M3 screws from the motor package, 4 tapered M3 x 18 mm (check this), 4 rubber spaces (included in the motor package), and 4 hexagonal-shaped nuts. Following the similar process from the other limbs, pre-thread all the screw holes before beginning assembly. Next, add the rubber spacers onto the screw notches of the motor (pictured below). Afterwards, you can attach the Hiwonder servos (using correct placement) onto the lower ends of the upper legs. Keep in mind that this servo will need to connect to the lower legs. **At this step**, add the servo horns meant for the lower legs onto the motor.
 
 ##### Hips
 Finally, we reach the end of the Lower Body Assembly. The hips will require a M3 screwdriver, 1 servo horn per hip side, 8 silver M3 screws and 2 black M3 screws from the motor package, 4 M3 x 25 mm (check this), 4 rubber spaces (included in the motor package), and 4 **square**-shaped nuts. As usual, pre-thread all the screw holes, **especially**, where the motors are attached to the hips. Next, add the rubber spacers onto the screw notches of the motor (pictured below) and following comes the trickiest part of the Lower Body Assembly. Place the motors inside their corresponding slots in the hips (following corrent orientation) and firmly press them down until you can see the rubber spacer peak out a little underneath. This does not mean you are trying your best to push the motor down so much that you damage material, but pressing it down enough that it stops moving and the screw holes are aligned. You can check this by screwing in one of the M3 x 25 mm screws (check this) and seeing if you feel a lot of resistance. There will exist some resistance (due to the spacers), but not enough that it feels like you will snap the hip upon using a screwdriver. 
@@ -250,13 +250,21 @@ PCB and electrical box wiring goes here
 Below is a listing of the safe operation ranges and home angle positions for each robot joint. In addition to this are images showing the robot in home position, along with the rotational position corresponding the the minimum and maximum positions for each joint, for reference when designing behaviors.
 
 Specifications on Motor Motion:
+
 Nod: "up-down"
+
 Turn: "left-right"
+
 Tilt: "side-side"
+
 Bow: "up-down"
+
 Pitch: "up-down"
+
 Roll: "side-side"
+
 Twist: "side-side"
+
 
 |     Joint Name       | Min | Max | Home |   |
 |----------------------|-----|-----|------|---|
@@ -267,7 +275,7 @@ Twist: "side-side"
 | Torso Tilt           | 40  | 140 | 115  |   |
 | Right Shoulder Pitch | 0   | 180 | 125  |   |  
 | Right Shoulder Roll  | 0   | 180 | 185  |   |
-| Right Arm Twist      | 0   | 180 | 125  |   |
+| Right Arm Twist      | 0   | 180 | 115  |   |
 | Right Elbow          |     |     | 90   |   |
 | Right Gripper        |     |     |      |   |
 | Left Shoulder Pitch  | 0   | 180 | 115  |   |
