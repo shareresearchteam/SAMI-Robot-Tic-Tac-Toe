@@ -29,12 +29,12 @@ For connecting the wires to the XT-60 connector, you may follow [this](https://w
 This cable assembly connects the 5V power on the motor control PCB to the 5V power supply for the robot.
 
 #### Materials
- - 1x red 14AWG braided wire, 24" length minimum
+ - 1x red 18AWG braided wire, 24" length minimum
  - 2x red heat shrink pieces
- - 1x black 14AWG braided wire, 24" length minimum
+ - 1x black 18AWG braided wire, 24" length minimum
  - 2x black heat shrink pieces
  - 1x XT-30 female plug
- - 2x fork connector #8, 16-14 gauge opening
+ - 2x fork connector #8, 22-16 gauge opening
 
 #### Assembly
 
