@@ -304,6 +304,7 @@ The biceps will require a M3 hex screwdriver, 2 servo horns, 2 black M3 screws a
 Beginning with the top motor placement on the bicep, attach 2 JST cables onto the back and right side of the Right Bicep motor (switching the right side to left for the Left Bicep motor). After completing this step, add the square nuts to their corresponding spaces on the inside of the Biceps. If you look at the screw hole from a top view, you shouldn’t be able to see the square-shaped nuts. If you can, this means that the screw holes from the Bicep pieces and the nuts are not aligned correctly. After aligning the nuts correctly, place the motors into the top motor space which should give you a prescribed alignment. Screw the motors in place using the M3 x 25 mm screws. The placement should mimic the figure below:
 
 Bicep references with JST cables:
+
 <img src="https://github.com/user-attachments/assets/f4e89a25-ad2e-43c7-81dc-ac4701654c09" width="516.75" height="379.75"/>
 <img src="https://github.com/user-attachments/assets/679e92a1-e3c4-46e9-826a-44c523c1410c" width="516.75" height="379.75"/>
 
@@ -311,6 +312,7 @@ Next, add 2 rubber spacers to the screw holes opposite to where the servo attach
 The final products should look like the figure below:
 
 Final products (Right motor and Left motor):
+
 <img src="https://github.com/user-attachments/assets/333d1d57-4228-4a8c-9b02-68a9d0f8d0a3" width="516.75" height="379.75"/>
 <img src="https://github.com/user-attachments/assets/ca5eab00-29db-42ac-ac02-90e8c3adef81" width="516.75" height="379.75"/>
 
@@ -320,6 +322,7 @@ The Shoulders will require a M3 hex screwdriver, 8 silver M3 screws, 2 black M3 
 Before placing the Shoulder motors in the 3D printed piece, attach servo horns on the bottom of the 3D piece using the silver M3 screws. This will be the servo horns meant to connect to the upper motors of the Bicep assembly that you just completed. Make sure to align the horns correctly according to the upper Bicep motors. To make this step easier, feel free to attach the servo horns onto the upper Bicep motors, **don’t screw them down yet**. Then, screw the Shoulder piece onto the horn. The outcome should look like the figure below:
 
 Outcome of servo horn attachment:
+
 <img src="https://github.com/user-attachments/assets/44c86e3d-d0b4-43cd-911c-888201e263ab" width="516.75" height="379.75"/>
 <img src="https://github.com/user-attachments/assets/8d47f8dc-36ba-4d75-b407-1b9a06d6f62b" width="516.75" height="379.75"/>
 
@@ -328,6 +331,7 @@ Next, add rubber spacers to the screw holes closest to the servo horn attachment
 After screwing the motor in place, you can screw on the servo horns and attach the JST cables (connected to the back of the upper Bicep motors) to the outer sides of the Shoulder motors. Right side for the Right Shoulder, and left side for the Left Shoulder. Additionally, attach JST cables to the inside of the Shoulder motors, which will later connect to the upper Chest motors. The figures below will include highlighted JST cable paths.
 
 Final product:
+
 <img src="https://github.com/user-attachments/assets/e8c9c002-01b7-43c8-988e-8ed79d05cee9" width="516.75" height="379.75"/>
 <img src="https://github.com/user-attachments/assets/fa1f86e3-4fc9-46f7-a944-eee68b8cbe08" width="516.75" height="379.75"/>
 <img src="https://github.com/user-attachments/assets/475cd43b-e45a-418c-a05b-824a77fe0eb7" width="516.75" height="379.75"/>
@@ -339,6 +343,7 @@ The Forearms will require a M3 hex screwdriver and 8 silver M3 screws from the m
 At this point in the Arm assembly process, the Biceps and Shoulders should already be connected together due to the slight complexity of their pieces. The only step left is to attach the forearm to the lower Bicep motor, which can be done by screwing the servo horns from the lower Bicep motors to their corresponding places on the Forearms. This will be accomplished using the silver M3 screws you grabbed for the Forearm section. The finished assembly should look like the figures below:
 
 Final assembly (Right Arm):
+
 <img src="https://github.com/user-attachments/assets/0d4b05da-834a-459d-a5ff-14fba3202919" width="516.75" height="379.75"/>
 
 #### Lower Body Assembly
@@ -350,31 +355,39 @@ The first and foremost step that is **highly** recommended is pre-setting all of
 Next up is the feet. The feet are a fairly quick and simple set-up that will require a M3 hex screwdriver, 8 silver M3 screws, 2 servo horns, 2 black rubber spacers (from the motor package) 2 black M3 screws from the motor package, and 2 JST cables. Begin by pre-threading the plastic screw holes with the silver M3 screws, then attach the servos by aligning them upright to the sky. Add the rubber spacers onto the screw notches that will attach to the lower legs as this will help stabilize our screws in the frame (see figure below). Lastly, attach the JST cables into the space on the back of the servos. The final product should look like the figure below.
 
 Final product:
+
 <img src="https://github.com/user-attachments/assets/06f753c8-95f5-4440-ad50-bb3e2b2c22f5" width="516.75" height="379.75"/>
+
+**Note that the cable path is incorrect in this figure, you should use the JST connection on the other side of the motor that will keep the JST cable from being pinched from ankle movement**
 
 ##### Lower Legs
 Following the set-up of the feet are the lower legs of the robot. The lower legs will require a hex screwdriver for tapered M3 screws, 4 tapered M3 x 16 mm screws, 4 rubber spacers (included in the motor package), 4 hexagonal-shaped nuts, 2 HiWonder servos (for the Knees), 2 servo horns, and 2 JST cables. As done the same with the feet, pre-thread all the screw holes on the lower legs before beginning assembly. Setting the lower legs in place on top of the ankle motors, begin screwing the legs in place using the tapered screws and hex nuts. We are now half-way through the step. The half-way product should look like the second figure below.
 
 Half-way point:
+
 <img src="https://github.com/user-attachments/assets/ff6eb85a-e048-47d1-95ad-a57ee4971cc7" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/1db44697-8483-4999-abb9-827725e73873)" width="516.75" height="379.75"/>
+<img src="https://github.com/user-attachments/assets/1db44697-8483-4999-abb9-827725e73873" width="516.75" height="379.75"/>
 
 Next, attach the Ankle JST cables to the bottom of the Knee motors, and a new JST cable onto the right side of the Left Knee motor. The Right Knee motor will have a new JST cable onto the left side. Finally, orient the Knee motors correctly onto the lower legs which should follow a 90 degree angle (the robot is sitting). Add rubber spacers onto the lower screw notches of the motor, where the upper legs will be attached.The figures below will show the final product, with JST cable, rubber spacer, and Knee motor orientation. 
 
 Final product, Left Leg:
- <img src="https://github.com/user-attachments/assets/484d1d5f-4c99-45d7-bafd-1ee1173bf8e1" width="516.75" height="379.75"/>
+
+<img src="https://github.com/user-attachments/assets/484d1d5f-4c99-45d7-bafd-1ee1173bf8e1" width="516.75" height="379.75"/>
 
 Final product, Right Leg:
- <img src="https://github.com/user-attachments/assets/14618958-877b-48ab-bf77-0ba9010d3df4" width="516.75" height="379.75"/>
+
+<img src="https://github.com/user-attachments/assets/14618958-877b-48ab-bf77-0ba9010d3df4" width="516.75" height="379.75"/>
 
 ##### Upper Legs
 Continuing now to the upper legs. The upper legs will require a hex screwdriver for tapered M3 screws, 4 tapered M3 x 18 mm screws, and 4 hexagonal-shaped nuts. Following the similar process from the other limbs, pre-thread all the screw holes before beginning assembly. Next, you can attach the lower end of the upper legs by attaching it to the motors on the upper part of the lower legs (using the tapered screws). Keep in mind that the JST cable for the Knee motors will need to run through the skeleton of the upper leg (see reference below). The final product should resemble the figure below.
 
 Final product, Left Leg:
+
 <img src="https://github.com/user-attachments/assets/b49ddc06-f992-464c-a400-4800fc8d887e" width="516.75" height="379.75"/>
 <img src="https://github.com/user-attachments/assets/0dbb8440-8940-412b-95f5-0ab516e40777" width="516.75" height="379.75"/>
 
 Final product, Right Leg:
+
 <img src="https://github.com/user-attachments/assets/69da38f9-680d-4712-a1b8-8d6229c92b6f" width="516.75" height="379.75"/>
 <img src="https://github.com/user-attachments/assets/de26c25e-de3d-4809-a336-12d9b11d257c" width="516.75" height="379.75"/>
 
@@ -388,11 +401,13 @@ After you have your motors settled with the screw holes aligned, make sure one o
 Following this step you can attach the servo horn onto the motor and JST cables protruding from the **back** connection of the Hip motors. The final product should look like the figure below:
 
 Final product:
+
 <img src="https://github.com/user-attachments/assets/f9bc1fd1-c299-4fe6-b821-83a9b373f4c2" width="516.75" height="379.75"/>
 
 After, you can attach the lower limbs to the hip by screwing the Upper Legs into place on the Hips' servo horns (using the silver M3 screws). The final assembly should look like the figures below:
 
 <img src="https://github.com/user-attachments/assets/c9390c90-048b-4cd3-ab7a-6d40e241f73a" width="516.75" height="379.75"/>
+
 **In this figure, the JST cables connected to the Hips are wired incorrectly. You should use the back JST connection to attach your Hip cables**
 
 #### Final Assembly
