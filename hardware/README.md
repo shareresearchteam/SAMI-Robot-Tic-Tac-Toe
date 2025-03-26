@@ -166,30 +166,6 @@ Once a motor has been set to the default position, you can attach the metal horn
 
 <img src="https://github.com/user-attachments/assets/58a353cc-a3eb-429b-9c43-654319a532c8" width="250" height="400"/>
 
-##### Hands Construction & Assembly
-Before beginning assembly, please be sure to double check that the hinges match the size-dependent and axial orientation on the fingers, with the fingers aligned to their corresponding palm (*Figures 1-3*). It is **highly** recommended to fit the largest hinges into the palm first. While the hinges should be printed as a more "spongey" material, you may need to use a pair of pliers to manually squeeze the larger side of the hinge into its gap in the palm. You can also use a file or a craft knife to trim a little from the opening sides. After fitting the palm hinges, all fingers can be assembled separately from the hand. They should perfectly slide into the finger hinge slots (following size contraints but axial orientation shouldn't matter). 
-
-Stringing the fishing line through the hands should be the **last step** (with fingers not yet assembled to the palm). Begin by measuring the amount you think you might need for your project by fitting the line through the bottom of the hand and up through the 3D piece (**do not cut yet**). Then, continue stringing your fishing line up the holes in the fingers and upon reaching the tip of the top finger, restring back through the second hole and leaving enough to tie it off (*Figure 4*). To get an accurate length of fishing line you will need, attach the finger to the palm and measure how much you think you will need at the bottom of the hand (leaving adequate space at the top to tie off your line). After ensuring you have the right length, you can cut off your line from its container and use pliers to tie a double knot at the top of the finger.
-
-<img src="https://github.com/user-attachments/assets/03f3db47-aefa-4afc-8d25-8f3e58caebf9" width="516.75" height="379.75"/>
-
-*Figure 1*: Composition and BOM of Flexy-Hand 2 ([Flexy-Hand 2]())
-
-
-<img src="https://github.com/user-attachments/assets/b6199e72-d340-43bb-9e2d-71c6663d8e74" width="516.75" height="379.75"/>
-
-*Figure 2*: Finger plate with labeled orientation ([Flexy-Hand 2]())
-
-
-<img src="https://github.com/user-attachments/assets/39fc64ee-b7f5-481a-aca4-d31c52dddc7e" width="500" height="250"/>
-
-*Figure 3*: Hinge orientation for all fingers ([Flexy-Hand 2]())
-
-
-<img src="https://github.com/user-attachments/assets/8d863733-dc20-4b80-aee7-aa96baf8d8a7" width="516.75" height="379.75"/>
-
-*Figure 4*: Tendon knot placement for all fingers ([Flexy-Hand 2]())
-
 
 ##### Servo JST Cables
 The JST cables that come with the servos are a very tight fit into the servo recepticals. We recommend only partially inserting them for initial assembly and testing. These partially inserted connectors will still make electrical contact for continuity testing and motor operation, while still providing more space for pliers to pull the header out without touching the wires themselves. Once operation is confirmed, the connectors can easily be pressed the rest of the way in.
@@ -213,7 +189,7 @@ The two HiWonder HTS-35H servo are also part of this section of the assembly, an
  - Torso Bow motor
  - Torso Tilt motor
  
- All correlated motor IDs are listed above in [Initializing Servo IDs and Positions](), as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found in [Servo Horn Alignment]().
+ All correlated motor IDs are listed above in [Initializing Servo IDs and Positions](#initializing-servo-ids-and-positions), as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found in [Servo Horn Alignment](#servo-horn-alignment).
 
 ##### Chest Assembly
 The chest will require:
@@ -363,7 +339,18 @@ After, you can place the headshell on top of this U-shaped piece by aligning the
 #### Arm Assembly
 When assembling the arms for the robot, it is best to begin with the bicep, then shoulder, and ending with the forearms. This is due to the slight complexity behind the arm assembly. You will need to attach the motors and JST cables onto certain pieces before moving on.
 
-The first step that is **highly** recommended is pre-setting all of the Arm motors before beginning the assembly. All HiWonder HTS-20H servos involved in this assembly would be: Right Shoulder, Right Bicep, Right Elbow, Left Shoulder, Left Bicep, Left Elbow. The forearms will require one Actuonix PQ12 Micro Linear Actuator each. All correlated motor IDs are listed above in [Initializing Servo IDs and Positions], as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found here [Servo Horn Alignment].
+The first step that is **highly** recommended is pre-setting all of the Arm motors before beginning the assembly. 
+
+The HiWonder HTS-20H servos involved in this assembly would be:  - Right Shoulder
+- Right Bicep
+- Right Elbow
+- Left Shoulder
+- Left Bicep
+- Left Elbow 
+
+The forearms will require one Actuonix PQ12 Micro Linear Actuator each. 
+
+All correlated motor IDs are listed above in [Initializing Servo IDs and Positions](#initializing-servo-ids-and-positions), as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found here [Servo Horn Alignment](#servo-horn-alignment).
 
 ##### Biceps
 The biceps will require:
@@ -430,6 +417,30 @@ The Forearms will require:
 
 Upon pre-threading all the screw holes, you can move onto the complete Arm Assembly (you will be using these screws in the assembly).
 
+##### Hands Construction & Assembly
+Before beginning assembly, please be sure to double check that the hinges match the size-dependent and axial orientation on the fingers, with the fingers aligned to their corresponding palm (*Figures 1-3*). It is **highly** recommended to fit the largest hinges into the palm first. While the hinges should be printed as a more "spongey" material, you may need to use a pair of pliers to manually squeeze the larger side of the hinge into its gap in the palm. You can also use a file or a craft knife to trim a little from the opening sides. After fitting the palm hinges, all fingers can be assembled separately from the hand. They should perfectly slide into the finger hinge slots (following size contraints but axial orientation shouldn't matter). 
+
+Stringing the fishing line through the hands should be the **last step** (with fingers not yet assembled to the palm). Begin by measuring the amount you think you might need for your project by fitting the line through the bottom of the hand and up through the 3D piece (**do not cut yet**). Then, continue stringing your fishing line up the holes in the fingers and upon reaching the tip of the top finger, restring back through the second hole and leaving enough to tie it off (*Figure 4*). To get an accurate length of fishing line you will need, attach the finger to the palm and measure how much you think you will need at the bottom of the hand (leaving adequate space at the top to tie off your line). After ensuring you have the right length, you can cut off your line from its container and use pliers to tie a double knot at the top of the finger.
+
+<img src="https://github.com/user-attachments/assets/03f3db47-aefa-4afc-8d25-8f3e58caebf9" width="516.75" height="379.75"/>
+
+*Figure 1*: Composition and BOM of Flexy-Hand 2 ([Flexy-Hand 2]())
+
+
+<img src="https://github.com/user-attachments/assets/b6199e72-d340-43bb-9e2d-71c6663d8e74" width="516.75" height="379.75"/>
+
+*Figure 2*: Finger plate with labeled orientation ([Flexy-Hand 2]())
+
+
+<img src="https://github.com/user-attachments/assets/39fc64ee-b7f5-481a-aca4-d31c52dddc7e" width="500" height="250"/>
+
+*Figure 3*: Hinge orientation for all fingers ([Flexy-Hand 2]())
+
+
+<img src="https://github.com/user-attachments/assets/8d863733-dc20-4b80-aee7-aa96baf8d8a7" width="516.75" height="379.75"/>
+
+*Figure 4*: Tendon knot placement for all fingers ([Flexy-Hand 2]())
+
 ##### Arm Assembly
 At this point in the Arm assembly process, the Biceps and Shoulders should already be connected together due to the slight complexity of their pieces. The only step left is to attach the forearm to the lower Bicep motor, which can be done by screwing the servo horns from the lower Bicep motors to their corresponding places on the Forearms. This will be accomplished using the silver M3 screws you grabbed for the Forearm section. The finished assembly should look like the figures below:
 
@@ -450,7 +461,7 @@ The HiWonder HTS-20H servos involved in this assembly would be:
  - Left Knee
  - Left Ankle
  
-All correlated motor IDs are listed above in [Initializing Servo IDs and Positions](), as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found in [Servo Horn Alignment]().
+All correlated motor IDs are listed above in [Initializing Servo IDs and Positions](#initializing-servo-ids-and-positions), as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found in [Servo Horn Alignment](#servo-horn-alignment).
 
 ##### Feet
 Next up is the feet. The feet are a fairly quick and simple set-up that will require:
