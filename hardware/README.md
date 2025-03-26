@@ -1,10 +1,10 @@
 # JAMIE Robot Hardware
 All of the hardware information for the robot system.
 
- 1. [Bill of Materials (BoM)]()
- 2. [Assembly Instructions]()
- 3. [Mechanical Information]()
- 4. [Electrical Information]()
+ 1. [Bill of Materials (BoM)](#bill-of-materials-bom)
+ 2. [Assembly Instructions](#assembly-instructions)
+ 3. [Mechanical Information](#mechanical-information)
+ 4. [Electrical Information](#electrical-information)
 
 ## Bill of Materials (BoM)
 The below mechanical and electrical BoMs include all components that are assembled into the robot system, and are the minimum hardware requirements necessary to make the system. In addition to this, it is assumed you have a computer to run the higher level system control, with one USB port as a minimum, with an additional USB port for the sensor box, and an HDMI port for the captioning system.
@@ -75,13 +75,13 @@ usb power cable (probably comes with)
 
 
 ## Assembly Instructions
- 1. [Robot Assembly Instructions]()
-     1. [Initializing Servo IDs and Positions]()
+ 1. [Robot Assembly Instructions](#robot-fabrication-and-assembly-instructions)
+     1. [Initializing Servo IDs and Positions](#initializing-servo-ids-and-positions)
      2. [Overall Assembly Information]()
-     3. [Neck and Torso Assembly]()
-     4. [Arm Assembly]()
-     5. [Lower Body Assembly]()
-     6. [Final Assembly]()
+     3. [Neck and Torso Assembly](#neck-and-torso-assembly)
+     4. [Arm Assembly](#arm-assembly)
+     5. [Lower Body Assembly](#lower-body-assembly)
+     6. [Final Assembly](#final-assembly)
  2. [Sensor Box Assembly Instructions]()
  3. [Caption Assembly Instructions]()
 
@@ -200,10 +200,34 @@ Additionally, despite how tight the connectors are into the recepticals, be very
 #### Neck and Torso Assembly
 When assembling the neck and torso for the robot, it is best to begin with the chest, then spine, and ending with the neck. Throughout this assembly you will need to attach the motors and JST cables onto certain pieces before moving on.
 
-The first step that is **highly** recommended is pre-setting all of the Neck and Torso motors before beginning the assembly. All HiWonder HTS-20H servos involved in this assembly would be: 2 Chest Connector motors, Right Chest, Left Chest, Neck, and 2 Neck Connector motors. All correlated motor IDs are listed above in [Initializing Servo IDs and Positions], as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found here [Servo Horn Alignment].
+The first step that is **highly** recommended is pre-setting the IDs of all of the Neck and Torso motors before beginning the assembly. 
+
+The HiWonder HTS-20H servos involved in this assembly would be: 
+ - Right Chest motor
+ - Left Chest motor
+ - Head Nod motor
+ - Head Tilt motor
+ - Head Turn motor 
+
+The two HiWonder HTS-35H servo are also part of this section of the assembly, and are used for the torso motors.
+ - Torso Bow motor
+ - Torso Tilt motor
+ 
+ All correlated motor IDs are listed above in [Initializing Servo IDs and Positions](), as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found in [Servo Horn Alignment]().
 
 ##### Chest Assembly
-The chest will require a M3 hex screwdriver, 2 servo horns, 2 black M3 screws, 8 silver M3 screws and 8 black rubber spacers from the motor package, 2 JST cables, 8 M3 x 14 mm hex screws, 8 hex nuts, and the Shoulder Connector pieces. As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
+The chest will require:
+ - an M3 hex screwdriver
+ - 2 servo horns
+ - 2 black M3 screws from the motor package
+ - 8 black rubber spacers from the motor package
+ - 8 silver servo horn M3 screws
+ - 2 JST cables
+ - 8 M3 x 14 mm hex screws
+ - 8 M3 hex nuts
+ - the Shoulder Connector pieces
+
+As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
 
 The chest assembly will be fairly simple as you’ll be attaching the Right Chest, Left Chest, and Neck motors, then at the end, adding the Chest Connector piece that you just put together. The most difficult part of this assembly will be adding the Chest Connector piece onto the Chest.
 
@@ -218,7 +242,17 @@ Now, you can add the motors’ servo horns with the black M3 screws, then the Sh
 <img src="https://github.com/user-attachments/assets/e49d2ef7-3ebd-4e32-b79a-a44266a75d46" width="516.75" height="379.75"/>
 
 ##### Chest Connector Assembly
-The Chest Connector assembly will require a M3 hex screwdriver, 8 rubber spacers and 2 black M3 screws from the motor package, 8 square-shaped nuts, 8 M3 x 14 mm hex screws, 2 servo horns, and 2 JST cables. As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
+The Chest Connector assembly will require:
+ - an M3 hex screwdriver
+ - 8 rubber spacers from the motor packages
+ - 2 black M3 screws from the motor packages
+ - 8 square M3 nuts
+ - 8 M3 x 14 mm hex screws
+ - 2 servo horns
+ - 8 servo horn M3 screws
+ - 2 JST cables
+ 
+As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
 
 Begin by attaching the Chest Connector motors in the connector piece. Be aware of where you place certain motors as you’ll want your ID to match the movement that it will make on the robot. For example, Motor #18 will make a side-to-side movement while Motor #19 will be in charge of the up-down movement. 
 
@@ -228,7 +262,7 @@ The placement of these motors can be a little tricky, so a visual will be provid
 <img src="https://github.com/user-attachments/assets/3852a557-a06a-497a-bc91-c2adf2600e09" width="516.75" height="379.75"/>
 <img src="https://github.com/user-attachments/assets/d2a107df-5d7c-48b7-b72e-4c6ef977055b" width="516.75" height="379.75"/>
 
-Now, add all the rubber spacers onto the screw notches of the motors and begin adding the screws until you barely reach the square-shaped nut opening. Place the square-shaped nuts in their corresponding spaces and continue tightening the screws completely. You might have to tilt the 3D printed piece a bit to keep the square nuts in their place.
+Now, add all the rubber spacers onto the screw notches of the motors and begin adding the screws until you barely reach the M3 square nut opening. Place the M3 square nuts in their corresponding spaces and continue tightening the screws completely. You might have to tilt the 3D printed piece a bit to keep the square nuts in their place.
 
 After finishing the connector piece you can attach the servo horns using the black M3 screws. These servo horns will attach the piece to both the spine and the chest piece. Now begins the tricky part, attaching the Chest Connector to the chest piece.
 
@@ -239,9 +273,16 @@ To make this as simple as possible, begin by attaching the front motor (the one 
 <img src="https://github.com/user-attachments/assets/8d63fda6-ad88-43bc-905f-26a522e8dc17" width="516.75" height="379.75"/>
 
 ##### Spine Assembly
-The Spine assembly will require a M3 hex screwdriver, 4 silver M3 screws from the motor package, 8 hex nuts, 8 M3 x 12 mm hex screws. As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
+The Spine assembly will require:
+ - an M3 hex screwdriver
+ - 4 silver servo horn M3 screws from the motor package
+ - 8 hex nuts
+ - 8 M3 x 12 mm hex screws
+
+As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
 
 To begin assembling, attach the frame of the spine to the hips. It is important that you attach the spine by the screw attachments that don’t include the servo horn location. It is also recommended that you screw in the spine with four screws in a diamond shape (the only screw holes that M3 screws will fit). This will give you a stable base for you to attach the rest of the torso on. This step should not impede instructions provided later for the Lower Body Assembly.
+
 The figure below shows screw placement:
 
 <img src="https://github.com/user-attachments/assets/fbe803f9-e4f2-4b21-bb7f-3550fc4fc05e" width="516.75" height="379.75"/>
@@ -255,7 +296,17 @@ The final product should look like the figures below:
 <img src="https://github.com/user-attachments/assets/e9d8cdd7-73ea-4a92-acfb-1fe8081837f0" width="516.75" height="379.75"/>
 
 ##### Neck Assembly
-The neck will require a M3 hex screwdriver, 1 servo horn, 1 black M3 screw, 4 silver M3 screws and 4 black rubber spacers from the motor package, 1 JST cable, 4 M3 x 16 mm hex screws, and 4 square nuts. As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
+The neck will require:
+ - an M3 hex screwdriver
+ - 1 servo horn
+ - 1 black M3 screw from the motor package
+ - 4 black rubber spacers from the motor package
+ - 4 silver servo horn M3 screws
+ - 1 JST cable
+ - 4 M3 x 16 mm hex screws
+ - 4 M3 square nuts
+
+As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
 
 First, add the black rubber spacers to all screw notches of the Neck motor. Next, you’ll want to add 4 square nuts to the spaces available on the empty motor space on the top of the chest piece. Using the M3 x 16 mm screws, attach the Neck motor. Next, add a servo horn using the silver M3 screws to the placement located on the bottom of the Neck piece. It will be easier to add the servo horn to the piece first than attaching it to the motor. After attaching the servo horn onto the Neck piece, you can add the Neck piece onto the Neck motor and secure it with a black M3 screw.
 
@@ -266,7 +317,17 @@ At this step you can also add a JST Cable to the port opening located on the bac
 <img src="https://github.com/user-attachments/assets/9f8f277b-ced1-485b-88dd-f3bf5ab1b9fb" width="516.75" height="379.75"/>
 
 ##### Neck Connector Assembly
-The Neck Connector will require a M3 hex screwdriver, 2 servo horns, 2 black M3 screws, 8 black rubber spacers from the motor package, 3 JST cables, 8 M3 x 16 mm hex screws, and 8 square nuts. As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
+The Neck Connector will require:
+ - an M3 hex screwdriver
+ - 2 servo horns
+ - 8 servo horn M3 screws
+ - 2 black M3 screws from the motor packages
+ - 8 black rubber spacers from the motor packages
+ - 3 JST cables
+ - 8 M3 x 16 mm hex screws
+ - 8 square nuts
+
+As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
 
 Begin by adding the rubber spacers to all screw notches on your Neck Connector motors, then you can begin attaching the motors in the connector piece using the M3 x 16 mm screws. Be aware of where you place certain motors as you’ll want your ID to match the movement that it will make on the robot. For example, Motor #1 will make a side-to-side movement while Motor #2 will be in charge of the up-down movement. After adding the motors you can attach their servo horns using the black M3 screws.
 
@@ -277,7 +338,13 @@ The placement of these motors can be a little tricky, so a visual will be provid
 <img src="https://github.com/user-attachments/assets/5648a226-1471-4cd9-acef-dbc36a0e228b" width="516.75" height="379.75"/>
 
 ##### Head Assembly
-The Head Assembly will require a M3 hex screwdriver, 8 silver M3 screws from the motor package, 2 M3 x 20 mm screws and 2 square-shaped nuts. As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
+The Head Assembly will require:
+ - an M3 hex screwdriver
+ - 8 silver servo horn M3 screws from the motor package
+ - 2 M3 x 20 mm screws
+ - 2 M3 square nuts 
+
+As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
 
 You will first want to attach the Neck Connector piece to the Neck piece that should be attached to the Chest piece at this point. Motor #1 should be attached to the servo horn placement on the Neck piece, and secured with the silver M3 screws. Next, you’ll want to use the piece that looks like U (this piece will help us attach the headshell later) and attach it to Motor #2 located on the Neck Connector piece. 
 
@@ -299,9 +366,19 @@ When assembling the arms for the robot, it is best to begin with the bicep, then
 The first step that is **highly** recommended is pre-setting all of the Arm motors before beginning the assembly. All HiWonder HTS-20H servos involved in this assembly would be: Right Shoulder, Right Bicep, Right Elbow, Left Shoulder, Left Bicep, Left Elbow. The forearms will require one Actuonix PQ12 Micro Linear Actuator each. All correlated motor IDs are listed above in [Initializing Servo IDs and Positions], as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found here [Servo Horn Alignment].
 
 ##### Biceps
-The biceps will require a M3 hex screwdriver, 2 servo horns, 2 black M3 screws and 4 black rubber spacers from the motor package, 4 JST cables, 4 M3 x 18 mm tapered screws, 4 M3 x 25 mm hex screws, and 4 square-shaped nuts. As recommended with every step within the assembly, it is best to pre-thread the screw holes on the 3D printed parts.
+The biceps will require:
+ - an M3 hex screwdriver
+ - 2 servo horns
+ - 2 black M3 screws from the motor package
+ - 4 black rubber spacers from the motor package
+ - 4 JST cables
+ - 4 M3 x 18 mm tapered screws
+ - 4 M3 x 25 mm hex screws
+ - 4 M3 square nuts
+ 
+As recommended with every step within the assembly, it is best to pre-thread the screw holes on the 3D printed parts.
 
-Beginning with the top motor placement on the bicep, attach 2 JST cables onto the back and right side of the Right Bicep motor (switching the right side to left for the Left Bicep motor). After completing this step, add the square nuts to their corresponding spaces on the inside of the Biceps. If you look at the screw hole from a top view, you shouldn’t be able to see the square-shaped nuts. If you can, this means that the screw holes from the Bicep pieces and the nuts are not aligned correctly. After aligning the nuts correctly, place the motors into the top motor space which should give you a prescribed alignment. Screw the motors in place using the M3 x 25 mm screws. The placement should mimic the figure below:
+Beginning with the top motor placement on the bicep, attach 2 JST cables onto the back and right side of the Right Bicep motor (switching the right side to left for the Left Bicep motor). After completing this step, add the square nuts to their corresponding spaces on the inside of the Biceps. If you look at the screw hole from a top view, you shouldn’t be able to see the M3 square nuts. If you can, this means that the screw holes from the Bicep pieces and the nuts are not aligned correctly. After aligning the nuts correctly, place the motors into the top motor space which should give you a prescribed alignment. Screw the motors in place using the M3 x 25 mm screws. The placement should mimic the figure below:
 
 Bicep references with JST cables:
 
@@ -317,7 +394,17 @@ Final products (Right motor and Left motor):
 <img src="https://github.com/user-attachments/assets/ca5eab00-29db-42ac-ac02-90e8c3adef81" width="516.75" height="379.75"/>
 
 ##### Shoulders
-The Shoulders will require a M3 hex screwdriver, 8 silver M3 screws, 2 black M3 screws, and 4 black rubber spacers from the motor package, 4 JST cables, 4 servo horns, 4 M3 x 14 mm hex screws, and 4 square-shaped nuts. As recommended with every step, it is best to pre-thread all screw holes in the CAD model. This is especially important for the Shoulders due to the uniqueness of its screw placements. 
+The Shoulders will require:
+ - an M3 hex screwdriver
+ - 8 silver servo horn M3 screws
+ - 2 black M3 screws from the motor package
+ - 4 black rubber spacers from the motor package
+ - 4 JST cables
+ - 4 servo horns
+ - 4 M3 x 14 mm hex screws
+ - 4 M3 square nuts. 
+ 
+As recommended with every step, it is best to pre-thread all screw holes in the CAD model. This is especially important for the Shoulders due to the uniqueness of its screw placements. 
 
 Before placing the Shoulder motors in the 3D printed piece, attach servo horns on the bottom of the 3D piece using the silver M3 screws. This will be the servo horns meant to connect to the upper motors of the Bicep assembly that you just completed. Make sure to align the horns correctly according to the upper Bicep motors. To make this step easier, feel free to attach the servo horns onto the upper Bicep motors, **don’t screw them down yet**. Then, screw the Shoulder piece onto the horn. The outcome should look like the figure below:
 
@@ -326,7 +413,7 @@ Outcome of servo horn attachment:
 <img src="https://github.com/user-attachments/assets/44c86e3d-d0b4-43cd-911c-888201e263ab" width="516.75" height="379.75"/>
 <img src="https://github.com/user-attachments/assets/8d47f8dc-36ba-4d75-b407-1b9a06d6f62b" width="516.75" height="379.75"/>
 
-Next, add rubber spacers to the screw holes closest to the servo horn attachment on the Shoulder motors. Put the Shoulder motors into the 3D printed piece with the label facing outward and the servo horn attachment orientated on the top. You can then screw the motors in place using the M3 x 14 mm hex screws and adding the square-shaped nuts into their corresponding slots. It might take a bit of fussing to get the square-shaped nuts aligned correctly with the screws. You can tilt the piece to help make this a bit easier. 
+Next, add rubber spacers to the screw holes closest to the servo horn attachment on the Shoulder motors. Put the Shoulder motors into the 3D printed piece with the label facing outward and the servo horn attachment orientated on the top. You can then screw the motors in place using the M3 x 14 mm hex screws and adding the M3 square nuts into their corresponding slots. It might take a bit of fussing to get the M3 square nuts aligned correctly with the screws. You can tilt the piece to help make this a bit easier. 
 
 After screwing the motor in place, you can screw on the servo horns and attach the JST cables (connected to the back of the upper Bicep motors) to the outer sides of the Shoulder motors. Right side for the Right Shoulder, and left side for the Left Shoulder. Additionally, attach JST cables to the inside of the Shoulder motors, which will later connect to the upper Chest motors. The figures below will include highlighted JST cable paths.
 
@@ -337,7 +424,11 @@ Final product:
 <img src="https://github.com/user-attachments/assets/475cd43b-e45a-418c-a05b-824a77fe0eb7" width="516.75" height="379.75"/>
 
 ##### Forearms
-The Forearms will require a M3 hex screwdriver and 8 silver M3 screws from the motor package. Upon pre-threading all the screw holes, you can move onto the complete Arm Assembly (you will be using these screws in the assembly).
+The Forearms will require:
+ - an M3 hex screwdriver
+ - 8 silver servo horn M3 screws
+
+Upon pre-threading all the screw holes, you can move onto the complete Arm Assembly (you will be using these screws in the assembly).
 
 ##### Arm Assembly
 At this point in the Arm assembly process, the Biceps and Shoulders should already be connected together due to the slight complexity of their pieces. The only step left is to attach the forearm to the lower Bicep motor, which can be done by screwing the servo horns from the lower Bicep motors to their corresponding places on the Forearms. This will be accomplished using the silver M3 screws you grabbed for the Forearm section. The finished assembly should look like the figures below:
@@ -349,10 +440,28 @@ Final assembly (Right Arm):
 #### Lower Body Assembly
 When assembling the lower body it is best to start with the feet and then work your way up to the upper legs. This ensures that you will have everything aligned and allows you to plug the corresponding JST cables as you go.
 
-The first and foremost step that is **highly** recommended is pre-setting all of the Lower Body motors before beginning the assembly. All HiWonder HTS-20H servos involved in this assembly would be: Right Hip, Knee, Ankle and Left Hip, Knee, Ankle. All correlated motor IDs are listed above in [Initializing Servo IDs and Positions], as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found here [Servo Horn Alignment].
+The first and foremost step that is **highly** recommended is pre-setting all of the Lower Body motors before beginning the assembly. 
+
+The HiWonder HTS-20H servos involved in this assembly would be:
+ - Right Hip
+ - Right Knee
+ - Right Ankle
+ - Left Hip
+ - Left Knee
+ - Left Ankle
+ 
+All correlated motor IDs are listed above in [Initializing Servo IDs and Positions](), as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found in [Servo Horn Alignment]().
 
 ##### Feet
-Next up is the feet. The feet are a fairly quick and simple set-up that will require a M3 hex screwdriver, 8 silver M3 screws, 2 servo horns, 2 black rubber spacers (from the motor package) 2 black M3 screws from the motor package, and 2 JST cables. Begin by pre-threading the plastic screw holes with the silver M3 screws, then attach the servos by aligning them upright to the sky. Add the rubber spacers onto the screw notches that will attach to the lower legs as this will help stabilize our screws in the frame (see figure below). Lastly, attach the JST cables into the space on the back of the servos. The final product should look like the figure below.
+Next up is the feet. The feet are a fairly quick and simple set-up that will require:
+ - an M3 hex screwdriver
+ - 8 silver servo M3 screws
+ - 2 servo horns
+ - 2 black rubber spacers from the motor package
+ - 2 black M3 screws from the motor package
+ - 2 JST cables
+ 
+Begin by pre-threading the plastic screw holes with the silver M3 screws, then attach the servos by aligning them upright to the sky. Add the rubber spacers onto the screw notches that will attach to the lower legs as this will help stabilize our screws in the frame (see figure below). Lastly, attach the JST cables into the space on the back of the servos. The final product should look like the figure below.
 
 Final product:
 
@@ -361,7 +470,20 @@ Final product:
 **Note that the cable path is incorrect in this figure, you should use the JST connection on the other side of the motor that will keep the JST cable from being pinched from ankle movement**
 
 ##### Lower Legs
-Following the set-up of the feet are the lower legs of the robot. The lower legs will require a hex screwdriver for tapered M3 screws, 4 tapered M3 x 16 mm screws, 4 rubber spacers (included in the motor package), 4 hexagonal-shaped nuts, 2 HiWonder servos (for the Knees), 2 servo horns, and 2 JST cables. As done the same with the feet, pre-thread all the screw holes on the lower legs before beginning assembly. Setting the lower legs in place on top of the ankle motors, begin screwing the legs in place using the tapered screws and hex nuts. We are now half-way through the step. The half-way product should look like the second figure below.
+Following the set-up of the feet are the lower legs of the robot. Repeat these steps for both the right and left lower legs.
+
+Each lower leg will require:
+ - a hex screwdriver
+ - Knee Servo Motor
+ - 1x black M3 screw from the motor package
+ - 2x rubber spacers included in the motor package
+ - 1x metal servo horn
+ - 4x silver servo horn M3 screws
+ - 2x tapered M3 x 16 mm screws
+ - 2x M3 nuts
+ - 1x JST cables
+
+As done the same with the feet, pre-thread all the screw holes on the lower legs before beginning assembly. Setting the lower legs in place on top of the ankle motors, begin screwing the legs in place using the tapered screws and hex nuts. We are now half-way through the step. The half-way product should look like the second figure below.
 
 Half-way point:
 
@@ -379,7 +501,12 @@ Final product, Right Leg:
 <img src="https://github.com/user-attachments/assets/14618958-877b-48ab-bf77-0ba9010d3df4" width="516.75" height="379.75"/>
 
 ##### Upper Legs
-Continuing now to the upper legs. The upper legs will require a hex screwdriver for tapered M3 screws, 4 tapered M3 x 18 mm screws, and 4 hexagonal-shaped nuts. Following the similar process from the other limbs, pre-thread all the screw holes before beginning assembly. Next, you can attach the lower end of the upper legs by attaching it to the motors on the upper part of the lower legs (using the tapered screws). Keep in mind that the JST cable for the Knee motors will need to run through the skeleton of the upper leg (see reference below). The final product should resemble the figure below.
+Continuing now to the upper legs. The upper legs will require:
+ - a hex screwdriver
+ - 4x tapered M3 x 18 mm screws
+ - 4x M3 hex nuts 
+ 
+ Following the similar process from the other limbs, pre-thread all the screw holes before beginning assembly. Next, you can attach the lower end of the upper legs by attaching it to the motors on the upper part of the lower legs (using the tapered screws). Keep in mind that the JST cable for the Knee motors will need to run through the skeleton of the upper leg (see reference below). The final product should resemble the figure below.
 
 Final product, Left Leg:
 
@@ -392,11 +519,21 @@ Final product, Right Leg:
 <img src="https://github.com/user-attachments/assets/de26c25e-de3d-4809-a336-12d9b11d257c" width="516.75" height="379.75"/>
 
 ##### Hips
-Finally, we reach the end of the Lower Body Assembly. The hips will require a M3 hex screwdriver, 1 servo horn per hip side, 8 silver M3 screws and 2 black M3 screws from the motor package, 4 M3 x 30 mm, 4 rubber spaces (included in the motor package), 4 square-shaped nuts, and 2 JST cables. As usual, pre-thread all the screw holes, **especially**, where the motors are attached to the hips. 
+Finally, we reach the end of the Lower Body Assembly. The hips will require:
+ - a M3 hex screwdriver
+ - 2x metal servo horns
+ - 8x silver servo horn M3 screws
+ - 2x black M3 screws from the motor package
+ - 4x rubber spacers from the motor package
+ - 4x M3 x 30 mm hex screws
+ - 4x M3 square nuts
+ - 2 JST cables. 
+ 
+As usual, pre-thread all the screw holes, **especially**, where the motors are attached to the hips. 
 
 Next, add the rubber spacers onto the screw notches of the motor (pictured below) and following comes the trickiest part of the Lower Body Assembly. Place the motors inside their corresponding slots in the hips (following corrent orientation) and firmly press them down until you can see the rubber spacer peek out a little underneath. This does not mean you are trying your best to push the motor down so much that you damage material, but pressing it down enough that it stops moving and the screw holes are aligned. You can check this by screwing in one of the M3 x 30 mm screws and seeing if you feel a lot of resistance. There will exist some resistance (due to the spacers), but not enough that it feels like you will snap the hip upon using a hex screwdriver. 
 
-After you have your motors settled with the screw holes aligned, make sure one of the screws is fitted far enough you can see it beginning to reach the square gap but not sitting in it at all (pictured below). Now, flip the 3D printed piece upside down so you are seeing the flat printed bottom. Insert a square-shaped nut into one of the rectangular slots and align it with your incoming screw. **This step will take the most adjusting!** Try to continue screwing in the M3 x 25 mm into the piece and seeing if it captures the square-shaped nut correctly. If it is meeting a lot of resistance or won't continue screwing, **retry**. Otherwise you might snap some material off. Tip: try tilting the hips at an angle if the square-shaped nut is falling through too much, or if a bottom layer exists (usually from the 3D printing process), drop the nut from the top and fit it appropriately in its slot. 
+After you have your motors settled with the screw holes aligned, make sure one of the screws is fitted far enough you can see it beginning to reach the square gap but not sitting in it at all (pictured below). Now, flip the 3D printed piece upside down so you are seeing the flat printed bottom. Insert a M3 square nut into one of the rectangular slots and align it with your incoming screw. **This step will take the most adjusting!** Try to continue screwing in the M3 x 25 mm into the piece and seeing if it captures the M3 square nut correctly. If it is meeting a lot of resistance or won't continue screwing, **retry**. Otherwise you might snap some material off. Tip: try tilting the hips at an angle if the M3 square nut is falling through too much, or if a bottom layer exists (usually from the 3D printing process), drop the nut from the top and fit it appropriately in its slot. 
 
 Following this step you can attach the servo horn onto the motor and JST cables protruding from the **back** connection of the Hip motors. The final product should look like the figure below:
 
