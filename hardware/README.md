@@ -194,13 +194,14 @@ The two HiWonder HTS-35H servo are also part of this section of the assembly, an
 ##### Chest Assembly
 The chest will require:
  - an M3 hex screwdriver
- - 2 servo horns
- - 2 black M3 screws from the motor package
- - 8 black rubber spacers from the motor package
- - 8 silver servo horn M3 screws
- - 2 JST cables
- - 8 M3 x 14 mm hex screws
- - 8 M3 hex nuts
+ - 3x servo horns
+ - 3x black M3 screws from the motor package
+ - 12x black rubber spacers from the motor package
+ - 12x silver servo horn M3 screws
+ - 3x JST cables
+ - 12 M3 x 16 mm hex screws
+ - 8x M3 hex nuts
+ - 4x M3 square nuts
  - the Shoulder Connector pieces
 
 As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
@@ -223,7 +224,7 @@ The Chest Connector assembly will require:
  - 8 rubber spacers from the motor packages
  - 2 black M3 screws from the motor packages
  - 8 square M3 nuts
- - 8 M3 x 14 mm hex screws
+ - 8 M3 x 16 mm hex screws
  - 2 servo horns
  - 8 servo horn M3 screws
  - 2 JST cables
@@ -253,7 +254,7 @@ The Spine assembly will require:
  - an M3 hex screwdriver
  - 4 silver servo horn M3 screws from the motor package
  - 8 hex nuts
- - 8 M3 x 12 mm hex screws
+ - 8 M3 x 14 mm hex screws
 
 As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
 
@@ -360,7 +361,7 @@ The biceps will require:
  - 4 black rubber spacers from the motor package
  - 4 JST cables
  - 4 M3 x 18 mm tapered screws
- - 4 M3 x 25 mm hex screws
+ - 4 M3 x 20 mm hex screws
  - 4 M3 square nuts
  
 As recommended with every step within the assembly, it is best to pre-thread the screw holes on the 3D printed parts.
@@ -388,7 +389,7 @@ The Shoulders will require:
  - 4 black rubber spacers from the motor package
  - 4 JST cables
  - 4 servo horns
- - 4 M3 x 14 mm hex screws
+ - 4 M3 x 16 mm hex screws
  - 4 M3 square nuts. 
  
 As recommended with every step, it is best to pre-thread all screw holes in the CAD model. This is especially important for the Shoulders due to the uniqueness of its screw placements. 
@@ -490,7 +491,7 @@ Each lower leg will require:
  - 2x rubber spacers included in the motor package
  - 1x metal servo horn
  - 4x silver servo horn M3 screws
- - 2x tapered M3 x 16 mm screws
+ - 2x tapered M3 x 18 mm screws
  - 2x M3 nuts
  - 1x JST cables
 
@@ -536,7 +537,7 @@ Finally, we reach the end of the Lower Body Assembly. The hips will require:
  - 8x silver servo horn M3 screws
  - 2x black M3 screws from the motor package
  - 4x rubber spacers from the motor package
- - 4x M3 x 30 mm hex screws
+ - 4x M3 x 25 mm hex screws
  - 4x M3 square nuts
  - 2 JST cables. 
  
