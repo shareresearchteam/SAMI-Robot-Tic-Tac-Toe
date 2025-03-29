@@ -93,28 +93,28 @@ usb power cable (probably comes with)
 Print orientations are shown below for each part, along with the part names that are used throughout this documentation.
 
 #### Headshell
-<img src="https://github.com/user-attachments/assets/0e18def7-b7d4-41be-88ae-e472a4a695b2" width="516.75" height="379.75"/>
+<img src="https://github.com/user-attachments/assets/0e18def7-b7d4-41be-88ae-e472a4a695b2"  width="50%"/>
 
 #### Chest and Headshell Panel
-<img src="https://github.com/user-attachments/assets/636dd761-b5fc-43b5-8e5c-8b0e2f4229c1" width="516.75" height="379.75"/>
+<img src="https://github.com/user-attachments/assets/636dd761-b5fc-43b5-8e5c-8b0e2f4229c1"  width="50%"/>
 
 #### Head/Neck Connectors and Spine
-<img src="https://github.com/user-attachments/assets/e3e65f0d-32de-43c1-860c-792ffeab9e75" width="516.75" height="379.75"/>
+<img src="https://github.com/user-attachments/assets/e3e65f0d-32de-43c1-860c-792ffeab9e75"  width="50%"/>
 
 #### Shoulders and Upper Arms
-<img src="https://github.com/user-attachments/assets/c95572e2-95e5-4ac5-920e-1a1e7d117261" width="516.75" height="379.75"/>
+<img src="https://github.com/user-attachments/assets/c95572e2-95e5-4ac5-920e-1a1e7d117261"  width="50%"/>
 
 #### Hands and Lower Arms
-<img src="https://github.com/user-attachments/assets/870787bf-a6fd-4431-8c6c-8ccfde2efe2b" width="516.75" height="379.75"/>
+<img src="https://github.com/user-attachments/assets/870787bf-a6fd-4431-8c6c-8ccfde2efe2b"  width="50%"/>
 
 #### Finger Hinges
-<img src="https://github.com/user-attachments/assets/2c212639-9a70-4d46-acc8-a449d4b221ca" width="516.75" height="379.75"/>
+<img src="https://github.com/user-attachments/assets/2c212639-9a70-4d46-acc8-a449d4b221ca"  width="50%"/>
 
 #### Hips and Upper Legs
-<img src="https://github.com/user-attachments/assets/83526c1b-5862-4ef0-a28d-257d7125a591" width="516.75" height="379.75"/>
+<img src="https://github.com/user-attachments/assets/83526c1b-5862-4ef0-a28d-257d7125a591"  width="50%"/>
 
 #### Lower Legs and Feet
-<img src="https://github.com/user-attachments/assets/c406bfa1-295f-4980-ab76-eb80dea6b9db" width="516.75" height="379.75"/>
+<img src="https://github.com/user-attachments/assets/c406bfa1-295f-4980-ab76-eb80dea6b9db"  width="50%"/>
 
 #### Initializing Servo IDs and Positions
 
@@ -210,13 +210,13 @@ The chest assembly will be fairly simple as you’ll be attaching the Right Ches
 
 For the Right and Left Chest motors add the black rubber spacers to all screw notches available, then attach them to their respective sides with the servo horn pins pointing away from the front of the chest. Next, use the M3 x 14 mm hex screws and hex nuts to attach the motors to the chest frame. After the motors have been attached, you can add JST cables to the connection points located on the back of the chest frame. The progress so far should look like the figures below:
 
-<img src="https://github.com/user-attachments/assets/579e230c-82a6-43cf-9231-3ca53428bddc" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/c2828cce-507e-471f-a49e-6566956b274f" width="516.75" height="379.75"/>
+<img src="res/Chest_Back.jpeg"  width="50%"/>
+<img src="res/Chest_Side.jpeg"  width="50%"/>
 
 Now, you can add the motors’ servo horns with the black M3 screws, then the Shoulder Connector pieces. You’ll want the orientation of the Shoulder Connector pieces to match the placement of the Chest motors. You can attach the Shoulder Connector pieces using the silver M3 screws. The final product should look like the figures below:
 
-<img src="https://github.com/user-attachments/assets/b9f95688-1db3-434b-ae76-3d4e216bb688" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/e49d2ef7-3ebd-4e32-b79a-a44266a75d46" width="516.75" height="379.75"/>
+<img src="res/Chest_ShoulderConnectors_Front.jpeg"  width="50%"/>
+<img src="res/Chest_ShoulderConnectors_Side.jpeg"  width="50%"/>
 
 ##### Chest Connector Assembly
 The Chest Connector assembly will require:
@@ -235,9 +235,9 @@ Begin by attaching the Chest Connector motors in the connector piece. Be aware o
 
 The placement of these motors can be a little tricky, so a visual will be provided below to help orient them correctly along with the JST connections. A good rule of thumb for this connector piece is to have the motor shaft in-line with the pins located on the 3D printed piece. The figures below shows correct placement and JST cable paths:
 
-<img src="https://github.com/user-attachments/assets/a1c2fada-1f10-4806-898b-c0c5aafd16ff" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/3852a557-a06a-497a-bc91-c2adf2600e09" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/d2a107df-5d7c-48b7-b72e-4c6ef977055b" width="516.75" height="379.75"/>
+<img src="res/ChestConnector_Angled.jpeg"  width="50%"/>
+<img src="res/ChestConnector_Angled2.jpeg"  width="50%"/>
+<img src="res/ChestConnector_Bottom.jpeg"  width="50%"/>
 
 Now, add all the rubber spacers onto the screw notches of the motors and begin adding the screws until you barely reach the M3 square nut opening. Place the M3 square nuts in their corresponding spaces and continue tightening the screws completely. You might have to tilt the 3D printed piece a bit to keep the square nuts in their place.
 
@@ -245,9 +245,9 @@ After finishing the connector piece you can attach the servo horns using the bla
 
 To make this as simple as possible, begin by attaching the front motor (the one that will attach to the chest piece) first. You will want to attach this upside down to its placement, then rotate it into its correct position after fitting the Chest Connector in correctly. A correct placement means that both the servo horn and the pin (on the back of the chest piece) are both slotted into their designed positions. The figures below show the assembly process and final product:
 
-<img src="https://github.com/user-attachments/assets/a83f731f-9cb8-4866-91bb-a0fbd495a5ba" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/5fbadfdf-73de-4032-95e3-e51da84cf73f" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/8d63fda6-ad88-43bc-905f-26a522e8dc17" width="516.75" height="379.75"/>
+<img src="res/Chest_ChestConnector_Angled.jpeg"  width="50%"/>
+<img src="res/Chest_ChestConnector_Front1.jpeg"  width="50%"/>
+<img src="res/Chest_ChestConnector_Front2.jpeg"  width="50%"/>
 
 ##### Spine Assembly
 The Spine assembly will require:
@@ -262,15 +262,15 @@ To begin assembling, attach the frame of the spine to the hips. It is important 
 
 The figure below shows screw placement:
 
-<img src="https://github.com/user-attachments/assets/fbe803f9-e4f2-4b21-bb7f-3550fc4fc05e" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/d16d871b-3c9b-4e93-8f6b-fa281797600b" width="516.75" height="379.75"/>
+<img src="res/Spine_Front.jpeg"  width="50%"/>
+<img src="res/Spine_Back.jpeg"  width="50%"/>
 
 Following the attachment to the hips is attaching the Chest assembly to the Spine. There should be a servo horn left on the Chest Connector that is orientated in the same direction as the available horn slot on the Spine. Attach the Chest to the Spine using this connection point with the silver M3 screws.
 The final product should look like the figures below:
 
-<img src="https://github.com/user-attachments/assets/8154bebc-f7f2-46f0-ba1f-b35af064ab30" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/95854157-e303-4155-b469-3513b9bcd0f7" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/e9d8cdd7-73ea-4a92-acfb-1fe8081837f0" width="516.75" height="379.75"/>
+<img src="res/Spine_Chest_Angled.jpeg"  width="50%"/>
+<img src="res/Spine_Chest_Front.jpeg"  width="50%"/>
+<img src="res/Spine_Chest_Angled2.jpeg"  width="50%"/>
 
 ##### Neck Assembly
 The neck will require:
@@ -289,9 +289,9 @@ First, add the black rubber spacers to all screw notches of the Neck motor. Next
 
 At this step you can also add a JST Cable to the port opening located on the back of the chest frame. The final product should look like the figures below:
 
-<img src="https://github.com/user-attachments/assets/8c9fece8-75b3-4e0f-a209-2f6cfb675380" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/89d5470a-64b3-4774-a97f-b6c69715116e" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/9f8f277b-ced1-485b-88dd-f3bf5ab1b9fb" width="516.75" height="379.75"/>
+<img src="res/Neck_Noscrews_Top.jpeg"  width="50%"/>
+<img src="res/Neck_Front.jpeg"  width="50%"/>
+<img src="res/Neck_Back.jpeg"  width="50%"/>
 
 ##### Neck Connector Assembly
 The Neck Connector will require:
@@ -310,9 +310,9 @@ Begin by adding the rubber spacers to all screw notches on your Neck Connector m
 
 The placement of these motors can be a little tricky, so a visual will be provided below to help orient them correctly along with the JST connections. A good rule of thumb for this connector piece is to have the motor shaft in-line with the pins located on the 3D printed piece. The figures below shows correct orientation and JST cable paths:
 
-<img src="https://github.com/user-attachments/assets/94c93cfa-9841-49e3-b6cb-26342b243530" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/c4caf1e8-5cf2-4f2b-9b4d-b20007dfe216" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/5648a226-1471-4cd9-acef-dbc36a0e228b" width="516.75" height="379.75"/>
+<img src="res/NeckConnector_Top.jpeg"  width="50%"/>
+<img src="res/NeckConnector_Side.jpeg"  width="50%"/>
+<img src="res/NeckConnector_Angled.jpeg"  width="50%"/>
 
 ##### Head Assembly
 The Head Assembly will require:
@@ -325,17 +325,17 @@ As recommended with every step, it is best to pre-thread the screw holes on the 
 
 You will first want to attach the Neck Connector piece to the Neck piece that should be attached to the Chest piece at this point. Motor #1 should be attached to the servo horn placement on the Neck piece, and secured with the silver M3 screws. Next, you’ll want to use the piece that looks like U (this piece will help us attach the headshell later) and attach it to Motor #2 located on the Neck Connector piece. 
 
-<img src="https://github.com/user-attachments/assets/ef84a948-7c4e-4249-bc94-ba51ecaca4ac" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/84e9fb98-8b70-4d3f-a0af-9e9a07ec0133" width="516.75" height="379.75"/>
+<img src="res/Neck_NeckConnector_Side.jpeg"  width="50%"/>
+<img src="res/Neck_NeckConnector_Front.jpeg"  width="50%"/>
 
 Next, insert the square nuts into the square slots on the U-shaped piece. Be sure to use a tool to push them as far in as they can go. You can check if they are in the right place by peering through the screw hole to see if the holes line up. See the figure below for a clearer visual (at this step the LED panel can be added, but optional):
 
-<img src="https://github.com/user-attachments/assets/1539c552-f8d6-4a0f-983b-2bd18e5fc750" width="516.75" height="379.75"/>
+<img src="res/Neck_NeckConnector_Side2.jpeg"  width="50%"/>
 
 After, you can place the headshell on top of this U-shaped piece by aligning the cylinder extrusions of the headshell with the cylinder-shaped gaps on the U piece. The two should fit snug and you should be able to press the headshell down to secure the fit. You can then complete the headshell’s attachment by screwing in the M3 x 20 mm screws until they reach past the square nuts. The final product should look like the figures below:
 
-<img src="https://github.com/user-attachments/assets/56e67656-8901-47b7-9073-37557e75e6e0" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/d2017a3d-ea86-44ca-bb18-f44a946057ae" width="516.75" height="379.75"/>
+<img src="res/Headshell_Side.jpeg"  width="50%"/>
+<img src="res/Headshell_Top.jpeg"  width="50%"/>
 
 #### Arm Assembly
 When assembling the arms for the robot, it is best to begin with the bicep, then shoulder, and ending with the forearms. This is due to the slight complexity behind the arm assembly. You will need to attach the motors and JST cables onto certain pieces before moving on.
@@ -370,16 +370,16 @@ Beginning with the top motor placement on the bicep, attach 2 JST cables onto th
 
 Bicep references with JST cables:
 
-<img src="https://github.com/user-attachments/assets/f4e89a25-ad2e-43c7-81dc-ac4701654c09" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/679e92a1-e3c4-46e9-826a-44c523c1410c" width="516.75" height="379.75"/>
+<img src="res/Biceps_Back.jpeg"  width="50%"/>
+<img src="res/Biceps_Top.jpeg"  width="50%"/>
 
 Next, add 2 rubber spacers to the screw holes opposite to where the servo attaches on the lower Bicep motors. Then, attach the lower Bicep motors to the lower motor placement available using the tapered M3 x 18 mm screws with their servo horns already included (using the black M3 screws). The motors should be aligned where the screw holes with the rubber spacers match up with the screw holes on the 3D printed piece. The end result should allow for the servo horn of the lower Bicep motors to be attached to the Forearms. Lastly, connect the JST cables located on the right or left side of the upper Bicep motors to the back available connection of the lower Bicep photos. The figures below will include highlighted JST cable paths.
 The final products should look like the figure below:
 
 Final products (Right motor and Left motor):
 
-<img src="https://github.com/user-attachments/assets/333d1d57-4228-4a8c-9b02-68a9d0f8d0a3" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/ca5eab00-29db-42ac-ac02-90e8c3adef81" width="516.75" height="379.75"/>
+<img src="res/CompleteBiceps_Front.jpeg"  width="50%"/>
+<img src="res/CompleteBiceps_Side.jpeg"  width="50%"/>
 
 ##### Shoulders
 The Shoulders will require:
@@ -398,8 +398,8 @@ Before placing the Shoulder motors in the 3D printed piece, attach servo horns o
 
 Outcome of servo horn attachment:
 
-<img src="https://github.com/user-attachments/assets/44c86e3d-d0b4-43cd-911c-888201e263ab" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/8d47f8dc-36ba-4d75-b407-1b9a06d6f62b" width="516.75" height="379.75"/>
+<img src="res/Shoulder_Screw_Top.jpeg"  width="50%"/>
+<img src="res/Bicep_Shoulder_Front.jpeg"  width="50%"/>
 
 Next, add rubber spacers to the screw holes closest to the servo horn attachment on the Shoulder motors. Put the Shoulder motors into the 3D printed piece with the label facing outward and the servo horn attachment orientated on the top. You can then screw the motors in place using the M3 x 14 mm hex screws and adding the M3 square nuts into their corresponding slots. It might take a bit of fussing to get the M3 square nuts aligned correctly with the screws. You can tilt the piece to help make this a bit easier. 
 
@@ -407,9 +407,9 @@ After screwing the motor in place, you can screw on the servo horns and attach t
 
 Final product:
 
-<img src="https://github.com/user-attachments/assets/e8c9c002-01b7-43c8-988e-8ed79d05cee9" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/fa1f86e3-4fc9-46f7-a944-eee68b8cbe08" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/475cd43b-e45a-418c-a05b-824a77fe0eb7" width="516.75" height="379.75"/>
+<img src="res/Shoulder_Bicep_Side.jpeg"  width="50%"/>
+<img src="res/Shoulder_Bicep_Front.jpeg"  width="50%"/>
+<img src="res/Shoulder_Bicep_Side2.jpeg"  width="50%"/>
 
 ##### Forearms
 The Forearms will require:
@@ -423,22 +423,22 @@ Before beginning assembly, please be sure to double check that the hinges match 
 
 Stringing the fishing line through the hands should be the **last step** (with fingers not yet assembled to the palm). Begin by measuring the amount you think you might need for your project by fitting the line through the bottom of the hand and up through the 3D piece (**do not cut yet**). Then, continue stringing your fishing line up the holes in the fingers and upon reaching the tip of the top finger, restring back through the second hole and leaving enough to tie it off (*Figure 4*). To get an accurate length of fishing line you will need, attach the finger to the palm and measure how much you think you will need at the bottom of the hand (leaving adequate space at the top to tie off your line). After ensuring you have the right length, you can cut off your line from its container and use pliers to tie a double knot at the top of the finger.
 
-<img src="https://github.com/user-attachments/assets/03f3db47-aefa-4afc-8d25-8f3e58caebf9" width="516.75" height="379.75"/>
+<img src="https://github.com/user-attachments/assets/03f3db47-aefa-4afc-8d25-8f3e58caebf9"  width="50%"/>
 
 *Figure 1*: Composition and BOM of Flexy-Hand 2 ([Flexy-Hand 2]())
 
 
-<img src="https://github.com/user-attachments/assets/b6199e72-d340-43bb-9e2d-71c6663d8e74" width="516.75" height="379.75"/>
+<img src="https://github.com/user-attachments/assets/b6199e72-d340-43bb-9e2d-71c6663d8e74"  width="50%"/>
 
 *Figure 2*: Finger plate with labeled orientation ([Flexy-Hand 2]())
 
 
-<img src="https://github.com/user-attachments/assets/39fc64ee-b7f5-481a-aca4-d31c52dddc7e" width="500" height="250"/>
+<img src="https://github.com/user-attachments/assets/39fc64ee-b7f5-481a-aca4-d31c52dddc7e" width="50%"/>
 
 *Figure 3*: Hinge orientation for all fingers ([Flexy-Hand 2]())
 
 
-<img src="https://github.com/user-attachments/assets/8d863733-dc20-4b80-aee7-aa96baf8d8a7" width="516.75" height="379.75"/>
+<img src="https://github.com/user-attachments/assets/8d863733-dc20-4b80-aee7-aa96baf8d8a7"  width="50%"/>
 
 *Figure 4*: Tendon knot placement for all fingers ([Flexy-Hand 2]())
 
@@ -447,7 +447,7 @@ At this point in the Arm assembly process, the Biceps and Shoulders should alrea
 
 Final assembly (Right Arm):
 
-<img src="https://github.com/user-attachments/assets/0d4b05da-834a-459d-a5ff-14fba3202919" width="516.75" height="379.75"/>
+<img src="res/ArmAssembly_Side.jpeg"  width="50%"/>
 
 #### Lower Body Assembly
 When assembling the lower body it is best to start with the feet and then work your way up to the upper legs. This ensures that you will have everything aligned and allows you to plug the corresponding JST cables as you go.
@@ -477,7 +477,7 @@ Begin by pre-threading the plastic screw holes with the silver M3 screws, then a
 
 Final product:
 
-<img src="https://github.com/user-attachments/assets/06f753c8-95f5-4440-ad50-bb3e2b2c22f5" width="516.75" height="379.75"/>
+<img src="res/LeftFoot_Angled.jpeg"  width="50%"/>
 
 **Note that the cable path is incorrect in this figure, you should use the JST connection on the other side of the motor that will keep the JST cable from being pinched from ankle movement**
 
@@ -499,18 +499,18 @@ As done the same with the feet, pre-thread all the screw holes on the lower legs
 
 Half-way point:
 
-<img src="https://github.com/user-attachments/assets/ff6eb85a-e048-47d1-95ad-a57ee4971cc7" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/1db44697-8483-4999-abb9-827725e73873" width="516.75" height="379.75"/>
+<img src="res/LeftFoot_Leg_Side.jpeg"  width="50%"/>
+<img src="res/LeftFoot_Leg_Back.jpeg"  width="50%"/>
 
 Next, attach the Ankle JST cables to the bottom of the Knee motors, and a new JST cable onto the right side of the Left Knee motor. The Right Knee motor will have a new JST cable onto the left side. Finally, orient the Knee motors correctly onto the lower legs which should follow a 90 degree angle (the robot is sitting). Add rubber spacers onto the lower screw notches of the motor, where the upper legs will be attached.The figures below will show the final product, with JST cable, rubber spacer, and Knee motor orientation. 
 
 Final product, Left Leg:
 
-<img src="https://github.com/user-attachments/assets/484d1d5f-4c99-45d7-bafd-1ee1173bf8e1" width="516.75" height="379.75"/>
+<img src="res/LeftLeg_Back.jpeg"  width="50%"/>
 
 Final product, Right Leg:
 
-<img src="https://github.com/user-attachments/assets/14618958-877b-48ab-bf77-0ba9010d3df4" width="516.75" height="379.75"/>
+<img src="res/RightLeg_Back.jpeg"  width="50%"/>
 
 ##### Upper Legs
 Continuing now to the upper legs. The upper legs will require:
@@ -522,13 +522,13 @@ Continuing now to the upper legs. The upper legs will require:
 
 Final product, Left Leg:
 
-<img src="https://github.com/user-attachments/assets/b49ddc06-f992-464c-a400-4800fc8d887e" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/0dbb8440-8940-412b-95f5-0ab516e40777" width="516.75" height="379.75"/>
+<img src="res/CompleteLeftLeg_Side.jpeg" width="50%"/>
+<img src="res/CompleteLeftLeg_Back.jpeg"  width="50%"/>
 
 Final product, Right Leg:
 
-<img src="https://github.com/user-attachments/assets/69da38f9-680d-4712-a1b8-8d6229c92b6f" width="516.75" height="379.75"/>
-<img src="https://github.com/user-attachments/assets/de26c25e-de3d-4809-a336-12d9b11d257c" width="516.75" height="379.75"/>
+<img src="res/CompleteRightLeg_Side.jpeg"  width="50%"/>
+<img src="res/CompleteRightLeg_Back.jpeg"  width="50%"/>
 
 ##### Hips
 Finally, we reach the end of the Lower Body Assembly. The hips will require:
@@ -551,11 +551,11 @@ Following this step you can attach the servo horn onto the motor and JST cables 
 
 Final product:
 
-<img src="https://github.com/user-attachments/assets/f9bc1fd1-c299-4fe6-b821-83a9b373f4c2" width="516.75" height="379.75"/>
+<img src="res/Hips_Angled.jpeg"  width="50%"/>
 
 After, you can attach the lower limbs to the hip by screwing the Upper Legs into place on the Hips' servo horns (using the silver M3 screws). The final assembly should look like the figures below:
 
-<img src="https://github.com/user-attachments/assets/c9390c90-048b-4cd3-ab7a-6d40e241f73a" width="516.75" height="379.75"/>
+<img src="res/FullLegAssembly_Front.jpeg"  width="50%"/>
 
 **In this figure, the JST cables connected to the Hips are wired incorrectly. You should use the back JST connection to attach your Hip cables**
 
