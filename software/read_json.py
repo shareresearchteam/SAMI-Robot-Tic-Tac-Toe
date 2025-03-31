@@ -101,9 +101,9 @@ class JamieControl:
     def __init__(self, 
                  arduino_port='/dev/ttyUSB0', 
                  baud_rate=115200,
-                 joint_config_file='/home/antara/Jamie-Robot/software/Joint_config.json',
+                 joint_config_file='Joint_config.json',
                  emote_file='Emote.json',
-                 audio_folder='/home/antara/Jamie-Robot/software/audio',
+                 audio_folder='audio',
                  starting_voice='Matt',
                  audio_file_encoding='.mp3'):
         self.arduino_port = arduino_port
@@ -193,10 +193,10 @@ class JamieControl:
 
 if __name__ == "__main__":
     # For testing purposes; adjust paths as necessary.
-    robot = JamieControl(audio_folder="/home/antara/Jamie-Robot/software/audio", starting_voice="Matt")
+    robot = JamieControl(audio_folder="audio", starting_voice="Matt")
     robot.initialize_serial_connection()
     time.sleep(1)
     # Ensure your Wave.json has at least one keyframe with HasAudio set to "True"
-    robot.read_json("/home/antara/Jamie-Robot/software/behaviors/Wave.json")
+    robot.read_json("Wave.json")
     time.sleep(1)
     robot.close_connection()

@@ -9,17 +9,17 @@ class JamieControlUI(JamieControl, QWidget):
     def __init__(self, 
                  arduino_port='/dev/ttyUSB0', 
                  baud_rate=115200,
-                 joint_config_file='/home/antara/Jamie-Robot/software/Joint_config.json',
-                 behavior_folder='/home/antara/Jamie-Robot/software/behaviors',
+                 joint_config_file='Joint_config.json',
+                 behavior_folder='behaviors',
                  emote_file='Emote.json',
-                 audio_folder='/home/antara/Jamie-Robot/software/audio',
+                 audio_folder='audio',
                  starting_voice='Matt'):
         JamieControl.__init__(self, arduino_port, baud_rate, joint_config_file, emote_file, audio_folder, starting_voice)
         QWidget.__init__(self)
         with open(joint_config_file, 'r') as f:
             self.full_joint_config = json.load(f)['JointConfig']
         self.full_joint_map = {joint['JointName']: joint for joint in self.full_joint_config}
-        self.behavior_folder = behavior_folder if os.path.exists(behavior_folder) else '/home/antara/Jamie-Robot/software/behaviors'
+        self.behavior_folder = behavior_folder if os.path.exists(behavior_folder) else 'behaviors'
         self.initUI()
         self.initialize_serial_connection()
 
@@ -112,7 +112,7 @@ class JamieControlUI(JamieControl, QWidget):
 
 def main():
     app = QApplication([])
-    window = JamieControlUI(audio_folder="/home/antara/Jamie-Robot/software/audio", starting_voice="Matt")
+    window = JamieControlUI(audio_folder="audio", starting_voice="Matt")
     app.exec_()
 
 if __name__ == "__main__":
