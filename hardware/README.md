@@ -86,41 +86,43 @@ usb power cable (probably comes with)
  3. [Caption Assembly Instructions]()
 
 ### Robot Fabrication and Assembly Instructions
+This section describes the part fabrication and hardware assembly process for the actual robot.
+
+#### 3D Printing & Orientations
 *If using Prusa i3 printers with Prusa Slicer,* all parts should be printed at 0.3mm resolution ("draft quality" on Prusa Slicer), with 15% gyroid infill, and organic supports enabled (where necessary), **except for the chest piece,** which should be printed at 0.2mm resolution, with 15% gyroid infill, and normal grid-style supports instead. Alternatively, the **finger hinges** should be printed using PETG filament with 0% gyroid infill and a brim.
 
 **The hands** used for this robot have been sized down by 42.5% with minimal changes to the bolt holes from the original prosthetic model, but the mechanism funtionality remains the same.
 
 Print orientations are shown below for each part, along with the part names that are used throughout this documentation.
 
-#### Headshell
-<img src="https://github.com/user-attachments/assets/0e18def7-b7d4-41be-88ae-e472a4a695b2"  width="50%"/>
+##### Headshell
+<img src="res/Headshell.png"  width="50%"/>
 
-#### Chest and Headshell Panel
-<img src="https://github.com/user-attachments/assets/636dd761-b5fc-43b5-8e5c-8b0e2f4229c1"  width="50%"/>
+##### Chest and Headshell Panel
+<img src="res/Chest_HeadshellSidePanel.png"  width="50%"/>
 
-#### Head/Neck Connectors and Spine
-<img src="https://github.com/user-attachments/assets/e3e65f0d-32de-43c1-860c-792ffeab9e75"  width="50%"/>
+##### Head/Neck Connectors and Spine
+<img src="res/HeadnNeck_Connector_Spine.png"  width="50%"/>
 
-#### Shoulders and Upper Arms
-<img src="https://github.com/user-attachments/assets/c95572e2-95e5-4ac5-920e-1a1e7d117261"  width="50%"/>
+##### Shoulders and Upper Arms
+<img src="res/Shoulders_Biceps.png"  width="50%"/>
 
-#### Hands and Lower Arms
-<img src="https://github.com/user-attachments/assets/870787bf-a6fd-4431-8c6c-8ccfde2efe2b"  width="50%"/>
+##### Hands and Lower Arms
+<img src="res/Hands_Lower Arms.png"  width="50%"/>
 
-#### Finger Hinges
-<img src="https://github.com/user-attachments/assets/2c212639-9a70-4d46-acc8-a449d4b221ca"  width="50%"/>
+##### Finger Hinges
+<img src="res/FFX_Finger_Hinge_Plate.png"  width="50%"/>
 
-#### Hips and Upper Legs
-<img src="https://github.com/user-attachments/assets/83526c1b-5862-4ef0-a28d-257d7125a591"  width="50%"/>
+##### Hips and Upper Legs
+<img src="res/Hip_UpperLegs.png"  width="50%"/>
 
-#### Lower Legs and Feet
-<img src="https://github.com/user-attachments/assets/c406bfa1-295f-4980-ab76-eb80dea6b9db"  width="50%"/>
+##### Lower Legs and Feet
+<img src="res/LowerLegs_Feet.png"  width="50%"/>
 
 #### Initializing Servo IDs and Positions
+You will need to communicate with the motors as part of the assembly process. This process can be completed using the completed robot PCB, or the [HiWonder motor debugging board]().
 
-You will need to communicate with the motors as part of the assembly process. As such, we provide a simplified breadboard-able circuit to use in communicating with the motors during this process. See below for the circuit wiring.
-
-**Breadboard assembly circuit wiring go here**
+In either case, you will be initializing each motor by connecting and communicating with it individually (*not* chaining the motors).
 
 Before assembling the robot, it is necessary to assign unique motor IDs for each joint motor. You can set these IDs with the [SetServoID Arduino code project](../Arduino/SetServoID/) as well as a simplified breadboard circuit for communicating, presented [here](). Any ID numbers may be chosen, but the default configuration file, and these assembly instructions, will use the joint names and IDs as listed in the table below.
 
@@ -164,7 +166,7 @@ Additionally, when screwing to the metal servo horns, it is very easy to misalig
 ##### Servo Horn Alignment
 Once a motor has been set to the default position, you can attach the metal horn with the small indent facing towards the motor body (see below image) as a useful visual reference to assist in verifying that the servo does not get misaligned or shifted during the assembly process.
 
-<img src="https://github.com/user-attachments/assets/58a353cc-a3eb-429b-9c43-654319a532c8" width="250" height="400"/>
+<img src="res/Servo_Horn_Orientation.jpg" width="50%"/>
 
 
 ##### Servo JST Cables
@@ -423,24 +425,24 @@ Before beginning assembly, please be sure to double check that the hinges match 
 
 Stringing the fishing line through the hands should be the **last step** (with fingers not yet assembled to the palm). Begin by measuring the amount you think you might need for your project by fitting the line through the bottom of the hand and up through the 3D piece (**do not cut yet**). Then, continue stringing your fishing line up the holes in the fingers and upon reaching the tip of the top finger, restring back through the second hole and leaving enough to tie it off (*Figure 4*). To get an accurate length of fishing line you will need, attach the finger to the palm and measure how much you think you will need at the bottom of the hand (leaving adequate space at the top to tie off your line). After ensuring you have the right length, you can cut off your line from its container and use pliers to tie a double knot at the top of the finger.
 
-<img src="https://github.com/user-attachments/assets/03f3db47-aefa-4afc-8d25-8f3e58caebf9"  width="50%"/>
+<img src="res/Finger_Hand_Reference_Sheet.jpg"  width="50%"/>
 
-*Figure 1*: Composition and BOM of Flexy-Hand 2 ([Flexy-Hand 2]())
-
-
-<img src="https://github.com/user-attachments/assets/b6199e72-d340-43bb-9e2d-71c6663d8e74"  width="50%"/>
-
-*Figure 2*: Finger plate with labeled orientation ([Flexy-Hand 2]())
+*Figure 1*: Composition and BOM of Flexy-Hand 2 ([Flexy-Hand 2](https://www.thingiverse.com/thing:380665))
 
 
-<img src="https://github.com/user-attachments/assets/39fc64ee-b7f5-481a-aca4-d31c52dddc7e" width="50%"/>
+<img src="res/Finger_Plate_Layout_display_large.jpg"  width="50%"/>
 
-*Figure 3*: Hinge orientation for all fingers ([Flexy-Hand 2]())
+*Figure 2*: Finger plate with labeled orientation ([Flexy-Hand 2](https://www.thingiverse.com/thing:380665))
 
 
-<img src="https://github.com/user-attachments/assets/8d863733-dc20-4b80-aee7-aa96baf8d8a7"  width="50%"/>
+<img src="res/Base_Hinge_Orientation_display_large.jpg" width="50%"/>
 
-*Figure 4*: Tendon knot placement for all fingers ([Flexy-Hand 2]())
+*Figure 3*: Hinge orientation for all fingers ([Flexy-Hand 2](https://www.thingiverse.com/thing:380665))
+
+
+<img src="res/Tendon_Tieoff_at_Base_of_Fingertip_display_large.jpg"  width="50%"/>
+
+*Figure 4*: Tendon knot placement for all fingers ([Flexy-Hand 2](https://www.thingiverse.com/thing:380665))
 
 ##### Arm Assembly
 At this point in the Arm assembly process, the Biceps and Shoulders should already be connected together due to the slight complexity of their pieces. The only step left is to attach the forearm to the lower Bicep motor, which can be done by screwing the servo horns from the lower Bicep motors to their corresponding places on the Forearms. This will be accomplished using the silver M3 screws you grabbed for the Forearm section. The finished assembly should look like the figures below:
