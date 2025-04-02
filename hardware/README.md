@@ -1,4 +1,4 @@
-# JAMIE Robot Hardware
+# Social Animated Mechanical Interlocutor (SAMI) Robot Hardware
 All of the hardware information for the robot system.
 
  1. [Bill of Materials (BoM)](#bill-of-materials-bom)
@@ -16,6 +16,17 @@ The mechanical BoM includes all of the 3D printed parts, and associated screw pi
 
 #### Robot 
 3D printed so many parts
+ - M3 square nuts: 
+ - M3 hex nuts: 20
+ - M3 lock nuts: 20
+ - M3 servo horn screws: 86
+ - M3x14 socket cap hex bolts: 8
+ - M3x16 socket cap hex bolts: 32
+ - M3x20 socket cap hex bolts: 6
+ - M3x25 socket cap hex bolts: 4
+ - M3x18 flat head countersunk hex bolts: 12
+ - Metal servo horns: 19
+
 so, so many screws
 Ikea chair
 cable ties
@@ -76,12 +87,13 @@ usb power cable (probably comes with)
 
 ## Assembly Instructions
  1. [Robot Assembly Instructions](#robot-fabrication-and-assembly-instructions)
-     1. [Initializing Servo IDs and Positions](#initializing-servo-ids-and-positions)
-     2. [Overall Assembly Information]()
-     3. [Neck and Torso Assembly](#neck-and-torso-assembly)
-     4. [Arm Assembly](#arm-assembly)
-     5. [Lower Body Assembly](#lower-body-assembly)
-     6. [Final Assembly](#final-assembly)
+     1. [3D Printing & Orientations](#3d-printing--orientations)
+     2. [Initializing Servo IDs and Positions](#initializing-servo-ids-and-positions)
+     3. [Overall Assembly Information]()
+     4. [Neck and Torso Assembly](#neck-and-torso-assembly)
+     5. [Arm Assembly](#arm-assembly)
+     6. [Lower Body Assembly](#lower-body-assembly)
+     7. [Final Assembly](#final-assembly)
  2. [Sensor Box Assembly Instructions]()
  3. [Caption Assembly Instructions]()
 
@@ -91,7 +103,7 @@ This section describes the part fabrication and hardware assembly process for th
 #### 3D Printing & Orientations
 *If using Prusa i3 printers with Prusa Slicer,* all parts should be printed at 0.3mm resolution ("draft quality" on Prusa Slicer), with 15% gyroid infill, and organic supports enabled (where necessary), **except for the chest piece,** which should be printed at 0.2mm resolution, with 15% gyroid infill, and normal grid-style supports instead. Alternatively, the **finger hinges** should be printed using PETG filament with 0% gyroid infill and a brim.
 
-**The hands** used for this robot have been sized down by 42.5% with minimal changes to the bolt holes from the original prosthetic model, but the mechanism funtionality remains the same.
+**The hands** used for this robot have been sized down by 42.5% with minimal changes to the bolt holes from the [original prosthetic model](), but the mechanism funtionality remains the same.
 
 Print orientations are shown below for each part, along with the part names that are used throughout this documentation.
 
@@ -122,38 +134,45 @@ Print orientations are shown below for each part, along with the part names that
 #### Initializing Servo IDs and Positions
 You will need to communicate with the motors as part of the assembly process. This process can be completed using the completed robot PCB, or the [HiWonder motor debugging board]().
 
-In either case, you will be initializing each motor by connecting and communicating with it individually (*not* chaining the motors).
+In either case, you will be initializing each motor by connecting and communicating with it individually (*not* chaining the motors). The below initialization instructions assume you are initializing the motors using the robot motor control PCB.
 
-Before assembling the robot, it is necessary to assign unique motor IDs for each joint motor. You can set these IDs with the [SetServoID Arduino code project](../Arduino/SetServoID/) as well as a simplified breadboard circuit for communicating, presented [here](). Any ID numbers may be chosen, but the default configuration file, and these assembly instructions, will use the joint names and IDs as listed in the table below.
+Before assembling the robot, it is necessary to assign unique motor IDs for each joint motor. You can set these IDs with the [SetServoID Arduino code project](../Arduino/SetServoID/) using the motor control PCB for the robot. Any ID numbers may be chosen, but the default configuration file, and these assembly instructions, will use the joint names and IDs as listed in the table below.
 
-|     Joint Name       | ID |
-|----------------------|----|
-| Head Tilt            | 01 |
-| Head Nod             | 02 |
-| Head Turn            | 03 |
-| Right Shoulder Pitch | 04 |
-| Right Shoulder Roll  | 05 |
-| Right Arm Twist      | 06 |
-| Right Elbow          | 07 |
-| Left Shoulder Pitch  | 08 |
-| Left Shoulder Roll   | 09 |
-| Left Arm Twist       | 10 |
-| Left Elbow           | 11 |
-| Right Hip            | 12 |
-| Right Knee           | 13 |
-| Right Ankle          | 14 |
-| Left Hip             | 15 |
-| Left Knee            | 16 |
-| Left Ankle           | 17 |
-| Torso Bow            | 18 |
-| Torso Tilt           | 19 |
-| Right Gripper        | 20 |
-| Left Gripper         | 21 |
-
+|     Joint Name       | ID | Assembly Orientation |
+|----------------------|----| -------------------- |
+| Head Tilt            | 01 |  |
+| Head Nod             | 02 |  |
+| Head Turn            | 03 |  |
+| Right Shoulder Pitch | 04 |  |
+| Right Shoulder Roll  | 05 |  |
+| Right Arm Twist      | 06 |  |
+| Right Elbow          | 07 |  |
+| Left Shoulder Pitch  | 08 |  |
+| Left Shoulder Roll   | 09 |  |
+| Left Arm Twist       | 10 |  |
+| Left Elbow           | 11 |  |
+| Right Hip            | 12 |  |
+| Right Knee           | 13 |  |
+| Right Ankle          | 14 |  |
+| Left Hip             | 15 |  |
+| Left Knee            | 16 |  |
+| Left Ankle           | 17 |  |
+| Torso Bow            | 18 |  |
+| Torso Tilt           | 19 |  |
+| Right Gripper        | 20 |  |
+| Left Gripper         | 21 |  |
 
 During assembly of the robot, it will be necessary to set each motor to a known rotation and then assemble the parts to match that orientation. These positions are *not operational home*, but are instead an easy reference position for use in assembly. The robot assembly pose, along with each joint name, motor ID, and the motor angle corresponding to the current pose, are shown in the image below. 
 
 **IMG GO HERE**
+
+To simplify assembly, the initialization steps for each motor are:
+
+1. Set the motor ID of the servo with the [SetServoID Arduino code project](../Arduino/SetServoID/).
+2. Set the motor to it's assembly home position using the [SetServoPosition Arduino code project](../Arduino/SetServoPosition/).
+3. While the servo is in the home position, attach the servo horn such that the dimple on the horn is facing towards the servo body as shown below.
+   <img src="res/Servo_Horn_Orientation.jpg" width="50%"/>
+4. Cut power to the servo and screw down the aligned horn using the black center screw from the servo accessory bag.
 
 #### Notes On Assembly Process
 Some components are sensitive, or could be easily damaged during assembly. To help mitigate this, these notes are provided as important notes to keep in mind during the process.
@@ -195,18 +214,56 @@ The two HiWonder HTS-35H servo are also part of this section of the assembly, an
 
 ##### Chest Assembly
 The chest will require:
- - an M3 hex screwdriver
- - 3x servo horns
- - 3x black M3 screws from the motor package
+ - A P1 philips screwdriver
+ - A M2.5 allen key
  - 12x black rubber spacers from the motor package
  - 12x silver servo horn M3 screws
  - 3x JST cables
  - 12 M3 x 16 mm hex screws
  - 8x M3 hex nuts
  - 4x M3 square nuts
+ - Motor ID 3
+ - Motor ID 4
+ - Motor ID 8
  - the Shoulder Connector pieces
+ - the chest piece
 
-As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
+As recommended in the assembly notes, it is best to pre-thread the screw holes on the 3D printed parts. You should also have already Initialized the motor IDs and home positions with attached servo horns as described in the [initialization instructions](#initializing-servo-ids-and-positions)
+
+Right Shoulder Chest
+1. Insert the black rubber spacers into the screw slots for each of motor 4.
+2. Insert motor 4 into the right shoulder slot on the chest piece. The servo should be oriented so the servo horn is closer to the back of the chest rather than the front as seen in the side photo below. Note the location of the dimple on the servo horn.
+   <img src="res/Chest_Side.jpeg"  width="50%"/>
+3. Use 4 of the M3x16 screws and 4 of the hex nuts to screw motor 4 to the chest.
+4. Use 4 of the silver M3 screws to attach motor 4's servo horn to the righst side Shoulder Connector piece. It should be attached to the horn mount in the middle of the part, and the two sides of the part should be dipping "down" when attached as shown below. 
+   <img src="res/Chest_ShoulderConnectors_Front.jpeg"  width="50%"/>
+5. Attach the JST cable to the jst connector on the motor facing the back of the chest piece.
+
+Left Shoulder Chest
+6. Insert the black rubber spacers into the screw slots for each of motor 8.
+7. Insert motor 8 into the left shoulder slot on the chest piece. The servo should be oriented so the servo horn is closer to the back of the chest rather than the front.
+8. Use 4 of the M3x16 screws and 4 of the M3 hex nuts to screw motor 8 to the chest.
+9. Use 4 of the silver M3 screws to attach motor 4's servo horn to the righst side Shoulder Connector piece. It should be attached to the horn mount in the middle of the part, and the two sides of the part should be dipping "down" when attached as shown below.
+   <img src="res/Chest_ShoulderConnectors_Side.jpeg"  width="50%"/>
+10. Attach the JST cable to the jst connector on the motor facing the back of the chest piece.
+
+
+With both motors installed and JST cables connected, the chest from behind should look like 
+<img src="res/Chest_Back.jpeg"  width="50%"/>
+
+
+Neck Chest
+11. Insert the black rubber spacers into the screw slots for each of motor 3.
+12. Insert 2 of the M3 square nuts into the slots in on the inside of the neck of the chest piece, as shown below.
+   <img src="res/Neck_Noscrews_Top.jpeg"  width="50%"/>
+13. Insert motor 3 into the neck of the chest piece. The servo should be oriented so the servo horn is closer to the back of the chest rather than the front.
+14. Insert the remaining 2 M3 square nuts into the slots on the back of the neck of the chest piece.
+15. Use the remaining 4 M3x16 hex screws to screw down motor 3 to the chest, making sure to screw into the square nuts.
+16. Attach the neck piece to the servo horn with 4 silver M3 screws, matching the orientation shown below.
+   <img src="" width="50%"/>
+17. Attach the JST cable to the jst connector on the motor facing the back of the chest piece.
+
+
 
 The chest assembly will be fairly simple as you’ll be attaching the Right Chest, Left Chest, and Neck motors, then at the end, adding the Chest Connector piece that you just put together. The most difficult part of this assembly will be adding the Chest Connector piece onto the Chest.
 
