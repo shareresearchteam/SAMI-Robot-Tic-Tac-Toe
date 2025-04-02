@@ -233,33 +233,41 @@ As recommended in the assembly notes, it is best to pre-thread the screw holes o
 Right Shoulder Chest
 1. Insert the black rubber spacers into the screw slots for each of motor 4.
 2. Insert motor 4 into the right shoulder slot on the chest piece. The servo should be oriented so the servo horn is closer to the back of the chest rather than the front as seen in the side photo below. Note the location of the dimple on the servo horn.
+
    <img src="res/Chest_Side.jpeg"  width="50%"/>
 3. Use 4 of the M3x16 screws and 4 of the hex nuts to screw motor 4 to the chest.
 4. Use 4 of the silver M3 screws to attach motor 4's servo horn to the righst side Shoulder Connector piece. It should be attached to the horn mount in the middle of the part, and the two sides of the part should be dipping "down" when attached as shown below. 
+
    <img src="res/Chest_ShoulderConnectors_Front.jpeg"  width="50%"/>
 5. Attach the JST cable to the jst connector on the motor facing the back of the chest piece.
 
 Left Shoulder Chest
+
 6. Insert the black rubber spacers into the screw slots for each of motor 8.
 7. Insert motor 8 into the left shoulder slot on the chest piece. The servo should be oriented so the servo horn is closer to the back of the chest rather than the front.
 8. Use 4 of the M3x16 screws and 4 of the M3 hex nuts to screw motor 8 to the chest.
 9. Use 4 of the silver M3 screws to attach motor 4's servo horn to the righst side Shoulder Connector piece. It should be attached to the horn mount in the middle of the part, and the two sides of the part should be dipping "down" when attached as shown below.
+
    <img src="res/Chest_ShoulderConnectors_Side.jpeg"  width="50%"/>
 10. Attach the JST cable to the jst connector on the motor facing the back of the chest piece.
 
 
 With both motors installed and JST cables connected, the chest from behind should look like 
+
 <img src="res/Chest_Back.jpeg"  width="50%"/>
 
 
 Neck Chest
+
 11. Insert the black rubber spacers into the screw slots for each of motor 3.
 12. Insert 2 of the M3 square nuts into the slots in on the inside of the neck of the chest piece, as shown below.
+
    <img src="res/Neck_Noscrews_Top.jpeg"  width="50%"/>
 13. Insert motor 3 into the neck of the chest piece. The servo should be oriented so the servo horn is closer to the back of the chest rather than the front.
 14. Insert the remaining 2 M3 square nuts into the slots on the back of the neck of the chest piece.
 15. Use the remaining 4 M3x16 hex screws to screw down motor 3 to the chest, making sure to screw into the square nuts.
 16. Attach the neck piece to the servo horn with 4 silver M3 screws, matching the orientation shown below.
+
    <img src="" width="50%"/>
 17. Attach the JST cable to the jst connector on the motor facing the back of the chest piece.
 
