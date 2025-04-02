@@ -262,7 +262,7 @@ Neck Chest
 11. Insert the black rubber spacers into the screw slots for each of motor 3.
 12. Insert 2 of the M3 square nuts into the slots in on the inside of the neck of the chest piece, as shown below.
 
-   <img src="res/Neck_Noscrews_Top.jpeg"  width="50%"/>
+    <img src="res/Neck_Noscrews_Top.jpeg"  width="50%"/>
 13. Insert motor 3 into the neck of the chest piece. The servo should be oriented so the servo horn is closer to the back of the chest rather than the front.
 14. Insert the remaining 2 M3 square nuts into the slots on the back of the neck of the chest piece.
 15. Use the remaining 4 M3x16 hex screws to screw down motor 3 to the chest, making sure to screw into the square nuts.
