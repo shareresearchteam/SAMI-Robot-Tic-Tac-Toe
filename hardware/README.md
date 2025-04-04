@@ -268,9 +268,8 @@ Neck Chest
 15. Use the remaining 4 M3x16 hex screws to screw down motor 3 to the chest, making sure to screw into the square nuts.
 16. Attach the neck piece to the servo horn with 4 silver M3 screws, matching the orientation shown below.
 
-   <img src="" width="50%"/>
+    <img src="" width="50%"/>
 17. Attach the JST cable to the jst connector on the motor facing the back of the chest piece.
-
 
 
 The chest assembly will be fairly simple as you’ll be attaching the Right Chest, Left Chest, and Neck motors, then at the end, adding the Chest Connector piece that you just put together. The most difficult part of this assembly will be adding the Chest Connector piece onto the Chest.
@@ -298,13 +297,29 @@ The Chest Connector assembly will require:
  
 As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
 
+Chest Bow
+
+1. Insert the black rubber spacers into all four of the screw slots on motor 19
+2. Insert motor 19 into the slot that will *not* have another motor behind it. Make sure the servo horn and shaft are aligned to the plastic pin on the opposite side as shown in the image below.
+
+   <img src="" width="50%"/>
+3. Insert four of the M3 square nuts into the square nut slots around the motor and screw them down using the M3x16 screws.
+
+Chest tilt
+
+4. Insert the black rubber spacers into all four of the screw slots on motor 18
+5. Insert motor 18 into the remaining motor slot, making sure the servo horn and shaft are aligned to the plastic pin on the opposite side as shown below.
+
+   <img src="" width="50%"/>
+6. Insert four of the M3 square nuts into the square nut slots around the motor and screw them down using the M3x16 screws.
+
 Begin by attaching the Chest Connector motors in the connector piece. Be aware of where you place certain motors as you’ll want your ID to match the movement that it will make on the robot. For example, Motor #18 will make a side-to-side movement while Motor #19 will be in charge of the up-down movement. 
 
 The placement of these motors can be a little tricky, so a visual will be provided below to help orient them correctly along with the JST connections. A good rule of thumb for this connector piece is to have the motor shaft in-line with the pins located on the 3D printed piece. The figures below shows correct placement and JST cable paths:
 
-<img src="res/ChestConnector_Angled.jpeg"  width="50%"/>
-<img src="res/ChestConnector_Angled2.jpeg"  width="50%"/>
-<img src="res/ChestConnector_Bottom.jpeg"  width="50%"/>
+<img src="res/ChestConnector_Angled.jpeg" width="50%"/>
+<img src="res/ChestConnector_Angled2.jpeg" width="50%"/>
+<img src="res/ChestConnector_Bottom.jpeg" width="50%"/>
 
 Now, add all the rubber spacers onto the screw notches of the motors and begin adding the screws until you barely reach the M3 square nut opening. Place the M3 square nuts in their corresponding spaces and continue tightening the screws completely. You might have to tilt the 3D printed piece a bit to keep the square nuts in their place.
 
