@@ -171,8 +171,10 @@ To simplify assembly, the initialization steps for each motor are:
 1. Set the motor ID of the servo with the [SetServoID Arduino code project](../Arduino/SetServoID/).
 2. Set the motor to it's assembly home position using the [SetServoPosition Arduino code project](../Arduino/SetServoPosition/).
 3. While the servo is in the home position, attach the servo horn such that the dimple on the horn is facing towards the servo body as shown below.
+
    <img src="res/Servo_Horn_Orientation.jpg" width="50%"/>
-4. Cut power to the servo and screw down the aligned horn using the black center screw from the servo accessory bag.
+   
+5. Cut power to the servo and screw down the aligned horn using the black center screw from the servo accessory bag.
 
 #### Notes On Assembly Process
 Some components are sensitive, or could be easily damaged during assembly. To help mitigate this, these notes are provided as important notes to keep in mind during the process.
@@ -625,7 +627,12 @@ Finally, we reach the end of the Lower Body Assembly. The hips will require:
  
 As usual, pre-thread all the screw holes, **especially**, where the motors are attached to the hips. 
 
-Next, add the rubber spacers onto the screw notches of the motor (pictured below) and following comes the trickiest part of the Lower Body Assembly. Place the motors inside their corresponding slots in the hips (following corrent orientation) and firmly press them down until you can see the rubber spacer peek out a little underneath. This does not mean you are trying your best to push the motor down so much that you damage material, but pressing it down enough that it stops moving and the screw holes are aligned. You can check this by screwing in one of the M3 x 30 mm screws and seeing if you feel a lot of resistance. There will exist some resistance (due to the spacers), but not enough that it feels like you will snap the hip upon using a hex screwdriver. 
+1. Add rubber spacers onto the screw notches of the motor.
+2. Place the motors inside their corresponding slots in the hips. Press the motors down until they stop moving and the screw holes are aligned.
+3. Use 4 M3 x 30 mm screws to begin securing the motors. Stop screwing the motors to leave space for the square nuts.
+4. Insert 4 square nuts into the spaces located on the bottom of the hip. Tilt the piece to align the screws with the square nuts. Then fully screw in the motor.
+
+Next, add the rubber spacers onto the screw notches of the motor (pictured below) and following comes the trickiest part of the Lower Body Assembly. Place the motors inside their corresponding slots in the hips (following correct orientation) and firmly press them down until you can see the rubber spacer peek out a little underneath. This does not mean you are trying your best to push the motor down so much that you damage material, but pressing it down enough that it stops moving and the screw holes are aligned. You can check this by screwing in one of the M3 x 30 mm screws and seeing if you feel a lot of resistance. There will exist some resistance (due to the spacers), but not enough that it feels like you will snap the hip upon using a hex screwdriver. 
 
 After you have your motors settled with the screw holes aligned, make sure one of the screws is fitted far enough you can see it beginning to reach the square gap but not sitting in it at all (pictured below). Now, flip the 3D printed piece upside down so you are seeing the flat printed bottom. Insert a M3 square nut into one of the rectangular slots and align it with your incoming screw. **This step will take the most adjusting!** Try to continue screwing in the M3 x 25 mm into the piece and seeing if it captures the M3 square nut correctly. If it is meeting a lot of resistance or won't continue screwing, **retry**. Otherwise you might snap some material off. Tip: try tilting the hips at an angle if the M3 square nut is falling through too much, or if a bottom layer exists (usually from the 3D printing process), drop the nut from the top and fit it appropriately in its slot. 
 
@@ -639,7 +646,7 @@ After, you can attach the lower limbs to the hip by screwing the Upper Legs into
 
 <img src="res/FullLegAssembly_Front.jpeg"  width="50%"/>
 
-**In this figure, the JST cables connected to the Hips are wired incorrectly. You should use the back JST connection to attach your Hip cables**
+**In this figure, the JST cables connected to the Hips are wired incorrectly. You should use the back JST connection to attach your Hip cables.**
 
 #### Final Assembly
 PCB and electrical box wiring goes here
@@ -679,12 +686,12 @@ Twist: "side-side"
 
 |     Joint Name       | Min | Max | Home |   |
 |----------------------|-----|-----|------|---|
-| Head Nod             | 0   | 240 | 125  |   |
-| Head Turn            | 0   | 240 | 120  |   |
-| Head Tilt            | 0   | 240 | 125  |   |
-| Torso Bow            | 40  | 140 | 125  |   |
-| Torso Tilt           | 40  | 140 | 115  |   |
-| Right Shoulder Pitch | 0   | 180 | 125  |   |  
+| Head Nod             | 110 | 155 | 125  |   |
+| Head Turn            | 70  | 160 | 120  |   |
+| Head Tilt            | 100 | 145 | 125  |   |
+| Torso Bow            | 100 | 150 | 125  |   |
+| Torso Tilt           | 80  | 160 | 115  |   |
+| Right Shoulder Pitch | 60  | 180 | 135  |   |  
 | Right Shoulder Roll  | 0   | 180 | 185  |   |
 | Right Arm Twist      | 0   | 180 | 115  |   |
 | Right Elbow          |     |     | 90   |   |
