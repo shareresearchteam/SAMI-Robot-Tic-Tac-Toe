@@ -140,27 +140,27 @@ Before assembling the robot, it is necessary to assign unique motor IDs for each
 
 |     Joint Name       | ID | Assembly Orientation |
 |----------------------|----| -------------------- |
-| Head Tilt            | 01 |  |
-| Head Nod             | 02 |  |
-| Head Turn            | 03 |  |
-| Right Shoulder Pitch | 04 |  |
-| Right Shoulder Roll  | 05 |  |
-| Right Arm Twist      | 06 |  |
-| Right Elbow          | 07 |  |
-| Left Shoulder Pitch  | 08 |  |
-| Left Shoulder Roll   | 09 |  |
-| Left Arm Twist       | 10 |  |
-| Left Elbow           | 11 |  |
-| Right Hip            | 12 |  |
-| Right Knee           | 13 |  |
-| Right Ankle          | 14 |  |
-| Left Hip             | 15 |  |
-| Left Knee            | 16 |  |
-| Left Ankle           | 17 |  |
-| Torso Bow            | 18 |  |
-| Torso Tilt           | 19 |  |
-| Right Gripper        | 20 |  |
-| Left Gripper         | 21 |  |
+| Head Tilt            | 01 | 125 |
+| Head Nod             | 02 | 125 |
+| Head Turn            | 03 | 120 |
+| Right Chest          | 04 | 125 |
+| Right Shoulder       | 05 | 85  |
+| Right Bicep          | 06 | 115 |
+| Right Elbow          | 07 | 90  |
+| Left Chest           | 08 | 115 |
+| Left Shoulder        | 09 | 180 |
+| Left Bicep           | 10 | 115 |
+| Left Elbow           | 11 | 105 |
+| Right Hip            | 12 | 90  |
+| Right Knee           | 13 | 90  |
+| Right Ankle          | 14 | 90  |
+| Left Hip             | 15 | 90  |
+| Left Knee            | 16 | 90  |
+| Left Ankle           | 17 | 90  |
+| Torso Tilt           | 18 | 115 |
+| Torso Bow            | 19 | 125 |
+| Right Gripper        | 20 | 0   |
+| Left Gripper         | 21 | 0   |
 
 During assembly of the robot, it will be necessary to set each motor to a known rotation and then assemble the parts to match that orientation. These positions are *not operational home*, but are instead an easy reference position for use in assembly. The robot assembly pose, along with each joint name, motor ID, and the motor angle corresponding to the current pose, are shown in the image below. 
 
@@ -274,7 +274,7 @@ Neck Chest
 17. Attach the JST cable to the jst connector on the motor facing the back of the chest piece.
 
 
-The chest assembly will be fairly simple as you’ll be attaching the Right Chest, Left Chest, and Neck motors, then at the end, adding the Chest Connector piece that you just put together. The most difficult part of this assembly will be adding the Chest Connector piece onto the Chest.
+<!--The chest assembly will be fairly simple as you’ll be attaching the Right Chest, Left Chest, and Neck motors, then at the end, adding the Chest Connector piece that you just put together. The most difficult part of this assembly will be adding the Chest Connector piece onto the Chest.
 
 For the Right and Left Chest motors add the black rubber spacers to all screw notches available, then attach them to their respective sides with the servo horn pins pointing away from the front of the chest. Next, use the M3 x 14 mm hex screws and hex nuts to attach the motors to the chest frame. After the motors have been attached, you can add JST cables to the connection points located on the back of the chest frame. The progress so far should look like the figures below:
 
@@ -284,7 +284,7 @@ For the Right and Left Chest motors add the black rubber spacers to all screw no
 Now, you can add the motors’ servo horns with the black M3 screws, then the Shoulder Connector pieces. You’ll want the orientation of the Shoulder Connector pieces to match the placement of the Chest motors. You can attach the Shoulder Connector pieces using the silver M3 screws. The final product should look like the figures below:
 
 <img src="res/Chest_ShoulderConnectors_Front.jpeg"  width="50%"/>
-<img src="res/Chest_ShoulderConnectors_Side.jpeg"  width="50%"/>
+<img src="res/Chest_ShoulderConnectors_Side.jpeg"  width="50%"/>-->
 
 ##### Chest Connector Assembly
 The Chest Connector assembly will require:
@@ -315,7 +315,19 @@ Chest tilt
    <img src="" width="50%"/>
 6. Insert four of the M3 square nuts into the square nut slots around the motor and screw them down using the M3x16 screws.
 
-Begin by attaching the Chest Connector motors in the connector piece. Be aware of where you place certain motors as you’ll want your ID to match the movement that it will make on the robot. For example, Motor #18 will make a side-to-side movement while Motor #19 will be in charge of the up-down movement. 
+Attaching to the Chest
+
+7. Begin by slotting motor 18 into the chest upside down, with the servo horn facing the front plate, as shown below. *Do not screw in the servo horn yet.*
+
+   <img src="res/Chest_ChestConnector_Angled.jpeg"  width="50%"/>
+   <img src="res/Chest_ChestConnector_Front1.jpeg"  width="50%"/>
+8. Rotate the chest connector assembly until it is right side up inside the chest, as shown below.
+
+   <img src="res/Chest_ChestConnector_Front2.jpeg"  width="50%"/>
+9. Attach the servo horn to the chest using four of the silver M3 motor screws.
+
+
+<!--Begin by attaching the Chest Connector motors in the connector piece. Be aware of where you place certain motors as you’ll want your ID to match the movement that it will make on the robot. For example, Motor #18 will make a side-to-side movement while Motor #19 will be in charge of the up-down movement. 
 
 The placement of these motors can be a little tricky, so a visual will be provided below to help orient them correctly along with the JST connections. A good rule of thumb for this connector piece is to have the motor shaft in-line with the pins located on the 3D printed piece. The figures below shows correct placement and JST cable paths:
 
@@ -331,7 +343,7 @@ To make this as simple as possible, begin by attaching the front motor (the one 
 
 <img src="res/Chest_ChestConnector_Angled.jpeg"  width="50%"/>
 <img src="res/Chest_ChestConnector_Front1.jpeg"  width="50%"/>
-<img src="res/Chest_ChestConnector_Front2.jpeg"  width="50%"/>
+<img src="res/Chest_ChestConnector_Front2.jpeg"  width="50%"/>-->
 
 ##### Spine Assembly
 The Spine assembly will require:
@@ -341,6 +353,11 @@ The Spine assembly will require:
  - 8 M3 x 14 mm hex screws
 
 As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
+
+1. Slot the spine over motor 19, with the bulge over the servo horn, and the flat plane of the spine aligned with the back of the chest piece, as shown below.
+
+   <img src="" width="50%"/>
+2. Screw in motor 19 by attaching four silver M3 motor screws to the servo horn through the holes in the spine.
 
 To begin assembling, attach the frame of the spine to the hips. It is important that you attach the spine by the screw attachments that don’t include the servo horn location. It is also recommended that you screw in the spine with four screws in a diamond shape (the only screw holes that M3 screws will fit). This will give you a stable base for you to attach the rest of the torso on. This step should not impede instructions provided later for the Lower Body Assembly.
 
