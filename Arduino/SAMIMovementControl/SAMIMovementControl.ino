@@ -1,9 +1,9 @@
 /*************************************************** 
- Arduino motor controller and logic for Aaron, the open-source robot,
+ Arduino motor controller and logic for SAMI, the open-source robot,
  developed as a live-in exercise and game buddy in skileld nursing facilities
  to promote feelings of agency and self-efficacy, and to inhibit learned helplessness.
 
- Aaron is based on Aster (https://www.thingiverse.com/thing:3992150), which is a modified 
+ SAMI is based on Aster (https://www.thingiverse.com/thing:3992150), which is a modified 
  Poppy robot (https://www.thingiverse.com/thing:2280067), with additional hardware modification
  plus low level onboard logic and higher level PC based interactions. 
  The project github page ()  includes:

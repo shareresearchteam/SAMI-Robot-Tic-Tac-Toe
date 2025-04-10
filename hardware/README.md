@@ -164,7 +164,7 @@ Before assembling the robot, it is necessary to assign unique motor IDs for each
 
 During assembly of the robot, it will be necessary to set each motor to a known rotation and then assemble the parts to match that orientation. These positions are *not operational home*, but are instead an easy reference position for use in assembly. The robot assembly pose, along with each joint name, motor ID, and the motor angle corresponding to the current pose, are shown in the image below. 
 
-**IMG GO HERE**
+<img src="" width="50%"/>
 
 To simplify assembly, the initialization steps for each motor are:
 
