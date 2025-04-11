@@ -8,6 +8,8 @@ This section describes the part fabrication and hardware assembly process for th
 6. [Lower Body Assembly](#lower-body-assembly)
 7. [Final Assembly](#final-assembly)
 
+The layout of the parts for the robot, with names that are used within these instructions.
+<img src="res/sami_labeled.jpeg" width="50%"/>
 
 ## 3D Printing & Orientations
 *If using Prusa i3 printers with Prusa Slicer,* all parts should be printed at 0.3mm resolution ("draft quality" on Prusa Slicer), with 15% gyroid infill, and organic supports enabled (where necessary), **except for the chest piece,** which should be printed at 0.2mm resolution, with 15% gyroid infill, and normal grid-style supports instead. Alternatively, the **finger hinges** should be printed using PETG filament with 0% gyroid infill and a brim.

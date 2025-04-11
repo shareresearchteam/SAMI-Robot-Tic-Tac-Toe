@@ -6,12 +6,12 @@ Each serial packet sent or recieved includes static starting and ending bytes to
 Each message begins with a message topic, which is a single char byte defining the type and structure of content the rest of the message will include. The robot uses one set of message topics, and the sensor box uses a different set of message topics.
 
 The list of existing robot message topics is:
- - J - [Joint Message]()
- - E - [Emote Message]()
- - P - [Power Message]()
+ - J - [Joint Message](#joint-message)
+ - E - [Emote Message](#emote-message)
+ - P - [Power Message](#power-message)
 
 The list of existing sensor box message topics is:
- - B - [Button Message]()
+ - B - [Button Message](#button-message)
 
 
 These existing message types, corresponding message topics, and remaining content structure are each presented individually below.
