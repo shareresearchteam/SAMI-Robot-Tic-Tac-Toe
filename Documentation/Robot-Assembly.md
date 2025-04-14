@@ -216,7 +216,7 @@ Chest Bow
 2. Insert motor 19 into the slot that will *not* have another motor behind it. Make sure the servo horn and shaft are aligned to the plastic pin on the opposite side as shown in the image below.
 
    <img src="" width="50%"/>
-3. Insert four of the M3 square nuts into the square nut slots around the motor and screw them down using the M3x16 screws.
+3. Insert four of the M3 square nuts into the square nut slots around the motor and screw them down using the M3 x 16 mm screws.
 
 Chest tilt
 
@@ -224,7 +224,7 @@ Chest tilt
 5. Insert motor 18 into the remaining motor slot, making sure the servo horn and shaft are aligned to the plastic pin on the opposite side as shown below.
 
    <img src="" width="50%"/>
-6. Insert four of the M3 square nuts into the square nut slots around the motor and screw them down using the M3x16 screws.
+6. Insert four of the M3 square nuts into the square nut slots around the motor and screw them down using the M3 x 16 mm screws.
 
 Attaching to the Chest
 
@@ -297,11 +297,17 @@ The neck will require:
 
 As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
 
-First, add the black rubber spacers to all screw notches of the Neck motor. Next, you’ll want to add 4 square nuts to the spaces available on the empty motor space on the top of the chest piece. Using the M3 x 16 mm screws, attach the Neck motor. Next, add a servo horn using the silver M3 screws to the placement located on the bottom of the Neck piece. It will be easier to add the servo horn to the piece first than attaching it to the motor. After attaching the servo horn onto the Neck piece, you can add the Neck piece onto the Neck motor and secure it with a black M3 screw.
+<!--First, add the black rubber spacers to all screw notches of the Neck motor. Next, you’ll want to add 4 square nuts to the spaces available on the empty motor space on the top of the chest piece. Using the M3 x 16 mm screws, attach the Neck motor. Next, add a servo horn using the silver M3 screws to the placement located on the bottom of the Neck piece. It will be easier to add the servo horn to the piece first than attaching it to the motor. After attaching the servo horn onto the Neck piece, you can add the Neck piece onto the Neck motor and secure it with a black M3 screw.
 
-At this step you can also add a JST Cable to the port opening located on the back of the chest frame. The final product should look like the figures below:
+At this step you can also add a JST Cable to the port opening located on the back of the chest frame. The final product should look like the figures below:-->
+1. Add rubber spacers to all screw notches of motor 3.
+2. Insert 2 square nuts to inside spaces on top of the chest piece.
+<img src="res/Neck_Noscrews_Top.jpeg"  width="50%"/> 
+3. Insert motor 3 into the space, begin securing with 4 M3 x 16 mm screws.
+4. Upon reaching the square-shaped slots, add 2 square nuts to remaining slots.
+5. Continue screwing until motor 3 is secured.
+6. Attach silver horn using 1 black M3 screw.
 
-<img src="res/Neck_Noscrews_Top.jpeg"  width="50%"/>
 <img src="res/Neck_Front.jpeg"  width="50%"/>
 <img src="res/Neck_Back.jpeg"  width="50%"/>
 
@@ -318,9 +324,28 @@ The Neck Connector will require:
 
 As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
 
-Begin by adding the rubber spacers to all screw notches on your Neck Connector motors, then you can begin attaching the motors in the connector piece using the M3 x 16 mm screws. Be aware of where you place certain motors as you’ll want your ID to match the movement that it will make on the robot. For example, Motor #1 will make a side-to-side movement while Motor #2 will be in charge of the up-down movement. After adding the motors you can attach their servo horns using the black M3 screws.
+<!--Begin by adding the rubber spacers to all screw notches on your Neck Connector motors, then you can begin attaching the motors in the connector piece using the M3 x 16 mm screws. Be aware of where you place certain motors as you’ll want your ID to match the movement that it will make on the robot. For example, Motor #1 will make a side-to-side movement while Motor #2 will be in charge of the up-down movement. After adding the motors you can attach their servo horns using the black M3 screws.
 
-The placement of these motors can be a little tricky, so a visual will be provided below to help orient them correctly along with the JST connections. A good rule of thumb for this connector piece is to have the motor shaft in-line with the pins located on the 3D printed piece. The figures below shows correct orientation and JST cable paths:
+The placement of these motors can be a little tricky, so a visual will be provided below to help orient them correctly along with the JST connections. A good rule of thumb for this connector piece is to have the motor shaft in-line with the pins located on the 3D printed piece. The figures below shows correct orientation and JST cable paths:-->
+
+Neck Bow
+
+1. Insert the black rubber spacers into all four of the screw slots on motor 2
+2. Insert motor 2 into the slot that will *not* have another motor behind it. Make sure the servo horn and shaft are aligned to the plastic pin on the opposite side as shown in the image below.
+
+   <img src="" width="50%"/>
+3. Insert four of the M3 square nuts into the square nut slots around the motor and screw them down using the M3 x 16 mm screws.
+4. Attach a JST cable to bottom connection point of motor 2.
+
+Neck Tilt
+
+4. Insert the black rubber spacers into all four of the screw slots on motor 1
+5. Insert motor 1 into the remaining motor slot, making sure the servo horn and shaft are aligned to the plastic pin on the opposite side as shown below.
+
+   <img src="" width="50%"/>
+6. Insert four of the M3 square nuts into the square nut slots around the motor and screw them down using the M3 x 16 mm screws.
+7. Attach JST cable from motor 2 to top connection point of motor 1.
+8. Attach additional JST cables to both sides of motor 1.
 
 <img src="res/NeckConnector_Top.jpeg"  width="50%"/>
 <img src="res/NeckConnector_Side.jpeg"  width="50%"/>
@@ -335,17 +360,21 @@ The Head Assembly will require:
 
 As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
 
-You will first want to attach the Neck Connector piece to the Neck piece that should be attached to the Chest piece at this point. Motor #1 should be attached to the servo horn placement on the Neck piece, and secured with the silver M3 screws. Next, you’ll want to use the piece that looks like U (this piece will help us attach the headshell later) and attach it to Motor #2 located on the Neck Connector piece. 
-
+<!--You will first want to attach the Neck Connector piece to the Neck piece that should be attached to the Chest piece at this point. Motor #1 should be attached to the servo horn placement on the Neck piece, and secured with the silver M3 screws. Next, you’ll want to use the piece that looks like U (this piece will help us attach the headshell later) and attach it to Motor #2 located on the Neck Connector piece.--> 
+1. Attach Neck Connector to motor 1 and secure with 4 silver M3 screws. Follow images below for correct orientation.
+2. Attach U-shaped piece to motor 2 using 4 silver M3 screws.
 
 <img src="res/Neck_NeckConnector_Side.jpeg"  width="50%"/>
 <img src="res/Neck_NeckConnector_Front.jpeg"  width="50%"/>
 
-Next, insert the square nuts into the square slots on the U-shaped piece. Be sure to use a tool to push them as far in as they can go. You can check if they are in the right place by peering through the screw hole to see if the holes line up. See the figure below for a clearer visual (at this step the LED panel can be added, but optional):
+<!--Next, insert the square nuts into the square slots on the U-shaped piece. Be sure to use a tool to push them as far in as they can go. You can check if they are in the right place by peering through the screw hole to see if the holes line up. See the figure below for a clearer visual (at this step the LED panel can be added, but optional):-->
+3. Insert 2 square nuts into the slots on U-shaped piece. Use a small tool to push them as far in as they can go. LED panel can also be added at this step (press-fit attachment).
 
 <img src="res/Neck_NeckConnector_Side2.jpeg"  width="50%"/>
 
-After, you can place the headshell on top of this U-shaped piece by aligning the cylinder extrusions of the headshell with the cylinder-shaped gaps on the U piece. The two should fit snug and you should be able to press the headshell down to secure the fit. You can then complete the headshell’s attachment by screwing in the M3 x 20 mm screws until they reach past the square nuts. The final product should look like the figures below:
+<!--After, you can place the headshell on top of this U-shaped piece by aligning the cylinder extrusions of the headshell with the cylinder-shaped gaps on the U piece. The two should fit snug and you should be able to press the headshell down to secure the fit. You can then complete the headshell’s attachment by screwing in the M3 x 20 mm screws until they reach past the square nuts. The final product should look like the figures below:-->
+4. Place headshell on top of U-shaped piece by aligning cylinder shaped press-fits.
+5. Secure in headshell with 2 M3 x 20 mm screws.
 
 <img src="res/Headshell_Side.jpeg"  width="50%"/>
 <img src="res/Headshell_Top.jpeg"  width="50%"/>
