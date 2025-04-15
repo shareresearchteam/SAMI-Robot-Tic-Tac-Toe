@@ -9,7 +9,8 @@ This section describes the part fabrication and hardware assembly process for th
 7. [Final Assembly](#final-assembly)
 
 The layout of the parts for the robot, with names that are used within these instructions.
-<img src="res/sami_labeled.jpeg" width="50%"/>
+
+<img src="res/sami_labeled.jpg"  width="50%"/>
 
 ## 3D Printing & Orientations
 *If using Prusa i3 printers with Prusa Slicer,* all parts should be printed at 0.3mm resolution ("draft quality" on Prusa Slicer), with 15% gyroid infill, and organic supports enabled (where necessary), **except for the chest piece,** which should be printed at 0.2mm resolution, with 15% gyroid infill, and normal grid-style supports instead. Alternatively, the **finger hinges** should be printed using PETG filament with 0% gyroid infill and a brim.
@@ -140,7 +141,8 @@ Pre-threading the plastic screw holes with the silver M3 screws before assembly.
 
 Final product:
 
-<img src="res/LeftFoot_Angled.jpeg"  width="50%"/>
+<img src="res/Feet_Angled.jpeg"  width="50%"/>
+<img src="res/Feet_Top.jpeg"  width="50%"/>
 
 ### Lower Legs
 Following the set-up of the feet are the lower legs of the robot. Repeat these steps for both the right and left lower legs.
@@ -164,8 +166,8 @@ As done the same with the feet, pre-thread all the screw holes on the lower legs
 
 Reference figures:
 
-<img src="res/LeftFoot_Leg_Side.jpeg"  width="50%"/>
-<img src="res/LeftFoot_Leg_Back.jpeg"  width="50%"/>
+<img src="res/LowerLegs_Side.jpeg"  width="50%"/>
+<img src="res/LowerLegs_Back.jpeg"  width="50%"/>
 
 <!--Next, attach the Ankle JST cables to the bottom of the Knee motors, and a new JST cable onto the right side of the Left Knee motor. The Right Knee motor will have a new JST cable onto the left side. Finally, orient the Knee motors correctly onto the lower legs which should follow a 90 degree angle (the robot is sitting). Add rubber spacers onto the lower screw notches of the motor, where the upper legs will be attached.The figures below will show the final product, with JST cable, rubber spacer, and Knee motor orientation.--> 
 
@@ -173,13 +175,9 @@ Reference figures:
 4. Orient motors 13 and 16 at ~90 degree angle on lower legs. Attach with 8 silver M3 screws.
 5. Add rubber spacers onto upper notches of motors 13 and 16.
 
-Final product, Left Leg:
+Final product:
 
-<img src="res/LeftLeg_Back.jpeg"  width="50%"/>
-
-Final product, Right Leg:
-
-<img src="res/RightLeg_Back.jpeg"  width="50%"/>
+<img src="res/LowerLegs_Angled.jpeg"  width="50%"/>
 
 ### Upper Legs
 Continuing now to the upper legs. The upper legs will require:
@@ -217,15 +215,16 @@ Finally, we reach the end of the Lower Body Assembly. The hips will require:
 As usual, pre-thread all the screw holes, **especially**, where the motors are attached to the hips. 
 
 1. Add rubber spacers onto the screw notches of the motor.
-2. Place motor 12 on the right side of the hips. Press it down until the screw holes are aligned. See the figure below:
+2. Place motor 12 on the right side of the hips. Press it down until the screw holes are aligned. See the figures below:
 
-    <img src="res/"  width="50%"/>
+    <img src="res/Hips_Side.jpeg"  width="50%"/>
+    <img src="res/RightHip_Back.jpeg"  width="50%"/>
     
 4. Use 2 M3 x 30 mm screws to begin securing the motor. Stop screwing the motors to leave space for the square nuts.
 5. Insert 2 square nuts into the spaces located on the bottom of the hip. Tilt the piece to align the screws with the square nuts. Then fully screw in the motor.
 6. Place motor 15 on the left side. Press it down until the screw holes are aligned. See the figure below:
    
-    <img src="res/"  width="50%"/>
+    <img src="res/LeftHip_Back.jpeg"  width="50%"/>
 
 7. Use 2 M3 x 30 mm screws to begin securing the motor. Stop screwing the motors to leave space for the square nuts.
 8. Insert 2 square nuts into the spaces located on the bottom of the hip. Tilt the piece to align the screws with the square nuts. Then fully screw in the motor.
@@ -238,13 +237,14 @@ Following this step you can attach the servo horn onto the motor and JST cables 
 
 Final product:
 
-<img src="res/Hips_Angled.jpeg"  width="50%"/>
+   <img src="res/Hips_Angled.jpeg"  width="50%"/>
+   <img src="res/Hips_Top.jpeg"  width="50%"/>
 
 After, you can attach the lower limbs to the hip by screwing the Upper Legs into place on the Hips' servo horns (using the silver M3 screws). The final assembly should look like the figures below:
 
-<img src="res/FullLegAssembly_Front.jpeg"  width="50%"/>
+   <img src="res/FullLegAssembly_Front.jpeg"  width="50%"/>
 
-**In this figure, the JST cables connected to the Hips are wired incorrectly. You should use the back JST connection to attach your Hip cables.**
+*In this figure, the JST cables connected to the Hips are wired incorrectly. You should use the back JST connection to attach your Hip cables. Also, your robot should only have the leg portion in this photo, ignore the additional components.*
 
 ## Neck and Torso Assembly
 When assembling the neck and torso for the robot, it is best to begin with the chest, then spine, and ending with the neck. Throughout this assembly you will need to attach the motors and JST cables onto certain pieces before moving on.
@@ -262,35 +262,7 @@ The two HiWonder HTS-35H servo are also part of this section of the assembly, an
  - Torso Bow motor
  - Torso Tilt motor
  
- All correlated motor IDs are listed above in [Initializing Servo IDs and Positions](#initializing-servo-ids-and-positions), as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found in [Servo Horn Alignment](#servo-horn-alignment).
-
-### Spine Assembly
-The Spine assembly will require:
- - an M3 hex screwdriver
- - 4 silver servo horn M3 screws from the motor package
- - 8 hex nuts
- - 8 M3 x 14 mm hex screws
-
-As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
-
-1. Slot the spine over motor 19, with the bulge over the servo horn, and the flat plane of the spine aligned with the back of the chest piece, as shown below.
-
-   <img src="" width="50%"/>
-2. Screw in motor 19 by attaching four silver M3 motor screws to the servo horn through the holes in the spine.
-
-To begin assembling, attach the frame of the spine to the hips. It is important that you attach the spine by the screw attachments that don’t include the servo horn location. It is also recommended that you screw in the spine with four screws in a diamond shape (the only screw holes that M3 screws will fit). This will give you a stable base for you to attach the rest of the torso on. This step should not impede instructions provided later for the Lower Body Assembly.
-
-The figure below shows screw placement:
-
-<img src="res/Spine_Front.jpeg"  width="50%"/>
-<img src="res/Spine_Back.jpeg"  width="50%"/>
-
-Following the attachment to the hips is attaching the Chest assembly to the Spine. There should be a servo horn left on the Chest Connector that is orientated in the same direction as the available horn slot on the Spine. Attach the Chest to the Spine using this connection point with the silver M3 screws.
-The final product should look like the figures below:
-
-<img src="res/Spine_Chest_Angled.jpeg"  width="50%"/>
-<img src="res/Spine_Chest_Front.jpeg"  width="50%"/>
-<img src="res/Spine_Chest_Angled2.jpeg"  width="50%"/>
+All correlated motor IDs are listed above in [Initializing Servo IDs and Positions](#initializing-servo-ids-and-positions), as well as instructions for how to set the IDs and their home positions. It is also recommended that you check the servo horn orientation during this time, following the alignment found in [Servo Horn Alignment](#servo-horn-alignment).
 
 ### Chest Assembly
 The chest will require:
@@ -315,26 +287,33 @@ Right Shoulder Chest
 2. Insert motor 4 into the right shoulder slot on the chest piece. The servo should be oriented so the servo horn is closer to the back of the chest rather than the front as seen in the side photo below. Note the location of the dimple on the servo horn.
 
    <img src="res/Chest_Side.jpeg"  width="50%"/>
+   
 3. Use 4 of the M3x16 screws and 4 of the hex nuts to screw motor 4 to the chest.
 4. Use 4 of the silver M3 screws to attach motor 4's servo horn to the righst side Shoulder Connector piece. It should be attached to the horn mount in the middle of the part, and the two sides of the part should be dipping "down" when attached as shown below. 
 
-   <img src="res/Chest_ShoulderConnectors_Front.jpeg"  width="50%"/>
+   <img src="res/Chest_RShoulderConnector_Side.jpeg"  width="50%"/>
+   
 5. Attach the JST cable to the jst connector on the motor facing the back of the chest piece.
 
 Left Shoulder Chest
 
-6. Insert the black rubber spacers into the screw slots for each of motor 8.
+6. Insert the black rubber spacers into the screw slots for each of motor 8
 7. Insert motor 8 into the left shoulder slot on the chest piece. The servo should be oriented so the servo horn is closer to the back of the chest rather than the front.
+
+   <img src="res/Chest_LSide.jpeg"  width="50%"/>
+
 8. Use 4 of the M3x16 screws and 4 of the M3 hex nuts to screw motor 8 to the chest.
 9. Use 4 of the silver M3 screws to attach motor 4's servo horn to the righst side Shoulder Connector piece. It should be attached to the horn mount in the middle of the part, and the two sides of the part should be dipping "down" when attached as shown below.
 
-   <img src="res/Chest_ShoulderConnectors_Side.jpeg"  width="50%"/>
+   <img src="res/Chest_LShoulderConnectors_Side.jpeg"  width="50%"/>
+   
 10. Attach the JST cable to the jst connector on the motor facing the back of the chest piece.
 
 
 With both motors installed and JST cables connected, the chest from behind should look like 
 
-<img src="res/Chest_Back.jpeg"  width="50%"/>
+   <img src="res/Chest_ShoulderConnectors_Front.jpeg"  width="50%"/>
+   <img src="res/Chest_ChestConnector_Back.jpeg"  width="50%"/> 
 
 <!--The chest assembly will be fairly simple as you’ll be attaching the Right Chest, Left Chest, and Neck motors, then at the end, adding the Chest Connector piece that you just put together. The most difficult part of this assembly will be adding the Chest Connector piece onto the Chest.
 
@@ -366,7 +345,8 @@ Chest Bow
 1. Insert the black rubber spacers into all four of the screw slots on motor 19
 2. Insert motor 19 into the slot that will *not* have another motor behind it. Make sure the servo horn and shaft are aligned to the plastic pin on the opposite side as shown in the image below.
 
-   <img src="" width="50%"/>
+   <img src="res/ChestConnector_1Motor_Top.jpeg"  width="50%"/> 
+   
 3. Insert four of the M3 square nuts into the square nut slots around the motor and screw them down using the M3 x 16 mm screws.
 
 Chest tilt
@@ -374,7 +354,8 @@ Chest tilt
 4. Insert the black rubber spacers into all four of the screw slots on motor 18
 5. Insert motor 18 into the remaining motor slot, making sure the servo horn and shaft are aligned to the plastic pin on the opposite side as shown below.
 
-   <img src="" width="50%"/>
+   <img src="res/ChestConnector_2Motors_Top.jpeg"  width="50%"/> 
+   
 6. Insert four of the M3 square nuts into the square nut slots around the motor and screw them down using the M3 x 16 mm screws.
 
 Attaching to the Chest
@@ -383,9 +364,11 @@ Attaching to the Chest
 
    <img src="res/Chest_ChestConnector_Angled.jpeg"  width="50%"/>
    <img src="res/Chest_ChestConnector_Front1.jpeg"  width="50%"/>
+   
 8. Rotate the chest connector assembly until it is right side up inside the chest, as shown below.
 
    <img src="res/Chest_ChestConnector_Front2.jpeg"  width="50%"/>
+   
 9. Attach the servo horn to the chest using four of the silver M3 motor screws.
 
 
@@ -407,6 +390,40 @@ To make this as simple as possible, begin by attaching the front motor (the one 
 <img src="res/Chest_ChestConnector_Front1.jpeg"  width="50%"/>
 <img src="res/Chest_ChestConnector_Front2.jpeg"  width="50%"/>-->
 
+### Spine Assembly
+The Spine assembly will require:
+ - an M3 hex screwdriver
+ - 4 silver servo horn M3 screws from the motor package
+ - 8 hex nuts
+ - 8 M3 x 14 mm hex screws
+
+As recommended with every step, it is best to pre-thread the screw holes on the 3D printed parts.
+
+<!--To begin assembling, attach the frame of the spine to the hips. It is important that you attach the spine by the screw attachments that don’t include the servo horn location. It is also recommended that you screw in the spine with four screws in a diamond shape (the only screw holes that M3 screws will fit). This will give you a stable base for you to attach the rest of the torso on. This step should not impede instructions provided later for the Lower Body Assembly.-->
+
+1. Attach bottom frame of spine to hips using 4 M3 x 14 mm screws and 4 hex nuts. Screw in diamond shape.
+
+The figure below shows screw placement:
+
+   <img src="res/Spine_Front.jpeg"  width="50%"/>
+   <img src="res/Spine_Back.jpeg"  width="50%"/>
+
+Following the attachment to the hips is attaching the Chest Assembly to the Spine. 
+<!--There should be a servo horn left on the Chest Connector that is orientated in the same direction as the available horn slot on the Spine. Attach the Chest to the Spine using this connection point with the silver M3 screws.-->
+The final product should look like the figures below:
+
+2. Slot the spine over motor 19, with the bulge over the servo horn, and the flat plane of the spine aligned with the back of the chest piece, as shown below.
+
+   <img src="" width="50%"/>
+   
+3. Screw in motor 19 by attaching four silver M3 motor screws to the servo horn through the holes in the spine.
+
+Final product: 
+
+   <img src="res/Spine_Chest_Angled.jpeg"  width="50%"/>
+   <img src="res/Spine_Chest_Front.jpeg"  width="50%"/>
+   <img src="res/Spine_Chest_Angled2.jpeg"  width="50%"/>
+
 ### Neck Assembly
 The neck will require:
  - an M3 hex screwdriver
@@ -423,22 +440,22 @@ As recommended with every step, it is best to pre-thread the screw holes on the 
 <!--First, add the black rubber spacers to all screw notches of the Neck motor. Next, you’ll want to add 4 square nuts to the spaces available on the empty motor space on the top of the chest piece. Using the M3 x 16 mm screws, attach the Neck motor. Next, add a servo horn using the silver M3 screws to the placement located on the bottom of the Neck piece. It will be easier to add the servo horn to the piece first than attaching it to the motor. After attaching the servo horn onto the Neck piece, you can add the Neck piece onto the Neck motor and secure it with a black M3 screw.
 
 At this step you can also add a JST Cable to the port opening located on the back of the chest frame. The final product should look like the figures below:-->
-Neck Chest
-
-1. Insert the black rubber spacers into the screw slots for each of motor 3.
+1. Insert the black rubber spacers into the screw slots for each of motor 3
 2. Insert 2 of the M3 square nuts into the slots in on the inside of the neck of the chest piece, as shown below.
 
     <img src="res/Neck_Noscrews_Top.jpeg"  width="50%"/>
+    
 3. Insert motor 3 into the neck of the chest piece. The servo should be oriented so the servo horn is closer to the back of the chest rather than the front.
 4. Insert the remaining 2 M3 square nuts into the slots on the back of the neck of the chest piece.
 5. Use the remaining 4 M3x16 hex screws to screw down motor 3 to the chest, making sure to screw into the square nuts.
    
-   <img src="res/Neck_Front.jpeg"  width="50%"/>
-   <img src="res/Neck_Back.jpeg"  width="50%"/>
+   <img src="res/Neck_Side.jpeg"  width="50%"/>
+   <img src="res/Neck_Top.jpeg"  width="50%"/>
 
 6. Attach the neck piece to the servo horn with 4 silver M3 screws, matching the orientation shown below.
 
-    <img src="" width="50%"/>
+   <img src="res/NeckPiece_Front.jpeg"  width="50%"/>
+   <img src="res/NeckPiece_Side.jpeg"  width="50%"/>
     
 7. Attach the JST cable to the jst connector on the motor facing the back of the chest piece.
 
@@ -603,9 +620,15 @@ Final product:
 ### Forearms
 The Forearms will require:
  - an M3 hex screwdriver
- - 8 silver servo horn M3 screws
+ - 8 silver M3 screws
 
-Upon pre-threading all the screw holes, you can move onto the complete Arm Assembly (you will be using these screws in the assembly).
+Pre-thread all screw holes before assembly.
+
+1. Attach Forearms to respective Biceps using 4 silver M3 screws each.
+
+Final assembly (Right Arm):
+
+<img src="res/ArmAssembly_Side.jpeg"  width="50%"/>
 
 ### Hands Construction & Assembly
 Before beginning assembly, please be sure to double check that the hinges match the size-dependent and axial orientation on the fingers, with the fingers aligned to their corresponding palm (*Figures 1-3*). This assembly will require:
@@ -647,13 +670,6 @@ Before beginning assembly, please be sure to double check that the hinges match 
 <img src="res/Tendon_Tieoff_at_Base_of_Fingertip_display_large.jpg"  width="50%"/>
 
 *Figure 4*: Tendon knot placement for all fingers ([Flexy-Hand 2](https://www.thingiverse.com/thing:380665))
-
-### Arm Assembly
-At this point in the Arm assembly process, the Biceps and Shoulders should already be connected together due to the slight complexity of their pieces. The only step left is to attach the forearm to the lower Bicep motor, which can be done by screwing the servo horns from the lower Bicep motors to their corresponding places on the Forearms. This will be accomplished using the silver M3 screws you grabbed for the Forearm section. The finished assembly should look like the figures below:
-
-Final assembly (Right Arm):
-
-<img src="res/ArmAssembly_Side.jpeg"  width="50%"/>
 
 ## Final Assembly
 PCB and electrical box wiring goes here
