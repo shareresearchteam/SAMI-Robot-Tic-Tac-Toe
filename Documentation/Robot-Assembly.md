@@ -1,12 +1,13 @@
 # Robot Assembly Guide
 This section describes the part fabrication and hardware assembly process for the actual robot.
 1. [3D Printing & Orientations](#3d-printing--orientations)
-2. [Initializing Servo IDs and Positions](#initializing-servo-ids-and-positions)
-3. [Overall Assembly Information]()
-4. [Neck and Torso Assembly](#neck-and-torso-assembly)
-5. [Arm Assembly](#arm-assembly)
-6. [Lower Body Assembly](#lower-body-assembly)
-7. [Final Assembly](#final-assembly)
+2. [Setting Up the Control Board](#setting-up-the-control-board)
+3. [Initializing Servo IDs and Positions](#initializing-servo-ids-and-positions)
+4. [Overall Assembly Information]()
+5. [Neck and Torso Assembly](#neck-and-torso-assembly)
+6. [Arm Assembly](#arm-assembly)
+7. [Lower Body Assembly](#lower-body-assembly)
+8. [Final Assembly](#final-assembly)
 
 The layout of the parts for the robot, with names that are used within these instructions.
 
@@ -42,6 +43,11 @@ Print orientations are shown below for each part, along with the part names that
 
 ### Lower Legs and Feet
 <img src="res/LowerLegs_Feet.png"  width="50%"/>
+
+## Setting Up the Control Board
+Before getting into initializing the robot setup, we'll begin by connecting power to the motor control PCB.
+
+1. 
 
 ## Initializing Servo IDs and Positions
 You will need to communicate with the motors as part of the assembly process. This process can be completed using the completed robot PCB, or the [HiWonder motor debugging board]().
