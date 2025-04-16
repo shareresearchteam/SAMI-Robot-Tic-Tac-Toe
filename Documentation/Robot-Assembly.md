@@ -412,9 +412,9 @@ Following the attachment to the hips is attaching the Chest Assembly to the Spin
 <!--There should be a servo horn left on the Chest Connector that is orientated in the same direction as the available horn slot on the Spine. Attach the Chest to the Spine using this connection point with the silver M3 screws.-->
 The final product should look like the figures below:
 
-2. Slot the spine over motor 19, with the bulge over the servo horn, and the flat plane of the spine aligned with the back of the chest piece, as shown below.
+2. Slot the spine over motor 19, with the servo horn over the bulge, and the flat plane of the spine aligned with the back of the chest piece. The figure below is only meant to show correct orientation.
 
-   <img src="" width="50%"/>
+   <img src="res/Spine_ChestConnector_Top.jpeg" width="50%"/>
    
 3. Screw in motor 19 by attaching four silver M3 motor screws to the servo horn through the holes in the spine.
 
@@ -481,7 +481,8 @@ Neck Bow
 1. Insert the black rubber spacers into all four of the screw slots on motor 2
 2. Insert motor 2 into the slot that will *not* have another motor behind it. Make sure the servo horn and shaft are aligned to the plastic pin on the opposite side as shown in the image below.
 
-   <img src="" width="50%"/>
+   <img src="res/NeckConnector_1Motor_Top.jpeg" width="50%"/>
+   
 3. Insert four of the M3 square nuts into the square nut slots around the motor and screw them down using the M3 x 16 mm screws.
 4. Attach a JST cable to bottom connection point of motor 2.
 
@@ -490,14 +491,15 @@ Neck Tilt
 4. Insert the black rubber spacers into all four of the screw slots on motor 1
 5. Insert motor 1 into the remaining motor slot, making sure the servo horn and shaft are aligned to the plastic pin on the opposite side as shown below.
 
-   <img src="" width="50%"/>
+   <img src="res/NeckConnector_2Motor_Top.jpeg" width="50%"/>
+   
 6. Insert four of the M3 square nuts into the square nut slots around the motor and screw them down using the M3 x 16 mm screws.
 7. Attach JST cable from motor 2 to top connection point of motor 1.
 8. Attach additional JST cables to both sides of motor 1.
 
-<img src="res/NeckConnector_Top.jpeg"  width="50%"/>
+<!--<img src="res/NeckConnector_Top.jpeg"  width="50%"/>
 <img src="res/NeckConnector_Side.jpeg"  width="50%"/>
-<img src="res/NeckConnector_Angled.jpeg"  width="50%"/>
+<img src="res/NeckConnector_Angled.jpeg"  width="50%"/>-->
 
 ### Head Assembly
 The Head Assembly will require:
