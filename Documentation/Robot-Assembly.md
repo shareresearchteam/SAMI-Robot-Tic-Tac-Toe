@@ -615,9 +615,8 @@ Outcome of servo horn attachment:
 
 Final product:
 
-<img src="res/Shoulder_Bicep_Side.jpeg"  width="50%"/>
-<img src="res/Shoulder_Bicep_Front.jpeg"  width="50%"/>
-<img src="res/Shoulder_Bicep_Side2.jpeg"  width="50%"/>
+<img src="res/LRShoulder_Bicep_Front.jpeg"  width="50%"/>
+<img src="res/LRShoulder_Bicep_Back.jpeg"  width="50%"/>
 
 ### Forearms
 The Forearms will require:
@@ -628,9 +627,9 @@ Pre-thread all screw holes before assembly.
 
 1. Attach Forearms to respective Biceps using 4 silver M3 screws each.
 
-Final assembly (Right Arm):
+Final assembly (ignore color differences, pieces were printed incorrectly):
 
-<img src="res/ArmAssembly_Side.jpeg"  width="50%"/>
+<img src="res/LRArmAssembly_Side.jpeg"  width="50%"/>
 
 ### Hands Construction & Assembly
 Before beginning assembly, please be sure to double check that the hinges match the size-dependent and axial orientation on the fingers, with the fingers aligned to their corresponding palm (*Figures 1-3*). This assembly will require:
