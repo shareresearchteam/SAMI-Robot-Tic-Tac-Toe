@@ -56,12 +56,12 @@ In either case, you will be initializing each motor by connecting and communicat
 
 Before assembling the robot, it is necessary to assign unique motor IDs for each joint motor. You can set these IDs with the [SetServoID Arduino code project](../Arduino/SetServoID/) using the motor control PCB for the robot. Any ID numbers may be chosen, but the default configuration file, and these assembly instructions, will use the joint names and IDs as listed in the table below.
 
-|     Joint Name       | ID | Assembly Orientation |
+|     Joint Name       | ID | Assembly Pose (Angle) |
 |----------------------|----| -------------------- |
 | Head Tilt            | 01 | 125 |
 | Head Nod             | 02 | 125 |
 | Head Turn            | 03 | 120 |
-| Right Chest          | 04 | 125 |
+| Right Chest          | 04 | 135 |
 | Right Shoulder       | 05 | 85  |
 | Right Bicep          | 06 | 115 |
 | Right Elbow          | 07 | 90  |
@@ -69,11 +69,11 @@ Before assembling the robot, it is necessary to assign unique motor IDs for each
 | Left Shoulder        | 09 | 180 |
 | Left Bicep           | 10 | 115 |
 | Left Elbow           | 11 | 105 |
-| Right Hip            | 12 | 90  |
+| Right Hip            | 12 | 84  |
 | Right Knee           | 13 | 90  |
-| Right Ankle          | 14 | 90  |
-| Left Hip             | 15 | 90  |
-| Left Knee            | 16 | 90  |
+| Right Ankle          | 14 | 80  |
+| Left Hip             | 15 | 96  |
+| Left Knee            | 16 | 80  |
 | Left Ankle           | 17 | 90  |
 | Torso Tilt           | 18 | 115 |
 | Torso Bow            | 19 | 125 |
