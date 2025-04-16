@@ -47,20 +47,26 @@ Print orientations are shown below for each part, along with the part names that
 ## Setting Up the Control Board
 Before getting into initializing the robot setup, we'll begin by connecting power to the motor control PCB.
 
-1. Connect power and grounds to both 12 V and 5 V power sources using the provided cables. Plug in the yellow ends to the corresponding connections on the PCB.
-2. Connect red, yellow, and black cables to back of switch.
-3. Connect other ends to locations on both power sources:
+1. Connect the red fork of the 12V power cable (shorter cable with large connector) to the V+ label on the 12V power supply.
+2. Connect the black fork for the 12V power cable to the V- label on the 12V power supply.
+3. Connect the red fork of the 5V power cable (longer cable with small connector) to the V- label on the 5V power supply.
+4. Connect the black fork of the 5V power cable to the V- label on the 5V power supply.
+5. Connect red, yellow, and black cables to back of power switch.
+
+   <img src="res/switch_wiring.JPG" width="50%"/>
+
+6. Connect other ends to locations on both th 5V and 12V power supplies:
    - Red to L
    - Yellow to N (neutral)
    - Black to GND
 
-   <img src="res/Switch_Key.jpeg"  width="50%">
+   <img src="res/Switch_Key.jpeg"  width="50%"/>
 
-4. Plug power cord to switch, then to a nearby power outlet.
+7. Plug power cord to switch, then to a nearby power outlet.
 
 Reference image:
 
-   <img src="res/Control_Board.jpeg"  width="50%">
+   <img src="res/Control_Board.jpeg"  width="50%"/>
 
 ## Initializing Servo IDs and Positions
 You will need to communicate with the motors as part of the assembly process. This process can be completed using the completed robot PCB, or the [HiWonder motor debugging board]().
@@ -95,7 +101,7 @@ Before assembling the robot, it is necessary to assign unique motor IDs for each
 
 During assembly of the robot, it will be necessary to set each motor to a known rotation and then assemble the parts to match that orientation. These positions are *not operational home*, but are instead an easy reference position for use in assembly. The robot assembly pose, along with each joint name, motor ID, and the motor angle corresponding to the current pose, are shown in the image below. 
 
-<img src="" width="50%"/>
+<img src="res/assembly_orientation.png" width="50%"/>
 
 To simplify assembly, the initialization steps for each motor are:
 
