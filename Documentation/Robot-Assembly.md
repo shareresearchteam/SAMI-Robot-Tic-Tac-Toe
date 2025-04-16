@@ -86,8 +86,8 @@ During assembly of the robot, it will be necessary to set each motor to a known 
 
 To simplify assembly, the initialization steps for each motor are:
 
-1. Set the motor ID of the servo with the [SetServoID Arduino code project](../Arduino/SetServoID/).
-2. Set the motor to it's assembly home position using the [SetServoPosition Arduino code project](../Arduino/SetServoPosition/).
+1. Set the motor ID of the servo with the [SetServoID Arduino code project](../Arduino/SetServoID/). Change the code to the motor ID you want to set.
+2. Set the motor to it's assembly home position using the [SetServoPosition Arduino code project](../Arduino/SetServoPosition/). Change the code so that you are only running **1 motor (the ID you just set) and 1 angle (the home angle you want to set)**.
 3. While the servo is in the home position, attach the servo horn such that the dimple on the horn is facing towards the servo body as shown below.
 
    <img src="res/Servo_Horn_Orientation.jpg" width="50%"/>
