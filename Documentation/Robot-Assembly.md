@@ -42,12 +42,25 @@ Print orientations are shown below for each part, along with the part names that
 <img src="res/Hip_UpperLegs.png"  width="50%"/>
 
 ### Lower Legs and Feet
-<img src="res/LowerLegs_Feet.png"  width="50%"/>
+   <img src="res/LowerLegs_Feet.png"  width="50%"/>
 
 ## Setting Up the Control Board
 Before getting into initializing the robot setup, we'll begin by connecting power to the motor control PCB.
 
-1. 
+1. Connect power and grounds to both 12 V and 5 V power sources using the provided cables. Plug in the yellow ends to the corresponding connections on the PCB.
+2. Connect red, yellow, and black cables to back of switch.
+3. Connect other ends to locations on both power sources:
+   - Red to L
+   - Yellow to N (neutral)
+   - Black to GND
+
+   <img src="res/Switch_Key.jpeg"  width="50%">
+
+4. Plug power cord to switch, then to a nearby power outlet.
+
+Reference image:
+
+   <img src="res/Control_Board.jpeg"  width="50%">
 
 ## Initializing Servo IDs and Positions
 You will need to communicate with the motors as part of the assembly process. This process can be completed using the completed robot PCB, or the [HiWonder motor debugging board]().
