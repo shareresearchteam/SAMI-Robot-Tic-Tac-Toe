@@ -45,7 +45,7 @@ Print orientations are shown below for each part, along with the part names that
    <img src="res/LowerLegs_Feet.png"  width="50%"/>
 
 ## Setting Up the Control Board
-Before getting into initializing the robot setup, we'll begin by connecting power to the motor control PCB.
+Before getting into initializing the robot setup, we'll begin by connecting power to the [motor control PCB](./Electrical-Assembly.md).
 
 1. Connect the red fork of the 12V power cable (shorter cable with large connector) to the V+ label on the 12V power supply.
 2. Connect the black fork for the 12V power cable to the V- label on the 12V power supply.
@@ -69,7 +69,7 @@ Reference image:
    <img src="res/Control_Board.jpeg"  width="50%"/>
 
 ## Initializing Servo IDs and Positions
-You will need to communicate with the motors as part of the assembly process. This process can be completed using the completed robot PCB, or the [HiWonder motor debugging board]().
+You will need to communicate with the motors as part of the assembly process. This process can be completed using the [assembled motor control PCB](#setting-up-the-control-board), or the [HiWonder motor debugging board](https://www.hiwonder.com/products/hiwonder-ttl-usb-debugging-board).
 
 In either case, you will be initializing each motor by connecting and communicating with it individually (*not* chaining the motors). The below initialization instructions assume you are initializing the motors using the robot motor control PCB.
 
@@ -699,4 +699,42 @@ Before beginning assembly, please be sure to double check that the hinges match 
 *Figure 4*: Tendon knot placement for all fingers ([Flexy-Hand 2](https://www.thingiverse.com/thing:380665))
 
 ## Final Assembly
-PCB and electrical box wiring goes here
+Chair attachment bits all go here!
+
+Final assembly will require:
+
+ - The assembly SAMI robot
+ - motor control PCB assembly (with power supplies)
+ - Ikea chair
+ - 8x8 NeoPixel array x2
+ - Eye Panel 3D printed piece
+ - Headshell 3D printer piece
+ - M2.5 screws and nuts for eye panel
+ - Short 3-pin JST cable
+ - Long 3-pin JST cable
+ - M4x?? socket head screw x2
+ - M3x?? screw x3
+ - M3x?? screw x2
+ - M8x?? screw x2
+ - M8 washer x2
+ - M8 lock nut x2
+ - [12V screw hole template]()
+ - [5V screw hole template]()
+ - [Robot attachment template]()
+ - [PCB mounting template]()
+ - [Power switch mounting template]()
+
+Eyes Assembly
+
+1. Take the first LED array and screw it into the flat side of the eye panel 3D printed piece, with the jst connectors pushed through the rectangular holes, and the DOUT labeled pin aligned to the rectangular hole closer to the center of the panel.
+2. Screw the second LED array and screw it to the eye panel next to the first, with the DIN labeled data pin aligned closer to the center of the panel.
+3. Attach the short 3-pin JST cable from the center-aligned DOUT connector of the first LED array to the center-aligned DIN connector of the second LED array.
+4. Attach the long 3-pin JST cable to the DIN connector of the first LED array.
+
+Chair Modification and Assembly
+
+
+
+
+Attach Everything to the Chair
+
