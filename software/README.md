@@ -7,8 +7,7 @@
 - Download or clone this project folder onto your local machine.
 - To install the required Python packages run command: pip install pyqt5 pyserial playsound
 - Default serial port is /dev/ttyUSB0 (Linux) or COM3 (Windows). Update in JamieUI.py.
-- Open a terminal in the project folder.
-- python JamieUI.py
+- Open a terminal in the project folder run : python JamieUI.py
 
 ## What does the GUI do?
 - Send Command: Select a joint, enter an angle and movement time, then send.
