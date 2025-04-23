@@ -1,9 +1,9 @@
 {
-    "Name": "Wave",
+    "Name": "Double Wave",
     "Keyframes": [
       {
         "HasEmote": "True",
-        "HasAudio": "True",
+        "HasAudio": "False",
         "AudioClip": "intro",
         "HasJoints": "True",
         "Expression": "Happy",
@@ -15,13 +15,29 @@
             "Angle": 90
           },
           {
+            "Joint": "RightShoulder",
+            "Angle": 180
+          }
+          
+        ]
+      },
+      {
+        "HasEmote": "True",
+        "HasAudio": "False",
+        "HasJoints": "True",
+        "Expression": "Happy",
+        "WaitTime": 1500,
+        "JointMoveTime": 1,
+        "JointAngles": [
+          {
             "Joint": "LeftBicep",
-            "Angle": 60
+            "Angle": 30
           },
           {
-            "Joint": "LeftElbow",
-            "Angle": 50
+            "Joint": "RightBicep",
+            "Angle": 180
           }
+          
         ]
       },
       {
@@ -34,8 +50,13 @@
         "JointAngles": [
           {
             "Joint": "LeftElbow",
-            "Angle": 120
+            "Angle": 150
+          },
+          {
+            "Joint": "RightElbow",
+            "Angle": 60
           }
+          
         ]
       },
       {
@@ -48,8 +69,13 @@
         "JointAngles": [
           {
             "Joint": "LeftElbow",
-            "Angle": 50
+            "Angle": 105
+          },
+          {
+            "Joint": "RightElbow",
+            "Angle": 100
           }
+          
         ]
       },
       {
@@ -62,8 +88,13 @@
         "JointAngles": [
           {
             "Joint": "LeftElbow",
-            "Angle": 120
+            "Angle": 150
+          },
+          {
+            "Joint": "RightElbow",
+            "Angle": 60
           }
+          
         ]
       },
       {
@@ -76,8 +107,13 @@
         "JointAngles": [
           {
             "Joint": "LeftElbow",
-            "Angle": 50
+            "Angle": 105
+          },
+          {
+            "Joint": "RightElbow",
+            "Angle": 100
           }
+          
         ]
       }
     ]
