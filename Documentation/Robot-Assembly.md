@@ -379,11 +379,11 @@ Chest Bow
    <img src="res/Connectors_SidebySide.jpeg"  width="50%"/>
 **Use the connector on the right for Chest Assembly.**
 
-3. Insert motor 19 into the slot that will *not* have another motor behind it. Make sure the servo horn and shaft are aligned to the plastic pin on the opposite side as shown in the image below.
+2. Insert motor 19 into the slot that will *not* have another motor behind it. Make sure the servo horn and shaft are aligned to the plastic pin on the opposite side as shown in the image below.
 
    <img src="res/ChestConnector_1Motor_Top.jpeg"  width="50%"/> 
    
-4. Insert four of the M3 square nuts into the square nut slots around the motor and screw them down using the M3 x 16 mm screws.
+3. Insert four of the M3 square nuts into the square nut slots around the motor and screw them down using the M3 x 16 mm screws.
 
 Chest tilt
 
@@ -727,7 +727,7 @@ Chair attachment bits all go here!
 
 Final assembly will require:
 
- - The assembly SAMI robot
+ - The SAMI robot assembly
  - motor control PCB assembly (with power supplies)
  - Ikea chair
  - 8x8 NeoPixel array x2
@@ -753,11 +753,14 @@ Eyes Assembly
 1. Take the first LED array and screw it into the flat side of the eye panel 3D printed piece, with the jst connectors pushed through the rectangular holes, and the DOUT labeled pin aligned to the rectangular hole closer to the center of the panel.
 2. Screw the second LED array and screw it to the eye panel next to the first, with the DIN labeled data pin aligned closer to the center of the panel.
 3. Attach the short 3-pin JST cable from the center-aligned DOUT connector of the first LED array to the center-aligned DIN connector of the second LED array.
+
+   <img src="res/back_of_eyepanel_wires.jpg" width="50%"/>
+
 4. Attach the long 3-pin JST cable to the DIN connector of the first LED array.
 
 Chair Modification and Assembly
 
-
+The Ikea chair needs to be modified with screw and bolt holes to attach the robot, control PCB, two power supplies, and power switch.
 
 
 Attach Everything to the Chair
