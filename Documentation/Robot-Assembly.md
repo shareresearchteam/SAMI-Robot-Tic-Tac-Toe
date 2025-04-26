@@ -685,23 +685,36 @@ Final assembly (ignore color differences, pieces were printed incorrectly):
 Before beginning assembly, please be sure to double check that the hinges match the size-dependent and axial orientation on the fingers, with the fingers aligned to their corresponding palm (*Figures 1-3*). This assembly will require:
  - TPU finger hinges
  - Resin printed fingers
- - 0.38 mm (0.015 in) fishing line 
+ - 0.38 mm (0.015 in) fishing line
+ - 4 2.5 mm self-tapping screws (from the motor package)
  - pair of thin nose pliers
  - scissors
  - small files
+ - 2 Actuonix PQ12 Micro Linear Actuators
+ - 2 U-shaped metal pieces (from linear actuator box)
+ - 2 M3 x 12 mm screws
+ - 2 M3 x 14 mm screws
+ - 2 M3 x 2 mm screws
+ - 2 lock nuts
+ - 2 square-shaped nuts
+ - 2 eyebolts
 
 <!--It is **highly** recommended to fit the largest hinges into the palm first. While the hinges should be printed as a more "spongey" material, you may need to use a pair of pliers to manually squeeze the larger side of the hinge into its gap in the palm. You can also use a file or a craft knife to trim a little from the opening sides. After fitting the palm hinges, all fingers can be assembled separately from the hand. They should perfectly slide into the finger hinge slots (following size contraints but axial orientation shouldn't matter).--> 
-
-1. Fit the largest hinges into the 4 largest slots on the palm. The material is "spongey", you can use pair of pliers to push it in. If necessary, shave the area use a small file or craft night.
-2. Slide first finger hinges in place following size constraints and hand orientation.
-3. Repeat process using smaller hinges and finger components, referencing the figures below as needed.
-
 <!--Stringing the fishing line through the hands should be the **last step** (with fingers not yet assembled to the palm). Begin by measuring the amount you think you might need for your project by fitting the line through the bottom of the hand and up through the 3D piece (**do not cut yet**). Then, continue stringing your fishing line up the holes in the fingers and upon reaching the tip of the top finger, restring back through the second hole and leaving enough to tie it off (*Figure 4*). To get an accurate length of fishing line you will need, attach the finger to the palm and measure how much you think you will need at the bottom of the hand (leaving adequate space at the top to tie off your line). After ensuring you have the right length, you can cut off your line from its container and use pliers to tie a double knot at the top of the finger.-->
 
-3. Cut ?? mm of fishing line per finger, ?? mm for the thumb.
-4. Fit fishing line through the bottom of the heand up through one set of finger components.
-5. Restring fishing line back through the top finger component. Leave enough room to tie off later.
-6. Ensure that the lenght is adequate enough to later attach to the forearm. If so, tie off the top of the finger using pliers to get a tight knot (may need to make more than one knot).
+1. Fit the largest hinges into the 4 largest slots on the palm using the side with the hole in it. The material is "spongey", you can use pair of pliers to push it in. If necessary, shave the area use a small file or craft night.
+2. Fit two small hinges into the thumb slot using the same process mentioned in step 1. If necessary, shave the area use a small file or craft night.
+3. Slide first finger hinges in place following size constraints and hand orientation.
+4. Repeat process using smaller hinges and finger components, referencing the figures below as needed.
+5. Cut ~30 mm of fishing line per finger, ~25 mm for the thumb.
+6. Fit fishing line through the bottom of the heand up through one set of finger components.
+7. Restring fishing line back through the top finger component. Leave enough room to tie off later.
+8. Ensure that the length is adequate enough to later attach to the forearm. If so, tie off the top of the finger using pliers to get a tight knot (may need to make more than one knot). Use Figure 4 as a reference.
+9. Attach eyebolts to middle screw hole of U-shaped metal piece using the M3 x 2 mm screws.
+10. Attach linear actuators to Forearm piece using M3 x 12 mm screws and square nuts. 
+11. Tie all 5 fishing lines to eyebolt using a 'Fisherman's Knot'. Use Figure 5 as a reference.
+12. Attach hands to the forearms using the 2.5 mm self-tapping screws.
+13. Attach other 2 screw holes of U-shaped metal piece to linear actuator using M3 x 14 mm screws and lock nuts. 
 
 <img src="res/Finger_Hand_Reference_Sheet.jpg"  width="50%"/>
 
@@ -721,6 +734,10 @@ Before beginning assembly, please be sure to double check that the hinges match 
 <img src="res/Tendon_Tieoff_at_Base_of_Fingertip_display_large.jpg"  width="50%"/>
 
 *Figure 4*: Tendon knot placement for all fingers ([Flexy-Hand 2](https://www.thingiverse.com/thing:380665))
+
+<img src="res/Fishermans-knot-all-steps.jpg"  width="50%"/>
+
+*Figure 5*: Fisherman's Knot instructional image
 
 ## Final Assembly
 Chair attachment bits all go here!
