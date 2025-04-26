@@ -736,12 +736,12 @@ Final assembly will require:
  - M2.5 screws and nuts for eye panel
  - Short 3-pin JST cable
  - Long 3-pin JST cable
- - M4x?? socket head screw x2
- - M3x?? screw x3
- - M3x?? screw x2
- - M8x?? screw x2
- - M8 washer x2
- - M8 lock nut x2
+ - M4x30 socket head screw x2 (12V to leg of chair)
+ - M3x20 screw x2 (Side of chair for 5V)
+ - M3x14 screw x2 (Bottom of chair for 5V)
+ - M10x40 screw x2 (Robot attach to chair)
+ - M10 washer x2
+ - M10 lock nut x2
  - [12V screw hole template]()
  - [5V screw hole template]()
  - [Robot attachment template]()
@@ -762,6 +762,13 @@ Chair Modification and Assembly
 
 The Ikea chair needs to be modified with screw and bolt holes to attach the robot, control PCB, two power supplies, and power switch.
 
+1. Lay out the Power switch mounting template on the
+
 
 Attach Everything to the Chair
+
+For the two motors in the hips, the JST cables that come with the motors will need to be lengthened to reach the motor pcb. You'll need to splice in a 12" length of wire. This can be done by soldering, or with mechanical splice connectors such as [these](https://www.amazon.com/dp/B0DGLJJRZ5).
+
+
+
 

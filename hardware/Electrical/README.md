@@ -55,6 +55,49 @@ This cable assembly connects both the 12V power supply and 5V power supply to th
 #### Assembly
 
 
+### Hip Motor to Control PCB JST Cable
+For the two motors in the hips, the JST cables that come with the motors will need to be lengthened to reach the motor pcb. You'll need to splice in a 12" length of wire. This can be done by soldering, or with mechanical splice connectors such as [these](https://www.amazon.com/dp/B0DGLJJRZ5).
+
+#### Materials
+ - 1x 3 pin JST cable (comes with motor)
+ - 1x 3 wire cable, 12" length minimum
+ - Solder and heat shrink or [2x mechanical crimp splicers](https://www.amazon.com/dp/B0DGLJJRZ5).
+
+#### Assembly
+
+### Eye Panel Short Cable
+This is the short cable combining the two LED array panels for the eyes.
+
+#### Materials
+ - 2x 3pin JST XH2.54 connectors
+ - 1x 3 wire cable, 4" length (try not to go long)
+
+#### Assembly
+
+
+### Eye Panel Long Cable
+ - 1x 3pin JST XH2.54 connector
+ - 1x 3pin JST PH2.0 connector
+ - 1x 3 wire cable, ?? length minimum
+
+#### Materials
+
+#### Assembly
+
+
+### Gripper Cable
+
+
+#### Materials
+ - 1x 3pin JST PH2.0 connector
+ - 1x 3pin Dupont female connector
+ - 1x 3 wire cable, ?? length minimum
+
+#### Assembly
+
+
+
+
 
 
 ## Bill of Materials

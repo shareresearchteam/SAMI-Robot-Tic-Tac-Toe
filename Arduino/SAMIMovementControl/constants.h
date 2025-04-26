@@ -15,6 +15,12 @@ This contains all our constant definitions, including:
 #define NECKTORSO_RELAY 33 // Pin for controlling power to the neck and torso motors
 #define LEGS_RELAY 26 // Pin for controlling power to the leg motors
 #define ARMS_RELAY 28 // Pin for controlling power to the arm motors
+// The gripper pins!
+#define R_GRIPPER 34  // Pin for controlling the right gripper servo
+#define L_GRIPPER 40  // Pin for controlling the left gripper servo
+// The gripper IDs
+#define R_GRIP_ID 20
+#define L_GRIP_ID 21
 
 
 /********** Motor Definitions **********/
