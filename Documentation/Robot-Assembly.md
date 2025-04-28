@@ -735,13 +735,13 @@ Before beginning assembly, please be sure to double check that the hinges match 
 *Figure 5*: Fisherman's Knot instructional image
 
 #### Continued...
-9. Set up linear actuator to board and move them to max length.
+9. Set up linear actuators to board and move them to max length before assembly. Follow Arduino code provided in [LinearActuatorSet](../Arduino/LinearActuatorSet/).
 
    <img src="res/ArduinoCircuit_Front.jpeg"  width="50%"/>
 
 10. Attach eyebolts to middle screw hole of U-shaped metal piece using the smallest M3 screws from the linear actuator package.
 
-   <img src="res/.jpeg"  width="50%"/>
+   <img src="res/Eyebolt_Top.jpeg"  width="50%"/>
 
 11. Attach linear actuators to Forearm piece using M3 x 12 mm screws and square nuts (see Final product reference).
 12. Tie all 5 fishing lines to eyebolt using a 'Fisherman's Knot'. Use Figure 5 as a reference.
@@ -749,11 +749,11 @@ Before beginning assembly, please be sure to double check that the hinges match 
    <img src="res/Hand_Eyebolt_Top.jpeg"  width="50%"/>
 
 12. Attach hands to the forearms using the 2.5 mm self-tapping screws.
-13. Attach other 2 screw holes of U-shaped metal piece to linear actuator using the medium length M3 screws and lock nuts.
+13. Attach other 2 screw holes of U-shaped metal piece to linear actuator using the medium length M3 screws and lock nuts. *Note: This image is only meant to show how linear actuator and hand should be attached. Only attach the two once the linear actuator is screwed into the forearm.*
 
    <img src="res/EyeboltKnot_Side.jpeg"  width="50%"/>
 
-Final product:
+Final product (Right Arm):
 
    <img src="res/CompleteForearm_Top.jpeg"  width="50%"/>
    <img src="res/CompleteForearm_Bottom.jpeg"  width="50%"/>
