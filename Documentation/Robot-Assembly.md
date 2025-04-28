@@ -66,7 +66,7 @@ Before getting into initializing the robot setup, we'll begin by connecting powe
 
 Reference image:
 
-   <img src="res/Control_Board.jpeg"  width="50%"/>
+   <img src="res/PowerSupplys_Front.jpeg"  width="50%"/>
 
 ## Initializing Servo IDs and Positions
 You will need to communicate with the motors as part of the assembly process. This process can be completed using the [assembled motor control PCB](#setting-up-the-control-board), or the [HiWonder motor debugging board](https://www.hiwonder.com/products/hiwonder-ttl-usb-debugging-board).
@@ -650,8 +650,8 @@ As recommended with every step, it is best to pre-thread all screw holes. This i
 
 Outcome of servo horn attachment:
 
-<img src="res/Shoulder_Screw_Top.jpeg"  width="50%"/>
-<img src="res/Bicep_Shoulder_Front.jpeg"  width="50%"/>
+   <img src="res/Shoulder_Screw_Top.jpeg"  width="50%"/>
+   <img src="res/Bicep_Shoulder_Front.jpeg"  width="50%"/>
 
 <!--Next, add rubber spacers to the screw holes closest to the servo horn attachment on the Shoulder motors. Put the Shoulder motors into the 3D printed piece with the label facing outward and the servo horn attachment orientated on the top. You can then screw the motors in place using the M3 x 14 mm hex screws and adding the M3 square nuts into their corresponding slots. It might take a bit of fussing to get the M3 square nuts aligned correctly with the screws. You can tilt the piece to help make this a bit easier.--> 
 
@@ -665,8 +665,8 @@ Outcome of servo horn attachment:
 
 Final product:
 
-<img src="res/LRShoulder_Bicep_Front.jpeg"  width="50%"/>
-<img src="res/LRShoulder_Bicep_Back.jpeg"  width="50%"/>
+   <img src="res/LRShoulder_Bicep_Front.jpeg"  width="50%"/>
+   <img src="res/LRShoulder_Bicep_Back.jpeg"  width="50%"/>
 
 ### Forearms
 The Forearms will require:
@@ -679,7 +679,7 @@ Pre-thread all screw holes before assembly.
 
 Final assembly (ignore color differences, pieces were printed incorrectly):
 
-<img src="res/LRArmAssembly_Side.jpeg"  width="50%"/>
+   <img src="res/LRArmAssembly_Side.jpeg"  width="50%"/>
 
 ### Hands Construction & Assembly
 Before beginning assembly, please be sure to double check that the hinges match the size-dependent and axial orientation on the fingers, with the fingers aligned to their corresponding palm (*Figures 1-3*). This assembly will require:
@@ -693,11 +693,11 @@ Before beginning assembly, please be sure to double check that the hinges match 
  - 2 Actuonix PQ12 Micro Linear Actuators
  - 2 U-shaped metal pieces (from linear actuator box)
  - 2 M3 x 12 mm screws
- - 2 M3 x 14 mm screws
- - 2 M3 x 2 mm screws
  - 2 lock nuts
  - 2 square-shaped nuts
  - 2 eyebolts
+ - 2 M3 small screws (from linear actuator box)
+ - 2 M3 medium length screws (from linear actuator box)
 
 <!--It is **highly** recommended to fit the largest hinges into the palm first. While the hinges should be printed as a more "spongey" material, you may need to use a pair of pliers to manually squeeze the larger side of the hinge into its gap in the palm. You can also use a file or a craft knife to trim a little from the opening sides. After fitting the palm hinges, all fingers can be assembled separately from the hand. They should perfectly slide into the finger hinge slots (following size contraints but axial orientation shouldn't matter).--> 
 <!--Stringing the fishing line through the hands should be the **last step** (with fingers not yet assembled to the palm). Begin by measuring the amount you think you might need for your project by fitting the line through the bottom of the hand and up through the 3D piece (**do not cut yet**). Then, continue stringing your fishing line up the holes in the fingers and upon reaching the tip of the top finger, restring back through the second hole and leaving enough to tie it off (*Figure 4*). To get an accurate length of fishing line you will need, attach the finger to the palm and measure how much you think you will need at the bottom of the hand (leaving adequate space at the top to tie off your line). After ensuring you have the right length, you can cut off your line from its container and use pliers to tie a double knot at the top of the finger.-->
@@ -710,11 +710,6 @@ Before beginning assembly, please be sure to double check that the hinges match 
 6. Fit fishing line through the bottom of the heand up through one set of finger components.
 7. Restring fishing line back through the top finger component. Leave enough room to tie off later.
 8. Ensure that the length is adequate enough to later attach to the forearm. If so, tie off the top of the finger using pliers to get a tight knot (may need to make more than one knot). Use Figure 4 as a reference.
-9. Attach eyebolts to middle screw hole of U-shaped metal piece using the M3 x 2 mm screws.
-10. Attach linear actuators to Forearm piece using M3 x 12 mm screws and square nuts. 
-11. Tie all 5 fishing lines to eyebolt using a 'Fisherman's Knot'. Use Figure 5 as a reference.
-12. Attach hands to the forearms using the 2.5 mm self-tapping screws.
-13. Attach other 2 screw holes of U-shaped metal piece to linear actuator using M3 x 14 mm screws and lock nuts. 
 
 <img src="res/Finger_Hand_Reference_Sheet.jpg"  width="50%"/>
 
@@ -738,6 +733,30 @@ Before beginning assembly, please be sure to double check that the hinges match 
 <img src="res/Fishermans-knot-all-steps.jpg"  width="50%"/>
 
 *Figure 5*: Fisherman's Knot instructional image
+
+#### Continued...
+9. Set up linear actuator to board and move them to max length.
+
+   <img src="res/ArduinoCircuit_Front.jpeg"  width="50%"/>
+
+10. Attach eyebolts to middle screw hole of U-shaped metal piece using the smallest M3 screws from the linear actuator package.
+
+   <img src="res/.jpeg"  width="50%"/>
+
+11. Attach linear actuators to Forearm piece using M3 x 12 mm screws and square nuts (see Final product reference).
+12. Tie all 5 fishing lines to eyebolt using a 'Fisherman's Knot'. Use Figure 5 as a reference.
+
+   <img src="res/Hand_Eyebolt_Top.jpeg"  width="50%"/>
+
+12. Attach hands to the forearms using the 2.5 mm self-tapping screws.
+13. Attach other 2 screw holes of U-shaped metal piece to linear actuator using the medium length M3 screws and lock nuts.
+
+   <img src="res/EyeboltKnot_Side.jpeg"  width="50%"/>
+
+Final product:
+
+   <img src="res/CompleteForearm_Top.jpeg"  width="50%"/>
+   <img src="res/CompleteForearm_Bottom.jpeg"  width="50%"/>
 
 ## Final Assembly
 Chair attachment bits all go here!
