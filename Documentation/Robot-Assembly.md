@@ -7,7 +7,8 @@ This section describes the part fabrication and hardware assembly process for th
 5. [Neck and Torso Assembly](#neck-and-torso-assembly)
 6. [Arm Assembly](#arm-assembly)
 7. [Lower Body Assembly](#lower-body-assembly)
-8. [Final Assembly](#final-assembly)
+8. [Chair Assembly](#chair-modification-and-assembly)
+9. [Final Assembly](#final-assembly)
 
 The layout of the parts for the robot, with names that are used within these instructions.
 
@@ -758,49 +759,22 @@ Final product (Right Arm):
    <img src="res/CompleteForearm_Top.jpeg"  width="50%"/>
    <img src="res/CompleteForearm_Bottom.jpeg"  width="50%"/>
 
-## Final Assembly
-Chair attachment bits all go here!
 
-Final assembly will require:
-
- - The SAMI robot assembly
- - motor control PCB assembly (with power supplies)
- - Ikea chair
- - 8x8 NeoPixel array x2
- - Eye Panel 3D printed piece
- - Headshell 3D printer piece
- - M2.5 screws and nuts for eye panel
- - Short 3-pin JST cable
- - Long 3-pin JST cable
- - M4x30 socket head screw x2 (12V to leg of chair)
- - M3x20 screw x2 (Side of chair for 5V)
- - M3x14 screw x2 (Bottom of chair for 5V)
- - M10x40 screw x2 (Robot attach to chair)
- - M3x30 flathead screw x2 (Power switch screws)
- - M3 lock nut x2 (Power switch mounting)
- - M10 washer x2
- - M10 lock nut x2
- - [12V screw hole template](res/chair_templates1.pdf)
- - [5V screw hole template](res/chair_templates1.pdf)
- - [Robot attachment template]()
- - [PCB mounting template]()
- - [Power switch mounting template](res/chair_templates1.pdf)
-
-Eyes Assembly
-
-1. Take the first LED array and screw it into the flat side of the eye panel 3D printed piece, with the jst connectors pushed through the rectangular holes, and the DOUT labeled pin aligned to the rectangular hole closer to the center of the panel.
-2. Screw the second LED array and screw it to the eye panel next to the first, with the DIN labeled data pin aligned closer to the center of the panel.
-3. Attach the short 3-pin JST cable from the center-aligned DOUT connector of the first LED array to the center-aligned DIN connector of the second LED array.
-
-   <img src="res/back_of_eyepanel_wires.jpg" width="50%"/>
-
-4. Attach the long 3-pin JST cable to the DIN connector of the first LED array.
-
-Chair Modification and Assembly
+## Chair Modification and Assembly
 
 The Ikea chair needs to be modified with screw and bolt holes to attach the robot, control PCB, two power supplies, and power switch.
 
-Power Switch
+Begin by first assembling the Ikea chair following their instructions.
+
+### Power Switch
+
+Requires:
+
+ - Ikea chair
+ - [Power switch]() and [fuse]()
+ - M3x30 flathead screw x2 (Power switch screws)
+ - M3 lock nut x2 (Power switch mounting)
+ - [Power switch mounting template](res/chair_templates1.pdf)
 
 1. Lay out the Power switch mounting template on the back of the plane of the chair below the seat.
 2. Cut out the box in the dashed line, then fit the power switch into the cut out on the chair.
@@ -812,7 +786,14 @@ Power Switch
 5. Lock down in place by tightening down the M3 lock nuts onto the end of the screws on the other side of the wood.
 
 
-12V Supply Mounting
+### 12V Supply Mounting
+
+Requires:
+
+ - Ikea chair
+ - 12VDC Power Supply
+ - M4x30 socket head screw x2 (12V to leg of chair)
+ - [12V screw hole template](res/chair_templates1.pdf)
 
 1. Lay out the 12V supply mounting template on the back leg of the chair, as shown in the image below.
 
@@ -825,7 +806,15 @@ Power Switch
    <img src="res/12v_behind.jpg" width="45%"/> <img src="res/12v_front.jpg" width="45%"/>
 
 
-5V Supply Mounting
+### 5V Supply Mounting
+
+Requires:
+
+ - Ikea chair
+ - 5VDC Power Supply
+ - M3x20 screw x2 (Side of chair for 5V)
+ - M3x14 screw x2 (Bottom of chair for 5V)
+ - [5V screw hole template](res/chair_templates1.pdf)
 
 1. Fold the 5V supply mounting template along the center align.
 2. Attach the template to the inside underside of the chair, as shown below.
@@ -841,7 +830,49 @@ Power Switch
 6. Screw the M3x14 screws through the holes in the seat of the chair and into the matching holes on the side of the 5V supply.
 
 
+### Motor Control PCB Mounting
 
+Requires:
+
+ - Ikea chair
+ - Motor control PCB assembly
+ - M3x??+6 standoffs x4
+ - [PCB mounting template]()
+
+
+### Robot Mounting
+
+Requires:
+
+ - Ikea chair
+ - SAMI Robot
+ - M10x40 screw x2 (Robot attach to chair)
+ - M10 washer x2
+ - M10 lock nut x2
+ - [Robot attachment template]()
+
+
+
+## Final Assembly
+
+
+### Eyes Assembly
+
+Assembly of the eyes requires:
+
+ - 8x8 NeoPixel array x2
+ - Eye Panel 3D printed piece
+ - M2.5 screws and nuts for eye panel
+ - Short 3-pin JST cable
+ - Long 3-pin JST cable
+
+1. Take the first LED array and screw it into the flat side of the eye panel 3D printed piece, with the jst connectors pushed through the rectangular holes, and the DOUT labeled pin aligned to the rectangular hole closer to the center of the panel.
+2. Screw the second LED array and screw it to the eye panel next to the first, with the DIN labeled data pin aligned closer to the center of the panel.
+3. Attach the short 3-pin JST cable from the center-aligned DOUT connector of the first LED array to the center-aligned DIN connector of the second LED array.
+
+   <img src="res/back_of_eyepanel_wires.jpg" width="50%"/>
+
+4. Attach the long 3-pin JST cable to the DIN connector of the first LED array.
 
 
 Attach Everything to the Chair
