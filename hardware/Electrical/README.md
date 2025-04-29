@@ -29,12 +29,12 @@ For connecting the wires to the XT-60 connector, you may follow [this](https://w
 This cable assembly connects the 5V power on the motor control PCB to the 5V power supply for the robot.
 
 #### Materials
- - 1x red 14AWG braided wire, 24" length minimum
+ - 1x red 18AWG braided wire, 24" length minimum
  - 2x red heat shrink pieces
- - 1x black 14AWG braided wire, 24" length minimum
+ - 1x black 18AWG braided wire, 24" length minimum
  - 2x black heat shrink pieces
  - 1x XT-30 female plug
- - 2x fork connector #8, 16-14 gauge opening
+ - 2x fork connector #8, 22-16 gauge opening
 
 #### Assembly
 
@@ -53,6 +53,57 @@ This cable assembly connects both the 12V power supply and 5V power supply to th
  - 3x female spade connector, 12-10 gauge opening
 
 #### Assembly
+
+
+### Hip Motor to Control PCB JST Cable
+For the two motors in the hips, the JST cables that come with the motors will need to be lengthened to reach the motor pcb. You'll need to splice in a 12" length of wire. This can be done by soldering, or with mechanical splice connectors such as [these](https://www.amazon.com/dp/B0DGLJJRZ5).
+
+You will need:
+ - 1x 3 pin JST cable (comes with motor)
+ - 1x 3 wire cable, 12" length minimum
+ - Solder and heat shrink or [2x mechanical crimp splicers](https://www.amazon.com/dp/B0DGLJJRZ5).
+
+Split the JST cable that comes with the motor down the middle. Then splice in the 12" length of cable, such that the connector ends match each other (*not* mirrored!) See the photo below.
+
+<img src="../../Documentation/res/leg_extensions.jpg" width="50%"/>
+
+
+### Eye Panel Short Cable
+This is the short cable combining the two LED array panels for the eyes.
+
+You will need:
+ - 2x 3pin JST XH2.54 connectors
+ - 1x 3 wire cable, 4" length (try not to go long)
+
+Assemble the connectors to the cable such that the connectors match each other (*not* mirrored!). See the photo below.
+
+<img src="../../Documentation/res/short_eyes_conn.jpg" width="50%"/>
+
+
+### Eye Panel Long Cable
+This is the logn cable connecting the first LED array panel to the motor control board. 
+
+You will need:
+ - 1x 3pin JST XH2.54 connector
+ - 1x 3pin JST PH2.0 connector
+ - 1x 3 wire cable, 16" length minimum
+
+Assemble the cable so that wires connect into the connectors as shown in the image below.
+
+<img src="../../Documentation/res/long_eyes_conn.jpg" width="50%"/>
+
+
+### Gripper Cable
+The cable to connector the gripper servo motors to the motor control pcb. It converts a dupont connector to a JST PH2.0.
+
+You will need:
+ - 1x 3pin JST PH2.0 connector
+ - 1x 3pin Dupont female connector
+ - 1x 3 wire cable, ?? length minimum
+
+Connect the dupont to the jst as shown below, where white is the signal line, red is power, and black is ground. 
+
+<img src="" width="50%"/>
 
 
 
