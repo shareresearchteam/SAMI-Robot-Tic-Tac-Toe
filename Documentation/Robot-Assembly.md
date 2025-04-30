@@ -875,10 +875,16 @@ Assembly of the eyes requires:
 4. Attach the long 3-pin JST cable to the DIN connector of the first LED array.
 
 
-Attach Everything to the Chair
-
+### Connect The Remaining Cables
 
 For the two motors in the hips, the JST cables that come with the motors will need to be lengthened to reach the motor pcb. You'll need to splice in a 12" length of wire. This can be done by soldering, or with mechanical splice connectors such as [these](https://www.amazon.com/dp/B0DGLJJRZ5).
+
+
+### Flash Arduino Code
+
+1. Install FastLED from the Arduino Library Manager (version 3.9.12)
+2. Install the [NeoEyes library](../Arduino/NeoEyes/) to your Arduino Library.
+3. Flash the [SAMIMovementControl](../Arduino/SAMIMovementControl/) project to the Arduino MEGA2560 attached to the motor control board.
 
 
 
