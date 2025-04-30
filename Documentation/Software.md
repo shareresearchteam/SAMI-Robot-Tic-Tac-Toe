@@ -23,7 +23,7 @@ Motion (JointAngles)
 Emotes (Expression)
 Audio (AudioClip)
 
-## Adding new Behaviors
+## Adding new Behaviors(#Guide to Custom Robot Behaviors)
 - You can define new behaviors by creating JSON files inside the behaviors/ folder. Each behavior consists of keyframes that specify joint movements, emotes, audio clips, and wait times.
 - For example see any .json file in behaviors/ folder.
 - Steps to Add:
