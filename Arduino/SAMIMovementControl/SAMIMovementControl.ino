@@ -65,27 +65,35 @@ void loop() {
   // Check for any serial communications
   recvWithStartEndMarkers();
   if(newData) {
-//    Serial.print("Message type: ");
-//    Serial.println(currMsgType);
+    #if defined(DEBUG) && DEBUG
+       Serial.print("Message type: ");
+       Serial.println(currMsgType);
+    #endif
     // If we got a new emote instruction, then set the eyes
     if(newEmote) {
-//      Serial.print("Emote Recieved: ");
-//      Serial.println(currentEmote);
+    #if defined(DEBUG) && DEBUG
+        Serial.print("Emote Recieved: ");
+        Serial.println(currentEmote);
+    #endif
       roboEyes.setStandardEmote(currentEmote);
       newEmote = false;
     }
     else if (updateRelayStates) {
-//      Serial.print("Relay Set: ");
-//      Serial.print(relaysToSet);
-//      Serial.print(" to state: ");
-//      Serial.println(newOnOffState);
+    #if defined(DEBUG) && DEBUG
+        Serial.print("Relay Set: ");
+        Serial.print(relaysToSet);
+        Serial.print(" to state: ");
+        Serial.println(newOnOffState);
+    #endif
       updateServoRelays();
       updateRelayStates = false;
     }
     // If we got new joint data
     else if(newJoints) {
-      //Serial.print("Number Joints Recieved: ");
-      //Serial.println(numJointsRecv);
+      #if defined(DEBUG) && DEBUG
+        Serial.print("Number Joints Recieved: ");
+        Serial.println(numJointsRecv);
+      #endif
       // Set the new joint values for the specific joint pins we recieved
       servoController.setFromJointMsg();
       newJoints = false;
