@@ -9,8 +9,8 @@ This contains all our constant definitions, including:
 #define CONSTANTS_H
 
 /********** Some Settings **********/
-// If you want the code to print out so much information back to the pc, turn this on
-#define DEBUG false
+// If you want the code to print out so much information back to the pc, turn this to 1
+#define DEBUG 0
 // The gripper IDs the PC side code uses to define the right gripper and left gripper
 #define R_GRIP_ID 20
 #define L_GRIP_ID 21

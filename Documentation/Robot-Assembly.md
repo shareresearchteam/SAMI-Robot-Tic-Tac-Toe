@@ -241,7 +241,7 @@ Finally, we reach the end of the Lower Body Assembly. The hips will require:
  - 4x rubber spacers from the motor package
  - 4x M3 x 25 mm hex screws
  - 4x M3 square nuts
- - 2x JST cables
+ - 2x  extended JST cables
  - Motor ID 12
  - Motor ID 15
  
@@ -886,6 +886,8 @@ For the two motors in the hips, the JST cables that come with the motors will ne
 2. Install the [NeoEyes library](../Arduino/NeoEyes/) to your Arduino Library.
 3. Flash the [SAMIMovementControl](../Arduino/SAMIMovementControl/) project to the Arduino MEGA2560 attached to the motor control board.
 
+### Test Motor movements
 
+Test movements for the motors using the software UI
 
 
