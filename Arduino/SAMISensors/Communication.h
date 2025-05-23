@@ -17,7 +17,7 @@ char pbMsg2 ='N';//NO push button
 void sendRFIDData(uint8_t data[16]) {
   Serial.print(startMarker);
   Serial.print(rfidMsg);
-  Serial.print(data);
+  //Serial.print(data);
   Serial.println(endMarker);
 }
 

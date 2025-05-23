@@ -13,33 +13,40 @@
 // the PN532 SCK, MOSI, and MISO pins need to be connected to the Arduino's
 // hardware SPI SCK, MOSI, and MISO pins.  On an Arduino Uno these are
 // SCK = 13, MOSI = 11, MISO = 12.  The SS line can be any digital IO pin.
-#define PN532_IRQ A4
-#define PN532_SS  A5
+#define PN532_SCK 13
+#define PN532_MISO 12
+#define PN532_MOSI 11
+#define PN532_SS  10
+//#define PN532_IRQ A4
+#define RFID_TRIG A5
+
 
 #define ECHO_INTERR1 2
 #define ECHO_INTERR2 3
 
-//#define BUZZER_PIN 5
-
 //PIR sensor input pin
-//#define PIR_PINM  A2
 #define PIR_PINR  A1
 #define PIR_PINL  A0
 
 //Push button input pin
-//#define PUSHB_1 A0
-//#define PUSHB_2 A1
-// Button state variables
-// array index is button id num!
-int numBtns = 3;
-int btnPins[] = {10,11,12};
-int btnStates[] = {LOW, LOW, LOW};
+#define BTN_1 A2
+#define BTN_2 A3
+#define BTN_3 A4
 
-#define NUM_READINGS 15  // Number of readings to average.
+
+#define NUM_READINGS 10  // Number of readings to average.
 #define THRESHOLD    50   // Deviation threshold from the average (in centimeters).
 
-#define DEBUG 1 // if we want to get debug messages
+#define DEBUG 0       // if we want to get debug messages
+#define DEBUG_ULTRA 0 // if we want to debug just the ultrasonic bits
+#define DEBUG_PIR 0   // if we want to debug just the pir bits
+#define DEBUG_RFID 0  // if we want to debug just the rfid bits
+#define DEBUG_BTN 0   // if we want to debug just the button bits
+#define DEBUG_LOGIC 1 // if we want to debug just the logic bits
 
+volatile bool cardTriggered = false; // Did the card detector get triggered??
+bool cardCurrentState = false; // Is there currently a card?
+bool haveRFIDReader = false; // Did we connect to the card reader?
 
 // Constants
 const unsigned int MAX_DIST = 23200;

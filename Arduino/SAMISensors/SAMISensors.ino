@@ -71,14 +71,17 @@ void setup() {
   //initializeReadings();
   Serial.begin(115200);
 
-  initializeRFIDReader();
+  // RFID Setup
+  pinMode(RFID_TRIG, INPUT_PULLUP);
+  haveRFIDReader = initializeRFIDReader();
+  
   // Then start our first ultrasonic ping
   // this one handles one of our echos and our rfid reader
-  attachInterrupt(digitalPinToInterrupt(ECHO_INTERR1),
+  attachInterrupt(digitalPinToInterrupt(ECHO_INTERR2),
                   echoRFIDPinInterrupt,
                   CHANGE);
   // this one handles our other two echos
-  attachInterrupt(digitalPinToInterrupt(ECHO_INTERR2),
+  attachInterrupt(digitalPinToInterrupt(ECHO_INTERR1),
                   echoPinInterrupt,
                   CHANGE);
   startUltrasonicPing(0);
@@ -86,11 +89,12 @@ void setup() {
   startUltrasonicPing(2);
   
   // Stabilization delay for the PIRs, which have a bunch of ping wiggles during initial power on
-  #if defined(DEBUG) && DEBUG 
+  #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_LOGIC) && DEBUG_LOGIC) 
     Serial.println("Stabilizing sensor...");
   #endif
-  delay(45000);  // 45 seconds stabilization time
-  #if defined(DEBUG) && DEBUG 
+  //delay(45000);  // 45 seconds stabilization time
+  delay(20000);
+  #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_LOGIC) && DEBUG_LOGIC) 
     Serial.println("Sensor stabilized.");
   #endif
 
@@ -104,6 +108,8 @@ void loop() {
   readAllPIRs();
   // Update all our ultrasonic sensor calls
   updateAllUltrasonic();
+
+  // Logic handling go here
   // if we have motion on the left, and the left ultrasonic says someone has entered it's range
   if (motionStatusL && ultraStatus[1] == 1) {
     // send a serial message about a new person on the left?
@@ -113,6 +119,14 @@ void loop() {
     // send a serial message about a new person on the right?
   }
   // something with checking the center too, I guess...
+
+  
+
+  // function checks the state of all buttons and sends any button messages if a button has been pressed
+  checkBtns();
+
+  // Check if we need to parse a change with the rfid card
+  checkRFIDCard();
 
 
 //  
@@ -126,7 +140,7 @@ void loop() {
 //      sendPirData(1);
 //      if (objectInRange) {
 //        center = true;
-//        #if defined(DEBUG) && DEBUG 
+//        #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_LOGIC) && DEBUG_LOGIC) 
 //          Serial.println("Someone at center");
 //        #endif
 //      }
@@ -135,7 +149,7 @@ void loop() {
 //    else if (motionStatusL) {
 //      detected = true;
 //      sendPirDataL(1);
-//      #if defined(DEBUG) && DEBUG 
+//      #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_LOGIC) && DEBUG_LOGIC) 
 //        Serial.println("Someone from left");
 //      #endif
 //    }
@@ -143,7 +157,7 @@ void loop() {
 //    else if (motionStatusR) {
 //      detected = true;
 //      sendPirDataR(1);
-//      #if defined(DEBUG) && DEBUG 
+//      #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_LOGIC) && DEBUG_LOGIC) 
 //          Serial.println("Someone from right");
 //        #endif
 //    }
@@ -238,11 +252,7 @@ void loop() {
 //    center = false;   // Ensure center remains false
 //}
 
-  // function checks the state of all buttons and sends any button messages if a button has been pressed
-  checkBtns();
-
-  // function to check and handle reading rfid card
-  readRFIDCard();
+  
     
 //  //read the state of the pushbutton value:
 //  buttonStateY = pushButton1(PUSHB_1);
@@ -257,5 +267,5 @@ void loop() {
 //  if (buttonStateN == 1){
 //  sendPushButtonData(1);
 // }  
-delay(1000);
+delay(100);
 }

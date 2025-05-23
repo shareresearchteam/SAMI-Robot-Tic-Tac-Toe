@@ -23,7 +23,7 @@ int pir(int pirPin, int &pirState, int &motionStatus){
     motionStatus = 1; // motion detected
     // We only want to print on the output change, not state
     pirState = HIGH;
-    #if defined(DEBUG) && DEBUG 
+    #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_PIR) && DEBUG_PIR) 
       Serial.print("PIR on pin ");
       Serial.print(pirPin);
       Serial.println(" detected motion start");
@@ -36,7 +36,7 @@ int pir(int pirPin, int &pirState, int &motionStatus){
     motionStatus = 0; //motion ended
     // We only want to print on the output change, not state
     pirState = LOW;
-    #if defined(DEBUG) && DEBUG 
+    #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_PIR) && DEBUG_PIR) 
       Serial.print("PIR on pin ");
       Serial.print(pirPin);
       Serial.println(" detected motion stop");
@@ -50,7 +50,7 @@ int pir(int pirPin, int &pirState, int &motionStatus){
 //      motionStatus = 1; //motion detected
 //      // We only want to print on the output change, not state
 //      pirState = HIGH;
-//      #if defined(DEBUG) && DEBUG 
+//      #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_PIR) && DEBUG_PIR) 
 //        Serial.print("PIR on pin ");
 //        Serial.print(pirPin);
 //        Serial.println(" detected motion start");
@@ -63,7 +63,7 @@ int pir(int pirPin, int &pirState, int &motionStatus){
 //      motionStatus = 0; //motion ended
 //      // We only want to print on the output change, not state
 //      pirState = LOW;
-//      #if defined(DEBUG) && DEBUG 
+//      #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_PIR) && DEBUG_PIR) 
 //        Serial.print("PIR on pin ");
 //        Serial.print(pirPin);
 //        Serial.println(" detected motion stop");

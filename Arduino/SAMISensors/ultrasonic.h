@@ -18,13 +18,15 @@
 //volatile bool newPulseDurationAvailable = false;
 
 float distanceThreshold = 10; // If the difference between current and previous is smaller than that, ignore it
-unsigned long timeoutTime = 10000; // If we don't return anything within 1ms  of starting a trig call, we want to just try again lol
+unsigned long timeoutTime = 1000000; // If we don't return anything within 1ms  of starting a trig call, we want to just try again lol
 
 // i = 0: Right ultrasonic
 // i = 1: Left ultrasonic
 // i = 2: Middle ultrasonic
 int trigPins[] = { TRIG_PINR, TRIG_PINL, TRIG_PINM };
 int echoPins[] = { ECHO_PINR, ECHO_PINL, ECHO_PINM };
+float movingAvg[NUM_READINGS][3] = {0};
+int oldestVal[3] = {1};
 float currDistance[] = { -1, -1, -1 };
 float prevDistance[] = { 0, 0, 0 };
 bool objectInRange[] = { false, false, false};
@@ -65,6 +67,7 @@ volatile unsigned long pulseInTimeEnd[] = { 0, 0, 0 };
 
 // This just kicks off the initial trig call for the echo to catch
 void startUltrasonicPing(int ultraNum) {
+  echoHigh[ultraNum] = false;
   digitalWrite(trigPins[ultraNum], LOW);  
   delayMicroseconds(2);  
   digitalWrite(trigPins[ultraNum], HIGH);  
@@ -77,7 +80,7 @@ void startUltrasonicPing(int ultraNum) {
 
 // We connect this to our interrupt pin so we can track our pulse time in a non-blocking way
 void echoPinInterrupt() {
-  if (digitalRead(echo_pins[1] != echoHigh[1]) {
+  if (digitalRead(echoPins[1]) != echoHigh[1]) {
     // then echo pin[1] (ultrasonic L) is what triggered!
     if (echoHigh[1]) {
       pulseInTimeEnd[1] = micros();
@@ -89,16 +92,16 @@ void echoPinInterrupt() {
       echoHigh[1] = true;
     }
   }
-  else {
-    // otherwise ultrasonic M is what triggered!
-    if (echoHigh[2]) {
-      pulseInTimeEnd[2] = micros();
-      echoHigh[2] = false;
-      newPulse[2] = true;
+  else if (digitalRead(echoPins[0]) != echoHigh[0]) {
+    // otherwise ultrasonic R is what triggered!
+    if (echoHigh[0]) {
+      pulseInTimeEnd[0] = micros();
+      echoHigh[0] = false;
+      newPulse[0] = true;
     }
     else {
-      pulseInTimeBegin[2] = micros();
-      echoHigh[2] = true;
+      pulseInTimeBegin[0] = micros();
+      echoHigh[0] = true;
     }
   }
 }
@@ -173,30 +176,40 @@ void echoPinInterrupt() {
 //    ultraM = true;
 //    }
 //  }
-}
+//}
 
  // We connect this to our interrupt pin so we can track our pulse time and trigger RFID
 void echoRFIDPinInterrupt()
 {
-  if(digitalRead(echo_pins[0]) != echoHigh[0]) {
-    // then the echo pin changed! 
-    if (echoHigh[0]) {
-        pulseInTimeEnd[0] = micros();
-        echoHigh[0] = false;
-        newPulse[0] = true;
+  if(digitalRead(echoPins[2]) != echoHigh[2]) {
+    // then we triggered pin M
+    if (echoHigh[2]) {
+        pulseInTimeEnd[2] = micros();
+        echoHigh[2] = false;
+        newPulse[2] = true;
       }
       else {
-        pulseInTimeBegin[0] = micros();
-        echoHigh[0] = true;
+        pulseInTimeBegin[2] = micros();
+        echoHigh[2] = true;
       }
   }
   else {
-    // we triggered rfid! 
-    pn532Read = true;
+    // RFID pin was triggered! If it's high, then there's no card, if it's low, there's a card 
+      cardTriggered = true;
   }
 }
 
-
+float updateMovingAvg(int ultraNum, float newDist) {
+  movingAvg[oldestVal[ultraNum]][ultraNum] = newDist;
+  oldestVal[ultraNum] = oldestVal[ultraNum] + 1;
+  if (oldestVal[ultraNum] >= NUM_READINGS) { oldestVal[ultraNum] = 0; }
+  float s = 0;
+  for (int i=0; i< NUM_READINGS; i++)
+  {
+      s += movingAvg[i][ultraNum];
+  }
+  return s/float(NUM_READINGS);
+}
 
 // return state
 // -1 : no data
@@ -206,8 +219,10 @@ void echoRFIDPinInterrupt()
 // 3 : object moving away
 // 4 : object leaving range
 // 5 : no object, no change
+// 6 : Something went wrong, restart the echo
 int checkUltrasonic(int ultraNum) {
   if (newPulse[ultraNum]) {
+    
     // Reset our availability check
     newPulse[ultraNum] = false;
     // set the current distance to our previous distance value
@@ -217,6 +232,15 @@ int checkUltrasonic(int ultraNum) {
     unsigned long pulseDuration = pulseInTimeEnd[ultraNum] - pulseInTimeBegin[ultraNum];
     currDistance[ultraNum] = (pulseDuration*.0343)/2; 
 
+    currDistance[ultraNum] = updateMovingAvg(ultraNum, currDistance[ultraNum]);
+
+    #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_ULTRA) && DEBUG_ULTRA)
+      Serial.print("Sensor ");
+      Serial.print(ultraNum);
+      Serial.print(": Got new distance ");
+      Serial.println(currDistance[ultraNum]);
+    #endif
+
     // If the currentDistance is measuring ~2180, then that means it's reached end of range and there's nothing there
     // If currentDistance is above ~200 but less than end of range, then there's something there, but it's so far away that it would be unreasonable to interact with it
     // So we only really care if the distance is below ~200
@@ -224,7 +248,7 @@ int checkUltrasonic(int ultraNum) {
       // Object has entered range
       if (!objectInRange[ultraNum]) {
         objectInRange[ultraNum] = true;
-        #if defined(DEBUG) && DEBUG 
+        #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_ULTRA) && DEBUG_ULTRA)
           Serial.print("Sensor ");
           Serial.print(ultraNum);
           Serial.print(": Something entered range at distance: ");
@@ -241,7 +265,7 @@ int checkUltrasonic(int ultraNum) {
       if (distDiff > distanceThreshold) {
         // Then the object is further away
         distanceChange[ultraNum] = 2;
-        #if defined(DEBUG) && DEBUG 
+        #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_ULTRA) && DEBUG_ULTRA)
           Serial.print("Sensor ");
           Serial.print(ultraNum);
           Serial.print(": Object moved away to: ");
@@ -253,7 +277,7 @@ int checkUltrasonic(int ultraNum) {
       else if (distDiff < -distanceThreshold) {
         // Then the object is closer
         distanceChange[ultraNum] = 1;
-        #if defined(DEBUG) && DEBUG 
+        #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_ULTRA) && DEBUG_ULTRA)
           Serial.print("Sensor ");
           Serial.print(ultraNum);
           Serial.print(": Object moved closer to: ");
@@ -282,24 +306,33 @@ int checkUltrasonic(int ultraNum) {
     }
     
     // Then we go ahead and start a new sensor reading
-    //startUltrasonicPing(ultraNum);
+//    #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_ULTRA) && DEBUG_ULTRA)
+//      Serial.print("Start new ping on ");
+//      Serial.println(ultraNum);
+//    #endif
+//    startUltrasonicPing(ultraNum);
   }
-  return -1;
+  else if (!echoHigh[ultraNum]) {
+    // Something got lost and we have no echo going, try again
+    return 6;
+  }
 //  else {
-//    #if defined(DEBUG) && DEBUG 
-//        Serial.println("Data not ready");
-//      #endif
+////    #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_ULTRA) && DEBUG_ULTRA)
+////        Serial.println("Data not ready");
+////      #endif
 //    unsigned long currTime = micros();
-//    if(abs(currTime - pulseTrigTime[ultraNum]) > timeoutTime) {
+//    if(abs(currTime - pulseInTimeBegin[ultraNum]) > timeoutTime) {
 //      // If we've reached beyond the timeout time since we first sent a ping out or micros has rolled over and gone beyond the timeout time...
 //      // then the signal is lost and we should just send a new ping
 //      // Should we say we're infinitely far if that happens? idk, for the moment we wont
-//      #if defined(DEBUG) && DEBUG 
-//        Serial.println("Echo ping not recieved");
+//      #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_ULTRA) && DEBUG_ULTRA)
+//        Serial.print("No echo on ");
+//        Serial.println(ultraNum);
 //      #endif
 //      startUltrasonicPing(ultraNum);
 //    }
 //  }
+  return -1;
 }
 
 void updateAllUltrasonic() {
@@ -327,7 +360,7 @@ void updateAllUltrasonic() {
 //    // So we only really care if the distance is below ~200
 //    if (currentDistance <= 200) {
 //      objectInRange = true;
-//      #if defined(DEBUG) && DEBUG 
+//      #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_ULTRA) && DEBUG_ULTRA)
 //        Serial.print("Something is in range at distance: ");
 //        Serial.println(currentDistance);
 //      #endif
@@ -339,7 +372,7 @@ void updateAllUltrasonic() {
 //      if (distDiff > distanceThreshold) {
 //        // Then the object is further away
 //        distanceChange = 2;
-//        #if defined(DEBUG) && DEBUG 
+//        #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_ULTRA) && DEBUG_ULTRA)
 //          Serial.print("Object moved away to: ");
 //          Serial.println(currentDistance);
 //        #endif
@@ -348,7 +381,7 @@ void updateAllUltrasonic() {
 //      else if (distDiff < -distanceThreshold) {
 //        // Then the object is closer
 //        distanceChange = 1;
-//        #if defined(DEBUG) && DEBUG 
+//        #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_ULTRA) && DEBUG_ULTRA)
 //          Serial.print("Object moved closer to: ");
 //          Serial.println(currentDistance);
 //        #endif
@@ -370,7 +403,7 @@ void updateAllUltrasonic() {
 //    startUltrasonicPing();
 //  }
 //  else {
-//    #if defined(DEBUG) && DEBUG 
+//    #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_ULTRA) && DEBUG_ULTRA)
 //        Serial.println("Data not ready");
 //      #endif
 //    unsigned long currTime = micros();
@@ -378,7 +411,7 @@ void updateAllUltrasonic() {
 //      // If we've reached beyond the timeout time since we first sent a ping out or micros has rolled over and gone beyond the timeout time...
 //      // then the signal is lost and we should just send a new ping
 //      // Should we say we're infinitely far if that happens? idk, for the moment we wont
-//      #if defined(DEBUG) && DEBUG 
+//      #if (defined(DEBUG) && DEBUG) || (defined(DEBUG_ULTRA) && DEBUG_ULTRA) 
 //        Serial.println("Echo ping not recieved");
 //      #endif
 //      startUltrasonicPing();
