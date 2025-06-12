@@ -58,14 +58,15 @@ Pre-made audio files can be included as part of behaviors. These audio files can
 
 For audio to play, as minimum, the unique portion of the file name must be provided (see the naming guide [here](#audio-file-naming-structure)). The other options will use their default values if not provided. The input key names and expected values are shown in the table below.
 
-| Key Name       | Type    | Default | Notes                                                                     |
-| -------------- | ------- | ------- | ------------------------------------------------------------------------- |
-| ClipName       | String  | ""      | Please see [naming structure](#audio-file-naming-structure).              |
-| IsGroup        | Boolean | "False" | Input as a string. See specifics [here](#audio-groups).                   |
-| IsCallResponse | Boolean | "False" | Input as a string. See specifics [here](#call-response-and-linked-audio). |
-| IsVoice        | Boolean | "True"  | Input as a string. See specifics [here](#voice-types).                    |
-| Async          | Boolean | "True"  | Input as a string. If true, audio will play as behavior continues.        |
-| Probability    | Float   | 1       | Range is from 0 to 1, which maps with range never to always play.         |
+| Key Name       | Type    | Default | Notes                                                                                      |
+| -------------- | ------- | ------- | ------------------------------------------------------------------------------------------ |
+| ClipName       | String  | ""      | Please see [naming structure](#audio-file-naming-structure).                               |
+| IsGroup        | Boolean | "False" | Input as a string. See specifics [here](#audio-groups).                                    |
+| IsCallResponse | Boolean | "False" | Input as a string. See specifics [here](#call-response-and-linked-audio).                  |
+| IsVoice        | Boolean | "True"  | Input as a string. See specifics [here](#voice-types).                                     |
+| Async          | Boolean | "True"  | Input as a string. If true, audio will play as behavior continues.                         |
+| Probability    | Float   | 1       | Range is from 0 to 1, which maps with play range: never to always.                         |
+| Encoding       | String  | None    | Will use encoding type provided to controller if none here. Specify as ending, i.e. ".mp3" |
 
 
 

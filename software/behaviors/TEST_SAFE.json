@@ -5,7 +5,7 @@
             "HasJoints": "True",
             "Expression": "Happy",
             "WaitTime": 1500,
-            "JointMoveTime": 1,
+            "JointMoveTime": 10,
             "JointAngles": [
                 {
                     "Joint": "RightShoulder",
@@ -30,7 +30,7 @@
             "HasJoints": "True",
             "Expression": "Happy",
             "WaitTime": 1500,
-            "JointMoveTime": 1,
+            "JointMoveTime": 10,
             "JointAngles": [
                 
                 {
@@ -54,7 +54,7 @@
             "HasJoints": "True",
             "Expression": "Happy",
             "WaitTime": 1500,
-            "JointMoveTime": 1,
+            "JointMoveTime": 10,
             "JointAngles": [
                 {
                     "Joint": "LeftShoulder",
@@ -80,7 +80,7 @@
             "HasJoints": "True",
             "Expression": "Happy",
             "WaitTime": 1500,
-            "JointMoveTime": 1,
+            "JointMoveTime": 10,
             "JointAngles": [
 
                 {
@@ -103,7 +103,7 @@
             "HasJoints": "True",
             "Expression": "Happy",
             "WaitTime": 1500,
-            "JointMoveTime": 1,
+            "JointMoveTime": 10,
             "JointAngles": [
                 {
                     "Joint": "HeadNod",
@@ -125,7 +125,7 @@
             "HasJoints": "True",
             "Expression": "Happy",
             "WaitTime": 1500,
-            "JointMoveTime": 1,
+            "JointMoveTime": 10,
             "JointAngles": [
                 {
                     "Joint": "HeadNod",
@@ -148,7 +148,7 @@
             "HasJoints": "True",
             "Expression": "Happy",
             "WaitTime": 1500,
-            "JointMoveTime": 1,
+            "JointMoveTime": 10,
             "JointAngles": [
                 {
                     "Joint": "HeadNod",
@@ -170,7 +170,7 @@
             "HasJoints": "True",
             "Expression": "Happy",
             "WaitTime": 1500,
-            "JointMoveTime": 1,
+            "JointMoveTime": 10,
             "JointAngles": [
                 {
                     "Joint": "TorsoTilt",
@@ -184,7 +184,7 @@
             "HasJoints": "True",
             "Expression": "Happy",
             "WaitTime": 1500,
-            "JointMoveTime": 1,
+            "JointMoveTime": 10,
             "JointAngles": [
                 {
                     "Joint": "TorsoTilt",
@@ -198,7 +198,7 @@
             "HasJoints": "True",
             "Expression": "Happy",
             "WaitTime": 1500,
-            "JointMoveTime": 1,
+            "JointMoveTime": 10,
             "JointAngles": [
                 {
                     "Joint": "TorsoBow",
@@ -212,7 +212,7 @@
             "HasJoints": "True",
             "Expression": "Happy",
             "WaitTime": 1500,
-            "JointMoveTime": 1,
+            "JointMoveTime": 10,
             "JointAngles": [
                 {
                     "Joint": "TorsoBow",

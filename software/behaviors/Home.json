@@ -5,7 +5,7 @@
             "HasJoints": true,
             "Expression": "Neutral",
             "WaitTime": 150,
-            "JointMoveTime": 1,
+            "JointMoveTime": 10,
             "JointAngles": [
               {
                 "Joint": "LeftChest",

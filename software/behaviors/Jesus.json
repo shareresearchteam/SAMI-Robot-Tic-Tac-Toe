@@ -5,7 +5,7 @@
             "HasJoints": true,
             "Expression": "Dead",
             "WaitTime": 1500,
-            "JointMoveTime": 1,
+            "JointMoveTime": 10,
             "JointAngles": [
               {
                 "Joint": "TorsoBow",

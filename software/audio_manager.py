@@ -39,12 +39,18 @@ class AudioManager:
         self._voice_type = value
         self.build_audio_path_end()
 
-    def send_audio(self, clip_name, async_=True):
+    def send_audio(self, clip_name, async_=True, isvoice=True, encoding=""):
         """
         Constructs the full path to the audio clip and plays it.
         If async_ is True, the audio is played in a separate thread.
         """
-        full_path = os.path.join(self._audio_folder_path, clip_name + self._audio_path_end)
+        if isvoice:
+            clip_name = clip_name+"_"+self._voice_type
+        if encoding != "":
+            clip_name = clip_name + encoding
+        else:
+            clip_name = clip_name + self._audio_file_encoding
+        full_path = os.path.join(self._audio_folder_path, clip_name)
         self._last_audio_clip = full_path
         print(f"Playing audio: {full_path}")
 
@@ -68,13 +74,13 @@ class AudioManager:
             print("No audio to repeat.")
 
 
-    def send_audio_with_probability(self, clip_name, play_probability=1.0, async_=True):
+    def send_audio_with_probability(self, clip_name, play_probability=1.0, async_=True, isvoice=True, encoding=""):
         """
         Plays the audio clip based on the given play probability.
         Returns True if the audio was played, or False if skipped.
         """
         if self.rng.random() < play_probability:
-            self.send_audio(clip_name, async_)
+            self.send_audio(clip_name, async_, isvoice, encoding)
             return True
         else:
             print(f"Skipping audio '{clip_name}' due to probability check.")
@@ -91,13 +97,15 @@ class AudioManager:
         if clip_name == "": return False
         async_ = audio_clip.get("Async","False") == "True"
         probability = audio_clip.get("Probability",1)
+        isvoice = audio_clip.get("IsVoice","True") == "True"
+        encoding = audio_clip.get("Encoding","")
 
         if audio_clip.get("IsGroup","False") == "True":
             # then handle it like a group of audio options rather than a standalone clip
             return False
         else:
             # If the clip isn't part of a group, then send it as a standalone audio clip with a probability
-            return self.send_audio_with_probability(clip_name, probability, async_)
+            return self.send_audio_with_probability(clip_name, probability, async_, isvoice, encoding)
 
         
 
