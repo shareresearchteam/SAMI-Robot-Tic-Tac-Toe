@@ -40,7 +40,7 @@
  * 
  */
 
-const byte numChars = 33;     // Max message length
+const byte numChars = 60;     // Max message length
 // Our defined messages
 const char noMsg = 'N';       // No message?
 const char emoteMsg = 'E';    // Message is telling us to set the eyes to a specific expression

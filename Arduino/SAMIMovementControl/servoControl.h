@@ -26,7 +26,7 @@ class servoControl {
    Move the servo with:
     - servo ID: jointID
     - goal position as angle, mapped from 0-240 degrees to 0-1000... clicks?
-    - set with goal time in milliseconds (currently 1 second)
+    - set with goal time in milliseconds (currently 0.1 second)
     - If the id is for one of the grippers, then command that gripper servo instead
   */
   void setJointAngle(uint8_t jointID, uint8_t angle) {
@@ -37,7 +37,7 @@ class servoControl {
       lGripper.write(angle);
       return;
     }
-    LobotSerialServoMove(_serialX, jointID, map(angle,0,240,0,1000), jointTime*1000);
+    LobotSerialServoMove(_serialX, jointID, map(angle,0,240,0,1000), jointTime*100);
   }
   
   // Get the temperature of a specified joint
