@@ -67,24 +67,6 @@ class AudioManager:
         else:
             print("No audio to repeat.")
 
-    # # Example methods mimicking the C# AudioManager behavior.
-    # def say_hello(self):
-    #     self.send_audio("hello")
-
-    # def say_yes(self):
-    #     self.send_audio("yes")
-
-    # def say_no(self):
-    #     self.send_audio("no")
-
-    # def say_laugh(self):
-    #     self.send_audio("laugh")
-
-    # def say_goodbye(self):
-    #     self.send_audio("goodbye")
-
-    # def say_intro(self):
-    #     self.send_audio("intro")
 
     def send_audio_with_probability(self, clip_name, play_probability=1.0, async_=True):
         """
@@ -97,6 +79,26 @@ class AudioManager:
         else:
             print(f"Skipping audio '{clip_name}' due to probability check.")
             return False
+
+    def process_audio_call(self, audio_clip):
+        """
+        Parses and appropriately plays an audio file based on instructions from a keyframe
+        Takes in the AudioClip section of the keyframe, as a set of key,value pairs
+        Returns True if the audio was played, or False if skipped.
+        """
+        # Get our clip values, and check that we actually have a clip name at all
+        clip_name = audio_clip.get("ClipName","")
+        if clip_name == "": return False
+        async_ = audio_clip.get("Async","False") == "True"
+        probability = audio_clip.get("Probability",1)
+
+        if audio_clip.get("IsGroup","False") == "True":
+            # then handle it like a group of audio options rather than a standalone clip
+            return False
+        else:
+            # If the clip isn't part of a group, then send it as a standalone audio clip with a probability
+            return self.send_audio_with_probability(clip_name, probability, async_)
+
         
 
 # if __name__ == "__main__":

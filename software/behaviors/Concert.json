@@ -2,9 +2,6 @@
     "Name": "Concert",
     "Keyframes": [
       {
-        "HasEmote": "True",
-        "HasAudio": "True",
-        "AudioClip": "base",
         "HasJoints": "True",
         "Expression": "Happy",
         "WaitTime": 1500,
@@ -22,8 +19,6 @@
         ]
       },
       {
-        "HasEmote": "True",
-        "HasAudio": "False",
         "HasJoints": "True",
         "Expression": "Happy",
         "WaitTime": 1500,
@@ -41,8 +36,6 @@
         ]
       },
       {
-        "HasEmote": "True",
-        "HasAudio": "False",
         "HasJoints": "True",
         "Expression": "Happy",
         "WaitTime": 1500,
@@ -60,8 +53,6 @@
         ]
       },
       {
-        "HasEmote": "True",
-        "HasAudio": "False",
         "HasJoints": "True",
         "Expression": "Happy",
         "WaitTime": 1500,
@@ -79,8 +70,6 @@
         ]
       },
       {
-        "HasEmote": "True",
-        "HasAudio": "False",
         "HasJoints": "True",
         "Expression": "Happy",
         "WaitTime": 1500,
@@ -98,8 +87,6 @@
         ]
       },
       {
-        "HasEmote": "True",
-        "HasAudio": "False",
         "HasJoints": "True",
         "Expression": "Happy",
         "WaitTime": 1500,
@@ -117,8 +104,6 @@
         ]
       },
       {
-        "HasEmote": "True",
-        "HasAudio": "False",
         "HasJoints": "True",
         "Expression": "Happy",
         "WaitTime": 1500,
@@ -136,8 +121,6 @@
         ]
       },
       {
-        "HasEmote": "True",
-        "HasAudio": "False",
         "HasJoints": "True",
         "Expression": "Happy",
         "WaitTime": 1500,

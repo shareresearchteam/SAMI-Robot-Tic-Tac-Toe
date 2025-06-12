@@ -3,18 +3,18 @@ import time
 import os
 import json
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLineEdit, QComboBox
-from read_json import JamieControl
+from SAMIControl import SAMIControl
 
-class JamieControlUI(JamieControl, QWidget):
+class SAMIControlUI(SAMIControl, QWidget):
     def __init__(self, 
-                 arduino_port='/dev/ttyUSB0', 
+                 arduino_port='COM8', 
                  baud_rate=115200,
                  joint_config_file='Joint_config.json',
                  behavior_folder='behaviors',
                  emote_file='Emote.json',
                  audio_folder='audio',
                  starting_voice='Matt'):
-        JamieControl.__init__(self, arduino_port, baud_rate, joint_config_file, emote_file, audio_folder, starting_voice)
+        SAMIControl.__init__(self, arduino_port, baud_rate, joint_config_file,behavior_folder, emote_file, audio_folder, starting_voice)
         QWidget.__init__(self)
         with open(joint_config_file, 'r') as f:
             self.full_joint_config = json.load(f)['JointConfig']
@@ -58,7 +58,7 @@ class JamieControlUI(JamieControl, QWidget):
         behavior_button.clicked.connect(self.perform_behavior)
         layout.addWidget(behavior_button)
         self.setLayout(layout)
-        self.setWindowTitle("Jamie Control")
+        self.setWindowTitle("SAMI Control")
         self.show()
 
     def load_behavior(self, behavior_file):
@@ -86,25 +86,29 @@ class JamieControlUI(JamieControl, QWidget):
 
     def perform_behavior(self):
         selected_behavior = self.behavior_dropdown.currentText()
-        behavior_path = os.path.join(self.behavior_folder, selected_behavior)
-        behavior_motion = self.load_behavior(behavior_path)
-        for frame in behavior_motion:
-            # Process Audio if available.
-            if frame["HasAudio"] == "True":
-                audio_clip = frame.get("AudioClip", frame.get("Expression", "default_audio"))
-                self.audio_manager.send_audio(audio_clip)
-            # Process Emote if available.
-            if frame["HasEmote"] == "True":
-                expression = frame.get("Expression", "Neutral")
-                emote_value = self.emote_mapping.get(expression, 0)
-                self.send_emote(emote_value)
-            # Process Joint Commands if available.
-            if frame["HasJoints"] == "True":
-                joint_ids = [self.get_joint_id(j['Joint']) for j in frame['JointAngles']]
-                angles = [j['Angle'] for j in frame['JointAngles']]
-                move_time = frame["JointMoveTime"]
-                self.send_joint_command(joint_ids, angles, move_time)
-            self.delay(frame["WaitTime"] / 1000)
+        self.start_behavior(selected_behavior)
+        # behavior_path = os.path.join(self.behavior_folder, selected_behavior)
+        # behavior_motion = self.load_behavior(behavior_path)
+        # for frame in behavior_motion:
+        #     # Process Audio if available.
+        #     if frame.get("AudioClip","") != "":
+        #         # Use "AudioClip" if provided; otherwise fall back to the "Expression" or a default.
+        #         #audio_clip = keyframe.get("AudioClip", keyframe.get("Expression", "default_audio"))
+        #         audio_clip = frame.get("AudioClip")
+        #         print("Processing audio keyframe – playing:", audio_clip)
+        #         self.audio_manager.process_audio_call(audio_clip)
+        #     # Process Emote if available.
+        #     if frame.get("Expression","") != "":
+        #         expression = frame.get("Expression", "Neutral")
+        #         emote_value = self.emote_mapping.get(expression, 0)
+        #         self.send_emote(emote_value)
+        #     # Process Joint Commands if available.
+        #     if frame["HasJoints"] == "True":
+        #         joint_ids = [self.get_joint_id(j['Joint']) for j in frame['JointAngles']]
+        #         angles = [j['Angle'] for j in frame['JointAngles']]
+        #         move_time = frame["JointMoveTime"]
+        #         self.send_joint_command(joint_ids, angles, move_time)
+        #     self.delay(frame["WaitTime"] / 1000)
 
     def closeEvent(self, event):
         self.close_connection()
@@ -112,7 +116,7 @@ class JamieControlUI(JamieControl, QWidget):
 
 def main():
     app = QApplication([])
-    window = JamieControlUI(audio_folder="audio", starting_voice="Matt")
+    window = SAMIControlUI(audio_folder="audio", starting_voice="Matt")
     app.exec_()
 
 if __name__ == "__main__":
