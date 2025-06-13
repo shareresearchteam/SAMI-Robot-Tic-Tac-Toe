@@ -1,4 +1,5 @@
 sidebar:
+  - overview
   - getting-started
   - label: Building and Testing the Robot
     children:
