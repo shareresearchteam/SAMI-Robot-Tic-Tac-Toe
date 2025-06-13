@@ -1,0 +1,15 @@
+sidebar:
+  - getting-started
+  - label: Building and Testing the Robot
+    children:
+      - part-fabrication
+      - robot-assembly
+      - software-setup
+  - label: Software Documentation
+    children:
+      - software-architecture
+      - behavior-guide
+      - comm-protocol
+  - label: Hardware Documentation
+    children:
+      - angle-ranges

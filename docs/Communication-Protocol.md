@@ -1,3 +1,8 @@
+---
+id: comm-protocol
+title: Serial Communication Packet Architecture
+sidebar_label: Communication Protocol
+---
 # Serial Communication Packet Architecture
 Each serial packet sent or recieved includes static starting and ending bytes to denote when a packet is complete, and the content between these bytes is our message.
  - Packet start byte char: <
