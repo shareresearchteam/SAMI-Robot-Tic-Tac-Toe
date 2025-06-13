@@ -1,6 +1,9 @@
 markdown: GFM
 
-theme: jekyll-theme-minimal
+plugins:
+  - jekyll-remote-theme
+
+remote_theme: vaibhavvikas/jekyll-theme-minimalistic
 
 nagivation:
   - name: Overview
