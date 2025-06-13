@@ -1,4 +1,5 @@
 ---
+layout: default
 id: behavior-guide
 title: Guide to Custom Robot Behaviors
 sidebar_label: Behavior Guide

@@ -1,4 +1,5 @@
 ---
+layout: default
 id: comm-protocol
 title: Serial Communication Packet Architecture
 sidebar_label: Communication Protocol

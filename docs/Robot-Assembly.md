@@ -1,4 +1,5 @@
 ---
+layout: default
 id: robot-assembly
 title: Robot Assembly Guide
 sidebar_label: Robot Assembly

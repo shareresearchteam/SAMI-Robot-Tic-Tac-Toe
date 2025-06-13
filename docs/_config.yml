@@ -1,8 +1,13 @@
 markdown: GFM
 
-plugins:
-  - jekyll-sitemap
+theme: jekyll-theme-minimal
 
+nagivation:
+  - name: Overview
+    link: ./README.html
+  - name: Getting Started
+    link: ./Getting-Started.html
+  
 
 sidebar:
   - getting-started
