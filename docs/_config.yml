@@ -1,9 +1,8 @@
 markdown: GFM
 
-theme: jekyll-theme-minimal
-
-gems:
+plugins:
   - jekyll-sitemap
+
 
 sidebar:
   - getting-started
