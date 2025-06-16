@@ -2,12 +2,15 @@ markdown: GFM
 
 plugins:
   - jekyll-remote-theme
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jemoji
 
 remote_theme: vaibhavvikas/jekyll-theme-minimalistic
 
 nagivation:
   - name: System Overview
-    link: ./
+    link: ./README.html
   - name: Getting Started
     link: ./Getting-Started.html
   - name: Part Fabrication
