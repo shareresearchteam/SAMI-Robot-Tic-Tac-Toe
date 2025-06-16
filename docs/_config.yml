@@ -6,23 +6,17 @@ plugins:
 remote_theme: vaibhavvikas/jekyll-theme-minimalistic
 
 nagivation:
+  - name: System Overview
+    link: ./
   - name: Getting Started
-    link: ./Getting-Started.md
-  - 
+    link: ./Getting-Started.html
+  - name: Part Fabrication
+    link: ./component-fabrication.html
+  - name: Robot Assembly
+    link: ./Robot-Assembly.html
+    sublist:
+      - name: Electronics Setup
+        link: ./Robot-Assembly.html#setting-up-the-control-board
+      - name: Servo Initialization
+        link: ./Robot-Assembly.html#initializing-servo-ids-and-positions
   
-
-sidebar:
-  - getting-started
-  - label: Building and Testing the Robot
-    children:
-      - part-fabrication
-      - robot-assembly
-      - software-setup
-  - label: Software Documentation
-    children:
-      - software-architecture
-      - behavior-guide
-      - comm-protocol
-  - label: Hardware Documentation
-    children:
-      - angle-ranges
