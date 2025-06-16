@@ -6,10 +6,9 @@ plugins:
 remote_theme: vaibhavvikas/jekyll-theme-minimalistic
 
 nagivation:
-  - name: Overview
-    link: ./README.html
   - name: Getting Started
-    link: ./Getting-Started.html
+    link: ./Getting-Started.md
+  - 
   
 
 sidebar:
