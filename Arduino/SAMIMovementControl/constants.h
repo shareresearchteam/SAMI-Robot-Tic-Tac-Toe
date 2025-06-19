@@ -28,7 +28,7 @@ This contains all our constant definitions, including:
 
 /********** Motor Definitions **********/
 // The number of joints in the system goes here, to define the max possible number of joints in a single command
-const int NumPins = 21;
+const int NumPins = 22;
 // We also define some global arrays, one for the joint pin numbers, 
 // and a second for the corresponding joint angle
 extern uint8_t jointIDs[NumPins];

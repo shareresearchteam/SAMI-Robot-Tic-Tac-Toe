@@ -1,4 +1,5 @@
-markdown: GFM
+favicon: false
+color-scheme: auto
 
 plugins:
   - jekyll-remote-theme
