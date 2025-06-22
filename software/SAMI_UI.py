@@ -79,7 +79,7 @@ class SAMIControlUI(SAMIControl, QWidget):
     def move_to_home(self):
         joint_ids = [joint['JointID'] for joint in self.full_joint_config]
         home_angles = [joint['HomeAngle'] for joint in self.full_joint_config]
-        self.send_joint_command(joint_ids, home_angles, 1)
+        self.send_joint_command(joint_ids, home_angles, 10)
 
     def get_behavior_files(self):
         return [f for f in os.listdir(self.behavior_folder) if f.endswith('.json')]
