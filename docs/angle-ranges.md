@@ -8,9 +8,9 @@ sidebar_label: Joint Motion Ranges
 
 <img src="res/sami_head_torso.jpg"  width="50%"/>
 
-<img src="res/sami_arm_leg_left.jpg"  width="50%"/>
+<img src="res/sami_leg_arm_left.jpg"  width="50%"/>
 
-<img src="res/sami_arm_leg_right.jpg"  width="50%"/>
+<img src="res/sami_leg_arm_right.jpg"  width="50%"/>
 
 |     Joint Name       | ID | Home Angle | Minimum | Maximum |
 |----------------------|----| ---------- | ------- | ------- |

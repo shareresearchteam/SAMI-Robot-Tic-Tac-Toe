@@ -1,5 +1,8 @@
 ---
 layout: default
+id: robot-assembly
+title: Robot Assembly Guide
+sidebar_label: Robot Assembly
 ---
 # Robot Assembly Guide
 This section describes the part fabrication and hardware assembly process for the actual robot.
