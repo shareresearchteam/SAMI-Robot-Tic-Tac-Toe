@@ -9,6 +9,10 @@ next_page: part-fabrication
 # Overview of the Robot Assembly
 BLEH
 
+The layout of the parts for the robot, with names that are used within these instructions.
+
+<img src="res/sami_labeled.jpg"  width="50%"/>
+
 ## Notes On Assembly Process
 Some components are sensitive, or could be easily damaged during assembly. To help mitigate this, these notes are provided as important notes to keep in mind during the process.
 
