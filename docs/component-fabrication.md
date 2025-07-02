@@ -3,6 +3,8 @@ layout: default
 id: part-fabrication
 title: Sub-Assembly Fabrication for the Robot
 sidebar_label: Part Fabrication
+previous_page: assembly-intro
+next_page: assembly-control
 ---
 # Sub-Assembly Fabrication for the Robot
 

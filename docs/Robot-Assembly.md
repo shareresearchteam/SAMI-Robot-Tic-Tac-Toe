@@ -579,7 +579,7 @@ As recommended with every step, it is best to pre-thread the screw holes on the 
    <img src="res/Headshell_Side.jpeg"  width="50%"/>
    <img src="res/Headshell_Top.jpeg"  width="50%"/>
 
-#### Arm Assembly
+## Arm Assembly
 When assembling the arms for the robot, it is best to begin with the bicep, then shoulder, and ending with the forearms. This is due to the slight complexity behind the arm assembly. You will need to attach the motors and JST cables onto certain pieces before moving on.
 
 The first step that is **highly** recommended is pre-setting all of the Arm motors before beginning the assembly. 

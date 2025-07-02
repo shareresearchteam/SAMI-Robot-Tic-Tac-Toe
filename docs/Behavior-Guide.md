@@ -3,6 +3,8 @@ layout: default
 id: behavior-guide
 title: Guide to Custom Robot Behaviors
 sidebar_label: Behavior Guide
+previous_page: software-architecture
+next_page: comm-protocol
 ---
 # Guide to Custom Robot Behaviors
 Reuseable behaviors can be designed for use with the robot, and several premade ones have been provided [here](../software/behaviors/). These behaviors are written as .json files, and the parameters and options are described below.
