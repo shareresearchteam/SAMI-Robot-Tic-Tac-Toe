@@ -110,13 +110,26 @@ void loop() {
   updateAllUltrasonic();
 
   // Logic handling go here
+
+  // If PIR sees motion and...
+    // ultrasonic is 1 => a person has entered range
+    // ultrasonic is 0 => a person is not moving in either direction
+    // ultrasonic is 2 => a person is approaching the system (crossing in front of the system)
+    // ultrasonic is 3 => a person is moving away from the system
+    // ultrasonic is anything else => then we don't care about the movement
+
+  //
+  
   // if we have motion on the left, and the left ultrasonic says someone has entered it's range
   if (motionStatusL && ultraStatus[1] == 1) {
-    // send a serial message about a new person on the left?
+    // send a serial message about a new person having appeared on the left
+    sendPirDataL(1);
   }
+  
   // if we have motion on the right, and the right ultrasonic says someone has entered it's range
   if (motionStatusR && ultraStatus[0] == 1) {
-    // send a serial message about a new person on the right?
+    // send a serial message about a new person having appeared on the left
+    sendPirDataR(1);
   }
   // something with checking the center too, I guess...
 
