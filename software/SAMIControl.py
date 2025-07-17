@@ -11,9 +11,9 @@ class SAMIControl:
                  arduino_port='/dev/ttyUSB0', 
                  baud_rate=115200,
                  joint_config_file='Joint_config.json',
-                 behavior_folder='behaviors',
+                 behavior_folder=os.path.join(os.path.dirname(__file__), 'behaviors'),
                  emote_file='Emote.json',
-                 audio_folder='audio',
+                 audio_folder=os.path.join(os.path.dirname(__file__), 'audio'),
                  starting_voice='Matt',
                  audio_file_encoding='.mp3'):
         self.arduino_port = arduino_port
@@ -32,10 +32,8 @@ class SAMIControl:
         with open(joint_config_file, 'r') as file:
             config = json.load(file)
         joint_map = {}
-        self.joint_limits = {}
         for joint in config["JointConfig"]:
             joint_map[joint["JointName"]] = joint["JointID"]
-            self.joint_limits[joint["JointID"]] = (joint["MinAngle"], joint["MaxAngle"])
         return joint_map
 
     def load_emote_mapping(self, emote_file):
@@ -81,12 +79,6 @@ class SAMIControl:
             raise ValueError("Mismatch in joint IDs and angles.")
         packet = [0x3C, 0x4A, joint_time]
         for jid, angle in zip(joint_ids, joint_angles):
-            if jid in self.joint_limits:
-                min_angle, max_angle = self.joint_limits[jid]
-                original_angle = angle
-                angle = max(min(angle, max_angle), min_angle)
-                if angle != original_angle:
-                    print(f"[Clamp] Joint ID {jid}: Angle {original_angle} out of bounds "f"({min_angle}–{max_angle}). Clamped to {angle}.")
             packet.extend([jid, angle])
         packet.append(0x3E)
         self._send_serial_comm(bytearray(packet))
