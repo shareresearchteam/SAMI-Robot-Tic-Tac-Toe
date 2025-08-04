@@ -7,6 +7,10 @@ previous_page: assembly-control
 next_page: assembly-lower-body
 ---
 # Initializing Servo IDs and Positions
+*** If you received a kit, the servo IDs and initial positions have already been set! Please skip this step! ***
+
+*** There is currently an error between the motor control board and the individual motors where if there is only one motor connected, it may burn out when it tries to run. Try not to run the motors from the board unless they are all connected. ***
+
 You will need to communicate with the motors as part of the assembly process. This process can be completed using the [assembled motor control PCB](#setting-up-the-control-board), or the [HiWonder motor debugging board](https://www.hiwonder.com/products/hiwonder-ttl-usb-debugging-board).
 
 In either case, you will be initializing each motor by connecting and communicating with it individually (*not* chaining the motors). The below initialization instructions assume you are initializing the motors using the robot motor control PCB.
