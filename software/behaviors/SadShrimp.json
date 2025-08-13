@@ -1,0 +1,80 @@
+{
+  "Name": "SadShrimp",
+  "Keyframes": [
+    {
+      "HasJoints": "True",
+      "Expression": "Sad",
+      "WaitTime": 1500,
+      "JointMoveTime": 10,
+      "JointAngles": [
+        {
+          "Joint": "LeftShoulder",
+          "Angle": 100
+        },
+        {
+          "Joint": "RightShoulder",
+          "Angle": 180
+        },
+        {
+          "Joint": "LeftKnee",
+          "Angle": 50
+        },
+        {
+          "Joint": "RightKnee",
+          "Angle": 120
+        },
+        {
+          "Joint": "LeftHip",
+          "Angle": 20
+        },
+        {
+          "Joint": "RightHip",
+          "Angle": 160
+        }
+      ]
+    },
+    {
+      "HasJoints": "True",
+      "WaitTime": 1500,
+      "JointMoveTime": 10,
+      "JointAngles": [
+        {
+          "Joint": "RightKnee",
+          "Angle": 60
+        },
+        {
+          "Joint": "LeftKnee",
+          "Angle": 110
+        },
+        {
+          "Joint": "TorsoBow",
+          "Angle": 95
+        },
+        {
+          "Joint": "LeftElbow",
+          "Angle": 85
+        },
+        {
+          "Joint": "LeftShoulder",
+          "Angle": 160
+        },
+        {
+          "Joint": "RightElbow",
+          "Angle": 110
+        },
+        {
+          "Joint": "RightBicep",
+          "Angle": 130
+        },
+        {
+          "Joint": "RightShoulder",
+          "Angle": 110
+        },
+        {
+          "Joint": "RightElbow",
+          "Angle": 115
+        }
+      ]
+    }
+  ]
+}
