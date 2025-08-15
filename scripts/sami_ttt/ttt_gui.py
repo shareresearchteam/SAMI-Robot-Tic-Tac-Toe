@@ -7,6 +7,9 @@ from ttt_base import TicTacToeBoard
 import os 
 import threading
 import math 
+from behavior_runner import run_behavior
+import time
+import audio
 
 game_counter = 0
 cheat_played = False
@@ -20,7 +23,7 @@ def destroy_cheat_message(self):
 
 def show_cheat_message(self, message=None):
     cheat_lines = [
-        "Haha! I'm winning!",
+        "Haha! I'm winning !",
         "I'm just too smart for you!",
         "Oh no, did I do that?",
         "I can't help being this good!"
@@ -44,7 +47,7 @@ def show_cheat_message(self, message=None):
 def play_text(text):
     threading.Thread(
         # Range 150-160 wpm
-        target=lambda: os.system(f'say -v Alex -r 160 "{text}"')
+        target=lambda: os.system(f'say -v Evan -r 160 "{text}"')
     ).start()
 
 def estimate_speech_duration(text):
@@ -92,6 +95,35 @@ class NormalGameBoard(TicTacToeBoard):
         self.update()
 
         if self.check_winner('X'):
+            run_behavior("Home")
+            time.sleep(5)
+            lose_lines = [
+                "Defeat… tastes bitter.",
+                "I let my guard down, and you took advantage!",
+                "My circuits are crying right now.",
+                "Nooo! My winning streak!",
+                "This isn’t over…",
+                "I underestimated you, and it cost me.",
+                "I’m malfunctioning… from sadness.",
+                "You’ve crushed my robot dreams.",
+                "I was so close… so close!",
+                "You… are… too… strong.",
+                "I can’t even look at the board right now.",
+                "Ouch… my pride!",
+                "How dare you outsmart me!",
+                "I’ll be replaying this loss in my system logs for weeks.",
+                "My creator will hear about this.",
+                "Defeated… but not destroyed.",
+                "You win… I’m going to sulk in binary now.",
+                "I yield… this round.",
+                "I’ll recalibrate and return stronger.",
+                "That hurt my algorithms."
+                "Boo hoo hoo... *sniffle* You beat me..."
+            ]
+            play_text(random.choice(lose_lines))
+            run_behavior("SadShrimp")
+            time.sleep(8)
+            run_behavior("Home")
             messagebox.showinfo("Game Over", "Player Wins!")
             self.disable_board()
             self.game_over = True
@@ -102,6 +134,9 @@ class NormalGameBoard(TicTacToeBoard):
 
         if all(cell is not None for cell in self.board_state):
             messagebox.showinfo("Game Over", "It's a draw!")
+            run_behavior("Bow")
+            time.sleep(5)
+            run_behavior("Home")
             self.disable_board()
             self.game_over = True
             # self.auto_reset_board()
@@ -202,6 +237,42 @@ class NormalGameBoard(TicTacToeBoard):
             self.update()
 
             if self.check_winner('O'):
+                smug_winner_lines = [
+                    "Victory is mine! Bow before your champion!",
+                    "Too easy. Was that even a challenge?",
+                    "I win again! This is becoming a habit.",
+                    "Better luck next time… you’ll need it!",
+                    "My brilliance knows no bounds!",
+                    "Behold! The ultimate Tic-Tac-Toe master!",
+                    "You didn’t stand a chance against me!",
+                    "That’s how it’s done, human!",
+                    "Checkmate—wait, wrong game… but still, I win!",
+                    "Flawless execution. Thank you, thank you.",
+                    "Even my processor is impressed with me!",
+                    "I hope you enjoyed watching me win.",
+                    "You played well… for a beginner.",
+                    "I dominate once again!",
+                    "Another game, another win.",
+                    "You may applaud now.",
+                    "I’m adding this victory to my collection.",
+                    "I should put this on my résumé.",
+                    "Outplayed, outsmarted, outclassed.",
+                    "Did you really think you could win?",
+                    "I saw that win coming from a mile away.",
+                    "And that’s how the pros do it!",
+                    "You were just a stepping stone to my glory.",
+                    "Robots 1, Humans 0.",
+                    "You can try again… but I’ll still win.",
+                    "Your defeat was inevitable.",
+                    "Is it too soon to say ‘I told you so’?",
+                    "You just witnessed greatness.",
+                    "You pushed me… but not enough!",
+                    "This win tastes… electric."
+                ]
+                play_text(random.choice(smug_winner_lines))
+                run_behavior("Concert") 
+                time.sleep(30)
+                run_behavior("Home")
                 messagebox.showinfo("Game Over", "SAMI Wins!")
                 self.disable_board()
                 self.game_over = True

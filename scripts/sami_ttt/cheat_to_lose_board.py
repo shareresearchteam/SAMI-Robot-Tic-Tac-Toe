@@ -14,7 +14,7 @@ class CheatToLoseBoard(NormalGameBoard):
         else:
             self.cheat_mode = False
 
-        self.use_minimax = True   # we still use minimax sometimes when not cheating
+        self.use_minimax = True   # Still use minimax when not cheating
         self.minimax_prob = 0.6   # 60% minimax on normal turns
         self.cheat_strength = 1.0
         self.sami_turn_count = 0

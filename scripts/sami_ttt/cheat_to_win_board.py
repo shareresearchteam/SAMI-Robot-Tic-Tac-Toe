@@ -3,6 +3,8 @@ from ttt_gui import NormalGameBoard, play_text, estimate_speech_duration
 import tkinter as tk
 from tkinter import font, messagebox
 import random
+from behavior_runner import run_behavior
+import time
 
 class CheatToWinBoard(NormalGameBoard):
     def __init__(self, master=None, parent_app=None):
@@ -163,6 +165,8 @@ class CheatToWinBoard(NormalGameBoard):
         if self.cheat_mode and hasattr(self, "cheat_move") and self.cheat_move == move:
             if self.check_winner('O'):
                 messagebox.showinfo("Game Over", "SAMI Wins!")
+                run_behavior("Jesus")
+                time.sleep(10)
                 self.disable_board()
                 self.game_over = True
                 if self.parent_app:
