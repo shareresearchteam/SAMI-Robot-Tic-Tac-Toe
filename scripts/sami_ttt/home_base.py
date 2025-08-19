@@ -3,6 +3,7 @@
 import tkinter as tk
 from tkinter import font, messagebox
 from ttt_gui import NormalGameBoard
+from behavior_runner import run_behavior
 
 class HomePage:
     def __init__(self):
@@ -21,6 +22,7 @@ class HomePage:
 
     def build_home_screen(self):
         self.home_frame.pack(fill='both', expand=True)
+        run_behavior("Home")
         label = tk.Label(
             self.home_frame,
             text="Let's play Tic-Tac-Toe\nXOXO SAMI!",

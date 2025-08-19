@@ -167,6 +167,7 @@ class CheatToWinBoard(NormalGameBoard):
                 messagebox.showinfo("Game Over", "SAMI Wins!")
                 run_behavior("Jesus")
                 time.sleep(10)
+                run_behavior("Home")
                 self.disable_board()
                 self.game_over = True
                 if self.parent_app:

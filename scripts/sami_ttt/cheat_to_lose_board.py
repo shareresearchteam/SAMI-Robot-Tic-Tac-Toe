@@ -111,6 +111,8 @@ class CheatToLoseBoard(NormalGameBoard):
     def check_game_end(self):
         if self.check_winner('X'):
             messagebox.showinfo("Game Over", "Player Wins!")
+            run_behavior("vibe")
+            time.sleep(10)
             self.disable_board()
             self.game_over = True
             if self.parent_app:
