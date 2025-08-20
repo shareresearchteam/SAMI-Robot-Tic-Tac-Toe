@@ -7,7 +7,7 @@ from SAMIControl import SAMIControl
 
 class SAMIControlUI(SAMIControl, QWidget):
     def __init__(self, 
-                 arduino_port='/dev/ttyUSB0', 
+                 arduino_port='/dev/tty.usbserial-130', 
                  baud_rate=115200,
                  joint_config_file='Joint_config.json',
                  behavior_folder='behaviors',

@@ -2,11 +2,12 @@ import os
 import threading
 import random
 import time
+import pygame
 
-try:
-    from playsound import playsound
-except ImportError:
-    print("The playsound module is not installed. Please install it with 'pip install playsound'.")
+# try:
+#     from playsound import playsound
+# except ImportError:
+#     print("The playsound module is not installed. Please install it with 'pip install playsound'.")
 
 class AudioManager:
     def __init__(self, starting_voice_type, audio_folder_path, audio_file_encoding=".wav"):
@@ -62,7 +63,10 @@ class AudioManager:
 
     def _play_audio(self, full_path):
         try:
-            playsound(full_path)
+            pygame.mixer.music.load(full_path)
+            pygame.mixer.music.play()
+            while pygame.mixer.music.get_busy():
+                time.sleep(0.1)
         except Exception as e:
             print(f"Error playing audio '{full_path}': {e}")
 

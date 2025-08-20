@@ -1,0 +1,17 @@
+{
+    "Name": "Bow",
+    "Keyframes": [
+      {
+        "HasJoints": "True",
+        "Expression": "Closed",
+        "WaitTime": 1500,
+        "JointMoveTime": 10,
+        "JointAngles": [
+          {
+            "Joint": "TorsoBow",
+            "Angle": 100
+          }
+        ]
+      }
+    ]
+  }
