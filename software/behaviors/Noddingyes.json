@@ -1,0 +1,86 @@
+{
+    "Name": "Noddingyes",
+    "Keyframes": [
+      {
+        "HasJoints": "True",
+        "Expression": "Happy",
+        "WaitTime": 100,
+        "JointMoveTime": 8,
+        "JointAngles": [
+          {
+            "Joint": "HeadNod",
+            "Angle": 150
+          }
+
+        ]
+      },
+
+      {
+        "HasJoints": "True",
+        "Expression": "Happy",
+        "WaitTime": 100,
+        "JointMoveTime": 8,
+        "JointAngles": [
+          {
+            "Joint": "HeadNod",
+            "Angle": 120
+          }
+
+        ]
+      },
+      {
+        "HasJoints": "True",
+        "Expression": "Happy",
+        "WaitTime": 100,
+        "JointMoveTime": 8,
+        "JointAngles": [
+          {
+            "Joint": "HeadNod",
+            "Angle": 150
+          }
+
+        ]
+      },
+      {
+        "HasJoints": "True",
+        "Expression": "Happy",
+        "WaitTime": 100,
+        "JointMoveTime": 8,
+        "JointAngles": [
+          {
+            "Joint": "HeadNod",
+            "Angle": 120
+          }
+
+        ]
+      },
+      {
+        "HasJoints": "True",
+        "Expression": "Happy",
+        "WaitTime": 100,
+        "JointMoveTime": 8,
+        "JointAngles": [
+          {
+            "Joint": "HeadNod",
+            "Angle": 150
+          }
+
+        ]
+      },
+      {
+        "HasJoints": "True",
+        "Expression": "Happy",
+        "WaitTime": 100,
+        "JointMoveTime": 8,
+        "JointAngles": [
+          {
+            "Joint": "HeadNod",
+            "Angle": 125
+          }
+
+        ]
+      }
+
+
+    ]
+  }

@@ -1,0 +1,47 @@
+{
+    "Name": "Gotit",
+    "Keyframes": [
+      {
+        "HasJoints": "True",
+        "Expression": "Happy",
+        "WaitTime": 300,
+        "JointMoveTime": 8,
+        "JointAngles": [
+          {
+            "Joint": "RightShoulder",
+            "Angle": 135
+          },
+          {
+            "Joint": "RightBicep",
+            "Angle": 80
+          },
+          {
+            "Joint": "RightElbow",
+            "Angle": 145
+          }
+        ]
+      },
+      {
+        "HasJoints": "True",
+        "WaitTime": 200,
+        "JointMoveTime": 8,
+        "JointAngles": [
+          {
+            "Joint": "RightShoulder",
+            "Angle": 100
+          }
+        ]
+      },
+      {
+        "HasJoints": "True",
+        "WaitTime": 200,
+        "JointMoveTime": 10,
+        "JointAngles": [
+          {
+            "Joint": "RightShoulder",
+            "Angle": 150
+          }
+        ]
+      }
+    ]
+  }

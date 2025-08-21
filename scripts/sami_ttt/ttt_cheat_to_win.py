@@ -8,9 +8,8 @@ class CheatToWinApp(HomePage):
     def __init__(self):
         super().__init__()
         self.protocol = [
-            "fair", "fair", "fair",
-            "cheat_to_win",
-            "fair", "fair", "fair"
+            "fair", "cheat_to_win", "cheat_to_win",
+            "cheat_to_win", "cheat_to_win"
         ]
 
     def get_board_class(self):

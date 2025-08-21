@@ -1,0 +1,42 @@
+{
+    "Name": "MoveArm",
+    "Keyframes": [
+          {
+            "HasJoints": true,
+            "Expression": "Confused",
+            "WaitTime": 150,
+            "JointMoveTime": 10,
+            "JointAngles": [
+              {
+                "Joint": "LeftChest",
+                "Angle": 35
+              },
+              {
+                "Joint": "LeftBicep",
+                "Angle": 80
+              },
+              {
+                "Joint": "LeftElbow",
+                "Angle": 165
+              },
+              {
+                "Joint": "LeftShoulder",
+                "Angle": 165
+              },
+              {
+                "Joint": "TorsoBow",
+                "Angle": 120
+              },
+              {
+                "Joint": "HeadTurn",
+                "Angle": 135
+              },
+              {
+                "Joint": "HeadTilt",
+                "Angle": 135
+              }
+
+            ]
+          }
+        ]
+    }

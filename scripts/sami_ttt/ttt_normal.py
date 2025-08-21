@@ -7,7 +7,7 @@ from home_base import HomePage
 class NormalApp(HomePage):
     def __init__(self):
         super().__init__()
-        self.protocol = ["fair"] * 7
+        self.protocol = ["fair"] * 5
 
     def get_board_class(self):
         return NormalGameBoard

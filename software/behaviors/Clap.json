@@ -1,0 +1,146 @@
+{
+    "Name": "ClapClap",
+    "Keyframes": [
+      {
+        "HasJoints": "True",
+        "Expression": "Happy",
+        "WaitTime": 80,
+        "JointMoveTime": 5,
+        "JointAngles": [
+          {
+            "Joint": "LeftChest",
+            "Angle": 125
+          },
+          {
+            "Joint": "LeftElbow",
+            "Angle": 85
+          }
+
+        ]
+      },
+
+      {
+        "HasJoints": "True",
+        "Expression": "Happy",
+        "WaitTime": 80,
+        "JointMoveTime": 5,
+        "JointAngles": [
+          {
+            "Joint": "LeftChest",
+            "Angle": 80
+          },
+          {
+            "Joint": "RightChest",
+            "Angle": 175
+          },
+          {
+            "Joint": "RightBicep",
+            "Angle": 105
+          },
+          {
+            "Joint": "RightShoulder",
+            "Angle":75
+          },
+          {
+            "Joint": "LeftShoulder",
+            "Angle": 190
+          },
+          {
+            "Joint": "LeftBicep",
+            "Angle" : 140
+          },
+          {
+            "Joint": "RightBicep",
+            "Angle": 85
+          }
+  
+        ]
+      },
+      {
+        "HasJoints": "True",
+        "Expression": "Happy",
+        "WaitTime": 80,
+        "JointMoveTime": 5,
+        "JointAngles": [
+          {
+            "Joint": "RightBicep",
+            "Angle": 105
+          },
+          {
+            "Joint": "LeftBicep",
+            "Angle": 120
+          }
+
+        ]
+      },
+      {
+        "HasJoints": "True",
+        "Expression": "Happy",
+        "WaitTime": 80,
+        "JointMoveTime": 5,
+        "JointAngles": [
+          {
+            "Joint": "RightBicep",
+            "Angle": 85
+          },
+          {
+            "Joint": "LeftBicep",
+            "Angle": 140
+          }
+
+        ]
+      },
+      {
+        "HasJoints": "True",
+        "Expression": "Happy",
+        "WaitTime": 80,
+        "JointMoveTime": 5,
+        "JointAngles": [
+          {
+            "Joint": "RightBicep",
+            "Angle": 105
+          },
+          {
+            "Joint": "LeftBicep",
+            "Angle": 120
+          }
+
+        ]
+      },
+      {
+        "HasJoints": "True",
+        "Expression": "Happy",
+        "WaitTime": 80,
+        "JointMoveTime": 5,
+        "JointAngles": [
+          {
+            "Joint": "RightBicep",
+            "Angle": 85
+          },
+          {
+            "Joint": "LeftBicep",
+            "Angle": 140
+          }
+
+        ]
+      },
+      {
+        "HasJoints": "True",
+        "Expression": "Happy",
+        "WaitTime": 80,
+        "JointMoveTime": 5,
+        "JointAngles": [
+          {
+            "Joint": "RightBicep",
+            "Angle": 105
+          },
+          {
+            "Joint": "LeftBicep",
+            "Angle": 120
+          }
+
+        ]
+      }
+
+    ]
+  }

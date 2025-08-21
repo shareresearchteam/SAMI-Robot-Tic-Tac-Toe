@@ -1,0 +1,86 @@
+{
+    "Name": "ShakeHeadNo",
+    "Keyframes": [
+      {
+        "HasJoints": "True",
+        "Expression": "Sad",
+        "WaitTime": 100,
+        "JointMoveTime": 8,
+        "JointAngles": [
+          {
+            "Joint": "HeadTurn",
+            "Angle": 160
+          }
+
+        ]
+      },
+
+      {
+        "HasJoints": "True",
+        "Expression": "Sad",
+        "WaitTime": 100,
+        "JointMoveTime": 8,
+        "JointAngles": [
+          {
+            "Joint": "HeadTurn",
+            "Angle": 90
+          }
+
+        ]
+      },
+      {
+        "HasJoints": "True",
+        "Expression": "Sad",
+        "WaitTime": 100,
+        "JointMoveTime": 8,
+        "JointAngles": [
+          {
+            "Joint": "HeadTurn",
+            "Angle": 160
+          }
+
+        ]
+      },
+      {
+        "HasJoints": "True",
+        "Expression": "Sad",
+        "WaitTime": 100,
+        "JointMoveTime": 8,
+        "JointAngles": [
+          {
+            "Joint": "HeadTurn",
+            "Angle": 90
+          }
+
+        ]
+      },
+      {
+        "HasJoints": "True",
+        "Expression": "Sad",
+        "WaitTime": 100,
+        "JointMoveTime": 8,
+        "JointAngles": [
+          {
+            "Joint": "HeadTurn",
+            "Angle": 160
+          }
+
+        ]
+      },
+      {
+        "HasJoints": "True",
+        "Expression": "Sad",
+        "WaitTime": 100,
+        "JointMoveTime": 8,
+        "JointAngles": [
+          {
+            "Joint": "HeadTurn",
+            "Angle": 120
+          }
+
+        ]
+      }
+
+
+    ]
+  }

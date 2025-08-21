@@ -1,0 +1,102 @@
+{
+    "Name": "Shimmy",
+    "Keyframes": [
+        {
+            "HasEmote": "False",
+            "HasAudio": "True",
+            "AudioClip": "clubmusic",
+            "HasJoints": "True",
+            "Expression": "Happy",
+            "WaitTime": 1000,
+            "JointMoveTime": 1,
+            "JointAngles": [
+              
+                { "Joint": "HeadTilt", "Angle": 120 },
+                { "Joint": "TorsoTilt", "Angle": 120 },
+                
+                { "Joint": "RightShoulder", "Angle": 180 },
+                { "Joint": "RightElbow", "Angle": 130 },
+
+                { "Joint": "LeftShoulder", "Angle": 90 },
+                { "Joint": "LeftElbow", "Angle": 50 }
+            ]
+        },
+        {
+            "HasEmote": "False",
+            "HasAudio": "False",
+            "HasJoints": "True",
+            "Expression": "Happy",
+            "WaitTime": 1000,
+            "JointMoveTime": 1,
+            "JointAngles": [
+              
+                { "Joint": "HeadTilt", "Angle": 110 },
+                { "Joint": "TorsoTilt", "Angle": 110 },
+                
+                { "Joint": "RightShoulder", "Angle": 150 },
+                { "Joint": "RightElbow", "Angle": 150 },
+
+                { "Joint": "LeftShoulder", "Angle": 75 },
+                { "Joint": "LeftElbow", "Angle": 75 }
+            ]
+        },
+        {
+            "HasEmote": "False",
+            "HasAudio": "False",
+            "HasJoints": "True",
+            "Expression": "Happy",
+            "WaitTime": 1000,
+            "JointMoveTime": 1,
+            "JointAngles": [
+              
+                { "Joint": "HeadTilt", "Angle": 120 },
+                { "Joint": "TorsoTilt", "Angle": 120 },
+
+                { "Joint": "RightShoulder", "Angle": 170 },
+                { "Joint": "RightElbow", "Angle": 140 },
+
+                { "Joint": "LeftShoulder", "Angle": 110 },
+                { "Joint": "LeftElbow", "Angle": 40 }
+            ]
+        },
+        {
+            "HasEmote": "False",
+            "HasAudio": "False",
+            "HasJoints": "True",
+            "Expression": "Happy",
+            "WaitTime": 1000,
+            "JointMoveTime": 1,
+            "JointAngles": [
+              
+                { "Joint": "HeadTilt", "Angle": 110 },
+                {"Joint": "TorsoTilt", "Angle": 110 },
+
+                { "Joint": "RightShoulder", "Angle": 150 },
+                { "Joint": "RightElbow", "Angle": 150 },
+
+                { "Joint": "LeftShoulder", "Angle": 75 },
+                { "Joint": "LeftElbow", "Angle": 75 }
+            ]
+        },
+        {
+            "HasEmote": "False",
+            "HasAudio": "False",
+            "HasJoints": "True",
+            "Expression": "Happy",
+            "WaitTime": 1000,
+            "JointMoveTime": 1,
+            "JointAngles": [
+              
+                { "Joint": "HeadTilt", "Angle": 135 },
+                {"Joint": "TorsoTilt", "Angle": 115 },
+
+                { "Joint": "RightShoulder", "Angle": 180 },
+                { "Joint": "RightElbow", "Angle": 140 },
+
+                { "Joint": "LeftShoulder", "Angle": 110 },
+                { "Joint": "LeftElbow", "Angle": 40 }
+            ]
+        }
+        
+    ]
+}

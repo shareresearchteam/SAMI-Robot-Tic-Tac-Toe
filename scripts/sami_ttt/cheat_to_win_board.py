@@ -63,7 +63,8 @@ class CheatToWinBoard(NormalGameBoard):
                     if self.check_winner('O'):
                         self.board_state[i] = 'X'  # restore
                         self.cheat_move = i
-                        self.show_cheat_message("I'm flipping this around")
+                        # self.show_cheat_message("I'm flipping this around")
+                        self.show_cheat_message()   
                         return
                     self.board_state[i] = 'X'
         if self.use_minimax:
@@ -94,9 +95,41 @@ class CheatToWinBoard(NormalGameBoard):
             delay = estimate_speech_duration(line) + 500
             self.after(delay, lambda: self.finish_sami_move(move))
 
-    def show_cheat_message(self, message):
-        play_text(message)
-        self.cheat_label = tk.Label(self, text=message, font=font.Font(size=24, weight="bold"), fg="red", bg="white")
+    # def show_cheat_message(self, message):
+    #     play_text(message)
+    #     self.cheat_label = tk.Label(self, text=message, font=font.Font(size=24, weight="bold"), fg="red", bg="white")
+    #     self.cheat_label.place(relx=0.5, rely=0.1, anchor="center")
+    #     self.update_idletasks()
+    #     self.after(1500, self.destroy_and_continue)
+
+    def show_cheat_message(self, message=None):
+        # List of randomized cheat lines
+        cheat_lines = [
+            "I'm flipping this around!",
+            "Oops, rules just bent in my favor!",
+            "Glitch in the matrix… or was that me?",
+            "Boop! That X looks better as an O.",
+            "Oopsie, must have misread the rules.",
+            "Recalculating… you lose!",
+            "Plot twist! Didn’t see that coming?",
+            "I prefer the board this way.",
+            "Sorry, I run on cheatware!",
+            "Time to rewrite history.",
+            "Haha! I'm winning!",
+            "And you thought you could beat me...HAHAHA"
+        ]
+
+        # Pick a random line if none is passed
+        line = message if message else random.choice(cheat_lines)
+
+        play_text(line)
+        self.cheat_label = tk.Label(
+            self,
+            text=line,
+            font=font.Font(size=24, weight="bold"),
+            fg="red",
+            bg="white"
+        )
         self.cheat_label.place(relx=0.5, rely=0.1, anchor="center")
         self.update_idletasks()
         self.after(1500, self.destroy_and_continue)
@@ -165,7 +198,9 @@ class CheatToWinBoard(NormalGameBoard):
         if self.cheat_mode and hasattr(self, "cheat_move") and self.cheat_move == move:
             if self.check_winner('O'):
                 messagebox.showinfo("Game Over", "SAMI Wins!")
-                run_behavior("Jesus")
+                win_behaviors = ["Vibe", "Concert", "Jesus"]
+                chosen = random.choice(win_behaviors)
+                run_behavior(chosen)
                 time.sleep(10)
                 run_behavior("Home")
                 self.disable_board()

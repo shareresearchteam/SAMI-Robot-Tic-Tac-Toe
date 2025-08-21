@@ -134,6 +134,23 @@ class NormalGameBoard(TicTacToeBoard):
 
         if all(cell is not None for cell in self.board_state):
             messagebox.showinfo("Game Over", "It's a draw!")
+            tie_lines = [
+                "Oh no, we tied again? How is this even possible?",
+                "Ugh, I thought I had you that time!",
+                "Seriously? A tie? You’re tougher than I thought!",
+                "I was so close… this game cheats, not me!",
+                "We keep ended up even… but I wanted the spotlight!",
+                "Alright, alright, I’ll get you next round!",
+                "A tie? Guess that just means a rematch.",
+                "Even? Not for long!",
+                "We’re evenly matched… for now.",
+                "One more game—I promise I’ll break the tie!",
+                "I should be better at this, I’m a robot!",
+                "My circuits must be rusty today.",
+                "How do I tie when I’m literally programmed to win?",
+                "This doesn’t compute. I need a software update."
+            ]
+            play_text(random.choice(tie_lines))
             run_behavior("Bow")
             time.sleep(5)
             run_behavior("Home")
@@ -183,7 +200,7 @@ class NormalGameBoard(TicTacToeBoard):
             return
 
         play_random = random.random() < 0.1
-        use_minimax_now = self.use_minimax and random.random() < 0.7  # 60% chance to use minimax
+        use_minimax_now = self.use_minimax and random.random() < 0.9  # 60% chance to use minimax
         if use_minimax_now:
             move = self.choose_best_move()
         else:
